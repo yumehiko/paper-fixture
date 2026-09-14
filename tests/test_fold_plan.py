@@ -33,3 +33,11 @@ class FoldPlanTests(unittest.TestCase):
    with self.assertRaisesRegex(InputError, 'already used'): validate_plan(p,d)
    p['assemblies'][0]['folds']=p['assemblies'][0]['folds'][:1]; p['assemblies'][0]['root_transform_mm']=[0,0,0]
    with self.assertRaisesRegex(InputError, '4x4'): validate_plan(p,d)
+ def test_ignores_unselected_invalid_source_fold_but_rejects_it_when_selected(self):
+  with tempfile.TemporaryDirectory() as d:
+   d=Path(d); (d/'build').mkdir(); shutil.copy(ROOT/'build/illustrator-export-r2/curve-hole/print-front.png',d/'build/print.png')
+   export=json.loads((ROOT/'build/illustrator-export-r2/curve-hole/export.json').read_text()); export['parts'][0]['folds']=[{'id':'FOLD_01','endpoints_mm':[[30,0],[30,160]]},{'id':'FOLD_CURVED_UNUSED','endpoints_mm':[[5,5],[20,160]]}]
+   (d/'build/export.json').write_text(json.dumps(export)); p=self.payload(); p['sources']={'export_json':'build/export.json','print_png':'build/print.png'}
+   self.assertEqual(validate_plan(p,d)['assemblies'][0]['folds'][0]['fold_id'], 'FOLD_01')
+   p['assemblies'][0]['folds'][0]['fold_id']='FOLD_CURVED_UNUSED'
+   with self.assertRaisesRegex(InputError, 'straight outer-boundary'): validate_plan(p,d)
