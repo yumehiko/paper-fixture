@@ -1,0 +1,129 @@
+{
+  "blend": "/Users/yumehiko/repository/paper-fixture-worktrees/blender-panels/build/blender-panels-r3/three-shelf/panels.blend",
+  "reopened": true,
+  "expected_thickness_mm": 3.0,
+  "parts": [
+    {
+      "id": "BACK",
+      "mesh_vertices": 288,
+      "mesh_faces": 436,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "size_mm": [
+        360.00001430511475,
+        460.00000834465027
+      ],
+      "front_material_ok": true,
+      "back_material_ok": true,
+      "edge_material_ok": true,
+      "uv_ok": true,
+      "print_image_link_ok": true,
+      "holes_open": [
+        true,
+        true
+      ]
+    },
+    {
+      "id": "SHELF_01",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "size_mm": [
+        360.00001430511475,
+        259.99999046325684
+      ],
+      "front_material_ok": true,
+      "back_material_ok": true,
+      "edge_material_ok": true,
+      "uv_ok": true,
+      "print_image_link_ok": true,
+      "holes_open": []
+    },
+    {
+      "id": "SHELF_02",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "size_mm": [
+        360.00001430511475,
+        259.99999046325684
+      ],
+      "front_material_ok": true,
+      "back_material_ok": true,
+      "edge_material_ok": true,
+      "uv_ok": true,
+      "print_image_link_ok": true,
+      "holes_open": []
+    },
+    {
+      "id": "SHELF_03",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "size_mm": [
+        360.00001430511475,
+        259.99999046325684
+      ],
+      "front_material_ok": true,
+      "back_material_ok": true,
+      "edge_material_ok": true,
+      "uv_ok": true,
+      "print_image_link_ok": true,
+      "holes_open": []
+    },
+    {
+      "id": "SIDE_LEFT",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "size_mm": [
+        300.00001192092896,
+        460.00000834465027
+      ],
+      "front_material_ok": true,
+      "back_material_ok": true,
+      "edge_material_ok": true,
+      "uv_ok": true,
+      "print_image_link_ok": true,
+      "holes_open": []
+    },
+    {
+      "id": "SIDE_RIGHT",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "size_mm": [
+        300.00001192092896,
+        460.00000834465027
+      ],
+      "front_material_ok": true,
+      "back_material_ok": true,
+      "edge_material_ok": true,
+      "uv_ok": true,
+      "print_image_link_ok": true,
+      "holes_open": []
+    },
+    {
+      "id": "TOP",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "size_mm": [
+        360.00001430511475,
+        270.00001072883606
+      ],
+      "front_material_ok": true,
+      "back_material_ok": true,
+      "edge_material_ok": true,
+      "uv_ok": true,
+      "print_image_link_ok": true,
+      "holes_open": []
+    }
+  ]
+}

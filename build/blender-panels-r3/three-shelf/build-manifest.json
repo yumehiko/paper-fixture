@@ -1,0 +1,29 @@
+{
+  "input": {
+    "export_json": {
+      "path": "build/illustrator-export-r2/three-shelf/export.json",
+      "sha256": "e1a149e17ff7c33952f997dc23501c2e1f4aff8e5dac9d6733f6fe997d4f0a97"
+    },
+    "print_png": {
+      "path": "build/illustrator-export-r2/three-shelf/print-front.png",
+      "sha256": "aad7949ba2f85af1b93ef2ccab02252101c8734b84a638fbe47e17d62e2cd9fc"
+    }
+  },
+  "outputs": {
+    "blend": "panels.blend",
+    "preview_front": "preview-front.png",
+    "preview_back": "preview-back.png"
+  },
+  "part_ids": [
+    "BACK",
+    "SHELF_01",
+    "SHELF_02",
+    "SHELF_03",
+    "SIDE_LEFT",
+    "SIDE_RIGHT",
+    "TOP"
+  ],
+  "thickness_mm": 3.0,
+  "curve_resolution_per_bezier": 12,
+  "stage": "flat panels only; not an assembly"
+}

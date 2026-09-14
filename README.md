@@ -13,5 +13,6 @@ Illustratorの展開図を起点に、Blenderで紙什器を組み立て、納�
 - [設計インタビューと未決事項](docs/open-questions.md)
 - [理想化入力サンプル（再生成手順）](samples/idealized_input/README.md)
 - [Illustrator書き出し試作](docs/illustrator-export.md)
+- [Blender平面部材生成（第3段階）](docs/blender-panels.md)
 
 各文書では、ユーザーが示した要望と、検証前の設計提案を区別する。未回答の項目を決定事項として扱わない。
