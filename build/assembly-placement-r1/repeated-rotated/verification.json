@@ -1,0 +1,160 @@
+{
+  "reopened": true,
+  "bundle": "/Users/yumehiko/repository/paper-fixture-worktrees/assembly-evidence/build/assembly-placement-r1/repeated-rotated.staging-u0ahx_3o",
+  "instance_count": 3,
+  "instances": [
+    {
+      "id": "angled-copy-a",
+      "part_id": "SHELF_01",
+      "mesh": "PF_angled-copy-a_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          9.293694980442524,
+          397.35493063926697
+        ],
+        "y": [
+          -248.51036071777344,
+          150.7614701986313
+        ],
+        "z": [
+          -181.95731937885284,
+          31.320422887802124
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          9.29369498429306,
+          397.3549344097973
+        ],
+        "y": [
+          -248.51036459795515,
+          150.7614621840387
+        ],
+        "z": [
+          -181.95732004446,
+          31.32042475386544
+        ]
+      },
+      "front_normal_world": [
+        0.4708700180053711,
+        -0.0581633485853672,
+        0.8802831768989563
+      ],
+      "holes_open": []
+    },
+    {
+      "id": "angled-copy-b",
+      "part_id": "SHELF_01",
+      "mesh": "PF_angled-copy-b_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          409.25532579421997,
+          793.9117550849915
+        ],
+        "y": [
+          -452.15702056884766,
+          -125.83716213703156
+        ],
+        "z": [
+          -137.82934844493866,
+          120.79651653766632
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          409.2553230243589,
+          793.9117119762612
+        ],
+        "y": [
+          -452.1570262861817,
+          -125.83717777238829
+        ],
+        "z": [
+          -137.82935182423194,
+          120.79652171897479
+        ]
+      },
+      "front_normal_world": [
+        0.49645131826400757,
+        0.37274542450904846,
+        0.7839623093605042
+      ],
+      "holes_open": []
+    },
+    {
+      "id": "another-id",
+      "part_id": "BACK",
+      "mesh": "PF_another-id_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          119.99999731779099,
+          697.0065832138062
+        ],
+        "y": [
+          -196.42271101474762,
+          385.51944494247437
+        ],
+        "z": [
+          68.49999725818634,
+          71.50000333786011
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          120.0,
+          697.0065782116494
+        ],
+        "y": [
+          -196.4227027448175,
+          385.519409622499
+        ],
+        "z": [
+          68.5,
+          71.5
+        ]
+      },
+      "front_normal_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "holes_open": [
+        true,
+        true
+      ]
+    }
+  ],
+  "texture_sha256": "aad7949ba2f85af1b93ef2ccab02252101c8734b84a638fbe47e17d62e2cd9fc",
+  "texture_hash_matches_manifest": true,
+  "source_input_hashes": {
+    "placement": {
+      "path": "samples/placement/repeated-rotated-placement.json",
+      "sha256": "f98e00cb4d5adb19e65ecb140c20332eac61c9f6fc5d7247ee35f529e43c63f2"
+    },
+    "panels": {
+      "path": "build/illustrator-export-r2/three-shelf/export.json",
+      "sha256": "e1a149e17ff7c33952f997dc23501c2e1f4aff8e5dac9d6733f6fe997d4f0a97"
+    },
+    "print_front": {
+      "path": "build/illustrator-export-r2/three-shelf/print-front.png",
+      "sha256": "aad7949ba2f85af1b93ef2ccab02252101c8734b84a638fbe47e17d62e2cd9fc"
+    }
+  },
+  "placement_checks": {
+    "expected_checks": [],
+    "expected_contacts": []
+  },
+  "input_checks": {
+    "expected_checks": [],
+    "expected_contacts": []
+  }
+}

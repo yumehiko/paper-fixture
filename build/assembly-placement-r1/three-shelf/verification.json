@@ -1,0 +1,404 @@
+{
+  "reopened": true,
+  "bundle": "/Users/yumehiko/repository/paper-fixture-worktrees/assembly-evidence/build/assembly-placement-r1/three-shelf.staging-siozo02k",
+  "instance_count": 7,
+  "instances": [
+    {
+      "id": "side-left",
+      "part_id": "SIDE_LEFT",
+      "mesh": "PF_side-left_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          -3.0000130645930767,
+          2.0107238540845174e-05
+        ],
+        "y": [
+          -301.50002241134644,
+          -1.4999998966231942
+        ],
+        "z": [
+          -6.556710729910264e-08,
+          460.00000834465027
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          -3.0000000000000284,
+          1.84297022087776e-14
+        ],
+        "y": [
+          -301.5000000000001,
+          -1.5
+        ],
+        "z": [
+          -1.4210854715202004e-12,
+          460.0
+        ]
+      },
+      "front_normal_world": [
+        -1.0,
+        -6.123234262925839e-17,
+        6.123234262925839e-17
+      ],
+      "holes_open": []
+    },
+    {
+      "id": "side-right",
+      "part_id": "SIDE_RIGHT",
+      "mesh": "PF_side-right_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          359.99995470046997,
+          363.0000054836273
+        ],
+        "y": [
+          -301.49999260902405,
+          -1.499980571679771
+        ],
+        "z": [
+          -6.556710729910264e-08,
+          460.00000834465027
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          360.0,
+          363.00000000000006
+        ],
+        "y": [
+          -301.5,
+          -1.5000000000005684
+        ],
+        "z": [
+          -1.4210854715202004e-12,
+          460.0
+        ]
+      },
+      "front_normal_world": [
+        1.0,
+        -6.123234262925839e-17,
+        6.123234262925839e-17
+      ],
+      "holes_open": []
+    },
+    {
+      "id": "shelf-01",
+      "part_id": "SHELF_01",
+      "mesh": "PF_shelf-01_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00001430511475
+        ],
+        "y": [
+          -261.5000009536743,
+          -1.500000013038516
+        ],
+        "z": [
+          116.99999868869781,
+          120.00000476837158
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00000000000176
+        ],
+        "y": [
+          -261.50000000000057,
+          -1.5
+        ],
+        "z": [
+          117.0,
+          120.0
+        ]
+      },
+      "front_normal_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "holes_open": []
+    },
+    {
+      "id": "shelf-02",
+      "part_id": "SHELF_02",
+      "mesh": "PF_shelf-02_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00001430511475
+        ],
+        "y": [
+          -261.5000009536743,
+          -1.500000013038516
+        ],
+        "z": [
+          237.0000034570694,
+          239.99999463558197
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          0.0,
+          359.9999999999993
+        ],
+        "y": [
+          -261.50000000000057,
+          -1.5
+        ],
+        "z": [
+          237.0,
+          240.0
+        ]
+      },
+      "front_normal_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "holes_open": []
+    },
+    {
+      "id": "shelf-03",
+      "part_id": "SHELF_03",
+      "mesh": "PF_shelf-03_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00001430511475
+        ],
+        "y": [
+          -261.5000009536743,
+          -1.500000013038516
+        ],
+        "z": [
+          356.9999933242798,
+          360.00001430511475
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00000000000176
+        ],
+        "y": [
+          -261.49999999999716,
+          -1.5
+        ],
+        "z": [
+          357.0,
+          360.0
+        ]
+      },
+      "front_normal_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "holes_open": []
+    },
+    {
+      "id": "back",
+      "part_id": "BACK",
+      "mesh": "PF_back_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00001430511475
+        ],
+        "y": [
+          -1.500000013038516,
+          1.500020152889192
+        ],
+        "z": [
+          -6.556710729910264e-08,
+          460.00000834465027
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          0.0,
+          359.9999999999993
+        ],
+        "y": [
+          -1.5000000000000282,
+          1.5
+        ],
+        "z": [
+          1.2505552149377763e-12,
+          460.0
+        ]
+      },
+      "front_normal_world": [
+        0.0,
+        -1.0,
+        6.123234262925839e-17
+      ],
+      "holes_open": [
+        true,
+        true
+      ]
+    },
+    {
+      "id": "top",
+      "part_id": "TOP",
+      "mesh": "PF_top_outline",
+      "closed_manifold": true,
+      "independent_mesh": true,
+      "scale_one": true,
+      "world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00001430511475
+        ],
+        "y": [
+          -271.50002121925354,
+          -1.500000013038516
+        ],
+        "z": [
+          456.9999873638153,
+          460.00000834465027
+        ]
+      },
+      "expected_world_aabb_mm": {
+        "x": [
+          0.0,
+          360.00000000000176
+        ],
+        "y": [
+          -271.5000000000002,
+          -1.5
+        ],
+        "z": [
+          457.0,
+          460.0
+        ]
+      },
+      "front_normal_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "holes_open": []
+    }
+  ],
+  "texture_sha256": "aad7949ba2f85af1b93ef2ccab02252101c8734b84a638fbe47e17d62e2cd9fc",
+  "texture_hash_matches_manifest": true,
+  "source_input_hashes": {
+    "placement": {
+      "path": "samples/placement/three-shelf-placement.json",
+      "sha256": "d8fb0bd905821e838ff92337317ffd501b03d49148879bb5e9454c6d6eb43610"
+    },
+    "panels": {
+      "path": "build/illustrator-export-r2/three-shelf/export.json",
+      "sha256": "e1a149e17ff7c33952f997dc23501c2e1f4aff8e5dac9d6733f6fe997d4f0a97"
+    },
+    "print_front": {
+      "path": "build/illustrator-export-r2/three-shelf/print-front.png",
+      "sha256": "aad7949ba2f85af1b93ef2ccab02252101c8734b84a638fbe47e17d62e2cd9fc"
+    }
+  },
+  "placement_checks": {
+    "expected_checks": [
+      {
+        "id": "shelf-01-upper-face",
+        "actual_mm": 120.00000476837158,
+        "passed": true
+      },
+      {
+        "id": "shelf-02-upper-face",
+        "actual_mm": 239.99999463558197,
+        "passed": true
+      },
+      {
+        "id": "shelf-03-upper-face",
+        "actual_mm": 360.00001430511475,
+        "passed": true
+      }
+    ],
+    "expected_contacts": [
+      {
+        "a": "shelf-01",
+        "b": "side-left",
+        "gap_mm": -2.0107238540845174e-05,
+        "overlaps_other_axes": true,
+        "passed": true
+      },
+      {
+        "a": "shelf-01",
+        "b": "side-right",
+        "gap_mm": -5.9604644775390625e-05,
+        "overlaps_other_axes": true,
+        "passed": true
+      },
+      {
+        "a": "shelf-01",
+        "b": "back",
+        "gap_mm": 0.0,
+        "overlaps_other_axes": true,
+        "passed": true
+      }
+    ]
+  },
+  "input_checks": {
+    "expected_checks": [
+      {
+        "id": "shelf-01-upper-face",
+        "actual_mm": 120.0,
+        "passed": true
+      },
+      {
+        "id": "shelf-02-upper-face",
+        "actual_mm": 240.0,
+        "passed": true
+      },
+      {
+        "id": "shelf-03-upper-face",
+        "actual_mm": 360.0,
+        "passed": true
+      }
+    ],
+    "expected_contacts": [
+      {
+        "a": "shelf-01",
+        "b": "side-left",
+        "gap_mm": -1.84297022087776e-14,
+        "overlaps_other_axes": true,
+        "passed": true
+      },
+      {
+        "a": "shelf-01",
+        "b": "side-right",
+        "gap_mm": -1.7621459846850485e-12,
+        "overlaps_other_axes": true,
+        "passed": true
+      },
+      {
+        "a": "shelf-01",
+        "b": "back",
+        "gap_mm": -2.8199664825478976e-14,
+        "overlaps_other_axes": true,
+        "passed": true
+      }
+    ]
+  }
+}

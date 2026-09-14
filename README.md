@@ -26,6 +26,44 @@ BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
 
 成果物は `assembly.blend`、`textures/print-front.png`、2枚の preview、`verification.json`、`build-manifest.json` からなります。画像は bundle 内の相対パス `//textures/print-front.png` で参照されます。
 
+### assembly bundle を使う
+
+Blender 5.2.1 LTS があれば、追加の Python パッケージは不要です。初回は
+`git clone https://github.com/yumehiko/paper-fixture.git`、更新時は checkout 内で
+`git pull --ff-only` を実行します。次は入力検査、最短生成、生成物の別プロセス検証を
+順に行う例です。検証 report は provenance を変えないよう bundle の外へ出します。
+
+```bash
+BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
+python3 tools/verify_assembly_placement.py \
+  --input samples/placement/three-shelf-placement.json --repo-root .
+mkdir -p build/local-assembly-check
+"$BLENDER" --background --python-exit-code 1 --python tools/build_assembly_bundle.py -- \
+  --input samples/placement/three-shelf-placement.json --repo-root . \
+  --output-dir build/local-assembly-check/three-shelf
+"$BLENDER" --background build/local-assembly-check/three-shelf/assembly.blend \
+  --python-exit-code 1 --python tools/verify_assembly_bundle.py -- \
+  --bundle build/local-assembly-check/three-shelf \
+  --report /tmp/paper-fixture-assembly-verification.json
+```
+
+3つのコマンドが終了コード 0 なら、入力の全 instance の transform、ワールド AABB、
+印刷面法線、指定した基準面・接触、閉じた mesh、UV、穴の既存フェーズ3相当の ray
+検査、bundle 内の画像 hash が確認されています。開くのは bundle 内の
+`assembly.blend` です。`textures/print-front.png`、`build-manifest.json`、
+`verification.json`、`preview-perspective.png`、`preview-reference.png` も同じ
+ディレクトリに保ってください。
+
+bundle ディレクトリ全体は checkout の外へ移動できます。移動後も
+`assembly.blend` を開くか、上記の最後の検証コマンドで確認します。画像は bundle
+相対パスなので、`.blend` 単体を移動してはいけません。
+
+同じ出力先への再生成は、前回 manifest の入力とすべての管理対象ファイルの hash が
+一致する場合だけ許可されます。Blender で手編集した bundle、画像や preview を追加・
+変更した bundle、未知ファイルを入れた bundle は通常の再生成が失敗します。改訂は新しい
+`--output-dir` を使い、当該成果物の変更を破棄してよい場合だけ `--force` を使ってください。
+`--force` は上流入力や別の bundle を変更しません。
+
 ## まず試す（macOS / Blender）
 
 この手順は、リポジトリに含まれる `curve-hole` の書き出し束から Blender の板を生成し、保存後の `.blend` を再オープンして検証します。Illustrator は必要ありません。
