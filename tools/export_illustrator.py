@@ -206,6 +206,14 @@ def export_from_dom(dom: dict[str, Any], *, source: Path, material: dict[str, An
             if not isinstance(parent, dict) or parent.get("type") == "Layer":
                 raise ExportValidationError(f"{layer_name}: path {raw.get('name')!r} must be inside a PF_PART_<ID> group")
             if parent.get("type") != "GroupItem":
+                ancestors = raw.get("ancestor_groups")
+                if not isinstance(ancestors, list) or not any(
+                    isinstance(group, dict)
+                    and _part_id(group.get("name")) is not None
+                    and group_layers.get(f"{layer_name}:{group.get('name')}") == layer_name
+                    for group in ancestors
+                ):
+                    raise ExportValidationError(f"{layer_name}: path {raw.get('name')!r} must be inside a PF_PART_<ID> group")
                 continue
         elif not isinstance(parent, dict) or parent.get("type") != "GroupItem":
             raise ExportValidationError(f"{layer_name}: path {raw.get('name')!r} must be directly inside a PF_PART_<ID> group")
@@ -341,12 +349,14 @@ def inspect_ai(source: Path, *, timeout: float) -> dict[str, Any]:
   }}
   var snapshot = documentSnapshot(documentRef);
   for (var pathIndex = 0; pathIndex < documentRef.pathItems.length; pathIndex++) {{
-   var cursor = documentRef.pathItems[pathIndex]; var layerName = null;
+   var cursor = documentRef.pathItems[pathIndex]; var layerName = null; var ancestorGroups = [];
    while (cursor && cursor.parent) {{
     cursor = cursor.parent;
+    if (cursor && cursor.typename === "GroupItem") ancestorGroups.push({{name: cursor.name || ""}});
     if (cursor && cursor.typename === "Layer") {{ layerName = cursor.name || ""; break; }}
    }}
    snapshot.paths[pathIndex].layer = layerName;
+   snapshot.paths[pathIndex].ancestor_groups = ancestorGroups;
   }}
   return toJson({{ok: true, illustrator_version: app.version, snapshot: snapshot, groups: groups}});
  }} catch (error) {{ return toJson({{ok: false, error: String(error)}}); }}

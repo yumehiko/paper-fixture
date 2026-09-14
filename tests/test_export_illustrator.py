@@ -34,6 +34,14 @@ def _dom(paths: list[dict]) -> dict:
         if marker not in seen_groups:
             group_entries.append({"name": path["parent"]["name"], "layer": path["layer"]})
             seen_groups.add(marker)
+        path.setdefault("ancestor_groups", [{"name": path["parent"]["name"]}])
+        for group in path["ancestor_groups"]:
+            name = group.get("name") if isinstance(group, dict) else None
+            ancestor_marker = (path["layer"], name)
+            if isinstance(name, str) and name.startswith("PF_PART_") and ancestor_marker not in seen_groups:
+                group_layers[f"{path['layer']}:{name}"] = path["layer"]
+                group_entries.append({"name": name, "layer": path["layer"]})
+                seen_groups.add(ancestor_marker)
     return {"illustrator": {"ok": True, "layer_names": ["PF_CUT", "PF_PRINT_FRONT", "PF_FOLD", "PF_ANNOTATION"],
             "artboards": [{"rect": [0, 72, 144, 0]}], "group_layers": group_layers,
             "group_entries": group_entries, "paths": paths}}
@@ -103,8 +111,17 @@ class ExportFromDomTests(unittest.TestCase):
         cut = _path("cut", [[0, 72], [144, 72], [144, 0], [0, 0]], layer="PF_CUT")
         compound = _path("outlined text", [[10, 20], [20, 20], [20, 10]], layer="PF_PRINT_FRONT")
         compound["parent"] = {"type": "CompoundPathItem", "name": ""}
+        compound["ancestor_groups"] = [{"name": "PF_PART_PANEL"}]
         result = exporter.export_from_dom(_dom([cut, compound]), source=_SOURCE, material=None)
         self.assertEqual(result["parts"][0]["print_front"]["paths"], [])
+
+    def test_rejects_compound_print_outside_part_group(self) -> None:
+        cut = _path("cut", [[0, 72], [144, 72], [144, 0], [0, 0]], layer="PF_CUT")
+        compound = _path("orphan compound", [[10, 20], [20, 20], [20, 10]], layer="PF_PRINT_FRONT")
+        compound["parent"] = {"type": "CompoundPathItem", "name": ""}
+        compound["ancestor_groups"] = []
+        with self.assertRaisesRegex(exporter.ExportValidationError, "inside a PF_PART"):
+            exporter.export_from_dom(_dom([cut, compound]), source=_SOURCE, material=None)
 
     def test_rejects_open_cut_and_nonstraight_fold(self) -> None:
         open_cut = _path("cut", [[0, 72], [144, 72], [144, 0]], layer="PF_CUT", closed=False)
