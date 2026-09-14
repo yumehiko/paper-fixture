@@ -6,13 +6,22 @@
 
 紙厚は現在の `.ai` DOM に保存されていないため、`material.json` を明示入力として受け取り、`export.json` に `external-explicit-input` と出所を記録する。渡さない場合は厚みを作らず `material.status: missing` を記録する。
 
+macOS と Adobe Illustrator 2026 に加え、公開 MIT リポジトリ [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) の環境が必要である。`paper-fixture` と同じ親ディレクトリで、次のように取得する。このリポジトリはその環境を同梱しない。
+
 ```bash
-ENV=/Users/yumehiko/repository/illustrator-agent/.venv/bin/python
-$ENV tools/export_illustrator.py \
+git clone https://github.com/yumehiko/py-ai-illustrator.git
+cd py-ai-illustrator
+uv sync --extra dev
+cd ../paper-fixture
+```
+
+```bash
+PYTHON=../py-ai-illustrator/.venv/bin/python
+"$PYTHON" tools/export_illustrator.py \
   build/input-samples-r2/curve-hole/curve-hole-input.native.ai \
   --material samples/idealized_input/material.json \
   --output-dir build/illustrator-export-r2/curve-hole
-$ENV tools/verify_illustrator_export.py build/illustrator-export-r2/curve-hole
+"$PYTHON" tools/verify_illustrator_export.py build/illustrator-export-r2/curve-hole
 ```
 
 出力の `export.json` は、左上原点・X右・Y下の mm 座標へ正規化した anchor と in/out Bézier handle、切断外周、穴、部材 ID、実寸、前面印刷パス、アートボード印刷範囲を保持する。`print-front.png` は Illustrator で `PF_PRINT_FRONT` だけを表示して144 dpiで出力するため、`PF_CUT`、注釈、折りガイドを含めない。`artboard.preview.png` は元アートボードとのレビュー用であり、Blender渡しの印刷PNGではない。
