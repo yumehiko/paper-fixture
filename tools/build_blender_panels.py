@@ -163,7 +163,11 @@ def setup_scene(bounds):
             bpy.data.collections.remove(old_collection)
     collection = bpy.data.collections.new("PF_FLAT_PANELS_NON_ASSEMBLY")
     scene = bpy.context.scene
-    scene.render.engine = "BLENDER_EEVEE_NEXT"
+    # Blender 4.x calls this EEVEE Next; Blender 5.2 exposes the same engine
+    # as BLENDER_EEVEE.  Select from the installed Blender's enum so the
+    # command-line generator remains usable across both supported versions.
+    render_engines = scene.render.bl_rna.properties["engine"].enum_items.keys()
+    scene.render.engine = "BLENDER_EEVEE_NEXT" if "BLENDER_EEVEE_NEXT" in render_engines else "BLENDER_EEVEE"
     scene.render.resolution_x = 1600
     scene.render.resolution_y = 900
     scene.render.resolution_percentage = 100
