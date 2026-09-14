@@ -1,0 +1,445 @@
+{
+  "schema": "paper-fixture-illustrator-export-v1",
+  "source": {
+    "path": "/Users/yumehiko/repository/paper-fixture-operator-intake/build/operator-intake-native-r1/operator-intake.synthetic.ai",
+    "sha256": "04457478ebbf15e006e8002c8aee603a1c21b8bc2f9753bdba3b5b8febf70c42",
+    "read_via": "Illustrator 2026 live DOM"
+  },
+  "coordinate_system": {
+    "unit": "mm",
+    "origin": "artboard upper-left",
+    "x_axis": "right",
+    "y_axis": "down",
+    "source_unit": "Illustrator points",
+    "mm_per_point": 0.35277777777777775,
+    "artboard_bounds_mm": [
+      0.0,
+      0.0,
+      253.99999999999997,
+      126.99999999999999
+    ]
+  },
+  "material": {
+    "status": "external-explicit-input",
+    "thickness_mm": 3.0,
+    "front_side": "PF_PRINT_FRONT",
+    "back_and_edge": "paper base color"
+  },
+  "print": {
+    "side": "front",
+    "range_mm": [
+      0.0,
+      0.0,
+      253.99999999999997,
+      126.99999999999999
+    ],
+    "pixel_mapping": "pixel_x = x_mm / width_mm * PNG_width; pixel_y = y_mm / height_mm * PNG_height"
+  },
+  "parts": [
+    {
+      "id": "BODY",
+      "cut": {
+        "outer": {
+          "source_id": "illustrator-dom-path-2",
+          "name": "BODY outer",
+          "closed": true,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                14.11111111111111,
+                35.27777777777777
+              ],
+              "in_handle_mm": [
+                14.11111111111111,
+                35.27777777777777
+              ],
+              "out_handle_mm": [
+                14.11111111111111,
+                35.27777777777777
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                119.94444444444443,
+                35.27777777777777
+              ],
+              "in_handle_mm": [
+                119.94444444444443,
+                35.27777777777777
+              ],
+              "out_handle_mm": [
+                119.94444444444443,
+                35.27777777777777
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                119.94444444444443,
+                112.88888888888889
+              ],
+              "in_handle_mm": [
+                119.94444444444443,
+                112.88888888888889
+              ],
+              "out_handle_mm": [
+                119.94444444444443,
+                112.88888888888889
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                14.11111111111111,
+                112.88888888888889
+              ],
+              "in_handle_mm": [
+                14.11111111111111,
+                112.88888888888889
+              ],
+              "out_handle_mm": [
+                14.11111111111111,
+                112.88888888888889
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BODY"
+          }
+        },
+        "holes": [
+          {
+            "source_id": "illustrator-dom-path-1",
+            "name": "BODY hole",
+            "closed": true,
+            "filled": false,
+            "stroked": true,
+            "fill_color": null,
+            "stroke_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 0,
+              "blue": 0
+            },
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  56.44444444444444,
+                  71.2611111111111
+                ],
+                "in_handle_mm": [
+                  56.44444444444444,
+                  71.2611111111111
+                ],
+                "out_handle_mm": [
+                  56.44444444444444,
+                  71.2611111111111
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  73.37777777777777,
+                  71.2611111111111
+                ],
+                "in_handle_mm": [
+                  73.37777777777777,
+                  71.2611111111111
+                ],
+                "out_handle_mm": [
+                  73.37777777777777,
+                  71.2611111111111
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  73.37777777777777,
+                  88.19444444444444
+                ],
+                "in_handle_mm": [
+                  73.37777777777777,
+                  88.19444444444444
+                ],
+                "out_handle_mm": [
+                  73.37777777777777,
+                  88.19444444444444
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  56.44444444444444,
+                  88.19444444444444
+                ],
+                "in_handle_mm": [
+                  56.44444444444444,
+                  88.19444444444444
+                ],
+                "out_handle_mm": [
+                  56.44444444444444,
+                  88.19444444444444
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_BODY"
+            }
+          }
+        ]
+      },
+      "dimensions_mm": [
+        105.83333333333331,
+        77.61111111111111
+      ],
+      "placement_bounds_mm": [
+        14.11111111111111,
+        35.27777777777777,
+        119.94444444444443,
+        112.88888888888889
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "illustrator-dom-path-5",
+            "name": "BODY red field",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 229,
+              "green": 26,
+              "blue": 26
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  19.049999999999997,
+                  40.21666666666666
+                ],
+                "in_handle_mm": [
+                  19.049999999999997,
+                  40.21666666666666
+                ],
+                "out_handle_mm": [
+                  19.049999999999997,
+                  40.21666666666666
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  115.00555555555555,
+                  40.21666666666666
+                ],
+                "in_handle_mm": [
+                  115.00555555555555,
+                  40.21666666666666
+                ],
+                "out_handle_mm": [
+                  115.00555555555555,
+                  40.21666666666666
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  115.00555555555555,
+                  107.94999999999999
+                ],
+                "in_handle_mm": [
+                  115.00555555555555,
+                  107.94999999999999
+                ],
+                "out_handle_mm": [
+                  115.00555555555555,
+                  107.94999999999999
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  19.049999999999997,
+                  107.94999999999999
+                ],
+                "in_handle_mm": [
+                  19.049999999999997,
+                  107.94999999999999
+                ],
+                "out_handle_mm": [
+                  19.049999999999997,
+                  107.94999999999999
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_BODY"
+            }
+          }
+        ],
+        "bounds_mm": [
+          19.049999999999997,
+          40.21666666666666,
+          115.00555555555555,
+          107.94999999999999
+        ]
+      },
+      "folds": [
+        {
+          "id": "FOLD_BODY_SIDE",
+          "endpoints_mm": [
+            [
+              67.02777777777777,
+              112.88888888888889
+            ],
+            [
+              67.02777777777777,
+              35.27777777777777
+            ]
+          ],
+          "boundary_relation": "not-evaluated-by-intake",
+          "status": "angle-and-direction-required-in-assembly-plan"
+        }
+      ]
+    },
+    {
+      "id": "SIDE",
+      "cut": {
+        "outer": {
+          "source_id": "illustrator-dom-path-0",
+          "name": "SIDE outer",
+          "closed": true,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                144.63888888888889,
+                35.27777777777777
+              ],
+              "in_handle_mm": [
+                144.63888888888889,
+                35.27777777777777
+              ],
+              "out_handle_mm": [
+                144.63888888888889,
+                35.27777777777777
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                208.13888888888886,
+                35.27777777777777
+              ],
+              "in_handle_mm": [
+                208.13888888888886,
+                35.27777777777777
+              ],
+              "out_handle_mm": [
+                208.13888888888886,
+                35.27777777777777
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                208.13888888888886,
+                112.88888888888889
+              ],
+              "in_handle_mm": [
+                208.13888888888886,
+                112.88888888888889
+              ],
+              "out_handle_mm": [
+                208.13888888888886,
+                112.88888888888889
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                144.63888888888889,
+                112.88888888888889
+              ],
+              "in_handle_mm": [
+                144.63888888888889,
+                112.88888888888889
+              ],
+              "out_handle_mm": [
+                144.63888888888889,
+                112.88888888888889
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE"
+          }
+        },
+        "holes": []
+      },
+      "dimensions_mm": [
+        63.49999999999997,
+        77.61111111111111
+      ],
+      "placement_bounds_mm": [
+        144.63888888888889,
+        35.27777777777777,
+        208.13888888888886,
+        112.88888888888889
+      ],
+      "print_front": {
+        "paths": [],
+        "bounds_mm": null
+      },
+      "folds": [
+        {
+          "id": "FOLD_SIDE_TAB",
+          "endpoints_mm": [
+            [
+              176.38888888888889,
+              112.88888888888889
+            ],
+            [
+              176.38888888888889,
+              35.27777777777777
+            ]
+          ],
+          "boundary_relation": "not-evaluated-by-intake",
+          "status": "angle-and-direction-required-in-assembly-plan"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "Synthetic note-free operator intake fixture",
+  "width": 720,
+  "height": 360,
+  "layers": [
+    {
+      "id": "cut", "name": "PF_CUT", "groups": [
+        {"id": "body-cut", "name": "PF_PART_BODY", "paths": [
+          {"id": "body-outer", "name": "BODY outer", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 40, "y": 40}, {"x": 340, "y": 40}, {"x": 340, "y": 260}, {"x": 40, "y": 260}]},
+          {"id": "body-hole", "name": "BODY hole", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 160, "y": 110}, {"x": 208, "y": 110}, {"x": 208, "y": 158}, {"x": 160, "y": 158}]}
+        ]},
+        {"id": "side-cut", "name": "PF_PART_SIDE", "paths": [
+          {"id": "side-outer", "name": "SIDE outer", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 410, "y": 40}, {"x": 590, "y": 40}, {"x": 590, "y": 260}, {"x": 410, "y": 260}]}
+        ]}
+      ]
+    },
+    {
+      "id": "print", "name": "PF_PRINT_FRONT", "groups": [
+        {"id": "body-print", "name": "PF_PART_BODY", "paths": [
+          {"id": "body-print-field", "name": "BODY red field", "closed": true, "fill": {"red": 0.9, "green": 0.1, "blue": 0.1}, "stroke": null, "points": [{"x": 54, "y": 54}, {"x": 326, "y": 54}, {"x": 326, "y": 246}, {"x": 54, "y": 246}]}
+        ], "text_frames": [
+          {"id": "body-text", "name": "BODY print text", "text": "FRONT / BODY", "x": 75, "y": 220, "font_size": 26, "font_name": "Helvetica", "fill": {"red": 1, "green": 1, "blue": 1}, "alignment": "left"}
+        ]},
+        {"id": "side-print", "name": "PF_PART_SIDE", "compound_paths": [
+          {"id": "side-compound", "name": "SIDE outlined print", "paths": [
+            {"id": "side-compound-outer", "closed": true, "fill": {"red": 0, "green": 0.7, "blue": 0.8}, "stroke": null, "polarity": "positive", "points": [{"x": 430, "y": 70}, {"x": 570, "y": 70}, {"x": 570, "y": 230}, {"x": 430, "y": 230}]},
+            {"id": "side-compound-hole", "closed": true, "fill": {"red": 0, "green": 0.7, "blue": 0.8}, "stroke": null, "polarity": "negative", "points": [{"x": 465, "y": 105}, {"x": 535, "y": 105}, {"x": 535, "y": 195}, {"x": 465, "y": 195}]}
+          ]}
+        ]}
+      ]
+    },
+    {
+      "id": "fold", "name": "PF_FOLD", "groups": [
+        {"id": "body-fold", "name": "PF_PART_BODY", "paths": [
+          {"id": "body-fold-line", "name": "FOLD_BODY_SIDE", "closed": false, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 190, "y": 40}, {"x": 190, "y": 260}]}
+        ]},
+        {"id": "side-fold", "name": "PF_PART_SIDE", "paths": [
+          {"id": "side-fold-line", "name": "FOLD_SIDE_TAB", "closed": false, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 500, "y": 40}, {"x": 500, "y": 260}]}
+        ]}
+      ]
+    },
+    {"id": "annotation", "name": "PF_ANNOTATION", "text_frames": [{"id": "annotation-text", "text": "Synthetic fixture only", "x": 20, "y": 20, "font_size": 12, "font_name": "Helvetica", "fill": {"red": 0, "green": 0, "blue": 0}, "alignment": "left"}]}
+  ]
+}
