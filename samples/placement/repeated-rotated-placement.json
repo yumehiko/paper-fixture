@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "status": "idealized-prototype-not-production-specification",
+  "unit": "mm",
+  "world": {
+    "origin": "floor, back mid-plane, left inner face",
+    "x_axis": "right",
+    "y_axis": "back",
+    "z_axis": "up",
+    "rotation_mode": "XYZ extrinsic degrees"
+  },
+  "sources": {
+    "panels": "build/illustrator-export-r2/three-shelf/export.json",
+    "print_front": "build/illustrator-export-r2/three-shelf/print-front.png"
+  },
+  "instances": [
+    {"id": "angled-copy-a", "part_id": "SHELF_01", "translation_mm": [10, -20, 30], "rotation_deg_xyz": [17, 23, 31]},
+    {"id": "angled-copy-b", "part_id": "SHELF_01", "translation_mm": [410, -220, 80], "rotation_deg_xyz": [-11, 37, 19]},
+    {"id": "another-id", "part_id": "BACK", "translation_mm": [120, 140, 70], "rotation_deg_xyz": [0, 0, 43]}
+  ],
+  "checks": {}
+}
