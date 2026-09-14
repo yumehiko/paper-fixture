@@ -81,11 +81,16 @@
     }
   ],
   "checks": {
-    "shelf_top_heights_mm": {
-      "shelf-01": 120,
-      "shelf-02": 240,
-      "shelf-03": 360
-    },
+    "expected_checks": [
+      {
+        "id": "reference-face-height",
+        "instance_id": "shelf-01",
+        "kind": "world_aabb_face",
+        "face": "max_z",
+        "target_mm": 120,
+        "tolerance_mm": 0.05
+      }
+    ],
     "expected_contacts": [
       {
         "a": "shelf-01",
@@ -101,6 +106,14 @@
 }
 ```
 
+`expected_checks` は任意の補助検査である。現在の純粋検査は
+`world_aabb_face` を受け付け、任意のinstanceのワールドAABB面を目標値と
+照合する。棚上面 `H` を確認する場合は、そのinstanceの `max_z` に `H` を
+指定する。これは部材名・段数・用途を解釈しない一般の基準面検査であり、
+`translation_z = H - t / 2` は水平板を上面で置くときの入力値の導出例に留める。
+この一般形は初期設計にあった `shelf_top_heights_mm` を置き換える実装上の軽微な
+補完である。
+
 回転の曖昧さを避けるため、ファイル上は度、軸順 `XYZ`、固定ワールド軸に順に適用する外因性回転として定義する。実装はこの定義から3×3行列またはquaternionを一度生成し、BlenderのEuler解釈を暗黙に正本としない。manifestには解決後の4×4行列を記録する。平行移動は部材局所原点を移すワールド座標である。scaleは入力させず常に1とし、寸法変更は上流形状の改訂とする。
 
 `expected_contacts` は順序を問わないinstance pair、互いに向き合うワールドAABB面、接触種別、目標gap、許容差を指定する。フェーズ4で許す種別は軸に平行な面同士の `axis_aligned_face_contact` だけとする。検査は指定軸の面間距離が `target_gap_mm ± tolerance_mm` であり、残る2軸のAABB区間が正の長さで重なることを確認する。試作推奨の許容差0.05 mmはBlender meshの浮動小数点誤差を吸収する検証値で、製造公差ではない。接触pairの重複、存在しないinstance、同じ向きまたは異なる軸の面、負の許容差、許容差を超えるgap/penetrationは失敗にする。
@@ -108,6 +121,24 @@
 `expected_contacts` は任意の検証指定であり、省略できる。この接触検査は初期fixtureの直方体かつワールド軸に整列した部材を対象にしたAABB検査である。曲線同士、非軸整列面、穴への差し込み、接触面積、局所的な干渉、接着、強度は判定しない。適用不能な部材を配置生成から拒否せず、そのpairのAABB接触検査を要求した入力だけを検査不能として診断する。未指定pairのAABB重なりは参考情報にできるが、曲線や回転部材では過検出するため汎用配置の失敗条件にしない。必要になった段階でmesh intersectionを別設計し、初期実装へ汎用衝突エンジンを持ち込まない。
 
 `part_id` は形状・UV・材料を持つ部材定義への参照、`id` は配置されたinstanceの安定IDである。同じ `part_id` を異なる `id` から複数回参照できる。この分離により、同一棚板の反復配置を複製meshとして編集可能にしながら、参照元を追跡できる。初期実装ではinstanceごとに独立mesh dataを持たせ、Blenderで一枚だけ形状編集しても他instanceへ波及しないようにする。リンク複製はファイルを小さくできるが、利用者に共有meshの編集挙動を要求するため採用しない。
+
+### Blender不要の入力検査
+
+`tools/verify_assembly_placement.py` は生成前の契約検査専用CLIである。入力を
+変更せず、解決した4×4 mm行列、変換後AABB、任意の基準面・接触検査結果をJSONで
+出力する。
+
+```bash
+python3 tools/verify_assembly_placement.py \
+  --input samples/placement/three-shelf-placement.json \
+  --repo-root . \
+  --report build/placement-report.json
+```
+
+source pathはリポジトリ相対で存在するファイルだけを許可し、`..` と絶対パスを
+拒否する。schemaの未知field（`scale` を含む）は拒否する。非軸整列instanceは
+通常の配置として有効であるが、そのinstanceを含む
+`axis_aligned_face_contact` は検査適用不能として、配置不能とは区別して診断する。
 
 配置機構はinstance配列を順に処理し、個数、`part_id`の名前、段数、水平/垂直、軸整列を条件分岐に使わない。棚上面高さや面接触はfixtureが必要に応じて追加する検査値であり、すべての部材へ要求する構造情報ではない。背面延長型なら延長済みの1枚の背面partを1instanceとして置き、独立板型なら背面partと別板partをそれぞれ置くだけで、配置schemaは同じである。
 

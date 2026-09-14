@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "status": "idealized-prototype-not-production-specification",
+  "unit": "mm",
+  "world": {
+    "origin": "floor, back mid-plane, left inner face",
+    "x_axis": "right",
+    "y_axis": "back",
+    "z_axis": "up",
+    "rotation_mode": "XYZ extrinsic degrees"
+  },
+  "sources": {
+    "panels": "build/illustrator-export-r2/three-shelf/export.json",
+    "print_front": "build/illustrator-export-r2/three-shelf/print-front.png"
+  },
+  "instances": [
+    {"id": "side-left", "part_id": "SIDE_LEFT", "translation_mm": [-1.5, -1.5, 460], "rotation_deg_xyz": [90, 0, -90]},
+    {"id": "side-right", "part_id": "SIDE_RIGHT", "translation_mm": [361.5, -301.5, 460], "rotation_deg_xyz": [90, 0, 90]},
+    {"id": "shelf-01", "part_id": "SHELF_01", "translation_mm": [0, -1.5, 118.5], "rotation_deg_xyz": [0, 0, 0]},
+    {"id": "shelf-02", "part_id": "SHELF_02", "translation_mm": [0, -1.5, 238.5], "rotation_deg_xyz": [0, 0, 0]},
+    {"id": "shelf-03", "part_id": "SHELF_03", "translation_mm": [0, -1.5, 358.5], "rotation_deg_xyz": [0, 0, 0]},
+    {"id": "back", "part_id": "BACK", "translation_mm": [0, 0, 460], "rotation_deg_xyz": [90, 0, 0]},
+    {"id": "top", "part_id": "TOP", "translation_mm": [0, -1.5, 458.5], "rotation_deg_xyz": [0, 0, 0]}
+  ],
+  "checks": {
+    "expected_checks": [
+      {"id": "shelf-01-upper-face", "instance_id": "shelf-01", "kind": "world_aabb_face", "face": "max_z", "target_mm": 120, "tolerance_mm": 0.05},
+      {"id": "shelf-02-upper-face", "instance_id": "shelf-02", "kind": "world_aabb_face", "face": "max_z", "target_mm": 240, "tolerance_mm": 0.05},
+      {"id": "shelf-03-upper-face", "instance_id": "shelf-03", "kind": "world_aabb_face", "face": "max_z", "target_mm": 360, "tolerance_mm": 0.05}
+    ],
+    "expected_contacts": [
+      {"a": "shelf-01", "a_face": "min_x", "b": "side-left", "b_face": "max_x", "kind": "axis_aligned_face_contact", "target_gap_mm": 0, "tolerance_mm": 0.05},
+      {"a": "shelf-01", "a_face": "max_x", "b": "side-right", "b_face": "min_x", "kind": "axis_aligned_face_contact", "target_gap_mm": 0, "tolerance_mm": 0.05},
+      {"a": "shelf-01", "a_face": "max_y", "b": "back", "b_face": "min_y", "kind": "axis_aligned_face_contact", "target_gap_mm": 0, "tolerance_mm": 0.05}
+    ]
+  }
+}
