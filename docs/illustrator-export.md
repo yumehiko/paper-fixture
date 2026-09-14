@@ -21,9 +21,10 @@ PYTHON=../py-ai-illustrator/.venv/bin/python
   build/input-samples-r2/curve-hole/curve-hole-input.native.ai \
   --material samples/idealized_input/material.json \
   --output-dir build/illustrator-export-r2/curve-hole
-"$PYTHON" tools/verify_illustrator_export.py build/illustrator-export-r2/curve-hole
+"$PYTHON" tools/verify_illustrator_export.py build/illustrator-export-r2/curve-hole \
+  --source build/input-samples-r2/curve-hole/curve-hole-input.native.ai
 ```
 
 出力の `export.json` は、左上原点・X右・Y下の mm 座標へ正規化した anchor と in/out Bézier handle、切断外周、穴、部材 ID、実寸、前面印刷パス、アートボード印刷範囲を保持する。`print-front.png` は Illustrator で `PF_PRINT_FRONT` だけを表示して144 dpiで出力するため、`PF_CUT`、注釈、折りガイドを含めない。`artboard.preview.png` は元アートボードとのレビュー用であり、Blender渡しの印刷PNGではない。
 
-`validation.json` は live DOM から JSON への anchor / in-handle / out-handle の逆変換を検査する。試作の数値閾値は 0.000001 mm であり、実案件の寸法許容値ではない。`geometry-overlay.svg` は元アートボードPNG上に、書き出し外周（マゼンタ）、穴（黄）、印刷パス（シアン）を重ねる2D証跡である。
+`validation.json` は live DOM から JSON への anchor / in-handle / out-handle の逆変換を検査する。試作の数値閾値は 0.000001 mm であり、実案件の寸法許容値ではない。さらに、検証時に元 `.ai` を読み取り専用で開き、`PF_PRINT_FRONT` だけを可視にした新しい PNG を出力して、提出された `print-front.png` の復号済み RGBA 画素列と一致することを確認する。これにより、赤を含む正当な印刷を拒否せず、色を問わず `PF_CUT`・注釈・折りガイドが混入した PNG を検出する。`geometry-overlay.svg` は元アートボードPNG上に、書き出し外周（マゼンタ）、穴（黄）、印刷パス（シアン）を重ねる2D証跡である。
