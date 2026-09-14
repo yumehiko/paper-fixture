@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import struct
+import tempfile
 from pathlib import Path
 from typing import Any
 
-from export_illustrator import MM_PER_PT, _note_id
+from export_illustrator import MM_PER_PT, _note_id, export_print_front_png
 from py_ai_illustrator.verification import _read_png_rgba
 
 
@@ -70,14 +72,68 @@ def _write_overlay(package: dict[str, Any], png: Path, output: Path) -> None:
     output.write_text("\n".join([f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">', '<image href="artboard.preview.png" width="100%" height="100%"/>', '<style>.cut{fill:none;stroke:#f0f;stroke-width:1.5}.hole{fill:none;stroke:#ff0;stroke-width:1.5}.print{fill:none;stroke:#0ff;stroke-width:.75}</style>', *elements, '</svg>', '']), encoding="utf-8")
 
 
-def _cut_red_pixel_count(path: Path) -> int:
-    _width, _height, pixels = _read_png_rgba(path.read_bytes())
-    return sum(1 for index in range(0, len(pixels), 4) if pixels[index] > 240 and pixels[index + 1] < 40 and pixels[index + 2] < 40 and pixels[index + 3] > 0)
+def _png_pixels(path: Path) -> tuple[int, int, bytes]:
+    return _read_png_rgba(path.read_bytes())
+
+
+def _verify_print_isolation(
+    evidence: dict[str, Any],
+    print_png: Path,
+    reference_png: Path | None,
+) -> dict[str, Any]:
+    """Check a print PNG against an independent PF_PRINT_FRONT-only export.
+
+    Layer visibility alone is only provenance.  The reference raster is created
+    from the native source in a fresh Illustrator document, so it also detects
+    a PF_CUT, annotation, or fold layer accidentally included in the delivered
+    PNG without treating any print colour as reserved.
+    """
+    print_evidence = evidence.get("print_front_png")
+    illustrator = evidence.get("dom", {}).get("illustrator", {})
+    layers = illustrator.get("layer_names") if isinstance(illustrator, dict) else None
+    if not isinstance(print_evidence, dict) or not isinstance(layers, list) or not all(isinstance(layer, str) for layer in layers):
+        return {"passed": False, "error": "print isolation evidence is incomplete"}
+    expected_hidden = sorted(layer for layer in layers if layer != "PF_PRINT_FRONT")
+    reported_hidden = print_evidence.get("hidden_layers")
+    provenance_ok = (
+        "PF_PRINT_FRONT" in layers
+        and print_evidence.get("visible_layer") == "PF_PRINT_FRONT"
+        and isinstance(reported_hidden, list)
+        and sorted(reported_hidden) == expected_hidden
+    )
+    width, height, pixels = _png_pixels(print_png)
+    pixel_sha256 = hashlib.sha256(pixels).hexdigest()
+    recorded_hash_ok = print_evidence.get("pixel_sha256") == pixel_sha256
+    result: dict[str, Any] = {
+        "visible_layer": print_evidence.get("visible_layer"),
+        "hidden_layers": reported_hidden,
+        "expected_hidden_layers": expected_hidden,
+        "pixels": [width, height],
+        "pixel_sha256": pixel_sha256,
+        "recorded_pixel_sha256": print_evidence.get("pixel_sha256"),
+        "layer_provenance_passed": provenance_ok,
+        "recorded_hash_passed": recorded_hash_ok,
+    }
+    if reference_png is None:
+        result.update({"fresh_print_only_reexport": "unavailable", "passed": False})
+        return result
+    reference_width, reference_height, reference_pixels = _png_pixels(reference_png)
+    reference_hash = hashlib.sha256(reference_pixels).hexdigest()
+    reference_ok = (width, height, pixels) == (reference_width, reference_height, reference_pixels)
+    result.update({
+        "fresh_print_only_reexport": "matched" if reference_ok else "mismatched",
+        "reference_pixels": [reference_width, reference_height],
+        "reference_pixel_sha256": reference_hash,
+        "passed": provenance_ok and recorded_hash_ok and reference_ok,
+    })
+    return result
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("export_dir", type=Path)
+    parser.add_argument("--source", type=Path, help="native AI source; defaults to export.json source.path")
+    parser.add_argument("--timeout", type=float, default=120.0)
     args = parser.parse_args(argv)
     root = args.export_dir
     package = json.loads((root / "export.json").read_text(encoding="utf-8"))
@@ -86,8 +142,24 @@ def main(argv: list[str] | None = None) -> int:
     artboard_png, print_png = root / "artboard.preview.png", root / "print-front.png"
     width, height = _png_size(print_png)
     _write_overlay(package, artboard_png, root / "geometry-overlay.svg")
-    print_evidence = evidence.get("print_front_png", {})
-    print_only = {"png": print_png.name, "pixels": [width, height], "range_mm": package["print"]["range_mm"], "formula": package["print"]["pixel_mapping"], "visible_layer": print_evidence.get("visible_layer"), "hidden_layers": print_evidence.get("hidden_layers"), "cut_red_pixels": _cut_red_pixel_count(print_png), "passed": print_evidence.get("visible_layer") == "PF_PRINT_FRONT" and _cut_red_pixel_count(print_png) == 0}
+    source_value = args.source or Path(package.get("source", {}).get("path", ""))
+    reference_png: Path | None = None
+    reference_error: str | None = None
+    reference_directory: tempfile.TemporaryDirectory[str] | None = None
+    if source_value.is_file():
+        try:
+            reference_directory = tempfile.TemporaryDirectory(prefix="paper-fixture-print-verify-")
+            reference_png = Path(reference_directory.name) / "print-front.reference.png"
+            export_print_front_png(source_value, reference_png, timeout=args.timeout)
+        except RuntimeError as error:
+            reference_error = str(error)
+    else:
+        reference_error = f"native AI source is unavailable: {source_value}"
+    print_only = {"png": print_png.name, "range_mm": package["print"]["range_mm"], "formula": package["print"]["pixel_mapping"], "source": str(source_value), **_verify_print_isolation(evidence, print_png, reference_png)}
+    if reference_error:
+        print_only["reference_error"] = reference_error
+    if reference_directory is not None:
+        reference_directory.cleanup()
     result = {"profile": "paper-fixture-export-verification-v1", "numeric_live_dom_roundtrip": numeric, "print_pixel_mapping": print_only, "2d_overlay": {"path": "geometry-overlay.svg", "source": artboard_png.name, "semantics": "magenta outer, yellow holes, cyan front-print paths"}, "status": "passed" if numeric["passed"] and print_only["passed"] else "failed"}
     (root / "validation.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0 if result["status"] == "passed" else 2

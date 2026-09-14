@@ -335,7 +335,17 @@ def export_print_front_png(source: Path, output: Path, *, timeout: float) -> dic
     if not response.startswith(prefix) or not output.is_file():
         raise RuntimeError(f"Illustrator print export failed: {response}")
     hidden = response.removeprefix(prefix)
-    return {"visible_layer": "PF_PRINT_FRONT", "hidden_layers": hidden.split("|") if hidden else [], "path": str(output), "dpi": 144}
+    from py_ai_illustrator.verification import _read_png_rgba
+
+    width, height, pixels = _read_png_rgba(output.read_bytes())
+    return {
+        "visible_layer": "PF_PRINT_FRONT",
+        "hidden_layers": hidden.split("|") if hidden else [],
+        "path": str(output),
+        "dpi": 144,
+        "pixels": [width, height],
+        "pixel_sha256": hashlib.sha256(pixels).hexdigest(),
+    }
 
 
 def _load_json(path: Path) -> dict[str, Any]:
