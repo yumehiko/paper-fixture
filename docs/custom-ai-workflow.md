@@ -28,7 +28,7 @@ Blender の生成・検証に追加 Python パッケージは不要です。Illu
 
 ### path note を付ける
 
-対象パスを選び、Illustrator の **ウィンドウ → 属性** を開いて note を設定します。各 path の note は、次のように `py-ai-path:` に JSON を続けた 1 行です。対象 path はすべて閉じます。
+対象パスを選び、Illustrator の **ウィンドウ → 属性** を開きます。属性パネル右上のメニューから **Show Note（ノートを表示）** を選んで Note 欄を出し、そこへ値を設定します。各 path の note は、次のように `py-ai-path:` に JSON を続けた 1 行です。対象 path はすべて閉じます。
 
 | レイヤー | 用途 | note | 形状 |
 | --- | --- | --- | --- |
@@ -38,7 +38,7 @@ Blender の生成・検証に追加 Python パッケージは不要です。Illu
 
 exporter はレイヤーにかかわらず文書中の **全 Illustrator pathItem** を読みます。したがってパスを含む寸法線、トンボ、ガイド、アウトライン文字、注釈は `PF_ANNOTATION` へ移しても無視されません。作業コピーから外すか、`PF_CUT` / `PF_PRINT_FRONT` の直下 `PF_PART_<ID>` に置き、上記の note と閉じた状態を設定してください。`PF_CUT` には `outer` と `hole.<番号>` 以外を置けません。`PF_PRINT_FRONT` の path も閉じたものが必要です。
 
-通常のライブテキスト、配置画像、ラスタ画像は export.json の path 情報としては表現されません。`PF_PRINT_FRONT` をラスタ化した PNG に写る場合はありますが、文字・配置画像・ラスタ画像を含む自作入力はこの開発機 smoke で未検証です。文字をアウトライン化すると pathItem になるため、各輪郭を `PF_PRINT_FRONT` 直下の `PF_PART_<ID>` に置き、一意な `print.<PART>.<ROLE>` note と閉じた状態を設定する必要があります。この入力形態も未検証です。複数アートボードは `exactly one artboard is required` で明示的に非対応です。
+通常のライブテキスト、配置画像、ラスタ画像は export.json の path 情報としては表現されません。`PF_PRINT_FRONT` をラスタ化した PNG に写る場合はありますが、文字・配置画像・ラスタ画像を含む自作入力はこの開発機 smoke で未検証です。アウトライン文字は通常 `CompoundPathItem` の下に pathItem を持ちますが、現行 exporter は path の親が `PF_PART_<ID>` group であることを要求するため拒否します。Compound Path の解除は穴や見た目を変え得るので推奨しません。アウトライン文字は現行契約では非対応です。複数アートボードは `exactly one artboard is required` で明示的に非対応です。
 
 ## 2. 明示入力を作る
 
@@ -97,6 +97,8 @@ exporter はレイヤーにかかわらず文書中の **全 Illustrator pathIte
 新規 output directory を使います。以下は `build/custom-ai-r1/` がまだ無い状態で、リポジトリ直下から実行する例です。
 
 ```bash
+(
+set -e
 PYTHON=../py-ai-illustrator/.venv/bin/python
 BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
 
@@ -119,6 +121,7 @@ python3 tools/verify_assembly_placement.py \
   --python-exit-code 1 --python tools/verify_assembly_bundle.py -- \
   --bundle build/custom-ai-r1/assembly \
   --report build/custom-ai-r1/assembly-verification.json
+)
 ```
 
 export の検証は元 `.ai` を読み取り専用で開き、`PF_PRINT_FRONT` だけを fresh export して提出 PNG と復号済み RGBA 画素列を比較します。赤い印刷は制限しません。全コマンドが終了コード 0 なら、`build/custom-ai-r1/assembly/assembly.blend` を Blender で開きます。
@@ -141,4 +144,4 @@ export の検証は元 `.ai` を読み取り専用で開き、`PF_PRINT_FRONT` �
 
 Illustrator 2026 の live DOM による 1 アートボード、閉じた図形 path、片面印刷、外周・穴、明示紙厚、数値配置、Blender 5.2.1 LTS の再オープン検証は実証済みです。曲線外周と穴は同梱 fixture で実証済みです。今回も新規 `CUSTOM_PANEL`（180 × 120 mm、R12 外周、穴、赤とシアンの印刷）で、export、fresh `PF_PRINT_FRONT` の RGBA 比較、placement、bundle、別プロセス再オープンまで開発機 smoke を通しました。利用者の実案件での実機検証は [#6](https://github.com/yumehiko/paper-fixture/issues/6) で収集します。
 
-折り、両面印刷、未整理 `.ai` の意味推定、複数アートボード、製造可能性・納品色管理の保証は対象外です。ライブテキスト、配置・ラスタ画像、アウトライン文字は上記のとおり未検証です。新しい入力機能が必要なら exporter を暗黙に拡張せず、別 Issue にしてください。
+折り、両面印刷、未整理 `.ai` の意味推定、アウトライン文字、複数アートボード、製造可能性・納品色管理の保証は対象外です。ライブテキスト、配置・ラスタ画像は上記のとおり未検証です。新しい入力機能が必要なら exporter を暗黙に拡張せず、別 Issue にしてください。
