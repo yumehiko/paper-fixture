@@ -4,6 +4,17 @@ Illustrator の展開図を起点に、Blender で紙什器を組み立て、納
 
 現在は試作の第1〜3段階まで完了しています。Illustrator から取り出した展開図を、印刷面・紙厚・穴を持つ編集可能な Blender の**平面部材**へ変換できます。折り、複数部材の組立配置、両面印刷、納品レンダリングはまだ実装していません。
 
+組立前の配置入力は Blender なしでも検査できます。既存の7部材試作入力を検査し、
+解決済みの4×4行列と任意の基準面・接触検査結果を出すには次を実行します。
+
+```bash
+python3 tools/verify_assembly_placement.py \
+  --input samples/placement/three-shelf-placement.json \
+  --repo-root .
+```
+
+入力契約と配置値の例は[数値配置と編集可能な `.blend` 受け渡し設計](docs/assembly-placement.md)を参照してください。
+
 ## まず試す（macOS / Blender）
 
 この手順は、リポジトリに含まれる `curve-hole` の書き出し束から Blender の板を生成し、保存後の `.blend` を再オープンして検証します。Illustrator は必要ありません。
