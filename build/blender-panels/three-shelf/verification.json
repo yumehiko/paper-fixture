@@ -1,0 +1,80 @@
+{
+  "blend": "/Users/yumehiko/repository/paper-fixture-worktrees/blender-panels/build/blender-panels/three-shelf/panels.blend",
+  "reopened": true,
+  "expected_thickness_mm": 3.0,
+  "parts": [
+    {
+      "id": "BACK",
+      "mesh_vertices": 288,
+      "mesh_faces": 436,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 157,
+      "back_and_edge_faces_with_paper": 279,
+      "holes_open": [
+        true,
+        true
+      ]
+    },
+    {
+      "id": "SHELF_01",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 57,
+      "back_and_edge_faces_with_paper": 83,
+      "holes_open": []
+    },
+    {
+      "id": "SHELF_02",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 57,
+      "back_and_edge_faces_with_paper": 83,
+      "holes_open": []
+    },
+    {
+      "id": "SHELF_03",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 57,
+      "back_and_edge_faces_with_paper": 83,
+      "holes_open": []
+    },
+    {
+      "id": "SIDE_LEFT",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 57,
+      "back_and_edge_faces_with_paper": 83,
+      "holes_open": []
+    },
+    {
+      "id": "SIDE_RIGHT",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 57,
+      "back_and_edge_faces_with_paper": 83,
+      "holes_open": []
+    },
+    {
+      "id": "TOP",
+      "mesh_vertices": 96,
+      "mesh_faces": 140,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 57,
+      "back_and_edge_faces_with_paper": 83,
+      "holes_open": []
+    }
+  ]
+}

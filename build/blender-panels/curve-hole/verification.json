@@ -1,0 +1,19 @@
+{
+  "blend": "/Users/yumehiko/repository/paper-fixture-worktrees/blender-panels/build/blender-panels/curve-hole/panels.blend",
+  "reopened": true,
+  "expected_thickness_mm": 3.0,
+  "parts": [
+    {
+      "id": "SAMPLE_CURVE_HOLE",
+      "mesh_vertices": 288,
+      "mesh_faces": 432,
+      "closed_manifold": true,
+      "thickness_mm": 3.000000026077032,
+      "front_faces_with_print": 155,
+      "back_and_edge_faces_with_paper": 277,
+      "holes_open": [
+        true
+      ]
+    }
+  ]
+}

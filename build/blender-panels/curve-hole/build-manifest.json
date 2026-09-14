@@ -1,0 +1,11 @@
+{
+  "export_json": "/Users/yumehiko/repository/paper-fixture-worktrees/blender-panels/build/illustrator-export-r2/curve-hole/export.json",
+  "print_png": "/Users/yumehiko/repository/paper-fixture-worktrees/blender-panels/build/illustrator-export-r2/curve-hole/print-front.png",
+  "blend": "/Users/yumehiko/repository/paper-fixture-worktrees/blender-panels/build/blender-panels/curve-hole/panels.blend",
+  "part_ids": [
+    "SAMPLE_CURVE_HOLE"
+  ],
+  "thickness_mm": 3.0,
+  "curve_resolution_per_bezier": 12,
+  "stage": "flat panels only; not an assembly"
+}
