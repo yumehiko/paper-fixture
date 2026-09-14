@@ -30,6 +30,22 @@ class AssemblyBundleOutputTests(unittest.TestCase):
                 assert_replaceable(output, self.input_hashes("second"), force=False)
             assert_replaceable(output, self.input_hashes("second"), force=True)
 
+    def test_rejects_invalid_manifest_types_or_json_and_force_can_recover(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "assembly"
+            self.write_complete_bundle(output, self.input_hashes("first"))
+            manifest = output / "build-manifest.json"
+            for invalid in (
+                '{"input_hashes": {}, "output_hashes": []}',
+                '{not json',
+            ):
+                manifest.write_text(invalid)
+                with self.assertRaisesRegex(RuntimeError, "manifest is invalid"):
+                    assert_replaceable(output, self.input_hashes("first"), force=False)
+                # Force is applied only after resolve_output_boundary in the CLI;
+                # this helper therefore permits replacing this exact directory.
+                assert_replaceable(output, self.input_hashes("first"), force=True)
+
     def test_rejects_output_that_contains_any_input_or_has_symlink_parent(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory) / "repo"

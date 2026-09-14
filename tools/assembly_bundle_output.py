@@ -79,6 +79,10 @@ def assert_replaceable(output, current_input_hashes, force):
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         expected_outputs = manifest["output_hashes"]
         expected_inputs = manifest["input_hashes"]
+        if not isinstance(expected_outputs, dict) or not isinstance(expected_inputs, dict):
+            raise ValueError("input_hashes and output_hashes must be objects")
+        if not all(isinstance(name, str) and isinstance(digest, str) for name, digest in expected_outputs.items()):
+            raise ValueError("output_hashes must map file names to SHA-256 strings")
     except (OSError, ValueError, KeyError, TypeError) as error:
         if not force:
             raise RuntimeError(f"existing output manifest is invalid: {error}; choose another --output-dir or pass --force")
