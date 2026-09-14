@@ -201,7 +201,10 @@ def main():
             obj["pf_flat_base_matrix"] = [list(row) for row in flat_base]
             flat_instances.append({"id": instance["id"], "part_id": instance["part_id"], "transform_mm": instance["transform_mm"]})
         bpy.ops.wm.save_as_mainfile(filepath=str(staging / "assembly.blend"))
-        (staging / "fold-manifest.json").write_text(json.dumps({"manifest_version": 1, "model": "rigid-mid-plane-v2", "input_hashes": input_hashes, "limitations": ["no bend radius", "no thickness collision guarantee", "no manufacturing guarantee"], "assemblies":assembly_records, "folds": folds, "flat_instances": flat_instances}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        selected={(assembly["part_id"],edge["fold_id"]) for assembly in plan["assemblies"] for edge in assembly["folds"]}
+        unselected=[{"part_id":part["id"],"fold_ids":[fold["id"] for fold in part.get("folds",[]) if (part["id"],fold["id"]) not in selected]} for part in bundle["parts"]]
+        unselected=[item for item in unselected if item["fold_ids"]]
+        (staging / "fold-manifest.json").write_text(json.dumps({"manifest_version": 1, "model": "rigid-mid-plane-v2", "input_hashes": input_hashes, "limitations": ["no bend radius", "no thickness collision guarantee", "no manufacturing guarantee"], "assemblies":assembly_records, "folds": folds, "flat_instances": flat_instances, "unselected_source_folds":unselected}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         provisional = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES - {"verification.json"})}
         (staging / "build-manifest.json").write_text(json.dumps({"manifest_version": 1, "input_hashes": input_hashes, "output_hashes": provisional}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         with tempfile.TemporaryDirectory(prefix="fold-verification-") as temporary:
