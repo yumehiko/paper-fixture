@@ -2,7 +2,7 @@
 
 Illustratorの展開図を起点に、Blenderで紙什器を組み立て、納品用レンダリングを制作する工程を補助するプロジェクト。
 
-現状は構想・要件整理の段階。実装や入力データの検証はまだ行っていない。
+現状は初期試作の第1段階。実案件の仕様確定やBlender実装の前に、理想化した Illustrator 入力サンプルと暫定規則を検証している。
 
 ## ドキュメント
 
@@ -11,5 +11,6 @@ Illustratorの展開図を起点に、Blenderで紙什器を組み立て、納�
 - [処理構成とモデル表現](docs/architecture.md)
 - [試作と検証の計画](docs/validation-plan.md)
 - [設計インタビューと未決事項](docs/open-questions.md)
+- [理想化入力サンプル（再生成手順）](samples/idealized_input/README.md)
 
 各文書では、ユーザーが示した要望と、検証前の設計提案を区別する。未回答の項目を決定事項として扱わない。

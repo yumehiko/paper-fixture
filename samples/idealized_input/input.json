@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1-draft",
+  "status": "idealized-prototype-not-production-specification",
+  "unit": "mm",
+  "coordinate_system": {
+    "origin": "each artboard's upper-left corner",
+    "x_axis": "right",
+    "y_axis": "down",
+    "illustrator_conversion": "1 mm = 72 / 25.4 pt; generated Illustrator coordinates use points"
+  },
+  "material": {
+    "thickness_mm": 3.0,
+    "front_side": "PF_PRINT_FRONT",
+    "back_and_edge": "paper base color in a later model-generation stage"
+  },
+  "layers": {
+    "PF_CUT": "closed outer contours and closed hole contours; stroke only",
+    "PF_PRINT_FRONT": "one-sided printable artwork in the same part-local coordinates as PF_CUT",
+    "PF_ANNOTATION": "non-geometric labels and dimensions; ignored by geometry import",
+    "PF_FOLD": "reserved and intentionally empty in this prototype"
+  },
+  "small_sample": {
+    "id": "SAMPLE_CURVE_HOLE",
+    "width_mm": 240.0,
+    "height_mm": 160.0,
+    "corner_radius_mm": 20.0,
+    "hole_diameter_mm": 24.0,
+    "hole_center_mm": [120.0, 80.0],
+    "print_orientation_marker": "orange arrow and cyan bar make top/bottom and left/right mirroring visible"
+  },
+  "shelf_assembly": {
+    "part_ids": [
+      "SIDE_LEFT",
+      "SIDE_RIGHT",
+      "SHELF_01",
+      "SHELF_02",
+      "SHELF_03",
+      "BACK",
+      "TOP"
+    ],
+    "parts_mm": {
+      "SIDE_LEFT": [300.0, 460.0],
+      "SIDE_RIGHT": [300.0, 460.0],
+      "SHELF_01": [360.0, 260.0],
+      "SHELF_02": [360.0, 260.0],
+      "SHELF_03": [360.0, 260.0],
+      "BACK": [360.0, 460.0],
+      "TOP": [360.0, 270.0]
+    },
+    "back_holes": {
+      "diameter_mm": 24.0,
+      "centers_mm": [[80.0, 230.0], [280.0, 230.0]]
+    },
+    "assembly_trial_values_mm": {
+      "shelf_top_heights_from_floor": [120.0, 240.0, 360.0],
+      "note": "Trial values only. They are explicit input for a later placement stage, not a real-job drawing specification."
+    }
+  }
+}

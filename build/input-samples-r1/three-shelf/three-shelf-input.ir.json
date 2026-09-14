@@ -1,0 +1,2102 @@
+{
+  "artboards": [
+    {
+      "height": 4677.165354330709,
+      "id": "artboard.shelf",
+      "left": 0,
+      "name": "THREE_SHELF_ASSEMBLY",
+      "top": 4677.165354330709,
+      "width": 2267.716535433071
+    }
+  ],
+  "height": 4677.165354330709,
+  "layers": [
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.SIDE_LEFT",
+          "item_order": [
+            {
+              "id": "cut.SIDE_LEFT.outer",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SIDE_LEFT",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.SIDE_LEFT.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour SIDE_LEFT",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 963.7795275590553,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 963.7795275590553,
+                  "y": 1417.3228346456694
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 1417.3228346456694
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.SIDE_RIGHT",
+          "item_order": [
+            {
+              "id": "cut.SIDE_RIGHT.outer",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SIDE_RIGHT",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.SIDE_RIGHT.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour SIDE_RIGHT",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1077.1653543307089,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1927.5590551181106,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1927.5590551181106,
+                  "y": 1417.3228346456694
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1077.1653543307089,
+                  "y": 1417.3228346456694
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.SHELF_01",
+          "item_order": [
+            {
+              "id": "cut.SHELF_01.outer",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SHELF_01",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.SHELF_01.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour SHELF_01",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 2267.716535433071
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 2267.716535433071
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.SHELF_02",
+          "item_order": [
+            {
+              "id": "cut.SHELF_02.outer",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SHELF_02",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.SHELF_02.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour SHELF_02",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 2267.716535433071
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 2267.716535433071
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.SHELF_03",
+          "item_order": [
+            {
+              "id": "cut.SHELF_03.outer",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SHELF_03",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.SHELF_03.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour SHELF_03",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 3118.110236220473
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 3118.110236220473
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.BACK",
+          "item_order": [
+            {
+              "id": "cut.BACK.outer",
+              "kind": "path"
+            },
+            {
+              "id": "cut.BACK.hole.01",
+              "kind": "path"
+            },
+            {
+              "id": "cut.BACK.hole.02",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_BACK",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.BACK.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour BACK",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 3685.039370078741
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 3685.039370078741
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.BACK.hole.01",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT BACK hole 1",
+              "points": [
+                {
+                  "in_handle": {
+                    "x": 1508.0314960629923,
+                    "y": 3014.2844872498504
+                  },
+                  "out_handle": {
+                    "x": 1508.0314960629923,
+                    "y": 3051.8572450336146
+                  },
+                  "smooth": true,
+                  "x": 1508.0314960629923,
+                  "y": 3033.0708661417325
+                },
+                {
+                  "in_handle": {
+                    "x": 1492.8021269233784,
+                    "y": 3067.0866141732286
+                  },
+                  "out_handle": {
+                    "x": 1455.2293691396142,
+                    "y": 3067.0866141732286
+                  },
+                  "smooth": true,
+                  "x": 1474.0157480314963,
+                  "y": 3067.0866141732286
+                },
+                {
+                  "in_handle": {
+                    "x": 1440.0000000000002,
+                    "y": 3051.8572450336146
+                  },
+                  "out_handle": {
+                    "x": 1440.0000000000002,
+                    "y": 3014.2844872498504
+                  },
+                  "smooth": true,
+                  "x": 1440.0000000000002,
+                  "y": 3033.0708661417325
+                },
+                {
+                  "in_handle": {
+                    "x": 1455.2293691396142,
+                    "y": 2999.0551181102364
+                  },
+                  "out_handle": {
+                    "x": 1492.8021269233784,
+                    "y": 2999.0551181102364
+                  },
+                  "smooth": true,
+                  "x": 1474.0157480314963,
+                  "y": 2999.0551181102364
+                }
+              ],
+              "polarity": "positive",
+              "stroke": {
+                "blue": 0.0,
+                "green": 0.0,
+                "red": 1.0
+              },
+              "stroke_width": 0.9921259842519685,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.BACK.hole.02",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT BACK hole 2",
+              "points": [
+                {
+                  "in_handle": {
+                    "x": 2074.96062992126,
+                    "y": 3014.2844872498504
+                  },
+                  "out_handle": {
+                    "x": 2074.96062992126,
+                    "y": 3051.8572450336146
+                  },
+                  "smooth": true,
+                  "x": 2074.96062992126,
+                  "y": 3033.0708661417325
+                },
+                {
+                  "in_handle": {
+                    "x": 2059.731260781646,
+                    "y": 3067.0866141732286
+                  },
+                  "out_handle": {
+                    "x": 2022.158502997882,
+                    "y": 3067.0866141732286
+                  },
+                  "smooth": true,
+                  "x": 2040.944881889764,
+                  "y": 3067.0866141732286
+                },
+                {
+                  "in_handle": {
+                    "x": 2006.929133858268,
+                    "y": 3051.8572450336146
+                  },
+                  "out_handle": {
+                    "x": 2006.929133858268,
+                    "y": 3014.2844872498504
+                  },
+                  "smooth": true,
+                  "x": 2006.929133858268,
+                  "y": 3033.0708661417325
+                },
+                {
+                  "in_handle": {
+                    "x": 2022.158502997882,
+                    "y": 2999.0551181102364
+                  },
+                  "out_handle": {
+                    "x": 2059.731260781646,
+                    "y": 2999.0551181102364
+                  },
+                  "smooth": true,
+                  "x": 2040.944881889764,
+                  "y": 2999.0551181102364
+                }
+              ],
+              "polarity": "positive",
+              "stroke": {
+                "blue": 0.0,
+                "green": 0.0,
+                "red": 1.0
+              },
+              "stroke_width": 0.9921259842519685,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.TOP",
+          "item_order": [
+            {
+              "id": "cut.TOP.outer",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_TOP",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.TOP.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour TOP",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 3798.425196850394
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 3798.425196850394
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 4563.779527559055
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 4563.779527559055
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        }
+      ],
+      "id": "layer.cut",
+      "item_order": [
+        {
+          "id": "group.cut.SIDE_LEFT",
+          "kind": "group"
+        },
+        {
+          "id": "group.cut.SIDE_RIGHT",
+          "kind": "group"
+        },
+        {
+          "id": "group.cut.SHELF_01",
+          "kind": "group"
+        },
+        {
+          "id": "group.cut.SHELF_02",
+          "kind": "group"
+        },
+        {
+          "id": "group.cut.SHELF_03",
+          "kind": "group"
+        },
+        {
+          "id": "group.cut.BACK",
+          "kind": "group"
+        },
+        {
+          "id": "group.cut.TOP",
+          "kind": "group"
+        }
+      ],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_CUT",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    },
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.SIDE_LEFT",
+          "item_order": [
+            {
+              "id": "print.SIDE_LEFT.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.SIDE_LEFT.orientation-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.SIDE_LEFT.orientation",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SIDE_LEFT",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.SIDE_LEFT.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base SIDE_LEFT",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 963.7795275590553,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 963.7795275590553,
+                  "y": 1417.3228346456694
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 1417.3228346456694
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.SIDE_LEFT.orientation-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "left orientation bar SIDE_LEFT",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 1417.3228346456694
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 1417.3228346456694
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.SIDE_LEFT.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 833.3858267716537,
+                  "y": 1218.8976377952756
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 901.4173228346458,
+                  "y": 1218.8976377952756
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 901.4173228346458,
+                  "y": 1318.1102362204724
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 935.4330708661419,
+                  "y": 1318.1102362204724
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 867.4015748031497,
+                  "y": 1383.3070866141734
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 799.3700787401576,
+                  "y": 1318.1102362204724
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 833.3858267716537,
+                  "y": 1318.1102362204724
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.SIDE_RIGHT",
+          "item_order": [
+            {
+              "id": "print.SIDE_RIGHT.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.SIDE_RIGHT.orientation-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.SIDE_RIGHT.orientation",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SIDE_RIGHT",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.SIDE_RIGHT.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base SIDE_RIGHT",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1077.1653543307089,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1927.5590551181106,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1927.5590551181106,
+                  "y": 1417.3228346456694
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1077.1653543307089,
+                  "y": 1417.3228346456694
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.SIDE_RIGHT.orientation-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "left orientation bar SIDE_RIGHT",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1077.1653543307089,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1128.188976377953,
+                  "y": 113.38582677165356
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1128.188976377953,
+                  "y": 1417.3228346456694
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1077.1653543307089,
+                  "y": 1417.3228346456694
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.SIDE_RIGHT.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1797.1653543307089,
+                  "y": 1218.8976377952756
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1865.196850393701,
+                  "y": 1218.8976377952756
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1865.196850393701,
+                  "y": 1318.1102362204724
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1899.212598425197,
+                  "y": 1318.1102362204724
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1831.181102362205,
+                  "y": 1383.3070866141734
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1763.1496062992128,
+                  "y": 1318.1102362204724
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1797.1653543307089,
+                  "y": 1318.1102362204724
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.SHELF_01",
+          "item_order": [
+            {
+              "id": "print.SHELF_01.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.SHELF_01.orientation-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.SHELF_01.orientation",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SHELF_01",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.SHELF_01.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base SHELF_01",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 2267.716535433071
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 2267.716535433071
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.SHELF_01.orientation-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "left orientation bar SHELF_01",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 2267.716535433071
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 2267.716535433071
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.SHELF_01.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1003.464566929134,
+                  "y": 2069.2913385826773
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1071.496062992126,
+                  "y": 2069.2913385826773
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1071.496062992126,
+                  "y": 2168.5039370078744
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1105.5118110236222,
+                  "y": 2168.5039370078744
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1037.48031496063,
+                  "y": 2233.700787401575
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 969.4488188976379,
+                  "y": 2168.5039370078744
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1003.464566929134,
+                  "y": 2168.5039370078744
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.SHELF_02",
+          "item_order": [
+            {
+              "id": "print.SHELF_02.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.SHELF_02.orientation-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.SHELF_02.orientation",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SHELF_02",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.SHELF_02.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base SHELF_02",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 2267.716535433071
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 2267.716535433071
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.SHELF_02.orientation-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "left orientation bar SHELF_02",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1298.2677165354332,
+                  "y": 1530.708661417323
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1298.2677165354332,
+                  "y": 2267.716535433071
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 2267.716535433071
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.SHELF_02.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2137.3228346456694,
+                  "y": 2069.2913385826773
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2205.3543307086616,
+                  "y": 2069.2913385826773
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2205.3543307086616,
+                  "y": 2168.5039370078744
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2239.3700787401576,
+                  "y": 2168.5039370078744
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2171.3385826771655,
+                  "y": 2233.700787401575
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2103.3070866141734,
+                  "y": 2168.5039370078744
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2137.3228346456694,
+                  "y": 2168.5039370078744
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.SHELF_03",
+          "item_order": [
+            {
+              "id": "print.SHELF_03.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.SHELF_03.orientation-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.SHELF_03.orientation",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SHELF_03",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.SHELF_03.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base SHELF_03",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 3118.110236220473
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 3118.110236220473
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.SHELF_03.orientation-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "left orientation bar SHELF_03",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 3118.110236220473
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 3118.110236220473
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.SHELF_03.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1003.464566929134,
+                  "y": 2919.6850393700793
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1071.496062992126,
+                  "y": 2919.6850393700793
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1071.496062992126,
+                  "y": 3018.8976377952763
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1105.5118110236222,
+                  "y": 3018.8976377952763
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1037.48031496063,
+                  "y": 3084.094488188977
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 969.4488188976379,
+                  "y": 3018.8976377952763
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1003.464566929134,
+                  "y": 3018.8976377952763
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.BACK",
+          "item_order": [
+            {
+              "id": "print.BACK.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.BACK.orientation-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.BACK.orientation",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_BACK",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.BACK.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base BACK",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2267.716535433071,
+                  "y": 3685.039370078741
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 3685.039370078741
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.BACK.orientation-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "left orientation bar BACK",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1298.2677165354332,
+                  "y": 2381.1023622047246
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1298.2677165354332,
+                  "y": 3685.039370078741
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1247.2440944881891,
+                  "y": 3685.039370078741
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.BACK.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2137.3228346456694,
+                  "y": 3486.6141732283468
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2205.3543307086616,
+                  "y": 3486.6141732283468
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2205.3543307086616,
+                  "y": 3585.826771653544
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2239.3700787401576,
+                  "y": 3585.826771653544
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2171.3385826771655,
+                  "y": 3651.0236220472443
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2103.3070866141734,
+                  "y": 3585.826771653544
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 2137.3228346456694,
+                  "y": 3585.826771653544
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        },
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.TOP",
+          "item_order": [
+            {
+              "id": "print.TOP.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.TOP.orientation-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.TOP.orientation",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_TOP",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.TOP.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base TOP",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 3798.425196850394
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 3798.425196850394
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1133.8582677165355,
+                  "y": 4563.779527559055
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 4563.779527559055
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.TOP.orientation-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "left orientation bar TOP",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 3798.425196850394
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 3798.425196850394
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 164.40944881889766,
+                  "y": 4563.779527559055
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 113.38582677165356,
+                  "y": 4563.779527559055
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.TOP.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1003.464566929134,
+                  "y": 4365.354330708662
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1071.496062992126,
+                  "y": 4365.354330708662
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1071.496062992126,
+                  "y": 4464.566929133859
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1105.5118110236222,
+                  "y": 4464.566929133859
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1037.48031496063,
+                  "y": 4529.76377952756
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 969.4488188976379,
+                  "y": 4464.566929133859
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 1003.464566929134,
+                  "y": 4464.566929133859
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        }
+      ],
+      "id": "layer.print",
+      "item_order": [
+        {
+          "id": "group.print.SIDE_LEFT",
+          "kind": "group"
+        },
+        {
+          "id": "group.print.SIDE_RIGHT",
+          "kind": "group"
+        },
+        {
+          "id": "group.print.SHELF_01",
+          "kind": "group"
+        },
+        {
+          "id": "group.print.SHELF_02",
+          "kind": "group"
+        },
+        {
+          "id": "group.print.SHELF_03",
+          "kind": "group"
+        },
+        {
+          "id": "group.print.BACK",
+          "kind": "group"
+        },
+        {
+          "id": "group.print.TOP",
+          "kind": "group"
+        }
+      ],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_PRINT_FRONT",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    },
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [],
+      "id": "layer.annotation",
+      "item_order": [],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_ANNOTATION",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    },
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [],
+      "id": "layer.fold",
+      "item_order": [],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_FOLD",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    }
+  ],
+  "metadata": {
+    "part_ids": [
+      "SIDE_LEFT",
+      "SIDE_RIGHT",
+      "SHELF_01",
+      "SHELF_02",
+      "SHELF_03",
+      "BACK",
+      "TOP"
+    ],
+    "prototype": true,
+    "source_input": "samples/idealized_input/input.json",
+    "thickness_mm": 3.0,
+    "unit": "mm"
+  },
+  "title": "PF idealized 3-shelf multi-part input",
+  "version": 1,
+  "width": 2267.716535433071
+}

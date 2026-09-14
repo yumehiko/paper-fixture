@@ -1,0 +1,583 @@
+{
+  "artboards": [
+    {
+      "height": 453.5433070866142,
+      "id": "artboard.small",
+      "left": 0,
+      "name": "SAMPLE_CURVE_HOLE",
+      "top": 453.5433070866142,
+      "width": 680.3149606299213
+    }
+  ],
+  "height": 453.5433070866142,
+  "layers": [
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.cut.SAMPLE_CURVE_HOLE",
+          "item_order": [
+            {
+              "id": "cut.SAMPLE_CURVE_HOLE.outer",
+              "kind": "path"
+            },
+            {
+              "id": "cut.SAMPLE_CURVE_HOLE.hole.01",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SAMPLE_CURVE_HOLE",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.SAMPLE_CURVE_HOLE.outer",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT outer contour (Bézier R20)",
+              "points": [
+                {
+                  "in_handle": {
+                    "x": 25.382281899356588,
+                    "y": 0
+                  },
+                  "out_handle": {
+                    "x": 88.00354487229697,
+                    "y": 0
+                  },
+                  "smooth": true,
+                  "x": 56.69291338582678,
+                  "y": 0
+                },
+                {
+                  "in_handle": {
+                    "x": 592.3114157576243,
+                    "y": 0
+                  },
+                  "out_handle": {
+                    "x": 654.9326787305648,
+                    "y": 0
+                  },
+                  "smooth": true,
+                  "x": 623.6220472440946,
+                  "y": 0
+                },
+                {
+                  "in_handle": {
+                    "x": 680.3149606299213,
+                    "y": 25.382281899356588
+                  },
+                  "out_handle": {
+                    "x": 680.3149606299213,
+                    "y": 88.00354487229697
+                  },
+                  "smooth": true,
+                  "x": 680.3149606299213,
+                  "y": 56.69291338582678
+                },
+                {
+                  "in_handle": {
+                    "x": 680.3149606299213,
+                    "y": 365.53976221431725
+                  },
+                  "out_handle": {
+                    "x": 680.3149606299213,
+                    "y": 428.1610251872576
+                  },
+                  "smooth": true,
+                  "x": 680.3149606299213,
+                  "y": 396.85039370078744
+                },
+                {
+                  "in_handle": {
+                    "x": 654.9326787305648,
+                    "y": 453.5433070866142
+                  },
+                  "out_handle": {
+                    "x": 592.3114157576243,
+                    "y": 453.5433070866142
+                  },
+                  "smooth": true,
+                  "x": 623.6220472440946,
+                  "y": 453.5433070866142
+                },
+                {
+                  "in_handle": {
+                    "x": 88.00354487229697,
+                    "y": 453.5433070866142
+                  },
+                  "out_handle": {
+                    "x": 25.382281899356588,
+                    "y": 453.5433070866142
+                  },
+                  "smooth": true,
+                  "x": 56.69291338582678,
+                  "y": 453.5433070866142
+                },
+                {
+                  "in_handle": {
+                    "x": 0,
+                    "y": 428.1610251872576
+                  },
+                  "out_handle": {
+                    "x": 0,
+                    "y": 365.53976221431725
+                  },
+                  "smooth": true,
+                  "x": 0,
+                  "y": 396.85039370078744
+                },
+                {
+                  "in_handle": {
+                    "x": 0,
+                    "y": 88.00354487229697
+                  },
+                  "out_handle": {
+                    "x": 0,
+                    "y": 25.382281899356588
+                  },
+                  "smooth": true,
+                  "x": 0,
+                  "y": 56.69291338582678
+                }
+              ],
+              "polarity": "positive",
+              "stroke": {
+                "blue": 0.0,
+                "green": 0.0,
+                "red": 1.0
+              },
+              "stroke_width": 0.9921259842519685,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": null,
+              "id": "cut.SAMPLE_CURVE_HOLE.hole.01",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "CUT hole φ24",
+              "points": [
+                {
+                  "in_handle": {
+                    "x": 374.1732283464567,
+                    "y": 207.985274651425
+                  },
+                  "out_handle": {
+                    "x": 374.1732283464567,
+                    "y": 245.55803243518923
+                  },
+                  "smooth": true,
+                  "x": 374.1732283464567,
+                  "y": 226.7716535433071
+                },
+                {
+                  "in_handle": {
+                    "x": 358.9438592068428,
+                    "y": 260.7874015748032
+                  },
+                  "out_handle": {
+                    "x": 321.3711014230785,
+                    "y": 260.7874015748032
+                  },
+                  "smooth": true,
+                  "x": 340.15748031496065,
+                  "y": 260.7874015748032
+                },
+                {
+                  "in_handle": {
+                    "x": 306.1417322834646,
+                    "y": 245.55803243518923
+                  },
+                  "out_handle": {
+                    "x": 306.1417322834646,
+                    "y": 207.985274651425
+                  },
+                  "smooth": true,
+                  "x": 306.1417322834646,
+                  "y": 226.7716535433071
+                },
+                {
+                  "in_handle": {
+                    "x": 321.3711014230785,
+                    "y": 192.75590551181105
+                  },
+                  "out_handle": {
+                    "x": 358.9438592068428,
+                    "y": 192.75590551181105
+                  },
+                  "smooth": true,
+                  "x": 340.15748031496065,
+                  "y": 192.75590551181105
+                }
+              ],
+              "polarity": "positive",
+              "stroke": {
+                "blue": 0.0,
+                "green": 0.0,
+                "red": 1.0
+              },
+              "stroke_width": 0.9921259842519685,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        }
+      ],
+      "id": "layer.cut",
+      "item_order": [
+        {
+          "id": "group.cut.SAMPLE_CURVE_HOLE",
+          "kind": "group"
+        }
+      ],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_CUT",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    },
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [
+        {
+          "clipping_groups": [],
+          "compound_paths": [],
+          "groups": [],
+          "id": "group.print.SAMPLE_CURVE_HOLE",
+          "item_order": [
+            {
+              "id": "print.SAMPLE_CURVE_HOLE.base",
+              "kind": "path"
+            },
+            {
+              "id": "print.SAMPLE_CURVE_HOLE.left-bar",
+              "kind": "path"
+            },
+            {
+              "id": "print.SAMPLE_CURVE_HOLE.orientation",
+              "kind": "path"
+            },
+            {
+              "id": "print.SAMPLE_CURVE_HOLE.hole-window",
+              "kind": "path"
+            }
+          ],
+          "linked_images": [],
+          "name": "PF_PART_SAMPLE_CURVE_HOLE",
+          "paths": [
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.9,
+                "green": 0.94,
+                "red": 0.94
+              },
+              "id": "print.SAMPLE_CURVE_HOLE.base",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "print base",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 680.3149606299213,
+                  "y": 0.0
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 680.3149606299213,
+                  "y": 453.5433070866142
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 0.0,
+                  "y": 453.5433070866142
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.86,
+                "green": 0.72,
+                "red": 0.0
+              },
+              "id": "print.SAMPLE_CURVE_HOLE.left-bar",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "asymmetric left cyan bar",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 68.03149606299213,
+                  "y": 0.0
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 68.03149606299213,
+                  "y": 453.5433070866142
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 0.0,
+                  "y": 453.5433070866142
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 0.05,
+                "green": 0.38,
+                "red": 1.0
+              },
+              "id": "print.SAMPLE_CURVE_HOLE.orientation",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "FRONT +Y orientation arrow",
+              "points": [
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 527.244094488189,
+                  "y": 215.43307086614175
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 595.2755905511812,
+                  "y": 215.43307086614175
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 595.2755905511812,
+                  "y": 314.6456692913386
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 629.2913385826772,
+                  "y": 314.6456692913386
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 561.2598425196851,
+                  "y": 379.8425196850394
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 493.228346456693,
+                  "y": 314.6456692913386
+                },
+                {
+                  "in_handle": null,
+                  "out_handle": null,
+                  "smooth": false,
+                  "x": 527.244094488189,
+                  "y": 314.6456692913386
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 1.0,
+              "unknown": {}
+            },
+            {
+              "closed": true,
+              "dash_offset": 0.0,
+              "dash_pattern": [],
+              "fill": {
+                "blue": 1.0,
+                "green": 1.0,
+                "red": 1.0
+              },
+              "id": "print.SAMPLE_CURVE_HOLE.hole-window",
+              "line_cap": "butt",
+              "line_join": "miter",
+              "miter_limit": 4.0,
+              "name": "hole location witness",
+              "points": [
+                {
+                  "in_handle": {
+                    "x": 374.1732283464567,
+                    "y": 207.985274651425
+                  },
+                  "out_handle": {
+                    "x": 374.1732283464567,
+                    "y": 245.55803243518923
+                  },
+                  "smooth": true,
+                  "x": 374.1732283464567,
+                  "y": 226.7716535433071
+                },
+                {
+                  "in_handle": {
+                    "x": 358.9438592068428,
+                    "y": 260.7874015748032
+                  },
+                  "out_handle": {
+                    "x": 321.3711014230785,
+                    "y": 260.7874015748032
+                  },
+                  "smooth": true,
+                  "x": 340.15748031496065,
+                  "y": 260.7874015748032
+                },
+                {
+                  "in_handle": {
+                    "x": 306.1417322834646,
+                    "y": 245.55803243518923
+                  },
+                  "out_handle": {
+                    "x": 306.1417322834646,
+                    "y": 207.985274651425
+                  },
+                  "smooth": true,
+                  "x": 306.1417322834646,
+                  "y": 226.7716535433071
+                },
+                {
+                  "in_handle": {
+                    "x": 321.3711014230785,
+                    "y": 192.75590551181105
+                  },
+                  "out_handle": {
+                    "x": 358.9438592068428,
+                    "y": 192.75590551181105
+                  },
+                  "smooth": true,
+                  "x": 340.15748031496065,
+                  "y": 192.75590551181105
+                }
+              ],
+              "polarity": "positive",
+              "stroke": null,
+              "stroke_width": 0.9921259842519685,
+              "unknown": {}
+            }
+          ],
+          "text_frames": [],
+          "unknown": {}
+        }
+      ],
+      "id": "layer.print",
+      "item_order": [
+        {
+          "id": "group.print.SAMPLE_CURVE_HOLE",
+          "kind": "group"
+        }
+      ],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_PRINT_FRONT",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    },
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [],
+      "id": "layer.annotation",
+      "item_order": [],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_ANNOTATION",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    },
+    {
+      "clipping_groups": [],
+      "compound_paths": [],
+      "groups": [],
+      "id": "layer.fold",
+      "item_order": [],
+      "linked_images": [],
+      "locked": false,
+      "name": "PF_FOLD",
+      "paths": [],
+      "text_frames": [],
+      "unknown": {},
+      "visible": true
+    }
+  ],
+  "metadata": {
+    "part_id": "SAMPLE_CURVE_HOLE",
+    "prototype": true,
+    "source_input": "samples/idealized_input/input.json",
+    "unit": "mm"
+  },
+  "title": "PF idealized curve-hole sample",
+  "version": 1,
+  "width": 680.3149606299213
+}
