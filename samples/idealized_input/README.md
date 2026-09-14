@@ -7,6 +7,8 @@
 - `curve-hole/curve-hole-input.native.ai`: 240 × 160 mm、R20 の真のベジェ外周と中央 φ24 穴を持つ1部材。
 - `three-shelf/three-shelf-input.native.ai`: 左右側面、棚3枚、背面、トップボードの7部材。背面だけは2つの φ24 穴を持つ。
 
+リポジトリでレビュー・視覚承認の対象にする成果物は `build/input-samples-r2/` である。これは左上原点・+Y下の座標変換を検証済みの revision である。
+
 各 `.ai` は `PF_CUT`、`PF_PRINT_FRONT`、`PF_ANNOTATION`、空の `PF_FOLD` を持つ。`PF_CUT` と `PF_PRINT_FRONT` の双方で同じ `PF_PART_<部材ID>` 名のグループに収める。前者では外周・穴を閉じたストロークパスにし、後者ではシアンの左帯とオレンジ矢印を含む非対称印刷にする。正本の座標は部材ローカルの mm、原点はアートボード左上、+X は右、+Y は下である。生成時には `X_ai = X_mm × 72 / 25.4`、`Y_ai = (artboard_height_mm - Y_mm) × 72 / 25.4` に変換する。アートボード上の部材配置は検査しやすいように並べたものであり、組み立て位置ではない。
 
 再生成は Illustrator Agent のロック済み環境から行う。
@@ -14,7 +16,7 @@
 ```bash
 uv --directory /Users/yumehiko/repository/illustrator-agent run --locked \
   python /Users/yumehiko/repository/paper-fixture/samples/idealized_input/generate.py \
-  --output-dir /Users/yumehiko/repository/paper-fixture/build/input-samples-r1
+  --output-dir /Users/yumehiko/repository/paper-fixture/build/input-samples-r3
 ```
 
-各出力の `report.json` は純粋ゲート、Illustrator native compile、再オープン検査、プレビュー生成を分けて記録する。人によるプレビュー承認は別ゲートであり、記録されるまでは `awaiting-visual-acceptance` が正しい状態である。
+既存 revision は上書きしない。各出力の `report.json` は純粋ゲート、Illustrator native compile、再オープン検査、プレビュー生成を分けて記録する。人によるプレビュー承認は別ゲートであり、記録されるまでは `awaiting-visual-acceptance` が正しい状態である。
