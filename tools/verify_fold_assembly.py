@@ -9,6 +9,15 @@ import bpy
 from mathutils import Matrix, Vector
 
 
+def sha256(path):
+    import hashlib
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as source:
+        for block in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
 def matrix_property(obj):
     return Matrix(obj["pf_flat_base_matrix"])
 
@@ -23,7 +32,26 @@ def main():
     parser.add_argument("--report", required=True)
     args = parser.parse_args(sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else [])
     bundle = Path(args.bundle)
+    report_path = Path(args.report).resolve()
+    if report_path.is_relative_to(bundle.resolve()):
+        raise RuntimeError("--report must be outside --bundle so verification cannot alter bundle provenance")
+    build = json.loads((bundle / "build-manifest.json").read_text())
     manifest = json.loads((bundle / "fold-manifest.json").read_text())
+    if build.get("manifest_version") != 1 or manifest.get("manifest_version") != 1:
+        raise RuntimeError("unsupported fold bundle manifest")
+    if build.get("input_hashes") != manifest.get("input_hashes"):
+        raise RuntimeError("fold/build input provenance mismatch")
+    outputs = build.get("output_hashes")
+    if not isinstance(outputs, dict):
+        raise RuntimeError("build output hashes are missing")
+    for name, expected in outputs.items():
+        candidate = bundle / name
+        if not candidate.is_file() or sha256(candidate) != expected:
+            raise RuntimeError("bundle provenance mismatch " + name)
+    texture = bundle / "textures/print-front.png"
+    source_texture = manifest.get("input_hashes", {}).get("print_front", {}).get("sha256")
+    if not isinstance(source_texture, str) or sha256(texture) != source_texture:
+        raise RuntimeError("bundle texture does not match source input hash")
     folds, faces = [], []
     for obj in bpy.data.objects:
         if obj.name.startswith("PF_FACE_"):
@@ -35,6 +63,20 @@ def main():
             if max(zs) - min(zs) <= 1e-8:
                 raise RuntimeError("lost paper thickness " + obj.name)
             faces.append({"name": obj.name, "vertices": len(obj.data.vertices), "polygons": len(obj.data.polygons), "uv": "PF_PRINT_UV", "local_thickness_m": max(zs) - min(zs)})
+    flat_instances=[]
+    for item in manifest.get("flat_instances", []):
+        obj=bpy.data.objects.get("PF_FLAT_" + item["id"])
+        if obj is None or obj.type != "MESH" or not obj.data.polygons or "PF_PRINT_UV" not in obj.data.uv_layers:
+            raise RuntimeError("missing editable flat instance " + item["id"])
+        base=matrix_property(obj)
+        # Flat objects retain their source base transform; compare only the
+        # requested assembly transform in millimetres.
+        actual=obj.matrix_world @ base.inverted()
+        expected=Matrix(item["transform_mm"])
+        for row in range(3): expected[row][3] *= .001
+        if max(abs(actual[row][col]-expected[row][col]) for row in range(4) for col in range(4)) > 1e-7:
+            raise RuntimeError("flat instance transform mismatch " + item["id"])
+        flat_instances.append({"id":item["id"],"part_id":item["part_id"],"editable_mesh":True})
     for fold in manifest["folds"]:
         prefix = "PF_FACE_" + fold["assembly"] + "_"
         parent = bpy.data.objects.get(prefix + fold["parent"])
@@ -43,9 +85,13 @@ def main():
             raise RuntimeError("missing folded editable face " + fold["fold_id"])
         parent_normal = parent.matrix_world.to_3x3() @ Vector((0, 0, 1))
         child_normal = child.matrix_world.to_3x3() @ Vector((0, 0, 1))
-        actual = math.degrees(math.acos(max(-1, min(1, parent_normal.normalized().dot(child_normal.normalized())))))
-        expected = abs(fold["rotation_from_flat_deg"])
-        if abs(actual - expected) > 0.01:
+        parent_normal.normalize(); child_normal.normalize()
+        a, b = fold["endpoints_mm"]
+        source_axis = Vector((b[0] - a[0], -(b[1] - a[1]), 0.0)).normalized()
+        world_axis = parent.matrix_world.to_3x3() @ source_axis
+        world_axis.normalize()
+        signed_actual = math.degrees(math.atan2(world_axis.dot(parent_normal.cross(child_normal)), parent_normal.dot(child_normal)))
+        if abs(signed_actual - fold["rotation_from_flat_deg"]) > 0.01:
             raise RuntimeError("fold angle mismatch " + fold["fold_id"])
         hinge_errors = []
         for point in fold["endpoints_mm"]:
@@ -53,8 +99,9 @@ def main():
             hinge_errors.append((face_transform(parent) @ flat - face_transform(child) @ flat).length)
         if max(hinge_errors) > 1e-7:
             raise RuntimeError("hinge boundary mismatch " + fold["fold_id"])
-        folds.append({"fold_id": fold["fold_id"], "angle_from_flat_deg": actual, "hinge_endpoint_error_m": max(hinge_errors), "editable_meshes": True})
-    Path(args.report).write_text(json.dumps({"reopened": True, "faces": faces, "folds": folds}, indent=2) + "\n")
+        folds.append({"assembly": fold["assembly"], "fold_id": fold["fold_id"], "angle_from_flat_deg": abs(signed_actual), "signed_angle_from_flat_deg": signed_actual, "child_normal_world": list(child_normal), "hinge_endpoint_error_m": max(hinge_errors), "editable_meshes": True})
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps({"reopened": True, "faces": faces, "flat_instances":flat_instances, "folds": folds, "texture_sha256": source_texture, "source_input_hashes": manifest["input_hashes"]}, indent=2) + "\n")
 
 
 if __name__ == "__main__":

@@ -24,3 +24,12 @@ class FoldPlanTests(unittest.TestCase):
    export=json.loads((ROOT/'build/illustrator-export-r2/curve-hole/export.json').read_text()); export['parts'][0]['folds']=[{'id':'FOLD_01','endpoints_mm':[[30,0],[30,160]],'boundary_relation':'not-evaluated-by-intake','status':'angle-and-direction-required-in-assembly-plan'}]
    (d/'build/export.json').write_text(json.dumps(export)); p=self.payload(); p['sources']={'export_json':'build/export.json','print_png':'build/print.png'}; del p['assemblies'][0]['folds'][0]['child_side']
    with self.assertRaisesRegex(InputError, 'fields'): validate_plan(p,d)
+ def test_rejects_duplicate_fold_id_and_invalid_root_transform(self):
+  with tempfile.TemporaryDirectory() as d:
+   d=Path(d); (d/'build').mkdir(); shutil.copy(ROOT/'build/illustrator-export-r2/curve-hole/print-front.png',d/'build/print.png')
+   export=json.loads((ROOT/'build/illustrator-export-r2/curve-hole/export.json').read_text()); export['parts'][0]['folds']=[{'id':'FOLD_01','endpoints_mm':[[30,0],[30,160]]}]
+   (d/'build/export.json').write_text(json.dumps(export)); p=self.payload();p['sources']={'export_json':'build/export.json','print_png':'build/print.png'}
+   p['assemblies'][0]['folds'].append({**p['assemblies'][0]['folds'][0], 'parent_face':'face-b', 'child_face':'face-c'})
+   with self.assertRaisesRegex(InputError, 'already used'): validate_plan(p,d)
+   p['assemblies'][0]['folds']=p['assemblies'][0]['folds'][:1]; p['assemblies'][0]['root_transform_mm']=[0,0,0]
+   with self.assertRaisesRegex(InputError, '4x4'): validate_plan(p,d)

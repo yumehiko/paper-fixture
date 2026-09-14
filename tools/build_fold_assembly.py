@@ -1,25 +1,26 @@
-"""Build a rigid straight-fold assembly from a validated face-tree plan.
-
-All cells are cut in the unfolded Blender world plane before any folding
-transform is applied. This is essential for a chain: cutting a child after
-its parent has moved makes the next source-space hinge meaningless.
-"""
+"""Build and separately verify a protected rigid straight-fold bundle."""
 from __future__ import annotations
 
 import argparse
 import json
 import math
 import shutil
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import bpy
 from mathutils import Matrix, Vector
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from tools.assembly_bundle_output import assert_replaceable, create_staging, publish_staging, resolve_output_boundary, sha256
 from tools.fold_plan import load_plan
 from tools.build_assembly_bundle import setup_scene
 from tools.build_blender_panels import MM, front_material, make_panel, paper_material
+
+
+OUTPUT_NAMES = {"assembly.blend", "fold-manifest.json", "textures/print-front.png", "verification.json"}
 
 
 def arguments():
@@ -27,6 +28,7 @@ def arguments():
     parser.add_argument("--plan", required=True)
     parser.add_argument("--repo-root", required=True)
     parser.add_argument("--output-dir", required=True)
+    parser.add_argument("--force", action="store_true")
     return parser.parse_args(sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else [])
 
 
@@ -80,7 +82,6 @@ def descendants(edges, root):
 
 
 def face_signatures(assembly):
-    """Map every planned face to its side of every source fold."""
     faces = {assembly["root_face"]}
     for edge in assembly["folds"]:
         faces.update((edge["parent_face"], edge["child_face"]))
@@ -92,9 +93,15 @@ def face_signatures(assembly):
     return signatures
 
 
+def matrix_from_mm(values):
+    result = Matrix(values)
+    for row in range(3):
+        result[row][3] *= MM
+    return result
+
+
 def face_transforms(assembly, part):
-    """Compute D_face from the already flat source-world coordinate system."""
-    result = {assembly["root_face"]: Matrix.Identity(4)}
+    result = {assembly["root_face"]: matrix_from_mm(assembly["root_transform_mm"])}
     unresolved = list(assembly["folds"])
     while unresolved:
         remaining = []
@@ -106,7 +113,10 @@ def face_transforms(assembly, part):
             source = fold_source(part, edge["fold_id"])
             pivot, endpoint = line_world(source["endpoints_mm"])
             axis = (endpoint - pivot).normalized()
-            sign = 1.0 if edge["mountain_valley"] == "valley" else -1.0
+            # Both the fold designation and the named moving half-plane are
+            # needed.  Reversing endpoints reverses axis and child_side, so
+            # their product keeps the physical mountain/valley unchanged.
+            sign = (1.0 if edge["mountain_valley"] == "valley" else -1.0) * edge["child_side"]
             theta = sign * math.radians(180.0 - edge["target_dihedral_deg"])
             result[edge["child_face"]] = parent @ Matrix.Translation(pivot) @ Matrix.Rotation(theta, 4, axis) @ Matrix.Translation(-pivot)
         if len(remaining) == len(unresolved):
@@ -123,41 +133,69 @@ def assert_nonempty(obj, label):
 def main():
     args = arguments()
     root = Path(args.repo_root).resolve()
-    plan = load_plan(args.plan, root)
-    output = Path(args.output_dir).resolve()
-    if output.exists():
-        raise RuntimeError("output directory already exists; choose a new revision directory")
+    plan_path = Path(args.plan).resolve()
+    try:
+        plan_path.relative_to(root)
+    except ValueError as error:
+        raise RuntimeError("--plan must be inside --repo-root") from error
+    plan = load_plan(plan_path, root)
+    export_path, print_path = root / plan["sources"]["export_json"], root / plan["sources"]["print_png"]
+    output = resolve_output_boundary(root, args.output_dir, (plan_path, export_path, print_path))
+    input_hashes = {"fold_plan": {"path": plan_path.relative_to(root).as_posix(), "sha256": sha256(plan_path)}, "export_json": {"path": plan["sources"]["export_json"], "sha256": sha256(export_path)}, "print_front": {"path": plan["sources"]["print_png"], "sha256": sha256(print_path)}}
+    assert_replaceable(output, input_hashes, args.force)
     from tools.panel_input import load_bundle
-    bundle = load_bundle(root / plan["sources"]["export_json"], root / plan["sources"]["print_png"], allow_folds=True)
+    bundle = load_bundle(export_path, print_path, allow_folds=True)
     parts = {part["id"]: part for part in bundle["parts"]}
-    output.mkdir(parents=True)
-    texture_dir = output / "textures"
-    texture_dir.mkdir()
-    shutil.copyfile(root / plan["sources"]["print_png"], texture_dir / "print-front.png")
-    _, collection, _ = setup_scene()
-    front = front_material(texture_dir / "print-front.png")
-    bpy.data.images["PF_PRINT_FRONT_SOURCE"].filepath = "//textures/print-front.png"
-    paper = paper_material()
-    manifest = []
-    for assembly in plan["assemblies"]:
-        part = parts[assembly["part_id"]]
-        flat_base = Matrix.Translation(Vector((part["bounds_mm"][0] * MM, -part["bounds_mm"][1] * MM, 0.0)))
-        signatures = face_signatures(assembly)
-        transforms = face_transforms(assembly, part)
-        for face, signature in signatures.items():
-            obj = make_panel(part, bundle["thickness_mm"], bundle["print_range_mm"], front, paper, collection)
-            obj.name = "PF_FACE_" + assembly["id"] + "_" + face
+    staging = create_staging(output)
+    try:
+        texture_dir = staging / "textures"
+        texture_dir.mkdir()
+        texture_path = texture_dir / "print-front.png"
+        shutil.copyfile(print_path, texture_path)
+        _, collection, _ = setup_scene()
+        front = front_material(texture_path)
+        bpy.data.images["PF_PRINT_FRONT_SOURCE"].filepath = "//textures/print-front.png"
+        paper = paper_material()
+        folds, flat_instances = [], []
+        for assembly in plan["assemblies"]:
+            part = parts[assembly["part_id"]]
+            flat_base = Matrix.Translation(Vector((part["bounds_mm"][0] * MM, -part["bounds_mm"][1] * MM, 0.0)))
+            signatures, transforms = face_signatures(assembly), face_transforms(assembly, part)
+            for face, signature in signatures.items():
+                obj = make_panel(part, bundle["thickness_mm"], bundle["print_range_mm"], front, paper, collection)
+                obj.name = "PF_FACE_" + assembly["id"] + "_" + face
+                for edge in assembly["folds"]:
+                    cut_half_flat(obj, fold_source(part, edge["fold_id"])["endpoints_mm"], signature[edge["fold_id"]] > 0)
+                assert_nonempty(obj, assembly["id"] + "/" + face)
+                obj.matrix_world = transforms[face] @ flat_base
+                obj["pf_face_id"] = face
+                obj["pf_flat_base_matrix"] = [list(row) for row in flat_base]
             for edge in assembly["folds"]:
-                cut_half_flat(obj, fold_source(part, edge["fold_id"])["endpoints_mm"], signature[edge["fold_id"]] > 0)
-            assert_nonempty(obj, assembly["id"] + "/" + face)
-            obj.matrix_world = transforms[face] @ flat_base
-            obj["pf_face_id"] = face
+                source = fold_source(part, edge["fold_id"])
+                folds.append({"assembly": assembly["id"], "fold_id": edge["fold_id"], "parent": edge["parent_face"], "child": edge["child_face"], "dihedral_deg": edge["target_dihedral_deg"], "rotation_from_flat_deg": (1 if edge["mountain_valley"] == "valley" else -1) * edge["child_side"] * (180 - edge["target_dihedral_deg"]), "endpoints_mm": source["endpoints_mm"]})
+        for instance in plan["flat_instances"]:
+            part = parts[instance["part_id"]]
+            obj = make_panel(part, bundle["thickness_mm"], bundle["print_range_mm"], front, paper, collection)
+            obj.name = "PF_FLAT_" + instance["id"]
+            flat_base = Matrix.Translation(Vector((part["bounds_mm"][0] * MM, -part["bounds_mm"][1] * MM, 0.0)))
+            obj.matrix_world = matrix_from_mm(instance["transform_mm"]) @ flat_base
+            obj["pf_flat_instance_id"] = instance["id"]
             obj["pf_flat_base_matrix"] = [list(row) for row in flat_base]
-        for edge in assembly["folds"]:
-            source = fold_source(part, edge["fold_id"])
-            manifest.append({"assembly": assembly["id"], "fold_id": edge["fold_id"], "parent": edge["parent_face"], "child": edge["child_face"], "dihedral_deg": edge["target_dihedral_deg"], "rotation_from_flat_deg": (1 if edge["mountain_valley"] == "valley" else -1) * (180 - edge["target_dihedral_deg"]), "endpoints_mm": source["endpoints_mm"]})
-    bpy.ops.wm.save_as_mainfile(filepath=str(output / "assembly.blend"))
-    (output / "fold-manifest.json").write_text(json.dumps({"model": "rigid-mid-plane-v2", "limitations": ["no bend radius", "no thickness collision guarantee", "no manufacturing guarantee"], "folds": manifest}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            flat_instances.append({"id": instance["id"], "part_id": instance["part_id"], "transform_mm": instance["transform_mm"]})
+        bpy.ops.wm.save_as_mainfile(filepath=str(staging / "assembly.blend"))
+        (staging / "fold-manifest.json").write_text(json.dumps({"manifest_version": 1, "model": "rigid-mid-plane-v2", "input_hashes": input_hashes, "limitations": ["no bend radius", "no thickness collision guarantee", "no manufacturing guarantee"], "folds": folds, "flat_instances": flat_instances}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        provisional = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES - {"verification.json"})}
+        (staging / "build-manifest.json").write_text(json.dumps({"manifest_version": 1, "input_hashes": input_hashes, "output_hashes": provisional}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        with tempfile.TemporaryDirectory(prefix="fold-verification-") as temporary:
+            report = Path(temporary) / "verification.json"
+            subprocess.run([bpy.app.binary_path, "--background", str(staging / "assembly.blend"), "--python-exit-code", "1", "--python", str(Path(__file__).with_name("verify_fold_assembly.py")), "--", "--bundle", str(staging), "--report", str(report)], check=True)
+            shutil.copyfile(report, staging / "verification.json")
+        final_hashes = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES)}
+        (staging / "build-manifest.json").write_text(json.dumps({"manifest_version": 1, "input_hashes": input_hashes, "output_hashes": final_hashes}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        publish_staging(staging, output)
+    except Exception:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
 
 
 if __name__ == "__main__":
