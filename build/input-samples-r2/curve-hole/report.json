@@ -916,14 +916,14 @@
     "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/samples/idealized_input/generate.py",
     "sha256": "f36d3e9b12976ae3db9014aa796093b54f089fbc393cd4758a5c377d66d6865f"
   },
-  "status": "awaiting-visual-acceptance",
+  "status": "passed",
   "visual_acceptance": {
-    "accepted_by": null,
+    "accepted_by": "ユーザー（ツール外レビュー、2026-09-14T13:48:21+09:00、回答: ok）",
     "criteria": [
       "240 × 160 mmの外周は4つのR20 Bézier角を持つ",
       "中央のφ24穴が切断線と印刷の位置証跡で一致する",
       "左上原点・+Y下の矢印と左のシアン帯で表面方向と鏡映が識別できる"
     ],
-    "status": "pending"
+    "status": "passed"
   }
 }

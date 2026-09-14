@@ -22,7 +22,7 @@
       "report": {
         "profile": "illustrator-agent-native-production-v1",
         "production_id": "curve-hole-input",
-        "status": "awaiting-visual-acceptance",
+        "status": "passed",
         "report_path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/curve-hole/report.json",
         "source": {
           "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/samples/idealized_input/generate.py",
@@ -939,8 +939,8 @@
           }
         },
         "visual_acceptance": {
-          "status": "pending",
-          "accepted_by": null,
+          "status": "passed",
+          "accepted_by": "ユーザー（ツール外レビュー、2026-09-14T13:48:21+09:00、回答: ok）",
           "criteria": [
             "240 × 160 mmの外周は4つのR20 Bézier角を持つ",
             "中央のφ24穴が切断線と印刷の位置証跡で一致する",
@@ -954,7 +954,7 @@
       "report": {
         "profile": "illustrator-agent-native-production-v1",
         "production_id": "three-shelf-input",
-        "status": "awaiting-visual-acceptance",
+        "status": "passed",
         "report_path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/report.json",
         "source": {
           "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/samples/idealized_input/generate.py",
@@ -4170,8 +4170,8 @@
           }
         },
         "visual_acceptance": {
-          "status": "pending",
-          "accepted_by": null,
+          "status": "passed",
+          "accepted_by": "ユーザー（ツール外レビュー、2026-09-14T13:48:21+09:00、回答: ok）",
           "criteria": [
             "PF_CUTとPF_PRINT_FRONTに同名の7部材グループがある",
             "左・右側面、3枚の棚、背面、トップボードの寸法が明示入力と一致する",

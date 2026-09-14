@@ -3215,14 +3215,14 @@
     "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/samples/idealized_input/generate.py",
     "sha256": "f36d3e9b12976ae3db9014aa796093b54f089fbc393cd4758a5c377d66d6865f"
   },
-  "status": "awaiting-visual-acceptance",
+  "status": "passed",
   "visual_acceptance": {
-    "accepted_by": null,
+    "accepted_by": "ユーザー（ツール外レビュー、2026-09-14T13:48:21+09:00、回答: ok）",
     "criteria": [
       "PF_CUTとPF_PRINT_FRONTに同名の7部材グループがある",
       "左・右側面、3枚の棚、背面、トップボードの寸法が明示入力と一致する",
       "背面の2つのφ24穴と全ての部材の非対称な向きマーカーが読める"
     ],
-    "status": "pending"
+    "status": "passed"
   }
 }

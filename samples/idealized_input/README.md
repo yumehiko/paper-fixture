@@ -19,4 +19,4 @@ uv --directory /Users/yumehiko/repository/illustrator-agent run --locked \
   --output-dir /Users/yumehiko/repository/paper-fixture/build/input-samples-r3
 ```
 
-既存 revision は上書きしない。各出力の `report.json` は純粋ゲート、Illustrator native compile、再オープン検査、プレビュー生成を分けて記録する。人によるプレビュー承認は別ゲートであり、記録されるまでは `awaiting-visual-acceptance` が正しい状態である。
+既存 revision は上書きしない。各出力の `report.json` は純粋ゲート、Illustrator native compile、再オープン検査、プレビュー生成を分けて記録する。r2 の2枚の PNG はユーザーがツール外で確認し、2026-09-14T13:48:21+09:00 に `ok` と承認したため、両 report の視覚承認ゲートは `passed` である。
