@@ -100,6 +100,12 @@ def validate_plan(payload, repo_root):
             active_folds.setdefault(assembly["part_id"],set()).update(item.get("fold_id") for item in assembly["folds"] if isinstance(item,dict) and isinstance(item.get("fold_id"),str))
     # Intake deliberately leaves boundary relation undecided; resolve selected folds here.
     for part in parts.values():
+        fold_ids=set()
+        for fold in part.get("folds",[]):
+            fold_id=fold.get("id") if isinstance(fold,dict) else None
+            if not isinstance(fold_id,str) or not fold_id: raise InputError(f"{part['id']}: fold id must be a non-empty string")
+            if fold_id in fold_ids: raise InputError(f"{part['id']}: fold id is duplicated: {fold_id}")
+            fold_ids.add(fold_id)
         seen_lines=[]
         for fold in part.get("folds",[]):
             if fold.get("id") not in active_folds.get(part["id"],set()): continue

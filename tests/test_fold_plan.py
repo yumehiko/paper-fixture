@@ -41,3 +41,11 @@ class FoldPlanTests(unittest.TestCase):
    self.assertEqual(validate_plan(p,d)['assemblies'][0]['folds'][0]['fold_id'], 'FOLD_01')
    p['assemblies'][0]['folds'][0]['fold_id']='FOLD_CURVED_UNUSED'
    with self.assertRaisesRegex(InputError, 'straight outer-boundary'): validate_plan(p,d)
+ def test_rejects_ambiguous_or_empty_source_fold_ids(self):
+  with tempfile.TemporaryDirectory() as d:
+   d=Path(d); (d/'build').mkdir(); shutil.copy(ROOT/'build/illustrator-export-r2/curve-hole/print-front.png',d/'build/print.png')
+   export=json.loads((ROOT/'build/illustrator-export-r2/curve-hole/export.json').read_text()); export['parts'][0]['folds']=[{'id':'FOLD_01','endpoints_mm':[[30,0],[30,160]]},{'id':'FOLD_01','endpoints_mm':[[40,0],[40,160]]}]
+   (d/'build/export.json').write_text(json.dumps(export)); p=self.payload(); p['sources']={'export_json':'build/export.json','print_png':'build/print.png'}
+   with self.assertRaisesRegex(InputError, 'duplicated'): validate_plan(p,d)
+   export['parts'][0]['folds']=[{'id':'','endpoints_mm':[[30,0],[30,160]]}]; (d/'build/export.json').write_text(json.dumps(export))
+   with self.assertRaisesRegex(InputError, 'non-empty'): validate_plan(p,d)
