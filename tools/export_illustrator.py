@@ -97,15 +97,32 @@ def _part_id(group_name: Any) -> str | None:
     return value or None
 
 
-def _flatten_path(path: dict[str, Any], steps: int = 32) -> list[list[float]]:
-    points = path["points"]
-    result = []
+FLATTEN_TOLERANCE_MM = 0.0001
+
+
+def _distance_to_line(point: list[float], first: list[float], second: list[float]) -> float:
+    dx, dy = second[0] - first[0], second[1] - first[1]
+    length = math.hypot(dx, dy)
+    return math.hypot(point[0] - first[0], point[1] - first[1]) if length == 0 else abs(dx * (first[1] - point[1]) - (first[0] - point[0]) * dy) / length
+
+
+def _flatten_cubic(p0: list[float], p1: list[float], p2: list[float], p3: list[float], result: list[list[float]], depth: int = 0) -> None:
+    if max(_distance_to_line(p1, p0, p3), _distance_to_line(p2, p0, p3)) <= FLATTEN_TOLERANCE_MM:
+        result.append(p3); return
+    if depth >= 24:
+        raise ExportValidationError(f"PF_CUT Bézier flattening exceeded {FLATTEN_TOLERANCE_MM:g} mm error bound")
+    mid = lambda a, b: [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]
+    p01, p12, p23 = mid(p0, p1), mid(p1, p2), mid(p2, p3)
+    p012, p123 = mid(p01, p12), mid(p12, p23); middle = mid(p012, p123)
+    _flatten_cubic(p0, p01, p012, middle, result, depth + 1)
+    _flatten_cubic(middle, p123, p23, p3, result, depth + 1)
+
+
+def _flatten_path(path: dict[str, Any]) -> list[list[float]]:
+    points = path["points"]; result: list[list[float]] = []
     for index, current in enumerate(points):
         previous = points[index - 1]
-        p0, p1, p2, p3 = previous["anchor_mm"], previous["out_handle_mm"], current["in_handle_mm"], current["anchor_mm"]
-        for step in range(steps):
-            t = step / steps; u = 1 - t
-            result.append([u**3*p0[0]+3*u*u*t*p1[0]+3*u*t*t*p2[0]+t**3*p3[0], u**3*p0[1]+3*u*u*t*p1[1]+3*u*t*t*p2[1]+t**3*p3[1]])
+        _flatten_cubic(previous["anchor_mm"], previous["out_handle_mm"], current["in_handle_mm"], current["anchor_mm"], result)
     return result
 
 
@@ -129,6 +146,46 @@ def _point_in_polygon(point: list[float], polygon: list[list[float]], tolerance:
             if x < crossing:
                 inside = not inside
     return inside
+
+
+def _orientation(a: list[float], b: list[float], c: list[float]) -> float:
+    return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
+
+
+def _on_segment(p: list[float], a: list[float], b: list[float]) -> bool:
+    return abs(_orientation(a, b, p)) <= FLATTEN_TOLERANCE_MM and min(a[0], b[0]) - FLATTEN_TOLERANCE_MM <= p[0] <= max(a[0], b[0]) + FLATTEN_TOLERANCE_MM and min(a[1], b[1]) - FLATTEN_TOLERANCE_MM <= p[1] <= max(a[1], b[1]) + FLATTEN_TOLERANCE_MM
+
+
+def _segments_intersect(a: list[float], b: list[float], c: list[float], d: list[float]) -> bool:
+    values = (_orientation(a, b, c), _orientation(a, b, d), _orientation(c, d, a), _orientation(c, d, b))
+    if all(abs(value) > FLATTEN_TOLERANCE_MM for value in values):
+        return (values[0] > 0) != (values[1] > 0) and (values[2] > 0) != (values[3] > 0)
+    return _on_segment(c, a, b) or _on_segment(d, a, b) or _on_segment(a, c, d) or _on_segment(b, c, d)
+
+
+def _validate_contours(polygons: list[list[list[float]]], part_id: str) -> list[list[int]]:
+    for index, polygon in enumerate(polygons):
+        for first in range(len(polygon)):
+            for second in range(first + 1, len(polygon)):
+                if second == first + 1 or {first, second} == {0, len(polygon) - 1}:
+                    continue
+                if _segments_intersect(polygon[first], polygon[(first + 1) % len(polygon)], polygon[second], polygon[(second + 1) % len(polygon)]):
+                    raise ExportValidationError(f"{part_id}: PF_CUT contour {index + 1} self-intersects or touches")
+    result = []
+    for index, polygon in enumerate(polygons):
+        containers = []
+        for other_index, other in enumerate(polygons):
+            if index == other_index:
+                continue
+            if any(_segments_intersect(polygon[i], polygon[(i + 1) % len(polygon)], other[j], other[(j + 1) % len(other)]) for i in range(len(polygon)) for j in range(len(other))):
+                raise ExportValidationError(f"{part_id}: PF_CUT contours intersect or touch")
+            positions = [_point_in_polygon(point, other, tolerance=FLATTEN_TOLERANCE_MM) for point in polygon]
+            if any(positions) and not all(positions):
+                raise ExportValidationError(f"{part_id}: PF_CUT contour containment is ambiguous")
+            if all(positions):
+                containers.append(other_index)
+        result.append(containers)
+    return result
 
 
 def _is_straight_fold(path: dict[str, Any], label: str) -> tuple[list[float], list[float]]:
@@ -243,9 +300,7 @@ def export_from_dom(dom: dict[str, Any], *, source: Path, material: dict[str, An
         if any(item["filled"] for item in cuts):
             raise ExportValidationError(f"{part_id}: PF_CUT contours must be unfilled")
         polygons = [_flatten_path(item) for item in cuts]
-        containers = [[other_index for other_index, other_polygon in enumerate(polygons)
-                       if other_index != index and _point_in_polygon(polygon[0], other_polygon)]
-                      for index, polygon in enumerate(polygons)]
+        containers = _validate_contours(polygons, part_id)
         outers = [item for index, item in enumerate(cuts) if not containers[index]]
         if len(outers) != 1:
             raise ExportValidationError(f"{part_id}: closed PF_CUT paths do not have one unambiguous outer contour")

@@ -7,8 +7,8 @@
     {
       "id": "cut", "name": "PF_CUT", "groups": [
         {"id": "body-cut", "name": "PF_PART_BODY", "paths": [
-          {"id": "body-outer", "name": "BODY outer", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 40, "y": 40}, {"x": 340, "y": 40}, {"x": 340, "y": 260}, {"x": 40, "y": 260}]},
-          {"id": "body-hole", "name": "BODY hole", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 160, "y": 110}, {"x": 208, "y": 110}, {"x": 208, "y": 158}, {"x": 160, "y": 158}]}
+          {"id": "body-outer", "name": "BODY curved outer", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 40, "y": 150, "in_handle": {"x": 40, "y": 210}, "out_handle": {"x": 40, "y": 90}, "smooth": true}, {"x": 190, "y": 40, "in_handle": {"x": 130, "y": 40}, "out_handle": {"x": 250, "y": 40}, "smooth": true}, {"x": 340, "y": 150, "in_handle": {"x": 340, "y": 90}, "out_handle": {"x": 340, "y": 210}, "smooth": true}, {"x": 190, "y": 260, "in_handle": {"x": 250, "y": 260}, "out_handle": {"x": 130, "y": 260}, "smooth": true}]},
+          {"id": "body-hole", "name": "BODY curved hole", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 166, "y": 150, "in_handle": {"x": 166, "y": 163}, "out_handle": {"x": 166, "y": 137}, "smooth": true}, {"x": 190, "y": 126, "in_handle": {"x": 177, "y": 126}, "out_handle": {"x": 203, "y": 126}, "smooth": true}, {"x": 214, "y": 150, "in_handle": {"x": 214, "y": 137}, "out_handle": {"x": 214, "y": 163}, "smooth": true}, {"x": 190, "y": 174, "in_handle": {"x": 203, "y": 174}, "out_handle": {"x": 177, "y": 174}, "smooth": true}]}
         ]},
         {"id": "side-cut", "name": "PF_PART_SIDE", "paths": [
           {"id": "side-outer", "name": "SIDE outer", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 410, "y": 40}, {"x": 590, "y": 40}, {"x": 590, "y": 260}, {"x": 410, "y": 260}]}

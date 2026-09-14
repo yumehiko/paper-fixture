@@ -78,6 +78,16 @@ class ExportFromDomTests(unittest.TestCase):
         with self.assertRaisesRegex(exporter.ExportValidationError, "unambiguous outer"):
             exporter.export_from_dom(_dom(paths), source=_SOURCE, material=None)
 
+    def test_rejects_intersecting_outer_and_overlapping_holes(self) -> None:
+        outer = _path("outer", [[0, 72], [144, 72], [144, 0], [0, 0]], layer="PF_CUT")
+        crossing = _path("crossing", [[100, 60], [180, 60], [180, 10], [100, 10]], layer="PF_CUT")
+        with self.assertRaisesRegex(exporter.ExportValidationError, "intersect or touch"):
+            exporter.export_from_dom(_dom([outer, crossing]), source=_SOURCE, material=None)
+        hole_a = _path("hole-a", [[20, 60], [80, 60], [80, 20], [20, 20]], layer="PF_CUT")
+        hole_b = _path("hole-b", [[60, 50], [120, 50], [120, 10], [60, 10]], layer="PF_CUT")
+        with self.assertRaisesRegex(exporter.ExportValidationError, "intersect or touch"):
+            exporter.export_from_dom(_dom([outer, hole_a, hole_b]), source=_SOURCE, material=None)
+
     def test_rejects_pf_layer_path_outside_part_group(self) -> None:
         path = _path("orphan", [[0, 72], [144, 72], [144, 0]], layer="PF_CUT")
         path["parent"] = {"type": "Layer", "name": "PF_CUT"}

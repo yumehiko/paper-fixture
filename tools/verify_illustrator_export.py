@@ -177,7 +177,7 @@ def main(argv: list[str] | None = None) -> int:
         print_only["reference_error"] = reference_error
     if reference_directory is not None:
         reference_directory.cleanup()
-    result = {"profile": "paper-fixture-export-verification-v1", "numeric_live_dom_roundtrip": numeric, "print_pixel_mapping": print_only, "2d_overlay": {"path": "geometry-overlay.svg", "source": artboard_png.name, "semantics": "magenta outer, yellow holes, cyan front-print paths"}, "status": "passed" if numeric["passed"] and print_only["passed"] else "failed"}
+    result = {"profile": "paper-fixture-export-verification-v1", "numeric_live_dom_roundtrip": numeric, "print_pixel_mapping": print_only, "2d_overlay": {"path": "geometry-overlay.svg", "source": artboard_png.name, "semantics": "magenta outer, yellow holes, cyan front-print paths, green folds"}, "status": "passed" if numeric["passed"] and print_only["passed"] else "failed"}
     (root / "validation.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0 if result["status"] == "passed" else 2
 
