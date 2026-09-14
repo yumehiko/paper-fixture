@@ -142,10 +142,14 @@ def render_previews(scene, camera, instances, output):
     bpy.ops.render.render(write_still=True)
 
 
-def manifest_instances(instances):
+def manifest_instances(instances, parts, thickness_mm, print_range_mm):
     keys = ("id", "part_id", "translation_mm", "rotation_deg_xyz", "matrix_mm")
     return [{**{key: item[key] for key in keys},
-             "front_normal_world": [item["matrix_mm"][row][2] for row in range(3)]}
+             "front_normal_world": [item["matrix_mm"][row][2] for row in range(3)],
+             "source_bounds_mm": parts[item["part_id"]]["bounds_mm"],
+             "source_holes": parts[item["part_id"]]["holes"],
+             "thickness_mm": thickness_mm,
+             "print_range_mm": print_range_mm}
             for item in instances]
 
 
@@ -194,7 +198,8 @@ def main():
         provisional_hashes = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES - {"verification.json"})}
         provisional_manifest = {"manifest_version": MANIFEST_VERSION, "blender_version": BLENDER_VERSION,
                                 "input_hashes": input_hashes,
-                                "instances": manifest_instances(resolved["instances"]),
+                                "instances": manifest_instances(resolved["instances"], parts, bundle["thickness_mm"], bundle["print_range_mm"]),
+                                "checks": resolved["checks"],
                                 "output_hashes": provisional_hashes}
         (staging / "build-manifest.json").write_text(json.dumps(provisional_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         with tempfile.TemporaryDirectory(prefix="assembly-verification-") as temporary:
@@ -208,7 +213,8 @@ def main():
         hashes = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES)}
         manifest = {"manifest_version": MANIFEST_VERSION, "blender_version": BLENDER_VERSION,
                     "input_hashes": input_hashes,
-                    "instances": manifest_instances(resolved["instances"]),
+                    "instances": manifest_instances(resolved["instances"], parts, bundle["thickness_mm"], bundle["print_range_mm"]),
+                    "checks": resolved["checks"],
                     "output_hashes": hashes}
         (staging / "build-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         publish_staging(staging, output)
