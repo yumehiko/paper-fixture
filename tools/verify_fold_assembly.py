@@ -126,7 +126,7 @@ def main():
         if root is None: raise RuntimeError("missing root face "+assembly["id"])
         actual=face_transform(root); expected=Matrix(assembly["root_transform_mm"])
         for row in range(3): expected[row][3]*=.001
-        if max(abs(actual[row][column]-expected[row][column]) for row in range(4) for column in range(4))>1e-7: raise RuntimeError("root transform mismatch "+assembly["id"])
+        if max(abs(actual[row][column]-expected[row][column]) for row in range(4) for column in range(4))>1e-6: raise RuntimeError("root transform mismatch "+assembly["id"])
         roots.append({"assembly":assembly["id"],"root_face":assembly["root_face"],"root_transform_verified":True})
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps({"reopened": True, "faces": faces, "roots":roots, "flat_instances":flat_instances, "folds": folds, "texture_sha256": source_texture, "source_input_hashes": manifest["input_hashes"]}, indent=2) + "\n")

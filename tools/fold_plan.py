@@ -91,10 +91,18 @@ def validate_plan(payload, repo_root):
         if not p.is_file(): raise InputError(f"sources.{key} is missing")
         paths.append(p)
     bundle=load_bundle(*paths, allow_folds=True); parts={p["id"]:p for p in bundle["parts"]}
-    # Intake deliberately leaves boundary relation undecided; resolve it here.
+    # A source may contain folds for parts deliberately placed flat.  Validate
+    # only the folds actually selected by this assembly plan; an unrelated
+    # unsupported crease must not prevent a documented flat instance.
+    active_folds={}
+    for assembly in payload.get("assemblies",[]) if isinstance(payload.get("assemblies"),list) else []:
+        if isinstance(assembly,dict) and isinstance(assembly.get("part_id"),str) and isinstance(assembly.get("folds"),list):
+            active_folds.setdefault(assembly["part_id"],set()).update(item.get("fold_id") for item in assembly["folds"] if isinstance(item,dict) and isinstance(item.get("fold_id"),str))
+    # Intake deliberately leaves boundary relation undecided; resolve selected folds here.
     for part in parts.values():
         seen_lines=[]
         for fold in part.get("folds",[]):
+            if fold.get("id") not in active_folds.get(part["id"],set()): continue
             ends=fold.get("endpoints_mm")
             if not isinstance(ends,list) or len(ends)!=2: raise InputError(f"{part['id']}.{fold.get('id')}: endpoints are invalid")
             a=_point(ends[0],'fold endpoint'); b=_point(ends[1],'fold endpoint')
