@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from export_illustrator import MM_PER_PT, _note_id, export_print_front_png
+from export_illustrator import MM_PER_PT, export_print_front_png
 from py_ai_illustrator.verification import _read_png_rgba
 
 
@@ -35,7 +35,10 @@ def _verify_live_dom(package: dict[str, Any], evidence: dict[str, Any]) -> dict[
     live = evidence["dom"]["illustrator"]
     artboard = live["artboards"][0]["rect"]
     left, top = float(artboard[0]), float(artboard[1])
-    source = {_note_id(path): path for path in live["paths"]}
+    source = {path["id"]: path for path in live["paths"]
+              if path.get("layer") in {"PF_CUT", "PF_PRINT_FRONT"}
+              and isinstance(path.get("parent"), dict)
+              and str(path["parent"].get("name", "")).startswith("PF_PART_")}
     exported = {path["source_id"]: path for path in _paths(package)}
     missing, extra = sorted(set(source) - set(exported)), sorted(set(exported) - set(source))
     errors: list[float] = []

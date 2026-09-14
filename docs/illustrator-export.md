@@ -2,7 +2,7 @@
 
 `tools/export_illustrator.py` は PDF や `.ir.json` を解析せず、Adobe Illustrator 2026 で元 `.ai` を読み取り専用で開いた DOM を唯一の形状・印刷パスの情報源にする。閉じる際は `DONOTSAVECHANGES` を指定する。
 
-入力規約は `PF_CUT` と `PF_PRINT_FRONT` レイヤー、各レイヤー直下の同名 `PF_PART_<部材ID>` グループ、各パスの `py-ai-path:{"id":"cut.<部材ID>.<役割>"}` または `print.<部材ID>.<役割>` note である。外周は `cut.<部材ID>.outer`、穴は `cut.<部材ID>.hole.<番号>` とする。曖昧なグループ所属、未閉鎖輪郭、重複 ID、欠けた印刷パス、単位不明の座標は停止する。これは r2 の事前整理規則を機械検査できるようにした暫定規約であり、一般の Illustrator ファイルを推定で受理しない。
+入力規約は `PF_CUT`、`PF_PRINT_FRONT`、`PF_FOLD` レイヤーと、各レイヤー直下の `PF_PART_<部材ID>` グループである。path noteは使わない。`PF_CUT` の閉パスは包含関係から外周と穴を決め、曖昧な包含、未閉鎖輪郭、入れ子穴は停止する。`PF_FOLD` は部材group内の名前付き開直線として抽出する。詳しい入稿規則と寸法資料は[Illustrator 入稿と寸法資料](operator-intake.md)を参照する。
 
 紙厚は現在の `.ai` DOM に保存されていないため、`material.json` を明示入力として受け取り、`export.json` に `external-explicit-input` と出所を記録する。渡さない場合は厚みを作らず `material.status: missing` を記録する。
 

@@ -31,22 +31,6 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _note_id(path: dict[str, Any]) -> str:
-    note = path.get("note")
-    if not isinstance(note, str) or not note.startswith("py-ai-path:"):
-        raise ExportValidationError(
-            f"path {path.get('name')!r} has no py-ai-path identifier note"
-        )
-    try:
-        value = json.loads(note.removeprefix("py-ai-path:"))
-    except json.JSONDecodeError as error:
-        raise ExportValidationError(f"path {path.get('name')!r} has invalid identifier note") from error
-    item_id = value.get("id") if isinstance(value, dict) else None
-    if not isinstance(item_id, str) or not item_id:
-        raise ExportValidationError(f"path {path.get('name')!r} has an empty identifier")
-    return item_id
-
-
 def _finite_pair(value: Any, *, path_id: str, field: str) -> tuple[float, float]:
     if not isinstance(value, list) or len(value) != 2:
         raise ExportValidationError(f"{path_id}: {field} must be a two-number coordinate")
@@ -75,15 +59,6 @@ def _point(point: dict[str, Any], *, path_id: str, top_pt: float, left_pt: float
     }
 
 
-def _path_kind(path_id: str) -> tuple[str, str, str]:
-    segments = path_id.split(".")
-    if len(segments) < 3 or segments[0] not in {"cut", "print"}:
-        raise ExportValidationError(
-            f"{path_id}: id must be cut.<PART>.<ROLE> or print.<PART>.<ROLE>"
-        )
-    return segments[0], segments[1], ".".join(segments[2:])
-
-
 def _bbox(paths: list[dict[str, Any]]) -> list[float]:
     points = [point["anchor_mm"] for path in paths for point in path["points"]]
     if not points:
@@ -92,28 +67,71 @@ def _bbox(paths: list[dict[str, Any]]) -> list[float]:
     return [min(xs), min(ys), max(xs), max(ys)]
 
 
-def _normalize_path(raw: dict[str, Any], *, top_pt: float, left_pt: float) -> dict[str, Any]:
-    path_id = _note_id(raw)
+def _normalize_path(raw: dict[str, Any], *, source_id: str, top_pt: float, left_pt: float, closed: bool = True) -> dict[str, Any]:
     anchors = raw.get("anchors")
     if not isinstance(anchors, list) or len(anchors) < 3:
-        raise ExportValidationError(f"{path_id}: a closed printable/cut path needs at least three anchors")
-    if raw.get("closed") is not True:
-        raise ExportValidationError(f"{path_id}: path must be closed")
+        raise ExportValidationError(f"{source_id}: a closed printable/cut path needs at least three anchors")
+    if raw.get("closed") is not closed:
+        raise ExportValidationError(f"{source_id}: path must be {'closed' if closed else 'open'}")
     normalized = {
-        "source_id": path_id,
+        "source_id": source_id,
         "name": raw.get("name"),
-        "closed": True,
+        "closed": closed,
         "filled": raw.get("filled") is True,
         "stroked": raw.get("stroked") is True,
         "fill_color": raw.get("fill_color"),
         "stroke_color": raw.get("stroke_color"),
         "stroke_width_mm": float(raw.get("stroke_width", 0.0)) * MM_PER_PT,
-        "points": [_point({"anchor": item.get("anchor"), "left_direction": item.get("left_direction", item.get("left")), "right_direction": item.get("right_direction", item.get("right")), "point_type": item.get("point_type")}, path_id=path_id, top_pt=top_pt, left_pt=left_pt) for item in anchors],
+        "points": [_point({"anchor": item.get("anchor"), "left_direction": item.get("left_direction", item.get("left")), "right_direction": item.get("right_direction", item.get("right")), "point_type": item.get("point_type")}, path_id=source_id, top_pt=top_pt, left_pt=left_pt) for item in anchors],
     }
     parent = raw.get("parent")
     if isinstance(parent, dict):
         normalized["parent"] = parent
     return normalized
+
+
+def _part_id(group_name: Any) -> str | None:
+    if not isinstance(group_name, str) or not group_name.startswith("PF_PART_"):
+        return None
+    value = group_name.removeprefix("PF_PART_")
+    return value or None
+
+
+def _point_in_polygon(point: list[float], polygon: list[list[float]]) -> bool:
+    """Use anchor polygons only to classify already-closed Illustrator paths.
+
+    Curved outline segments remain in the exported Bézier geometry.  The test is
+    deliberately conservative: ambiguous nesting is rejected rather than
+    silently assigning a cut path to an outer contour or hole.
+    """
+    x, y = point
+    inside = False
+    for index, first in enumerate(polygon):
+        second = polygon[(index + 1) % len(polygon)]
+        if (first[1] > y) != (second[1] > y):
+            crossing = (second[0] - first[0]) * (y - first[1]) / (second[1] - first[1]) + first[0]
+            if x < crossing:
+                inside = not inside
+    return inside
+
+
+def _is_straight_fold(path: dict[str, Any], label: str) -> tuple[list[float], list[float]]:
+    anchors = path.get("anchors")
+    if path.get("closed") is not False or path.get("filled") is True or not isinstance(anchors, list) or len(anchors) != 2:
+        raise ExportValidationError(f"{label}: PF_FOLD path must be an unfilled open line with exactly two anchors")
+    first, second = (_finite_pair(item.get("anchor"), path_id=label, field="anchor") for item in anchors)
+    dx, dy = second[0] - first[0], second[1] - first[1]
+    if dx == 0 and dy == 0:
+        raise ExportValidationError(f"{label}: fold endpoints must differ")
+    for point in anchors:
+        for key in ("left_direction", "left", "right_direction", "right"):
+            handle = point.get(key)
+            if handle is None:
+                continue
+            hx, hy = _finite_pair(handle, path_id=label, field=key)
+            if abs(dx * (hy - first[1]) - dy * (hx - first[0])) > 1e-6:
+                raise ExportValidationError(f"{label}: PF_FOLD path must be straight")
+    return list(first), list(second)
 
 
 def export_from_dom(dom: dict[str, Any], *, source: Path, material: dict[str, Any] | None) -> dict[str, Any]:
@@ -123,8 +141,8 @@ def export_from_dom(dom: dict[str, Any], *, source: Path, material: dict[str, An
     if not isinstance(illustrator, dict) or illustrator.get("ok") is not True:
         raise ExportValidationError("Illustrator did not return a successful live DOM inspection")
     layers = illustrator.get("layer_names")
-    if not isinstance(layers, list) or not {"PF_CUT", "PF_PRINT_FRONT"}.issubset(layers):
-        raise ExportValidationError("required layers PF_CUT and PF_PRINT_FRONT are missing")
+    if not isinstance(layers, list) or not {"PF_CUT", "PF_PRINT_FRONT", "PF_FOLD"}.issubset(layers):
+        raise ExportValidationError("required layers PF_CUT, PF_PRINT_FRONT and PF_FOLD are missing")
     artboards = illustrator.get("artboards")
     if not isinstance(artboards, list) or len(artboards) != 1:
         raise ExportValidationError("exactly one artboard is required for one export package")
@@ -138,60 +156,76 @@ def export_from_dom(dom: dict[str, Any], *, source: Path, material: dict[str, An
     if not isinstance(raw_paths, list):
         raise ExportValidationError("Illustrator did not return path inspection data")
 
-    parts: dict[str, dict[str, list[dict[str, Any]]]] = defaultdict(lambda: {"cut": [], "print": []})
     group_layers = illustrator.get("group_layers")
     if not isinstance(group_layers, dict):
         raise ExportValidationError("Illustrator did not return group-to-layer membership data")
-    seen_ids: set[str] = set()
+    grouped: dict[str, dict[str, list[dict[str, Any]]]] = defaultdict(lambda: {"cut": [], "print": [], "fold": []})
     for raw in raw_paths:
         if not isinstance(raw, dict):
             raise ExportValidationError("Illustrator returned a non-object path")
-        path_id = _note_id(raw)
-        if path_id in seen_ids:
-            raise ExportValidationError(f"duplicate path identifier: {path_id}")
-        seen_ids.add(path_id)
-        layer, part_id, role = _path_kind(path_id)
-        item = _normalize_path(raw, top_pt=top, left_pt=left)
-        expected_group = f"PF_PART_{part_id}"
-        parent = item.get("parent")
-        if not isinstance(parent, dict) or parent.get("type") != "GroupItem" or parent.get("name") != expected_group:
-            raise ExportValidationError(f"{path_id}: must be directly inside group {expected_group}")
-        expected_layer = "PF_CUT" if layer == "cut" else "PF_PRINT_FRONT"
-        group_key = f"{expected_layer}:{expected_group}"
-        if group_layers.get(group_key) != expected_layer:
-            raise ExportValidationError(f"{path_id}: group {expected_group} is not directly on {expected_layer}")
-        item["role"] = role
-        parts[part_id][layer].append(item)
+        parent = raw.get("parent")
+        if not isinstance(parent, dict) or parent.get("type") != "GroupItem":
+            continue
+        part_id = _part_id(parent.get("name"))
+        if part_id is None:
+            continue
+        group_name = parent["name"]
+        layer_name = raw.get("layer")
+        kind_by_layer = {"PF_CUT": "cut", "PF_PRINT_FRONT": "print", "PF_FOLD": "fold"}
+        kind = kind_by_layer.get(layer_name)
+        if kind and group_layers.get(f"{layer_name}:{group_name}") == layer_name:
+            grouped[part_id][kind].append(raw)
 
     exported_parts: list[dict[str, Any]] = []
-    for part_id in sorted(parts):
-        part = parts[part_id]
-        outers = [item for item in part["cut"] if item["role"] == "outer"]
-        holes = [item for item in part["cut"] if item["role"].startswith("hole.")]
-        unsupported = [item["source_id"] for item in part["cut"] if item not in outers + holes]
-        if len(outers) != 1:
-            raise ExportValidationError(f"{part_id}: exactly one cut.<PART>.outer is required")
-        if unsupported:
-            raise ExportValidationError(f"{part_id}: unsupported cut roles: {', '.join(unsupported)}")
-        if not part["print"]:
-            raise ExportValidationError(f"{part_id}: PF_PRINT_FRONT paths are missing")
+    for part_id in sorted(grouped):
+        part = grouped[part_id]
+        if not part["cut"]:
+            continue
+        cuts = [_normalize_path(raw, source_id=str(raw.get("id", f"cut.{part_id}.{index + 1}")), top_pt=top, left_pt=left)
+                for index, raw in enumerate(part["cut"])]
         # AI may intentionally retain a non-printing cut path without a visible
         # stroke.  Geometry import needs the closed, unfilled contour; whether a
         # CAM-facing stroke is required belongs to a later output profile.
-        if outers[0]["filled"]:
-            raise ExportValidationError(f"{part_id}: outer contour must be unfilled")
-        if any(item["filled"] for item in holes):
-            raise ExportValidationError(f"{part_id}: hole contours must be unfilled")
-        outer_bounds = _bbox(outers)
+        if any(item["filled"] for item in cuts):
+            raise ExportValidationError(f"{part_id}: PF_CUT contours must be unfilled")
+        polygons = [[point["anchor_mm"] for point in item["points"]] for item in cuts]
+        containers = [[other_index for other_index, other_polygon in enumerate(polygons)
+                       if other_index != index and _point_in_polygon(polygon[0], other_polygon)]
+                      for index, polygon in enumerate(polygons)]
+        outers = [item for index, item in enumerate(cuts) if not containers[index]]
+        if len(outers) != 1:
+            raise ExportValidationError(f"{part_id}: closed PF_CUT paths do not have one unambiguous outer contour")
+        outer = outers[0]
+        outer_index = cuts.index(outer)
+        holes = [item for index, item in enumerate(cuts) if index != outer_index]
+        if any(containers[index] != [outer_index] for index in range(len(cuts)) if index != outer_index):
+            raise ExportValidationError(f"{part_id}: PF_CUT contour nesting is ambiguous; use one outer contour and non-nested holes")
+        outer_bounds = _bbox([outer])
         if outer_bounds[2] <= outer_bounds[0] or outer_bounds[3] <= outer_bounds[1]:
             raise ExportValidationError(f"{part_id}: outer contour has no positive extent")
+        fold_names: set[str] = set()
+        folds = []
+        outer_polygon = polygons[outer_index]
+        for index, raw in enumerate(part["fold"]):
+            label = raw.get("name") if isinstance(raw.get("name"), str) and raw["name"] else f"FOLD_{index + 1:02d}"
+            if label in fold_names:
+                raise ExportValidationError(f"{part_id}: duplicate PF_FOLD name {label!r}")
+            fold_names.add(label)
+            first, second = _is_straight_fold(raw, f"{part_id}/{label}")
+            endpoints = [_point({"anchor": point, "left_direction": point, "right_direction": point}, path_id=f"{part_id}/{label}", top_pt=top, left_pt=left)["anchor_mm"] for point in (first, second)]
+            folds.append({"id": label, "endpoints_mm": endpoints,
+                          "boundary_relation": "not-evaluated-by-intake",
+                          "status": "angle-and-direction-required-in-assembly-plan"})
+        print_paths = [_normalize_path(raw, source_id=str(raw.get("id", f"print.{part_id}.{index + 1}")), top_pt=top, left_pt=left)
+                       for index, raw in enumerate(part["print"]) if raw.get("closed") is True]
         exported_parts.append(
             {
                 "id": part_id,
-                "cut": {"outer": outers[0], "holes": holes},
+                "cut": {"outer": outer, "holes": holes},
                 "dimensions_mm": [outer_bounds[2] - outer_bounds[0], outer_bounds[3] - outer_bounds[1]],
                 "placement_bounds_mm": outer_bounds,
-                "print_front": {"paths": part["print"], "bounds_mm": _bbox(part["print"])},
+                "print_front": {"paths": print_paths, "bounds_mm": _bbox(print_paths) if print_paths else None},
+                "folds": folds,
             }
         )
 
@@ -259,8 +293,16 @@ def inspect_ai(source: Path, *, timeout: float) -> dict[str, Any]:
    var group = documentRef.groupItems[index];
    groups.push({{name: group.name || "", parent: itemParent(group)}});
   }}
-  return toJson({{ok: true, illustrator_version: app.version,
-   snapshot: documentSnapshot(documentRef), groups: groups}});
+  var snapshot = documentSnapshot(documentRef);
+  for (var pathIndex = 0; pathIndex < documentRef.pathItems.length; pathIndex++) {{
+   var cursor = documentRef.pathItems[pathIndex]; var layerName = null;
+   while (cursor && cursor.parent) {{
+    cursor = cursor.parent;
+    if (cursor && cursor.typename === "Layer") {{ layerName = cursor.name || ""; break; }}
+   }}
+   snapshot.paths[pathIndex].layer = layerName;
+  }}
+  return toJson({{ok: true, illustrator_version: app.version, snapshot: snapshot, groups: groups}});
  }} catch (error) {{ return toJson({{ok: false, error: String(error)}}); }}
  finally {{ if (documentRef !== null) documentRef.close(SaveOptions.DONOTSAVECHANGES);
   app.userInteractionLevel = previousInteractionLevel; }}
