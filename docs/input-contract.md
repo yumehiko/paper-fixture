@@ -23,7 +23,7 @@
 
 ### 理想化サンプルの draft 規則
 
-最初の検証は実案件データより先に、`samples/idealized_input/input.json` の理想化データで行う。単位は mm、部材ローカル原点はアートボード左上、+X は右、+Y は下とする。生成時の Illustrator 座標は `72 / 25.4 pt/mm` に換算する。
+最初の検証は実案件データより先に、`samples/idealized_input/input.json` の理想化データで行う。単位は mm、部材ローカル原点はアートボード左上、+X は右、+Y は下とする。生成時には `X_ai = X_mm × 72 / 25.4`、`Y_ai = (artboard_height_mm - Y_mm) × 72 / 25.4` として Illustrator 座標へ変換する。
 
 `PF_CUT` は閉じた外周と穴のストローク、`PF_PRINT_FRONT` は同じ部材ローカル座標の片面印刷、`PF_ANNOTATION` は形状生成から除外する注釈、`PF_FOLD` は将来用の空レイヤーとする。切断・印刷の各レイヤーには同じ `PF_PART_<部材ID>` 名のグループを置く。色だけを意味の根拠にせず、レイヤー名、グループ名、安定IDを併用する。
 

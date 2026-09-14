@@ -1,0 +1,3228 @@
+{
+  "artifacts": {
+    "ir": {
+      "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.ir.json",
+      "sha256": "ed24353b26d991c2a180d2caa2c5b71b9aa691ed801cd86a2ac57027cead0acc"
+    },
+    "native_ai": {
+      "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.native.ai",
+      "sha256": "7f40ad7c886b7bafbad3024309318b71dc15a87dd849f5c2e2f32827a3a34520"
+    },
+    "native_preview": {
+      "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.native.preview.png",
+      "sha256": "b45cca77658709f27d9654753bb3f6a56f35af822a0c92b0f5bbb6cdd74bed77"
+    }
+  },
+  "illustrator": {
+    "checks": {
+      "area_texts_do_not_overflow": true,
+      "direct_native_compile": true,
+      "dom_reopen_inspection": true,
+      "editable_area_texts": true,
+      "linked_assets_exist": true,
+      "linked_image_placements": true,
+      "native_artboards": true,
+      "pdf_preview_created": true,
+      "reopen_semantic_editability": true,
+      "requested_fonts_available": true
+    },
+    "compile": {
+      "format": {
+        "confidence": "high",
+        "format": "pdf-compatible-ai",
+        "header": "%PDF-1.6",
+        "illustrator_markers": [
+          "AIPrivateData",
+          "Illustrator PieceInfo",
+          "Illustrator dictionary",
+          "Adobe Illustrator creator",
+          "AI DSC comments"
+        ],
+        "notes": [],
+        "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.native.ai",
+        "pdf_version": "1.6",
+        "size_bytes": 234914
+      },
+      "illustrator": {
+        "checks": {
+          "geometry_and_style": true,
+          "linked_resources": true,
+          "native_editability": true,
+          "pdf_compatible_ai": true,
+          "stable_identity": true,
+          "structure_and_order": true
+        },
+        "contract": "py-ai-illustrator.native-compile-result",
+        "counts": {
+          "artboards": 1,
+          "groups": 14,
+          "layers": 4,
+          "legacy_texts": 0,
+          "linked_images": 0,
+          "paths": 30,
+          "texts": 0
+        },
+        "errors": [],
+        "illustrator_version": "30.8.1",
+        "ok": true,
+        "operation": "compile",
+        "text_overflows": [],
+        "version": 1
+      },
+      "output": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.native.ai",
+      "packaged_links": [],
+      "profile": {
+        "color_space": "rgb",
+        "embed_linked_files": false,
+        "pdf_compatible": true
+      },
+      "status": "passed"
+    },
+    "fonts": {
+      "error": null,
+      "missing": [],
+      "required": [],
+      "status": "not-required"
+    },
+    "inspection": {
+      "checks": {
+        "linked_files_exist": true
+      },
+      "expected": null,
+      "illustrator": {
+        "artboard_count": 1,
+        "artboards": [
+          {
+            "name": "THREE_SHELF_ASSEMBLY",
+            "rect": [
+              0,
+              4677.16535433071,
+              2267.71653543307,
+              0
+            ]
+          }
+        ],
+        "clipping_group_count": 0,
+        "closed_count": 30,
+        "compound_path_item_count": 0,
+        "document_color_space": "DocumentColorSpace.RGB",
+        "document_name": "fixture.ai",
+        "filled_count": 21,
+        "group_item_count": 14,
+        "illustrator_version": "30.8.1",
+        "layer_count": 4,
+        "layer_names": [
+          "PF_CUT",
+          "PF_PRINT_FRONT",
+          "PF_ANNOTATION",
+          "PF_FOLD"
+        ],
+        "layer_page_item_types": [
+          [
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem"
+          ],
+          [
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem",
+            "GroupItem"
+          ],
+          [],
+          []
+        ],
+        "layers": [
+          {
+            "locked": false,
+            "name": "PF_CUT",
+            "page_item_count": 7,
+            "page_item_types": [
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem"
+            ],
+            "visible": true
+          },
+          {
+            "locked": false,
+            "name": "PF_PRINT_FRONT",
+            "page_item_count": 7,
+            "page_item_types": [
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem",
+              "GroupItem"
+            ],
+            "visible": true
+          },
+          {
+            "locked": false,
+            "name": "PF_ANNOTATION",
+            "page_item_count": 0,
+            "page_item_types": [],
+            "visible": true
+          },
+          {
+            "locked": false,
+            "name": "PF_FOLD",
+            "page_item_count": 0,
+            "page_item_types": [],
+            "visible": true
+          }
+        ],
+        "ok": true,
+        "page_item_count": 44,
+        "path_item_count": 30,
+        "paths": [
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  878.740157480315
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  878.740157480315
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  878.740157480315
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  878.740157480315
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  878.740157480315
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  878.740157480315
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  113.385826771653
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  113.385826771653
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  113.385826771653
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  113.385826771653
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  113.385826771653
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  113.385826771653
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "CUT outer contour TOP",
+            "note": "py-ai-path:{\"id\":\"cut.TOP.outer\",\"name\":\"CUT outer contour TOP\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  2074.96062992126,
+                  1644.09448818898
+                ],
+                "left_direction": [
+                  2074.96062992126,
+                  1662.88086708086
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  2074.96062992126,
+                  1625.3081092971
+                ]
+              },
+              {
+                "anchor": [
+                  2040.94488188976,
+                  1610.07874015748
+                ],
+                "left_direction": [
+                  2059.73126078165,
+                  1610.07874015748
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  2022.15850299788,
+                  1610.07874015748
+                ]
+              },
+              {
+                "anchor": [
+                  2006.92913385827,
+                  1644.09448818898
+                ],
+                "left_direction": [
+                  2006.92913385827,
+                  1625.3081092971
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  2006.92913385827,
+                  1662.88086708086
+                ]
+              },
+              {
+                "anchor": [
+                  2040.94488188976,
+                  1678.11023622047
+                ],
+                "left_direction": [
+                  2022.15850299788,
+                  1678.11023622047
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  2059.73126078165,
+                  1678.11023622047
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 4,
+            "name": "CUT BACK hole 2",
+            "note": "py-ai-path:{\"id\":\"cut.BACK.hole.02\",\"name\":\"CUT BACK hole 2\"}",
+            "stroke_color": {
+              "blue": 0,
+              "green": 0,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "stroke_width": 0.99212598800659,
+            "stroked": true
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1508.03149606299,
+                  1644.09448818898
+                ],
+                "left_direction": [
+                  1508.03149606299,
+                  1662.88086708086
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  1508.03149606299,
+                  1625.3081092971
+                ]
+              },
+              {
+                "anchor": [
+                  1474.0157480315,
+                  1610.07874015748
+                ],
+                "left_direction": [
+                  1492.80212692338,
+                  1610.07874015748
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  1455.22936913961,
+                  1610.07874015748
+                ]
+              },
+              {
+                "anchor": [
+                  1440,
+                  1644.09448818898
+                ],
+                "left_direction": [
+                  1440,
+                  1625.3081092971
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  1440,
+                  1662.88086708086
+                ]
+              },
+              {
+                "anchor": [
+                  1474.0157480315,
+                  1678.11023622047
+                ],
+                "left_direction": [
+                  1455.22936913961,
+                  1678.11023622047
+                ],
+                "point_type": "PointType.SMOOTH",
+                "right_direction": [
+                  1492.80212692338,
+                  1678.11023622047
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 4,
+            "name": "CUT BACK hole 1",
+            "note": "py-ai-path:{\"id\":\"cut.BACK.hole.01\",\"name\":\"CUT BACK hole 1\"}",
+            "stroke_color": {
+              "blue": 0,
+              "green": 0,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "stroke_width": 0.99212598800659,
+            "stroked": true
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1247.24409448819,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  992.125984251968
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  992.125984251968
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  992.125984251968
+                ]
+              },
+              {
+                "anchor": [
+                  1247.24409448819,
+                  992.125984251968
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  992.125984251968
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  992.125984251968
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "CUT outer contour BACK",
+            "note": "py-ai-path:{\"id\":\"cut.BACK.outer\",\"name\":\"CUT outer contour BACK\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  1559.05511811024
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  1559.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  1559.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  1559.05511811024
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  1559.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  1559.05511811024
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "CUT outer contour SHELF_03",
+            "note": "py-ai-path:{\"id\":\"cut.SHELF_03.outer\",\"name\":\"CUT outer contour SHELF_03\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1247.24409448819,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  2409.44881889764
+                ]
+              },
+              {
+                "anchor": [
+                  1247.24409448819,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  2409.44881889764
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "CUT outer contour SHELF_02",
+            "note": "py-ai-path:{\"id\":\"cut.SHELF_02.outer\",\"name\":\"CUT outer contour SHELF_02\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  2409.44881889764
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  2409.44881889764
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "CUT outer contour SHELF_01",
+            "note": "py-ai-path:{\"id\":\"cut.SHELF_01.outer\",\"name\":\"CUT outer contour SHELF_01\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1077.16535433071,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  1077.16535433071,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1077.16535433071,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  1927.55905511811,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  1927.55905511811,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1927.55905511811,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  1927.55905511811,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  1927.55905511811,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1927.55905511811,
+                  3259.84251968504
+                ]
+              },
+              {
+                "anchor": [
+                  1077.16535433071,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  1077.16535433071,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1077.16535433071,
+                  3259.84251968504
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "CUT outer contour SIDE_RIGHT",
+            "note": "py-ai-path:{\"id\":\"cut.SIDE_RIGHT.outer\",\"name\":\"CUT outer contour SIDE_RIGHT\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  963.779527559055,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  963.779527559055,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  963.779527559055,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  963.779527559055,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  963.779527559055,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  963.779527559055,
+                  3259.84251968504
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  3259.84251968504
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": null,
+            "filled": false,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "CUT outer contour SIDE_LEFT",
+            "note": "py-ai-path:{\"id\":\"cut.SIDE_LEFT.outer\",\"name\":\"CUT outer contour SIDE_LEFT\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1003.46456692913,
+                  311.811023622047
+                ],
+                "left_direction": [
+                  1003.46456692913,
+                  311.811023622047
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1003.46456692913,
+                  311.811023622047
+                ]
+              },
+              {
+                "anchor": [
+                  1071.49606299213,
+                  311.811023622047
+                ],
+                "left_direction": [
+                  1071.49606299213,
+                  311.811023622047
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1071.49606299213,
+                  311.811023622047
+                ]
+              },
+              {
+                "anchor": [
+                  1071.49606299213,
+                  212.598425196849
+                ],
+                "left_direction": [
+                  1071.49606299213,
+                  212.598425196849
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1071.49606299213,
+                  212.598425196849
+                ]
+              },
+              {
+                "anchor": [
+                  1105.51181102362,
+                  212.598425196849
+                ],
+                "left_direction": [
+                  1105.51181102362,
+                  212.598425196849
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1105.51181102362,
+                  212.598425196849
+                ]
+              },
+              {
+                "anchor": [
+                  1037.48031496063,
+                  147.401574803149
+                ],
+                "left_direction": [
+                  1037.48031496063,
+                  147.401574803149
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1037.48031496063,
+                  147.401574803149
+                ]
+              },
+              {
+                "anchor": [
+                  969.448818897638,
+                  212.598425196849
+                ],
+                "left_direction": [
+                  969.448818897638,
+                  212.598425196849
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  969.448818897638,
+                  212.598425196849
+                ]
+              },
+              {
+                "anchor": [
+                  1003.46456692913,
+                  212.598425196849
+                ],
+                "left_direction": [
+                  1003.46456692913,
+                  212.598425196849
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1003.46456692913,
+                  212.598425196849
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 13,
+              "green": 97,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "FRONT +Y orientation arrow",
+            "note": "py-ai-path:{\"id\":\"print.TOP.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  878.740157480315
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  878.740157480315
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  878.740157480315
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  878.740157480315
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  878.740157480315
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  878.740157480315
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  113.385826771653
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  113.385826771653
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  113.385826771653
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  113.385826771653
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  113.385826771653
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  113.385826771653
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 219,
+              "green": 184,
+              "red": 0,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "left orientation bar TOP",
+            "note": "py-ai-path:{\"id\":\"print.TOP.orientation-bar\",\"name\":\"left orientation bar TOP\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  878.740157480315
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  878.740157480315
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  878.740157480315
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  878.740157480315
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  878.740157480315
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  878.740157480315
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  113.385826771653
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  113.385826771653
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  113.385826771653
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  113.385826771653
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  113.385826771653
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  113.385826771653
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 229,
+              "green": 240,
+              "red": 240,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "print base TOP",
+            "note": "py-ai-path:{\"id\":\"print.TOP.base\",\"name\":\"print base TOP\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  2137.32283464567,
+                  1190.55118110236
+                ],
+                "left_direction": [
+                  2137.32283464567,
+                  1190.55118110236
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2137.32283464567,
+                  1190.55118110236
+                ]
+              },
+              {
+                "anchor": [
+                  2205.35433070866,
+                  1190.55118110236
+                ],
+                "left_direction": [
+                  2205.35433070866,
+                  1190.55118110236
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2205.35433070866,
+                  1190.55118110236
+                ]
+              },
+              {
+                "anchor": [
+                  2205.35433070866,
+                  1091.33858267717
+                ],
+                "left_direction": [
+                  2205.35433070866,
+                  1091.33858267717
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2205.35433070866,
+                  1091.33858267717
+                ]
+              },
+              {
+                "anchor": [
+                  2239.37007874016,
+                  1091.33858267717
+                ],
+                "left_direction": [
+                  2239.37007874016,
+                  1091.33858267717
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2239.37007874016,
+                  1091.33858267717
+                ]
+              },
+              {
+                "anchor": [
+                  2171.33858267717,
+                  1026.14173228346
+                ],
+                "left_direction": [
+                  2171.33858267717,
+                  1026.14173228346
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2171.33858267717,
+                  1026.14173228346
+                ]
+              },
+              {
+                "anchor": [
+                  2103.30708661417,
+                  1091.33858267717
+                ],
+                "left_direction": [
+                  2103.30708661417,
+                  1091.33858267717
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2103.30708661417,
+                  1091.33858267717
+                ]
+              },
+              {
+                "anchor": [
+                  2137.32283464567,
+                  1091.33858267717
+                ],
+                "left_direction": [
+                  2137.32283464567,
+                  1091.33858267717
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2137.32283464567,
+                  1091.33858267717
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 13,
+              "green": 97,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "FRONT +Y orientation arrow",
+            "note": "py-ai-path:{\"id\":\"print.BACK.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1247.24409448819,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  1298.26771653543,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  1298.26771653543,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1298.26771653543,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  1298.26771653543,
+                  992.125984251968
+                ],
+                "left_direction": [
+                  1298.26771653543,
+                  992.125984251968
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1298.26771653543,
+                  992.125984251968
+                ]
+              },
+              {
+                "anchor": [
+                  1247.24409448819,
+                  992.125984251968
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  992.125984251968
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  992.125984251968
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 219,
+              "green": 184,
+              "red": 0,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "left orientation bar BACK",
+            "note": "py-ai-path:{\"id\":\"print.BACK.orientation-bar\",\"name\":\"left orientation bar BACK\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1247.24409448819,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  992.125984251968
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  992.125984251968
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  992.125984251968
+                ]
+              },
+              {
+                "anchor": [
+                  1247.24409448819,
+                  992.125984251968
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  992.125984251968
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  992.125984251968
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 229,
+              "green": 240,
+              "red": 240,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "print base BACK",
+            "note": "py-ai-path:{\"id\":\"print.BACK.base\",\"name\":\"print base BACK\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1003.46456692913,
+                  1757.48031496063
+                ],
+                "left_direction": [
+                  1003.46456692913,
+                  1757.48031496063
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1003.46456692913,
+                  1757.48031496063
+                ]
+              },
+              {
+                "anchor": [
+                  1071.49606299213,
+                  1757.48031496063
+                ],
+                "left_direction": [
+                  1071.49606299213,
+                  1757.48031496063
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1071.49606299213,
+                  1757.48031496063
+                ]
+              },
+              {
+                "anchor": [
+                  1071.49606299213,
+                  1658.26771653543
+                ],
+                "left_direction": [
+                  1071.49606299213,
+                  1658.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1071.49606299213,
+                  1658.26771653543
+                ]
+              },
+              {
+                "anchor": [
+                  1105.51181102362,
+                  1658.26771653543
+                ],
+                "left_direction": [
+                  1105.51181102362,
+                  1658.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1105.51181102362,
+                  1658.26771653543
+                ]
+              },
+              {
+                "anchor": [
+                  1037.48031496063,
+                  1593.07086614173
+                ],
+                "left_direction": [
+                  1037.48031496063,
+                  1593.07086614173
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1037.48031496063,
+                  1593.07086614173
+                ]
+              },
+              {
+                "anchor": [
+                  969.448818897638,
+                  1658.26771653543
+                ],
+                "left_direction": [
+                  969.448818897638,
+                  1658.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  969.448818897638,
+                  1658.26771653543
+                ]
+              },
+              {
+                "anchor": [
+                  1003.46456692913,
+                  1658.26771653543
+                ],
+                "left_direction": [
+                  1003.46456692913,
+                  1658.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1003.46456692913,
+                  1658.26771653543
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 13,
+              "green": 97,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "FRONT +Y orientation arrow",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_03.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  1559.05511811024
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  1559.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  1559.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  1559.05511811024
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  1559.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  1559.05511811024
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 219,
+              "green": 184,
+              "red": 0,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "left orientation bar SHELF_03",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_03.orientation-bar\",\"name\":\"left orientation bar SHELF_03\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  2296.06299212598
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  2296.06299212598
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  2296.06299212598
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  1559.05511811024
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  1559.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  1559.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  1559.05511811024
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  1559.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  1559.05511811024
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 229,
+              "green": 240,
+              "red": 240,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "print base SHELF_03",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_03.base\",\"name\":\"print base SHELF_03\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  2137.32283464567,
+                  2607.87401574803
+                ],
+                "left_direction": [
+                  2137.32283464567,
+                  2607.87401574803
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2137.32283464567,
+                  2607.87401574803
+                ]
+              },
+              {
+                "anchor": [
+                  2205.35433070866,
+                  2607.87401574803
+                ],
+                "left_direction": [
+                  2205.35433070866,
+                  2607.87401574803
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2205.35433070866,
+                  2607.87401574803
+                ]
+              },
+              {
+                "anchor": [
+                  2205.35433070866,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  2205.35433070866,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2205.35433070866,
+                  2508.66141732284
+                ]
+              },
+              {
+                "anchor": [
+                  2239.37007874016,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  2239.37007874016,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2239.37007874016,
+                  2508.66141732284
+                ]
+              },
+              {
+                "anchor": [
+                  2171.33858267717,
+                  2443.46456692914
+                ],
+                "left_direction": [
+                  2171.33858267717,
+                  2443.46456692914
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2171.33858267717,
+                  2443.46456692914
+                ]
+              },
+              {
+                "anchor": [
+                  2103.30708661417,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  2103.30708661417,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2103.30708661417,
+                  2508.66141732284
+                ]
+              },
+              {
+                "anchor": [
+                  2137.32283464567,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  2137.32283464567,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2137.32283464567,
+                  2508.66141732284
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 13,
+              "green": 97,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "FRONT +Y orientation arrow",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_02.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1247.24409448819,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  1298.26771653543,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  1298.26771653543,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1298.26771653543,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  1298.26771653543,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  1298.26771653543,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1298.26771653543,
+                  2409.44881889764
+                ]
+              },
+              {
+                "anchor": [
+                  1247.24409448819,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  2409.44881889764
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 219,
+              "green": 184,
+              "red": 0,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "left orientation bar SHELF_02",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_02.orientation-bar\",\"name\":\"left orientation bar SHELF_02\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1247.24409448819,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  2267.71653543307,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  2267.71653543307,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  2267.71653543307,
+                  2409.44881889764
+                ]
+              },
+              {
+                "anchor": [
+                  1247.24409448819,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  1247.24409448819,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1247.24409448819,
+                  2409.44881889764
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 229,
+              "green": 240,
+              "red": 240,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "print base SHELF_02",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_02.base\",\"name\":\"print base SHELF_02\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1003.46456692913,
+                  2607.87401574803
+                ],
+                "left_direction": [
+                  1003.46456692913,
+                  2607.87401574803
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1003.46456692913,
+                  2607.87401574803
+                ]
+              },
+              {
+                "anchor": [
+                  1071.49606299213,
+                  2607.87401574803
+                ],
+                "left_direction": [
+                  1071.49606299213,
+                  2607.87401574803
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1071.49606299213,
+                  2607.87401574803
+                ]
+              },
+              {
+                "anchor": [
+                  1071.49606299213,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  1071.49606299213,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1071.49606299213,
+                  2508.66141732284
+                ]
+              },
+              {
+                "anchor": [
+                  1105.51181102362,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  1105.51181102362,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1105.51181102362,
+                  2508.66141732284
+                ]
+              },
+              {
+                "anchor": [
+                  1037.48031496063,
+                  2443.46456692914
+                ],
+                "left_direction": [
+                  1037.48031496063,
+                  2443.46456692914
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1037.48031496063,
+                  2443.46456692914
+                ]
+              },
+              {
+                "anchor": [
+                  969.448818897638,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  969.448818897638,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  969.448818897638,
+                  2508.66141732284
+                ]
+              },
+              {
+                "anchor": [
+                  1003.46456692913,
+                  2508.66141732284
+                ],
+                "left_direction": [
+                  1003.46456692913,
+                  2508.66141732284
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1003.46456692913,
+                  2508.66141732284
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 13,
+              "green": 97,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "FRONT +Y orientation arrow",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_01.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  2409.44881889764
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  2409.44881889764
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 219,
+              "green": 184,
+              "red": 0,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "left orientation bar SHELF_01",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_01.orientation-bar\",\"name\":\"left orientation bar SHELF_01\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  3146.45669291339
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  3146.45669291339
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  3146.45669291339
+                ]
+              },
+              {
+                "anchor": [
+                  1133.85826771654,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  1133.85826771654,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1133.85826771654,
+                  2409.44881889764
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  2409.44881889764
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  2409.44881889764
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  2409.44881889764
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 229,
+              "green": 240,
+              "red": 240,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "print base SHELF_01",
+            "note": "py-ai-path:{\"id\":\"print.SHELF_01.base\",\"name\":\"print base SHELF_01\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1797.16535433071,
+                  3458.26771653543
+                ],
+                "left_direction": [
+                  1797.16535433071,
+                  3458.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1797.16535433071,
+                  3458.26771653543
+                ]
+              },
+              {
+                "anchor": [
+                  1865.1968503937,
+                  3458.26771653543
+                ],
+                "left_direction": [
+                  1865.1968503937,
+                  3458.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1865.1968503937,
+                  3458.26771653543
+                ]
+              },
+              {
+                "anchor": [
+                  1865.1968503937,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  1865.1968503937,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1865.1968503937,
+                  3359.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  1899.2125984252,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  1899.2125984252,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1899.2125984252,
+                  3359.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  1831.18110236221,
+                  3293.85826771654
+                ],
+                "left_direction": [
+                  1831.18110236221,
+                  3293.85826771654
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1831.18110236221,
+                  3293.85826771654
+                ]
+              },
+              {
+                "anchor": [
+                  1763.14960629921,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  1763.14960629921,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1763.14960629921,
+                  3359.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  1797.16535433071,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  1797.16535433071,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1797.16535433071,
+                  3359.05511811024
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 13,
+              "green": 97,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "FRONT +Y orientation arrow",
+            "note": "py-ai-path:{\"id\":\"print.SIDE_RIGHT.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1077.16535433071,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  1077.16535433071,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1077.16535433071,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  1128.18897637795,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  1128.18897637795,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1128.18897637795,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  1128.18897637795,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  1128.18897637795,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1128.18897637795,
+                  3259.84251968504
+                ]
+              },
+              {
+                "anchor": [
+                  1077.16535433071,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  1077.16535433071,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1077.16535433071,
+                  3259.84251968504
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 219,
+              "green": 184,
+              "red": 0,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "left orientation bar SIDE_RIGHT",
+            "note": "py-ai-path:{\"id\":\"print.SIDE_RIGHT.orientation-bar\",\"name\":\"left orientation bar SIDE_RIGHT\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  1077.16535433071,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  1077.16535433071,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1077.16535433071,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  1927.55905511811,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  1927.55905511811,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1927.55905511811,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  1927.55905511811,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  1927.55905511811,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1927.55905511811,
+                  3259.84251968504
+                ]
+              },
+              {
+                "anchor": [
+                  1077.16535433071,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  1077.16535433071,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  1077.16535433071,
+                  3259.84251968504
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 229,
+              "green": 240,
+              "red": 240,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "print base SIDE_RIGHT",
+            "note": "py-ai-path:{\"id\":\"print.SIDE_RIGHT.base\",\"name\":\"print base SIDE_RIGHT\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  833.385826771653,
+                  3458.26771653543
+                ],
+                "left_direction": [
+                  833.385826771653,
+                  3458.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  833.385826771653,
+                  3458.26771653543
+                ]
+              },
+              {
+                "anchor": [
+                  901.417322834646,
+                  3458.26771653543
+                ],
+                "left_direction": [
+                  901.417322834646,
+                  3458.26771653543
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  901.417322834646,
+                  3458.26771653543
+                ]
+              },
+              {
+                "anchor": [
+                  901.417322834646,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  901.417322834646,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  901.417322834646,
+                  3359.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  935.433070866142,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  935.433070866142,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  935.433070866142,
+                  3359.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  867.40157480315,
+                  3293.85826771654
+                ],
+                "left_direction": [
+                  867.40157480315,
+                  3293.85826771654
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  867.40157480315,
+                  3293.85826771654
+                ]
+              },
+              {
+                "anchor": [
+                  799.370078740158,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  799.370078740158,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  799.370078740158,
+                  3359.05511811024
+                ]
+              },
+              {
+                "anchor": [
+                  833.385826771653,
+                  3359.05511811024
+                ],
+                "left_direction": [
+                  833.385826771653,
+                  3359.05511811024
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  833.385826771653,
+                  3359.05511811024
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 13,
+              "green": 97,
+              "red": 255,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "FRONT +Y orientation arrow",
+            "note": "py-ai-path:{\"id\":\"print.SIDE_LEFT.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  164.409448818898,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  164.409448818898,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  164.409448818898,
+                  3259.84251968504
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  3259.84251968504
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 219,
+              "green": 184,
+              "red": 0,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "left orientation bar SIDE_LEFT",
+            "note": "py-ai-path:{\"id\":\"print.SIDE_LEFT.orientation-bar\",\"name\":\"left orientation bar SIDE_LEFT\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          },
+          {
+            "anchors": [
+              {
+                "anchor": [
+                  113.385826771653,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  963.779527559055,
+                  4563.77952755906
+                ],
+                "left_direction": [
+                  963.779527559055,
+                  4563.77952755906
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  963.779527559055,
+                  4563.77952755906
+                ]
+              },
+              {
+                "anchor": [
+                  963.779527559055,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  963.779527559055,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  963.779527559055,
+                  3259.84251968504
+                ]
+              },
+              {
+                "anchor": [
+                  113.385826771653,
+                  3259.84251968504
+                ],
+                "left_direction": [
+                  113.385826771653,
+                  3259.84251968504
+                ],
+                "point_type": "PointType.CORNER",
+                "right_direction": [
+                  113.385826771653,
+                  3259.84251968504
+                ]
+              }
+            ],
+            "closed": true,
+            "dash_offset": 0,
+            "dash_pattern": [],
+            "fill_color": {
+              "blue": 229,
+              "green": 240,
+              "red": 240,
+              "type": "RGBColor"
+            },
+            "filled": true,
+            "line_cap": "StrokeCap.BUTTENDCAP",
+            "line_join": "StrokeJoin.MITERENDJOIN",
+            "miter_limit": 10,
+            "name": "print base SIDE_LEFT",
+            "note": "py-ai-path:{\"id\":\"print.SIDE_LEFT.base\",\"name\":\"print base SIDE_LEFT\"}",
+            "stroke_color": null,
+            "stroke_width": 1,
+            "stroked": false
+          }
+        ],
+        "placed_images": [],
+        "placed_item_count": 0,
+        "point_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "stroked_count": 2,
+        "text_frame_count": 0,
+        "text_frames": []
+      },
+      "input": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.native.ai",
+      "status": "passed"
+    },
+    "preview": {
+      "dpi": 144,
+      "page_count": 1,
+      "pages": [
+        {
+          "height": 9355,
+          "index": 1,
+          "output": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.native.preview.png",
+          "pixel_sha256": "4e919e19020e68f5ddfe171faa892f5235ff08977771afd6ca3b873514112dd1",
+          "png_sha256": "b45cca77658709f27d9654753bb3f6a56f35af822a0c92b0f5bbb6cdd74bed77",
+          "width": 4536
+        }
+      ],
+      "profile": "deterministic-raster-preview-v1",
+      "renderer": "pdftocairo",
+      "renderer_version": "pdftocairo version 26.04.0",
+      "source": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/three-shelf-input.native.ai",
+      "source_sha256": "7f40ad7c886b7bafbad3024309318b71dc15a87dd849f5c2e2f32827a3a34520"
+    },
+    "status": "passed"
+  },
+  "input": {
+    "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/samples/idealized_input/input.json",
+    "sha256": "6466ecd3fe5f8bded1153983de49b907c831cdd66fb3d5392a4c864af9cd8e31"
+  },
+  "production_id": "three-shelf-input",
+  "profile": "illustrator-agent-native-production-v1",
+  "pure": {
+    "checks": {
+      "area_texts": true,
+      "artboard_content": true,
+      "artboard_variant_correspondence": true,
+      "artboards": true,
+      "canvas_dimensions": true,
+      "group_count": true,
+      "ir_json_roundtrip": true,
+      "layer_names": true,
+      "linked_images": true,
+      "path_count": true,
+      "required_fonts_declared": true,
+      "required_group_names": true,
+      "required_ids": true,
+      "source_is_deterministic": true,
+      "text_count": true,
+      "text_layout_verified": true
+    },
+    "document_evidence": {
+      "area_texts": [],
+      "artboards": [
+        {
+          "height": 4677.165354330709,
+          "id": "artboard.shelf",
+          "left": 0,
+          "name": "THREE_SHELF_ASSEMBLY",
+          "top": 4677.165354330709,
+          "width": 2267.716535433071
+        }
+      ],
+      "font_postscript_names": [],
+      "group_count": 14,
+      "group_descendant_ids": {
+        "group.cut.BACK": [
+          "cut.BACK.outer",
+          "cut.BACK.hole.01",
+          "cut.BACK.hole.02"
+        ],
+        "group.cut.SHELF_01": [
+          "cut.SHELF_01.outer"
+        ],
+        "group.cut.SHELF_02": [
+          "cut.SHELF_02.outer"
+        ],
+        "group.cut.SHELF_03": [
+          "cut.SHELF_03.outer"
+        ],
+        "group.cut.SIDE_LEFT": [
+          "cut.SIDE_LEFT.outer"
+        ],
+        "group.cut.SIDE_RIGHT": [
+          "cut.SIDE_RIGHT.outer"
+        ],
+        "group.cut.TOP": [
+          "cut.TOP.outer"
+        ],
+        "group.print.BACK": [
+          "print.BACK.base",
+          "print.BACK.orientation-bar",
+          "print.BACK.orientation"
+        ],
+        "group.print.SHELF_01": [
+          "print.SHELF_01.base",
+          "print.SHELF_01.orientation-bar",
+          "print.SHELF_01.orientation"
+        ],
+        "group.print.SHELF_02": [
+          "print.SHELF_02.base",
+          "print.SHELF_02.orientation-bar",
+          "print.SHELF_02.orientation"
+        ],
+        "group.print.SHELF_03": [
+          "print.SHELF_03.base",
+          "print.SHELF_03.orientation-bar",
+          "print.SHELF_03.orientation"
+        ],
+        "group.print.SIDE_LEFT": [
+          "print.SIDE_LEFT.base",
+          "print.SIDE_LEFT.orientation-bar",
+          "print.SIDE_LEFT.orientation"
+        ],
+        "group.print.SIDE_RIGHT": [
+          "print.SIDE_RIGHT.base",
+          "print.SIDE_RIGHT.orientation-bar",
+          "print.SIDE_RIGHT.orientation"
+        ],
+        "group.print.TOP": [
+          "print.TOP.base",
+          "print.TOP.orientation-bar",
+          "print.TOP.orientation"
+        ]
+      },
+      "group_names": [
+        "PF_PART_SIDE_LEFT",
+        "PF_PART_SIDE_RIGHT",
+        "PF_PART_SHELF_01",
+        "PF_PART_SHELF_02",
+        "PF_PART_SHELF_03",
+        "PF_PART_BACK",
+        "PF_PART_TOP",
+        "PF_PART_SIDE_LEFT",
+        "PF_PART_SIDE_RIGHT",
+        "PF_PART_SHELF_01",
+        "PF_PART_SHELF_02",
+        "PF_PART_SHELF_03",
+        "PF_PART_BACK",
+        "PF_PART_TOP"
+      ],
+      "group_names_by_id": {
+        "group.cut.BACK": "PF_PART_BACK",
+        "group.cut.SHELF_01": "PF_PART_SHELF_01",
+        "group.cut.SHELF_02": "PF_PART_SHELF_02",
+        "group.cut.SHELF_03": "PF_PART_SHELF_03",
+        "group.cut.SIDE_LEFT": "PF_PART_SIDE_LEFT",
+        "group.cut.SIDE_RIGHT": "PF_PART_SIDE_RIGHT",
+        "group.cut.TOP": "PF_PART_TOP",
+        "group.print.BACK": "PF_PART_BACK",
+        "group.print.SHELF_01": "PF_PART_SHELF_01",
+        "group.print.SHELF_02": "PF_PART_SHELF_02",
+        "group.print.SHELF_03": "PF_PART_SHELF_03",
+        "group.print.SIDE_LEFT": "PF_PART_SIDE_LEFT",
+        "group.print.SIDE_RIGHT": "PF_PART_SIDE_RIGHT",
+        "group.print.TOP": "PF_PART_TOP"
+      },
+      "height": 4677.165354330709,
+      "ids": [
+        "artboard.shelf",
+        "cut.BACK.hole.01",
+        "cut.BACK.hole.02",
+        "cut.BACK.outer",
+        "cut.SHELF_01.outer",
+        "cut.SHELF_02.outer",
+        "cut.SHELF_03.outer",
+        "cut.SIDE_LEFT.outer",
+        "cut.SIDE_RIGHT.outer",
+        "cut.TOP.outer",
+        "group.cut.BACK",
+        "group.cut.SHELF_01",
+        "group.cut.SHELF_02",
+        "group.cut.SHELF_03",
+        "group.cut.SIDE_LEFT",
+        "group.cut.SIDE_RIGHT",
+        "group.cut.TOP",
+        "group.print.BACK",
+        "group.print.SHELF_01",
+        "group.print.SHELF_02",
+        "group.print.SHELF_03",
+        "group.print.SIDE_LEFT",
+        "group.print.SIDE_RIGHT",
+        "group.print.TOP",
+        "layer.annotation",
+        "layer.cut",
+        "layer.fold",
+        "layer.print",
+        "print.BACK.base",
+        "print.BACK.orientation",
+        "print.BACK.orientation-bar",
+        "print.SHELF_01.base",
+        "print.SHELF_01.orientation",
+        "print.SHELF_01.orientation-bar",
+        "print.SHELF_02.base",
+        "print.SHELF_02.orientation",
+        "print.SHELF_02.orientation-bar",
+        "print.SHELF_03.base",
+        "print.SHELF_03.orientation",
+        "print.SHELF_03.orientation-bar",
+        "print.SIDE_LEFT.base",
+        "print.SIDE_LEFT.orientation",
+        "print.SIDE_LEFT.orientation-bar",
+        "print.SIDE_RIGHT.base",
+        "print.SIDE_RIGHT.orientation",
+        "print.SIDE_RIGHT.orientation-bar",
+        "print.TOP.base",
+        "print.TOP.orientation",
+        "print.TOP.orientation-bar"
+      ],
+      "layer_names": [
+        "PF_CUT",
+        "PF_PRINT_FRONT",
+        "PF_ANNOTATION",
+        "PF_FOLD"
+      ],
+      "linked_image_count": 0,
+      "linked_images": [],
+      "path_count": 30,
+      "point_text_count": 0,
+      "point_text_signatures": [],
+      "text_count": 0,
+      "width": 2267.716535433071
+    },
+    "ir_json_roundtrip": {
+      "difference_count": 0,
+      "differences": [],
+      "equal": true
+    },
+    "layer1": {
+      "clean": true,
+      "commit": "58529ffb08f69ea98488dc0c23adc438621aae4c",
+      "editable": false,
+      "repository": "https://github.com/yumehiko/py-ai-illustrator.git",
+      "source": "git",
+      "version": "0.1.0.dev0"
+    },
+    "source_determinism": {
+      "difference_count": 0,
+      "differences": [],
+      "equal": true
+    },
+    "status": "passed",
+    "text_layout": null
+  },
+  "report_path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/build/input-samples-r2/three-shelf/report.json",
+  "source": {
+    "path": "/Users/yumehiko/repository/paper-fixture-worktrees/input-samples/samples/idealized_input/generate.py",
+    "sha256": "f36d3e9b12976ae3db9014aa796093b54f089fbc393cd4758a5c377d66d6865f"
+  },
+  "status": "awaiting-visual-acceptance",
+  "visual_acceptance": {
+    "accepted_by": null,
+    "criteria": [
+      "PF_CUTとPF_PRINT_FRONTに同名の7部材グループがある",
+      "左・右側面、3枚の棚、背面、トップボードの寸法が明示入力と一致する",
+      "背面の2つのφ24穴と全ての部材の非対称な向きマーカーが読める"
+    ],
+    "status": "pending"
+  }
+}

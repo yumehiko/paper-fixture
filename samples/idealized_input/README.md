@@ -7,7 +7,7 @@
 - `curve-hole/curve-hole-input.native.ai`: 240 × 160 mm、R20 の真のベジェ外周と中央 φ24 穴を持つ1部材。
 - `three-shelf/three-shelf-input.native.ai`: 左右側面、棚3枚、背面、トップボードの7部材。背面だけは2つの φ24 穴を持つ。
 
-各 `.ai` は `PF_CUT`、`PF_PRINT_FRONT`、`PF_ANNOTATION`、空の `PF_FOLD` を持つ。`PF_CUT` と `PF_PRINT_FRONT` の双方で同じ `PF_PART_<部材ID>` 名のグループに収める。前者では外周・穴を閉じたストロークパスにし、後者ではシアンの左帯とオレンジ矢印を含む非対称印刷にする。座標は部材ローカルの mm を正本とし、Illustrator 生成座標には `72 / 25.4 pt/mm` を用いる。アートボード上の部材配置は検査しやすいように並べたものであり、組み立て位置ではない。
+各 `.ai` は `PF_CUT`、`PF_PRINT_FRONT`、`PF_ANNOTATION`、空の `PF_FOLD` を持つ。`PF_CUT` と `PF_PRINT_FRONT` の双方で同じ `PF_PART_<部材ID>` 名のグループに収める。前者では外周・穴を閉じたストロークパスにし、後者ではシアンの左帯とオレンジ矢印を含む非対称印刷にする。正本の座標は部材ローカルの mm、原点はアートボード左上、+X は右、+Y は下である。生成時には `X_ai = X_mm × 72 / 25.4`、`Y_ai = (artboard_height_mm - Y_mm) × 72 / 25.4` に変換する。アートボード上の部材配置は検査しやすいように並べたものであり、組み立て位置ではない。
 
 再生成は Illustrator Agent のロック済み環境から行う。
 

@@ -95,6 +95,55 @@ def layer(item_id: str, name: str, groups: list[Group]) -> Layer:
     return Layer(id=item_id, name=name, groups=groups, item_order=[LayerItemRef("group", item.id) for item in groups])
 
 
+def flip_path_y(path: AiPath, canvas_height_mm: float) -> AiPath:
+    """Map the input's top-left, +Y-down coordinates to Illustrator coordinates."""
+
+    canvas_height = pt(canvas_height_mm)
+
+    def flip_handle(handle: ControlPoint | None) -> ControlPoint | None:
+        if handle is None:
+            return None
+        return ControlPoint(handle.x, canvas_height - handle.y)
+
+    points = [
+        Point(
+            point.x,
+            canvas_height - point.y,
+            in_handle=flip_handle(point.in_handle),
+            out_handle=flip_handle(point.out_handle),
+            smooth=point.smooth,
+        )
+        for point in path.points
+    ]
+    return AiPath(
+        id=path.id,
+        name=path.name,
+        points=points,
+        closed=path.closed,
+        fill=path.fill,
+        stroke=path.stroke,
+        stroke_width=path.stroke_width,
+        dash_pattern=list(path.dash_pattern),
+        dash_offset=path.dash_offset,
+        line_cap=path.line_cap,
+        line_join=path.line_join,
+        miter_limit=path.miter_limit,
+        polarity=path.polarity,
+        unknown=dict(path.unknown),
+    )
+
+
+def apply_input_coordinate_system(document: Document, canvas_height_mm: float) -> Document:
+    """Apply the one top-left mm to Illustrator-coordinate conversion at the boundary."""
+
+    for item_layer in document.layers:
+        for item_group in item_layer.groups:
+            item_group.paths = [
+                flip_path_y(path, canvas_height_mm) for path in item_group.paths
+            ]
+    return document
+
+
 @dataclass(frozen=True)
 class Sample:
     key: str
@@ -119,7 +168,8 @@ def small_sample(data: dict) -> Sample:
     cut_group = group(f"group.cut.{part_id}", f"PF_PART_{part_id}", cut_paths)
     print_group = group(f"group.print.{part_id}", f"PF_PART_{part_id}", print_paths)
     document = Document(width=pt(width), height=pt(height), title="PF idealized curve-hole sample", metadata={"unit": "mm", "prototype": True, "part_id": part_id, "source_input": "samples/idealized_input/input.json"}, artboards=[Artboard(id="artboard.small", name=part_id, left=0, top=pt(height), width=pt(width), height=pt(height))], layers=[layer("layer.cut", "PF_CUT", [cut_group]), layer("layer.print", "PF_PRINT_FRONT", [print_group]), layer("layer.annotation", "PF_ANNOTATION", []), layer("layer.fold", "PF_FOLD", [])])
-    return Sample("curve-hole", document, ProductionContract(production_id="curve-hole-input", width=pt(width), height=pt(height), layer_names=("PF_CUT", "PF_PRINT_FRONT", "PF_ANNOTATION", "PF_FOLD"), path_count=6, text_count=0, group_count=2, required_ids=("group.cut." + part_id, "group.print." + part_id, "cut." + part_id + ".outer", "cut." + part_id + ".hole.01", "print." + part_id + ".orientation"), required_group_names=(f"PF_PART_{part_id}",), visual_acceptance=("240 × 160 mmの外周は4つのR20 Bézier角を持つ", "中央のφ24穴が切断線と印刷の位置証跡で一致する", "左のシアン帯とオレンジ矢印で表面方向と鏡映が識別できる"), artboards=(ProductionArtboard(id="artboard.small", name=part_id, left=0, top=pt(height), width=pt(width), height=pt(height), group_id="group.cut." + part_id, required_ids=("cut." + part_id + ".outer", "cut." + part_id + ".hole.01")),)))
+    document = apply_input_coordinate_system(document, height)
+    return Sample("curve-hole", document, ProductionContract(production_id="curve-hole-input", width=pt(width), height=pt(height), layer_names=("PF_CUT", "PF_PRINT_FRONT", "PF_ANNOTATION", "PF_FOLD"), path_count=6, text_count=0, group_count=2, required_ids=("group.cut." + part_id, "group.print." + part_id, "cut." + part_id + ".outer", "cut." + part_id + ".hole.01", "print." + part_id + ".orientation"), required_group_names=(f"PF_PART_{part_id}",), visual_acceptance=("240 × 160 mmの外周は4つのR20 Bézier角を持つ", "中央のφ24穴が切断線と印刷の位置証跡で一致する", "左上原点・+Y下の矢印と左のシアン帯で表面方向と鏡映が識別できる"), artboards=(ProductionArtboard(id="artboard.small", name=part_id, left=0, top=pt(height), width=pt(width), height=pt(height), group_id="group.cut." + part_id, required_ids=("cut." + part_id + ".outer", "cut." + part_id + ".hole.01")),)))
 
 
 def shelf_sample(data: dict) -> Sample:
@@ -154,6 +204,7 @@ def shelf_sample(data: dict) -> Sample:
         print_paths = [rectangle(f"print.{part_id}.base", width, height, fill=PAPER, name=f"print base {part_id}", x_mm=x, y_mm=y), rectangle(f"print.{part_id}.orientation-bar", min(18, width / 8), height, fill=CYAN, name=f"left orientation bar {part_id}", x_mm=x, y_mm=y), arrow(f"print.{part_id}.orientation", x + width - 46, y + height - 70)]
         print_groups.append(group(f"group.print.{part_id}", f"PF_PART_{part_id}", print_paths))
     document = Document(width=pt(canvas_width), height=pt(canvas_height), title="PF idealized 3-shelf multi-part input", metadata={"unit": "mm", "prototype": True, "part_ids": part_ids, "thickness_mm": data["material"]["thickness_mm"], "source_input": "samples/idealized_input/input.json"}, artboards=[Artboard(id="artboard.shelf", name="THREE_SHELF_ASSEMBLY", left=0, top=pt(canvas_height), width=pt(canvas_width), height=pt(canvas_height))], layers=[layer("layer.cut", "PF_CUT", cut_groups), layer("layer.print", "PF_PRINT_FRONT", print_groups), layer("layer.annotation", "PF_ANNOTATION", []), layer("layer.fold", "PF_FOLD", [])])
+    document = apply_input_coordinate_system(document, canvas_height)
     required = tuple(f"group.{kind}.{part_id}" for kind in ("cut", "print") for part_id in part_ids)
     return Sample("three-shelf", document, ProductionContract(production_id="three-shelf-input", width=pt(canvas_width), height=pt(canvas_height), layer_names=("PF_CUT", "PF_PRINT_FRONT", "PF_ANNOTATION", "PF_FOLD"), path_count=9 + len(part_ids) * 3, text_count=0, group_count=len(part_ids) * 2, required_ids=required + ("cut.BACK.hole.01", "cut.BACK.hole.02"), required_group_names=tuple(f"PF_PART_{part_id}" for part_id in part_ids), visual_acceptance=("PF_CUTとPF_PRINT_FRONTに同名の7部材グループがある", "左・右側面、3枚の棚、背面、トップボードの寸法が明示入力と一致する", "背面の2つのφ24穴と全ての部材の非対称な向きマーカーが読める"), artboards=(ProductionArtboard(id="artboard.shelf", name="THREE_SHELF_ASSEMBLY", left=0, top=pt(canvas_height), width=pt(canvas_width), height=pt(canvas_height), group_id="group.cut.SIDE_LEFT", required_ids=("cut.SIDE_LEFT.outer",)),)))
 
@@ -184,9 +235,10 @@ def validation_evidence(data: dict, samples: list[Sample]) -> dict:
         "small_outer_dimensions_mm": math.isclose(max(point.x for point in small_cut[0].points) / MM_TO_PT, small_spec["width_mm"]) and math.isclose(max(point.y for point in small_cut[0].points) / MM_TO_PT, small_spec["height_mm"]),
         "small_hole_is_closed_phi24": small_cut[1].closed and len(small_cut[1].points) == 4 and math.isclose((max(point.x for point in small_cut[1].points) - min(point.x for point in small_cut[1].points)) / MM_TO_PT, small_spec["hole_diameter_mm"]),
         "matching_part_groups_on_cut_and_print": [item.name for item in shelf_cut_groups] == [f"PF_PART_{part_id}" for part_id in expected_part_ids] == [item.name for item in shelf_print_groups],
-        "shelf_dimensions_match_explicit_mm": all(math.isclose((group.paths[0].points[1].x - group.paths[0].points[0].x) / MM_TO_PT, shelf_spec["parts_mm"][part_id][0]) and math.isclose((group.paths[0].points[2].y - group.paths[0].points[1].y) / MM_TO_PT, shelf_spec["parts_mm"][part_id][1]) for group, part_id in zip(shelf_cut_groups, expected_part_ids, strict=True)),
+        "shelf_dimensions_match_explicit_mm": all(math.isclose((group.paths[0].points[1].x - group.paths[0].points[0].x) / MM_TO_PT, shelf_spec["parts_mm"][part_id][0]) and math.isclose(abs(group.paths[0].points[2].y - group.paths[0].points[1].y) / MM_TO_PT, shelf_spec["parts_mm"][part_id][1]) for group, part_id in zip(shelf_cut_groups, expected_part_ids, strict=True)),
         "back_has_two_closed_phi24_holes": len(shelf_cut_groups[5].paths) == 3 and all(path.closed and len(path.points) == 4 and math.isclose((max(point.x for point in path.points) - min(point.x for point in path.points)) / MM_TO_PT, shelf_spec["back_holes"]["diameter_mm"]) for path in shelf_cut_groups[5].paths[1:]),
         "every_part_has_asymmetric_front_marker": all(len(group.paths) == 3 and group.paths[1].name and "orientation bar" in group.paths[1].name and group.paths[2].name == "FRONT +Y orientation arrow" for group in shelf_print_groups),
+        "top_left_y_down_maps_to_illustrator_y_up": math.isclose(max(point.y for point in small_cut[0].points), pt(small_spec["height_mm"])) and math.isclose(min(point.y for point in small_cut[0].points), 0.0) and shelf.document.layers[1].groups[0].paths[2].points[4].y < shelf.document.layers[1].groups[0].paths[2].points[0].y,
     }
     return {"status": "passed" if all(checks.values()) else "failed", "checks": checks}
 
