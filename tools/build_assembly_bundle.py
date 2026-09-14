@@ -12,7 +12,9 @@ import argparse
 import json
 import math
 import shutil
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import bpy
@@ -83,6 +85,8 @@ def make_panel(part, thickness_mm, print_range, front, paper, collection, instan
     object_["pf_input_rotation_deg_xyz"] = instance["rotation_deg_xyz"]
     object_["pf_resolved_matrix_mm"] = json.dumps(instance["matrix_mm"], separators=(",", ":"))
     object_["pf_source_bounds_mm"] = list(part["bounds_mm"])
+    object_["pf_print_range_mm"] = list(print_range)
+    object_["pf_source_holes"] = json.dumps(part["holes"], separators=(",", ":"))
     object_["pf_front_normal_local"] = [0., 0., 1.]
     object_["pf_thickness_mm"] = thickness_mm
     object_["pf_thickness_reference"] = "local Z=0 is the mid-plane; front print is +Z"
@@ -138,6 +142,17 @@ def render_previews(scene, camera, instances, output):
     bpy.ops.render.render(write_still=True)
 
 
+def manifest_instances(instances, parts, thickness_mm, print_range_mm):
+    keys = ("id", "part_id", "translation_mm", "rotation_deg_xyz", "matrix_mm")
+    return [{**{key: item[key] for key in keys},
+             "front_normal_world": [item["matrix_mm"][row][2] for row in range(3)],
+             "source_bounds_mm": parts[item["part_id"]]["bounds_mm"],
+             "source_holes": parts[item["part_id"]]["holes"],
+             "thickness_mm": thickness_mm,
+             "print_range_mm": print_range_mm}
+            for item in instances]
+
+
 def main():
     args = arguments()
     root = Path(args.repo_root).resolve()
@@ -178,12 +193,28 @@ def main():
         scene["pf_blender_version_required"] = BLENDER_VERSION
         bpy.ops.wm.save_as_mainfile(filepath=str(staging / "assembly.blend"))
         render_previews(scene, camera, resolved["instances"], staging)
-        verification = {"reopened": False, "input_checks": checks, "instance_count": len(objects), "image_sha256": sha256(texture)}
+        # The provisional manifest lets the separate Blender process verify the
+        # texture and instance contract before the final report is hashed.
+        provisional_hashes = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES - {"verification.json"})}
+        provisional_manifest = {"manifest_version": MANIFEST_VERSION, "blender_version": BLENDER_VERSION,
+                                "input_hashes": input_hashes,
+                                "instances": manifest_instances(resolved["instances"], parts, bundle["thickness_mm"], bundle["print_range_mm"]),
+                                "checks": resolved["checks"],
+                                "output_hashes": provisional_hashes}
+        (staging / "build-manifest.json").write_text(json.dumps(provisional_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        with tempfile.TemporaryDirectory(prefix="assembly-verification-") as temporary:
+            external_report = Path(temporary) / "verification.json"
+            subprocess.run([bpy.app.binary_path, "--background", str(staging / "assembly.blend"), "--python-exit-code", "1", "--python",
+                            str(Path(__file__).with_name("verify_assembly_bundle.py")), "--", "--bundle", str(staging),
+                            "--report", str(external_report)], check=True)
+            verification = json.loads(external_report.read_text(encoding="utf-8"))
+        verification["input_checks"] = checks
         (staging / "verification.json").write_text(json.dumps(verification, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         hashes = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES)}
         manifest = {"manifest_version": MANIFEST_VERSION, "blender_version": BLENDER_VERSION,
                     "input_hashes": input_hashes,
-                    "instances": [{key: item[key] for key in ("id", "part_id", "translation_mm", "rotation_deg_xyz", "matrix_mm")} for item in resolved["instances"]],
+                    "instances": manifest_instances(resolved["instances"], parts, bundle["thickness_mm"], bundle["print_range_mm"]),
+                    "checks": resolved["checks"],
                     "output_hashes": hashes}
         (staging / "build-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         publish_staging(staging, output)
