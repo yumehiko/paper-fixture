@@ -1,8 +1,8 @@
 # paper-fixture
 
-Illustrator の展開図を起点に、Blender で紙什器を組み立て、納品用レンダリングを制作する工程を補助するプロジェクトです。
+Illustrator の展開図を起点に、Blender で紙什器を組み立て、確認・編集できるモデルへ受け渡す工程を補助するプロジェクトです。カメラ、照明、背景、納品レンダリングは既存の手動工程で設定します。
 
-現在は試作の第1〜4段階まで完了しています。Illustrator から取り出した展開図を、印刷面・紙厚・穴を持つ編集可能な Blender の平面部材へ変換し、明示した instance 配置から編集可能な assembly bundle を生成できます。折り、両面印刷、納品レンダリングはまだ実装していません。
+現在は試作の第1〜4段階まで完了しています。Illustrator から取り出した展開図を、印刷面・紙厚・穴を持つ編集可能な Blender の平面部材へ変換し、明示した instance 配置から編集可能な assembly bundle を生成できます。折りと両面印刷は対象外です。
 
 組立前の配置入力は Blender なしでも検査できます。既存の7部材試作入力を検査し、
 解決済みの4×4行列と任意の基準面・接触検査結果を出すには次を実行します。
@@ -118,7 +118,9 @@ mkdir -p build/local-blender-check/curve-hole
 
 最短手順で使う `export.json` と `print-front.png` は、リポジトリに同梱されています。独自の `.ai` から作る場合は、macOS、Adobe Illustrator 2026、Illustrator を読み取り専用で操作する公開 MIT リポジトリ [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) が必要です。取得と環境作成のコマンドは [Illustrator 書き出し試作](docs/illustrator-export.md) に記載しています。
 
-独自入力には、`PF_CUT` と `PF_PRINT_FRONT` レイヤー、部材ごとの `PF_PART_<ID>` グループ、パス ID、紙厚を記した `material.json` が必要です。規約、コマンド、出力内容は [Illustrator 書き出し試作](docs/illustrator-export.md) を参照してください。理想化サンプルの `.ai` 再生成は、追加で公開 MIT リポジトリ [illustrator-agent](https://github.com/yumehiko/illustrator-agent) を必要とする開発者向け手順であり、Blender を試すための前提ではありません。
+同梱サンプルを試したあとに独自の `.ai` から始める場合は、[自作 `.ai` から assembly bundle を作る](docs/custom-ai-workflow.md) を先に読んでください。元ファイルのコピーを整理し、`PF_CUT` と `PF_PRINT_FRONT`、部材ごとの `PF_PART_<ID>`、全パスの ID note、紙厚を記した `material.json`、配置を記した `placement.json` を用意するところから、書き出し・検証・Blender での確認までを一続きで説明しています。
+
+[Illustrator 書き出し試作](docs/illustrator-export.md) は exporter の規約と出力形式の詳細です。理想化サンプルの `.ai` 再生成は、追加で公開 MIT リポジトリ [illustrator-agent](https://github.com/yumehiko/illustrator-agent) を必要とする開発者向け手順であり、Blender を試すための前提ではありません。
 
 ## 困ったとき・フィードバック
 
@@ -141,6 +143,7 @@ mkdir -p build/local-blender-check/curve-hole
 - [設計インタビューと未決事項](docs/open-questions.md)
 - [理想化入力サンプル（再生成手順）](samples/idealized_input/README.md)
 - [Illustrator書き出し試作](docs/illustrator-export.md)
+- [自作 `.ai` から assembly bundle を作る](docs/custom-ai-workflow.md)
 - [Blender平面部材生成（第3段階）](docs/blender-panels.md)
 - [数値配置と編集可能な `.blend` 受け渡し設計（第4段階）](docs/assembly-placement.md)
 
