@@ -82,5 +82,6 @@ mkdir -p build/local-blender-check/curve-hole
 - [理想化入力サンプル（再生成手順）](samples/idealized_input/README.md)
 - [Illustrator書き出し試作](docs/illustrator-export.md)
 - [Blender平面部材生成（第3段階）](docs/blender-panels.md)
+- [数値配置と編集可能な `.blend` 受け渡し設計（第4段階）](docs/assembly-placement.md)
 
 各文書では、ユーザーが示した要望と、検証前の設計提案を区別する。未回答の項目を決定事項として扱わない。
