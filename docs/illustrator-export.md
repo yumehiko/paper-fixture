@@ -6,10 +6,17 @@
 
 紙厚は現在の `.ai` DOM に保存されていないため、`material.json` を明示入力として受け取り、`export.json` に `external-explicit-input` と出所を記録する。渡さない場合は厚みを作らず `material.status: missing` を記録する。
 
-`py-ai-illustrator` と Adobe Illustrator 2026 を導入した macOS の Python 環境で実行する。依存ライブラリの導入は [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) の手順に従う。このリポジトリはその環境を同梱しない。
+macOS と Adobe Illustrator 2026 に加え、公開 MIT リポジトリ [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) の環境が必要である。`paper-fixture` と同じ親ディレクトリで、次のように取得する。このリポジトリはその環境を同梱しない。
 
 ```bash
-PYTHON=/実際の/py-ai-illustrator環境/bin/python
+git clone https://github.com/yumehiko/py-ai-illustrator.git
+cd py-ai-illustrator
+uv sync --extra dev
+cd ../paper-fixture
+```
+
+```bash
+PYTHON=../py-ai-illustrator/.venv/bin/python
 "$PYTHON" tools/export_illustrator.py \
   build/input-samples-r2/curve-hole/curve-hole-input.native.ai \
   --material samples/idealized_input/material.json \

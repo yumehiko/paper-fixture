@@ -55,9 +55,9 @@ mkdir -p build/local-blender-check/curve-hole
 
 ## Illustrator を含むフル工程
 
-最短手順で使う `export.json` と `print-front.png` は、リポジトリに同梱されています。独自の `.ai` から作る場合は、macOS、Adobe Illustrator 2026、Illustrator を読み取り専用で操作する [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) を導入した Python 環境が必要です。`py-ai-illustrator` のロック済み環境やインストーラーはこのリポジトリには含まれないため、現状ではこの工程を単独で一行導入する手順は提供していません。
+最短手順で使う `export.json` と `print-front.png` は、リポジトリに同梱されています。独自の `.ai` から作る場合は、macOS、Adobe Illustrator 2026、Illustrator を読み取り専用で操作する公開 MIT リポジトリ [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) が必要です。取得と環境作成のコマンドは [Illustrator 書き出し試作](docs/illustrator-export.md) に記載しています。
 
-独自入力には、`PF_CUT` と `PF_PRINT_FRONT` レイヤー、部材ごとの `PF_PART_<ID>` グループ、パス ID、紙厚を記した `material.json` が必要です。規約、コマンド、出力内容は [Illustrator 書き出し試作](docs/illustrator-export.md) を参照してください。理想化サンプルの `.ai` 再生成は `py-ai-illustrator` 環境を必要とする開発者向け手順であり、Blender を試すための前提ではありません。
+独自入力には、`PF_CUT` と `PF_PRINT_FRONT` レイヤー、部材ごとの `PF_PART_<ID>` グループ、パス ID、紙厚を記した `material.json` が必要です。規約、コマンド、出力内容は [Illustrator 書き出し試作](docs/illustrator-export.md) を参照してください。理想化サンプルの `.ai` 再生成は、追加で公開 MIT リポジトリ [illustrator-agent](https://github.com/yumehiko/illustrator-agent) を必要とする開発者向け手順であり、Blender を試すための前提ではありません。
 
 ## 困ったとき・フィードバック
 

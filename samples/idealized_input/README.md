@@ -13,12 +13,19 @@
 
 各 `.ai` は `PF_CUT`、`PF_PRINT_FRONT`、`PF_ANNOTATION`、空の `PF_FOLD` を持つ。`PF_CUT` と `PF_PRINT_FRONT` の双方で同じ `PF_PART_<部材ID>` 名のグループに収める。前者では外周・穴を閉じたストロークパスにし、後者ではシアンの左帯とオレンジ矢印を含む非対称印刷にする。正本の座標は部材ローカルの mm、原点はアートボード左上、+X は右、+Y は下である。生成時には `X_ai = X_mm × 72 / 25.4`、`Y_ai = (artboard_height_mm - Y_mm) × 72 / 25.4` に変換する。アートボード上の部材配置は検査しやすいように並べたものであり、組み立て位置ではない。
 
-再生成には macOS、Adobe Illustrator 2026、[py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) を導入した Python 環境が必要である。このリポジトリはその環境を同梱しない。依存ライブラリの導入は `py-ai-illustrator` 側の手順に従う。
-
-リポジトリ直下で、実際の Python の場所を指定して実行する。
+再生成には macOS、Adobe Illustrator 2026、公開 MIT リポジトリ [illustrator-agent](https://github.com/yumehiko/illustrator-agent) のロック済み環境が必要である。`illustrator-agent` は必要な `py-ai-illustrator` commit を `uv.lock` で固定して取得する。`paper-fixture` と同じ親ディレクトリで、次のように取得する。このリポジトリはその環境を同梱しない。
 
 ```bash
-PYTHON=/実際の/py-ai-illustrator環境/bin/python
+git clone https://github.com/yumehiko/illustrator-agent.git
+cd illustrator-agent
+uv sync --locked
+cd ../paper-fixture
+```
+
+リポジトリ直下で実行する。
+
+```bash
+PYTHON=../illustrator-agent/.venv/bin/python
 "$PYTHON" samples/idealized_input/generate.py \
   --output-dir build/input-samples-local
 ```

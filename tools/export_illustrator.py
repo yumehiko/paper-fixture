@@ -243,7 +243,7 @@ def inspect_ai(source: Path, *, timeout: float) -> dict[str, Any]:
         from py_ai_illustrator._illustrator_bridge import execute_javascript
         from py_ai_illustrator._illustrator_scripts import _native_local_dom_helpers, character_code_expression
     except ImportError as error:
-        raise RuntimeError("py-ai-illustrator is required; use the locked illustrator-agent environment") from error
+        raise RuntimeError("py-ai-illustrator is required; install its documented environment") from error
     source_literal = character_code_expression(source.resolve())
     javascript = f'''#target illustrator
 (function () {{
@@ -300,7 +300,7 @@ def export_print_front_png(source: Path, output: Path, *, timeout: float) -> dic
         from py_ai_illustrator._illustrator_bridge import execute_javascript
         from py_ai_illustrator._illustrator_scripts import character_code_expression
     except ImportError as error:
-        raise RuntimeError("py-ai-illustrator is required; use the locked illustrator-agent environment") from error
+        raise RuntimeError("py-ai-illustrator is required; install its documented environment") from error
     source_literal, output_literal = character_code_expression(source.resolve()), character_code_expression(output.resolve())
     javascript = f'''#target illustrator
 (function () {{
