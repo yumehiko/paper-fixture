@@ -13,12 +13,14 @@
 
 各 `.ai` は `PF_CUT`、`PF_PRINT_FRONT`、`PF_ANNOTATION`、空の `PF_FOLD` を持つ。`PF_CUT` と `PF_PRINT_FRONT` の双方で同じ `PF_PART_<部材ID>` 名のグループに収める。前者では外周・穴を閉じたストロークパスにし、後者ではシアンの左帯とオレンジ矢印を含む非対称印刷にする。正本の座標は部材ローカルの mm、原点はアートボード左上、+X は右、+Y は下である。生成時には `X_ai = X_mm × 72 / 25.4`、`Y_ai = (artboard_height_mm - Y_mm) × 72 / 25.4` に変換する。アートボード上の部材配置は検査しやすいように並べたものであり、組み立て位置ではない。
 
-再生成は Illustrator Agent のロック済み環境から行う。
+再生成には macOS、Adobe Illustrator 2026、[py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) を導入した Python 環境が必要である。このリポジトリはその環境を同梱しない。依存ライブラリの導入は `py-ai-illustrator` 側の手順に従う。
+
+リポジトリ直下で、実際の Python の場所を指定して実行する。
 
 ```bash
-uv --directory /Users/yumehiko/repository/illustrator-agent run --locked \
-  python /Users/yumehiko/repository/paper-fixture/samples/idealized_input/generate.py \
-  --output-dir /Users/yumehiko/repository/paper-fixture/build/input-samples-r3
+PYTHON=/実際の/py-ai-illustrator環境/bin/python
+"$PYTHON" samples/idealized_input/generate.py \
+  --output-dir build/input-samples-local
 ```
 
 既存 revision は上書きしない。各出力の `report.json` は純粋ゲート、Illustrator native compile、再オープン検査、プレビュー生成を分けて記録する。r2 の2枚の PNG はユーザーがツール外で確認し、2026-09-14T13:48:21+09:00 に `ok` と承認したため、両 report の視覚承認ゲートは `passed` である。
