@@ -4,7 +4,7 @@ Run this through Blender, for example::
 
   Blender --background --python tools/build_blender_panels.py -- \
     --export-json build/.../export.json --print-png build/.../print-front.png \
-    --output-dir build/blender-panels/curve-hole
+    --output-dir build/blender-panels-r3/curve-hole
 """
 
 from __future__ import annotations

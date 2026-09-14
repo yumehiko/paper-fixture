@@ -8,11 +8,11 @@ Blender 4.4.1 で、リポジトリ直下から実行する。
 
 ```bash
 BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
-$BLENDER --background --python tools/build_blender_panels.py -- \
+$BLENDER --background --python-exit-code 1 --python tools/build_blender_panels.py -- \
   --export-json build/illustrator-export-r2/curve-hole/export.json \
   --print-png build/illustrator-export-r2/curve-hole/print-front.png \
   --output-dir build/blender-panels-r3/curve-hole
-$BLENDER --background build/blender-panels-r3/curve-hole/panels.blend \
+$BLENDER --background build/blender-panels-r3/curve-hole/panels.blend --python-exit-code 1 \
   --python tools/verify_blender_panels.py -- \
   --export-json build/illustrator-export-r2/curve-hole/export.json \
   --print-png build/illustrator-export-r2/curve-hole/print-front.png \
