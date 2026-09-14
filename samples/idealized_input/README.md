@@ -2,6 +2,8 @@
 
 `input.json` が正本である。単位、部材ID、輪郭、穴、紙厚、棚位置の試作値を明示し、`generate.py` が同じ編集可能な `.ai` を新規 revision に再生成する。ここにある値は実案件の図面仕様ではない。
 
+第2段階の書き出しでは、`.ai` に保持されない紙厚だけを [`material.json`](material.json) の明示的な外部入力として渡す。形状・部材ID・印刷パスはこのJSONやIRから補完せず、Illustratorで開いた `.ai` DOM から抽出する。
+
 生成物は次の二つである。
 
 - `curve-hole/curve-hole-input.native.ai`: 240 × 160 mm、R20 の真のベジェ外周と中央 φ24 穴を持つ1部材。

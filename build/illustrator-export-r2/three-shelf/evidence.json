@@ -1,0 +1,3383 @@
+{
+  "dom": {
+    "status": "passed",
+    "illustrator": {
+      "ok": true,
+      "illustrator_version": "30.8.1",
+      "layer_names": [
+        "PF_CUT",
+        "PF_PRINT_FRONT",
+        "PF_ANNOTATION",
+        "PF_FOLD"
+      ],
+      "artboards": [
+        {
+          "name": "THREE_SHELF_ASSEMBLY",
+          "rect": [
+            0,
+            4677.16535433071,
+            2267.71653543307,
+            0
+          ]
+        }
+      ],
+      "paths": [
+        {
+          "id": "illustrator-dom-path-0",
+          "dom_index": 0,
+          "name": "CUT outer contour TOP",
+          "note": "py-ai-path:{\"id\":\"cut.TOP.outer\",\"name\":\"CUT outer contour TOP\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_TOP"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            878.740157480315
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            878.740157480315,
+            1133.85826771654,
+            113.385826771653
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            878.740157480315,
+            1133.85826771654,
+            113.385826771653
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "left": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "right": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                878.740157480315
+              ],
+              "left": [
+                1133.85826771654,
+                878.740157480315
+              ],
+              "right": [
+                1133.85826771654,
+                878.740157480315
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                113.385826771653
+              ],
+              "left": [
+                1133.85826771654,
+                113.385826771653
+              ],
+              "right": [
+                1133.85826771654,
+                113.385826771653
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "left": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "right": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-1",
+          "dom_index": 1,
+          "name": "CUT BACK hole 2",
+          "note": "py-ai-path:{\"id\":\"cut.BACK.hole.02\",\"name\":\"CUT BACK hole 2\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BACK"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 0.99212598800659,
+          "position": [
+            2006.92913385827,
+            1678.11023622047
+          ],
+          "geometric_bounds": [
+            2006.92913385827,
+            1678.11023622047,
+            2074.96062992126,
+            1610.07874015748
+          ],
+          "visible_bounds": [
+            2006.43307086427,
+            1678.60629921447,
+            2075.45669291526,
+            1609.58267716348
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                2074.96062992126,
+                1644.09448818898
+              ],
+              "left": [
+                2074.96062992126,
+                1662.88086708086
+              ],
+              "right": [
+                2074.96062992126,
+                1625.3081092971
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                2040.94488188976,
+                1610.07874015748
+              ],
+              "left": [
+                2059.73126078165,
+                1610.07874015748
+              ],
+              "right": [
+                2022.15850299788,
+                1610.07874015748
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                2006.92913385827,
+                1644.09448818898
+              ],
+              "left": [
+                2006.92913385827,
+                1625.3081092971
+              ],
+              "right": [
+                2006.92913385827,
+                1662.88086708086
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                2040.94488188976,
+                1678.11023622047
+              ],
+              "left": [
+                2022.15850299788,
+                1678.11023622047
+              ],
+              "right": [
+                2059.73126078165,
+                1678.11023622047
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-2",
+          "dom_index": 2,
+          "name": "CUT BACK hole 1",
+          "note": "py-ai-path:{\"id\":\"cut.BACK.hole.01\",\"name\":\"CUT BACK hole 1\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BACK"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 0.99212598800659,
+          "position": [
+            1440,
+            1678.11023622047
+          ],
+          "geometric_bounds": [
+            1440,
+            1678.11023622047,
+            1508.03149606299,
+            1610.07874015748
+          ],
+          "visible_bounds": [
+            1439.503937006,
+            1678.60629921447,
+            1508.52755905699,
+            1609.58267716348
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1508.03149606299,
+                1644.09448818898
+              ],
+              "left": [
+                1508.03149606299,
+                1662.88086708086
+              ],
+              "right": [
+                1508.03149606299,
+                1625.3081092971
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                1474.0157480315,
+                1610.07874015748
+              ],
+              "left": [
+                1492.80212692338,
+                1610.07874015748
+              ],
+              "right": [
+                1455.22936913961,
+                1610.07874015748
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                1440,
+                1644.09448818898
+              ],
+              "left": [
+                1440,
+                1625.3081092971
+              ],
+              "right": [
+                1440,
+                1662.88086708086
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                1474.0157480315,
+                1678.11023622047
+              ],
+              "left": [
+                1455.22936913961,
+                1678.11023622047
+              ],
+              "right": [
+                1492.80212692338,
+                1678.11023622047
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-3",
+          "dom_index": 3,
+          "name": "CUT outer contour BACK",
+          "note": "py-ai-path:{\"id\":\"cut.BACK.outer\",\"name\":\"CUT outer contour BACK\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BACK"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1247.24409448819,
+            2296.06299212598
+          ],
+          "geometric_bounds": [
+            1247.24409448819,
+            2296.06299212598,
+            2267.71653543307,
+            992.125984251968
+          ],
+          "visible_bounds": [
+            1247.24409448819,
+            2296.06299212598,
+            2267.71653543307,
+            992.125984251968
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "left": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "right": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                2296.06299212598
+              ],
+              "left": [
+                2267.71653543307,
+                2296.06299212598
+              ],
+              "right": [
+                2267.71653543307,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                992.125984251968
+              ],
+              "left": [
+                2267.71653543307,
+                992.125984251968
+              ],
+              "right": [
+                2267.71653543307,
+                992.125984251968
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "left": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "right": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-4",
+          "dom_index": 4,
+          "name": "CUT outer contour SHELF_03",
+          "note": "py-ai-path:{\"id\":\"cut.SHELF_03.outer\",\"name\":\"CUT outer contour SHELF_03\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_03"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            2296.06299212598
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            2296.06299212598,
+            1133.85826771654,
+            1559.05511811024
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            2296.06299212598,
+            1133.85826771654,
+            1559.05511811024
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "left": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "right": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                2296.06299212598
+              ],
+              "left": [
+                1133.85826771654,
+                2296.06299212598
+              ],
+              "right": [
+                1133.85826771654,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                1559.05511811024
+              ],
+              "left": [
+                1133.85826771654,
+                1559.05511811024
+              ],
+              "right": [
+                1133.85826771654,
+                1559.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "left": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "right": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-5",
+          "dom_index": 5,
+          "name": "CUT outer contour SHELF_02",
+          "note": "py-ai-path:{\"id\":\"cut.SHELF_02.outer\",\"name\":\"CUT outer contour SHELF_02\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_02"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1247.24409448819,
+            3146.45669291339
+          ],
+          "geometric_bounds": [
+            1247.24409448819,
+            3146.45669291339,
+            2267.71653543307,
+            2409.44881889764
+          ],
+          "visible_bounds": [
+            1247.24409448819,
+            3146.45669291339,
+            2267.71653543307,
+            2409.44881889764
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "left": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "right": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                3146.45669291339
+              ],
+              "left": [
+                2267.71653543307,
+                3146.45669291339
+              ],
+              "right": [
+                2267.71653543307,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                2409.44881889764
+              ],
+              "left": [
+                2267.71653543307,
+                2409.44881889764
+              ],
+              "right": [
+                2267.71653543307,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "left": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "right": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-6",
+          "dom_index": 6,
+          "name": "CUT outer contour SHELF_01",
+          "note": "py-ai-path:{\"id\":\"cut.SHELF_01.outer\",\"name\":\"CUT outer contour SHELF_01\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_01"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            3146.45669291339
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            3146.45669291339,
+            1133.85826771654,
+            2409.44881889764
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            3146.45669291339,
+            1133.85826771654,
+            2409.44881889764
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "left": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "right": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                3146.45669291339
+              ],
+              "left": [
+                1133.85826771654,
+                3146.45669291339
+              ],
+              "right": [
+                1133.85826771654,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                2409.44881889764
+              ],
+              "left": [
+                1133.85826771654,
+                2409.44881889764
+              ],
+              "right": [
+                1133.85826771654,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "left": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "right": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-7",
+          "dom_index": 7,
+          "name": "CUT outer contour SIDE_RIGHT",
+          "note": "py-ai-path:{\"id\":\"cut.SIDE_RIGHT.outer\",\"name\":\"CUT outer contour SIDE_RIGHT\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_RIGHT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1077.16535433071,
+            4563.77952755906
+          ],
+          "geometric_bounds": [
+            1077.16535433071,
+            4563.77952755906,
+            1927.55905511811,
+            3259.84251968504
+          ],
+          "visible_bounds": [
+            1077.16535433071,
+            4563.77952755906,
+            1927.55905511811,
+            3259.84251968504
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "left": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "right": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1927.55905511811,
+                4563.77952755906
+              ],
+              "left": [
+                1927.55905511811,
+                4563.77952755906
+              ],
+              "right": [
+                1927.55905511811,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1927.55905511811,
+                3259.84251968504
+              ],
+              "left": [
+                1927.55905511811,
+                3259.84251968504
+              ],
+              "right": [
+                1927.55905511811,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "left": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "right": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-8",
+          "dom_index": 8,
+          "name": "CUT outer contour SIDE_LEFT",
+          "note": "py-ai-path:{\"id\":\"cut.SIDE_LEFT.outer\",\"name\":\"CUT outer contour SIDE_LEFT\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_LEFT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            4563.77952755906
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            4563.77952755906,
+            963.779527559055,
+            3259.84251968504
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            4563.77952755906,
+            963.779527559055,
+            3259.84251968504
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "left": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "right": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                963.779527559055,
+                4563.77952755906
+              ],
+              "left": [
+                963.779527559055,
+                4563.77952755906
+              ],
+              "right": [
+                963.779527559055,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                963.779527559055,
+                3259.84251968504
+              ],
+              "left": [
+                963.779527559055,
+                3259.84251968504
+              ],
+              "right": [
+                963.779527559055,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "left": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "right": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-9",
+          "dom_index": 9,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.TOP.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_TOP"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            969.448818897638,
+            311.811023622047
+          ],
+          "geometric_bounds": [
+            969.448818897638,
+            311.811023622047,
+            1105.51181102362,
+            147.401574803149
+          ],
+          "visible_bounds": [
+            969.448818897638,
+            311.811023622047,
+            1105.51181102362,
+            147.401574803149
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1003.46456692913,
+                311.811023622047
+              ],
+              "left": [
+                1003.46456692913,
+                311.811023622047
+              ],
+              "right": [
+                1003.46456692913,
+                311.811023622047
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1071.49606299213,
+                311.811023622047
+              ],
+              "left": [
+                1071.49606299213,
+                311.811023622047
+              ],
+              "right": [
+                1071.49606299213,
+                311.811023622047
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1071.49606299213,
+                212.598425196849
+              ],
+              "left": [
+                1071.49606299213,
+                212.598425196849
+              ],
+              "right": [
+                1071.49606299213,
+                212.598425196849
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1105.51181102362,
+                212.598425196849
+              ],
+              "left": [
+                1105.51181102362,
+                212.598425196849
+              ],
+              "right": [
+                1105.51181102362,
+                212.598425196849
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1037.48031496063,
+                147.401574803149
+              ],
+              "left": [
+                1037.48031496063,
+                147.401574803149
+              ],
+              "right": [
+                1037.48031496063,
+                147.401574803149
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                969.448818897638,
+                212.598425196849
+              ],
+              "left": [
+                969.448818897638,
+                212.598425196849
+              ],
+              "right": [
+                969.448818897638,
+                212.598425196849
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1003.46456692913,
+                212.598425196849
+              ],
+              "left": [
+                1003.46456692913,
+                212.598425196849
+              ],
+              "right": [
+                1003.46456692913,
+                212.598425196849
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-10",
+          "dom_index": 10,
+          "name": "left orientation bar TOP",
+          "note": "py-ai-path:{\"id\":\"print.TOP.orientation-bar\",\"name\":\"left orientation bar TOP\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_TOP"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            878.740157480315
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            878.740157480315,
+            164.409448818898,
+            113.385826771653
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            878.740157480315,
+            164.409448818898,
+            113.385826771653
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "left": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "right": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                878.740157480315
+              ],
+              "left": [
+                164.409448818898,
+                878.740157480315
+              ],
+              "right": [
+                164.409448818898,
+                878.740157480315
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                113.385826771653
+              ],
+              "left": [
+                164.409448818898,
+                113.385826771653
+              ],
+              "right": [
+                164.409448818898,
+                113.385826771653
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "left": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "right": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-11",
+          "dom_index": 11,
+          "name": "print base TOP",
+          "note": "py-ai-path:{\"id\":\"print.TOP.base\",\"name\":\"print base TOP\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_TOP"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            878.740157480315
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            878.740157480315,
+            1133.85826771654,
+            113.385826771653
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            878.740157480315,
+            1133.85826771654,
+            113.385826771653
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "left": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "right": [
+                113.385826771653,
+                878.740157480315
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                878.740157480315
+              ],
+              "left": [
+                1133.85826771654,
+                878.740157480315
+              ],
+              "right": [
+                1133.85826771654,
+                878.740157480315
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                113.385826771653
+              ],
+              "left": [
+                1133.85826771654,
+                113.385826771653
+              ],
+              "right": [
+                1133.85826771654,
+                113.385826771653
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "left": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "right": [
+                113.385826771653,
+                113.385826771653
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-12",
+          "dom_index": 12,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.BACK.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BACK"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            2103.30708661417,
+            1190.55118110236
+          ],
+          "geometric_bounds": [
+            2103.30708661417,
+            1190.55118110236,
+            2239.37007874016,
+            1026.14173228346
+          ],
+          "visible_bounds": [
+            2103.30708661417,
+            1190.55118110236,
+            2239.37007874016,
+            1026.14173228346
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                2137.32283464567,
+                1190.55118110236
+              ],
+              "left": [
+                2137.32283464567,
+                1190.55118110236
+              ],
+              "right": [
+                2137.32283464567,
+                1190.55118110236
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2205.35433070866,
+                1190.55118110236
+              ],
+              "left": [
+                2205.35433070866,
+                1190.55118110236
+              ],
+              "right": [
+                2205.35433070866,
+                1190.55118110236
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2205.35433070866,
+                1091.33858267717
+              ],
+              "left": [
+                2205.35433070866,
+                1091.33858267717
+              ],
+              "right": [
+                2205.35433070866,
+                1091.33858267717
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2239.37007874016,
+                1091.33858267717
+              ],
+              "left": [
+                2239.37007874016,
+                1091.33858267717
+              ],
+              "right": [
+                2239.37007874016,
+                1091.33858267717
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2171.33858267717,
+                1026.14173228346
+              ],
+              "left": [
+                2171.33858267717,
+                1026.14173228346
+              ],
+              "right": [
+                2171.33858267717,
+                1026.14173228346
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2103.30708661417,
+                1091.33858267717
+              ],
+              "left": [
+                2103.30708661417,
+                1091.33858267717
+              ],
+              "right": [
+                2103.30708661417,
+                1091.33858267717
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2137.32283464567,
+                1091.33858267717
+              ],
+              "left": [
+                2137.32283464567,
+                1091.33858267717
+              ],
+              "right": [
+                2137.32283464567,
+                1091.33858267717
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-13",
+          "dom_index": 13,
+          "name": "left orientation bar BACK",
+          "note": "py-ai-path:{\"id\":\"print.BACK.orientation-bar\",\"name\":\"left orientation bar BACK\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BACK"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1247.24409448819,
+            2296.06299212598
+          ],
+          "geometric_bounds": [
+            1247.24409448819,
+            2296.06299212598,
+            1298.26771653543,
+            992.125984251968
+          ],
+          "visible_bounds": [
+            1247.24409448819,
+            2296.06299212598,
+            1298.26771653543,
+            992.125984251968
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "left": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "right": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1298.26771653543,
+                2296.06299212598
+              ],
+              "left": [
+                1298.26771653543,
+                2296.06299212598
+              ],
+              "right": [
+                1298.26771653543,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1298.26771653543,
+                992.125984251968
+              ],
+              "left": [
+                1298.26771653543,
+                992.125984251968
+              ],
+              "right": [
+                1298.26771653543,
+                992.125984251968
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "left": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "right": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-14",
+          "dom_index": 14,
+          "name": "print base BACK",
+          "note": "py-ai-path:{\"id\":\"print.BACK.base\",\"name\":\"print base BACK\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BACK"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1247.24409448819,
+            2296.06299212598
+          ],
+          "geometric_bounds": [
+            1247.24409448819,
+            2296.06299212598,
+            2267.71653543307,
+            992.125984251968
+          ],
+          "visible_bounds": [
+            1247.24409448819,
+            2296.06299212598,
+            2267.71653543307,
+            992.125984251968
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "left": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "right": [
+                1247.24409448819,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                2296.06299212598
+              ],
+              "left": [
+                2267.71653543307,
+                2296.06299212598
+              ],
+              "right": [
+                2267.71653543307,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                992.125984251968
+              ],
+              "left": [
+                2267.71653543307,
+                992.125984251968
+              ],
+              "right": [
+                2267.71653543307,
+                992.125984251968
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "left": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "right": [
+                1247.24409448819,
+                992.125984251968
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-15",
+          "dom_index": 15,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_03.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_03"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            969.448818897638,
+            1757.48031496063
+          ],
+          "geometric_bounds": [
+            969.448818897638,
+            1757.48031496063,
+            1105.51181102362,
+            1593.07086614173
+          ],
+          "visible_bounds": [
+            969.448818897638,
+            1757.48031496063,
+            1105.51181102362,
+            1593.07086614173
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1003.46456692913,
+                1757.48031496063
+              ],
+              "left": [
+                1003.46456692913,
+                1757.48031496063
+              ],
+              "right": [
+                1003.46456692913,
+                1757.48031496063
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1071.49606299213,
+                1757.48031496063
+              ],
+              "left": [
+                1071.49606299213,
+                1757.48031496063
+              ],
+              "right": [
+                1071.49606299213,
+                1757.48031496063
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1071.49606299213,
+                1658.26771653543
+              ],
+              "left": [
+                1071.49606299213,
+                1658.26771653543
+              ],
+              "right": [
+                1071.49606299213,
+                1658.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1105.51181102362,
+                1658.26771653543
+              ],
+              "left": [
+                1105.51181102362,
+                1658.26771653543
+              ],
+              "right": [
+                1105.51181102362,
+                1658.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1037.48031496063,
+                1593.07086614173
+              ],
+              "left": [
+                1037.48031496063,
+                1593.07086614173
+              ],
+              "right": [
+                1037.48031496063,
+                1593.07086614173
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                969.448818897638,
+                1658.26771653543
+              ],
+              "left": [
+                969.448818897638,
+                1658.26771653543
+              ],
+              "right": [
+                969.448818897638,
+                1658.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1003.46456692913,
+                1658.26771653543
+              ],
+              "left": [
+                1003.46456692913,
+                1658.26771653543
+              ],
+              "right": [
+                1003.46456692913,
+                1658.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-16",
+          "dom_index": 16,
+          "name": "left orientation bar SHELF_03",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_03.orientation-bar\",\"name\":\"left orientation bar SHELF_03\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_03"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            2296.06299212598
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            2296.06299212598,
+            164.409448818898,
+            1559.05511811024
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            2296.06299212598,
+            164.409448818898,
+            1559.05511811024
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "left": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "right": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                2296.06299212598
+              ],
+              "left": [
+                164.409448818898,
+                2296.06299212598
+              ],
+              "right": [
+                164.409448818898,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                1559.05511811024
+              ],
+              "left": [
+                164.409448818898,
+                1559.05511811024
+              ],
+              "right": [
+                164.409448818898,
+                1559.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "left": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "right": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-17",
+          "dom_index": 17,
+          "name": "print base SHELF_03",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_03.base\",\"name\":\"print base SHELF_03\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_03"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            2296.06299212598
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            2296.06299212598,
+            1133.85826771654,
+            1559.05511811024
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            2296.06299212598,
+            1133.85826771654,
+            1559.05511811024
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "left": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "right": [
+                113.385826771653,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                2296.06299212598
+              ],
+              "left": [
+                1133.85826771654,
+                2296.06299212598
+              ],
+              "right": [
+                1133.85826771654,
+                2296.06299212598
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                1559.05511811024
+              ],
+              "left": [
+                1133.85826771654,
+                1559.05511811024
+              ],
+              "right": [
+                1133.85826771654,
+                1559.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "left": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "right": [
+                113.385826771653,
+                1559.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-18",
+          "dom_index": 18,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_02.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_02"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            2103.30708661417,
+            2607.87401574803
+          ],
+          "geometric_bounds": [
+            2103.30708661417,
+            2607.87401574803,
+            2239.37007874016,
+            2443.46456692914
+          ],
+          "visible_bounds": [
+            2103.30708661417,
+            2607.87401574803,
+            2239.37007874016,
+            2443.46456692914
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                2137.32283464567,
+                2607.87401574803
+              ],
+              "left": [
+                2137.32283464567,
+                2607.87401574803
+              ],
+              "right": [
+                2137.32283464567,
+                2607.87401574803
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2205.35433070866,
+                2607.87401574803
+              ],
+              "left": [
+                2205.35433070866,
+                2607.87401574803
+              ],
+              "right": [
+                2205.35433070866,
+                2607.87401574803
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2205.35433070866,
+                2508.66141732284
+              ],
+              "left": [
+                2205.35433070866,
+                2508.66141732284
+              ],
+              "right": [
+                2205.35433070866,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2239.37007874016,
+                2508.66141732284
+              ],
+              "left": [
+                2239.37007874016,
+                2508.66141732284
+              ],
+              "right": [
+                2239.37007874016,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2171.33858267717,
+                2443.46456692914
+              ],
+              "left": [
+                2171.33858267717,
+                2443.46456692914
+              ],
+              "right": [
+                2171.33858267717,
+                2443.46456692914
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2103.30708661417,
+                2508.66141732284
+              ],
+              "left": [
+                2103.30708661417,
+                2508.66141732284
+              ],
+              "right": [
+                2103.30708661417,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2137.32283464567,
+                2508.66141732284
+              ],
+              "left": [
+                2137.32283464567,
+                2508.66141732284
+              ],
+              "right": [
+                2137.32283464567,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-19",
+          "dom_index": 19,
+          "name": "left orientation bar SHELF_02",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_02.orientation-bar\",\"name\":\"left orientation bar SHELF_02\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_02"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1247.24409448819,
+            3146.45669291339
+          ],
+          "geometric_bounds": [
+            1247.24409448819,
+            3146.45669291339,
+            1298.26771653543,
+            2409.44881889764
+          ],
+          "visible_bounds": [
+            1247.24409448819,
+            3146.45669291339,
+            1298.26771653543,
+            2409.44881889764
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "left": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "right": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1298.26771653543,
+                3146.45669291339
+              ],
+              "left": [
+                1298.26771653543,
+                3146.45669291339
+              ],
+              "right": [
+                1298.26771653543,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1298.26771653543,
+                2409.44881889764
+              ],
+              "left": [
+                1298.26771653543,
+                2409.44881889764
+              ],
+              "right": [
+                1298.26771653543,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "left": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "right": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-20",
+          "dom_index": 20,
+          "name": "print base SHELF_02",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_02.base\",\"name\":\"print base SHELF_02\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_02"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1247.24409448819,
+            3146.45669291339
+          ],
+          "geometric_bounds": [
+            1247.24409448819,
+            3146.45669291339,
+            2267.71653543307,
+            2409.44881889764
+          ],
+          "visible_bounds": [
+            1247.24409448819,
+            3146.45669291339,
+            2267.71653543307,
+            2409.44881889764
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "left": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "right": [
+                1247.24409448819,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                3146.45669291339
+              ],
+              "left": [
+                2267.71653543307,
+                3146.45669291339
+              ],
+              "right": [
+                2267.71653543307,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                2267.71653543307,
+                2409.44881889764
+              ],
+              "left": [
+                2267.71653543307,
+                2409.44881889764
+              ],
+              "right": [
+                2267.71653543307,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "left": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "right": [
+                1247.24409448819,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-21",
+          "dom_index": 21,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_01.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_01"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            969.448818897638,
+            2607.87401574803
+          ],
+          "geometric_bounds": [
+            969.448818897638,
+            2607.87401574803,
+            1105.51181102362,
+            2443.46456692914
+          ],
+          "visible_bounds": [
+            969.448818897638,
+            2607.87401574803,
+            1105.51181102362,
+            2443.46456692914
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1003.46456692913,
+                2607.87401574803
+              ],
+              "left": [
+                1003.46456692913,
+                2607.87401574803
+              ],
+              "right": [
+                1003.46456692913,
+                2607.87401574803
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1071.49606299213,
+                2607.87401574803
+              ],
+              "left": [
+                1071.49606299213,
+                2607.87401574803
+              ],
+              "right": [
+                1071.49606299213,
+                2607.87401574803
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1071.49606299213,
+                2508.66141732284
+              ],
+              "left": [
+                1071.49606299213,
+                2508.66141732284
+              ],
+              "right": [
+                1071.49606299213,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1105.51181102362,
+                2508.66141732284
+              ],
+              "left": [
+                1105.51181102362,
+                2508.66141732284
+              ],
+              "right": [
+                1105.51181102362,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1037.48031496063,
+                2443.46456692914
+              ],
+              "left": [
+                1037.48031496063,
+                2443.46456692914
+              ],
+              "right": [
+                1037.48031496063,
+                2443.46456692914
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                969.448818897638,
+                2508.66141732284
+              ],
+              "left": [
+                969.448818897638,
+                2508.66141732284
+              ],
+              "right": [
+                969.448818897638,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1003.46456692913,
+                2508.66141732284
+              ],
+              "left": [
+                1003.46456692913,
+                2508.66141732284
+              ],
+              "right": [
+                1003.46456692913,
+                2508.66141732284
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-22",
+          "dom_index": 22,
+          "name": "left orientation bar SHELF_01",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_01.orientation-bar\",\"name\":\"left orientation bar SHELF_01\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_01"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            3146.45669291339
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            3146.45669291339,
+            164.409448818898,
+            2409.44881889764
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            3146.45669291339,
+            164.409448818898,
+            2409.44881889764
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "left": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "right": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                3146.45669291339
+              ],
+              "left": [
+                164.409448818898,
+                3146.45669291339
+              ],
+              "right": [
+                164.409448818898,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                2409.44881889764
+              ],
+              "left": [
+                164.409448818898,
+                2409.44881889764
+              ],
+              "right": [
+                164.409448818898,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "left": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "right": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-23",
+          "dom_index": 23,
+          "name": "print base SHELF_01",
+          "note": "py-ai-path:{\"id\":\"print.SHELF_01.base\",\"name\":\"print base SHELF_01\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_01"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            3146.45669291339
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            3146.45669291339,
+            1133.85826771654,
+            2409.44881889764
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            3146.45669291339,
+            1133.85826771654,
+            2409.44881889764
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "left": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "right": [
+                113.385826771653,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                3146.45669291339
+              ],
+              "left": [
+                1133.85826771654,
+                3146.45669291339
+              ],
+              "right": [
+                1133.85826771654,
+                3146.45669291339
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1133.85826771654,
+                2409.44881889764
+              ],
+              "left": [
+                1133.85826771654,
+                2409.44881889764
+              ],
+              "right": [
+                1133.85826771654,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "left": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "right": [
+                113.385826771653,
+                2409.44881889764
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-24",
+          "dom_index": 24,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.SIDE_RIGHT.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_RIGHT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1763.14960629921,
+            3458.26771653543
+          ],
+          "geometric_bounds": [
+            1763.14960629921,
+            3458.26771653543,
+            1899.2125984252,
+            3293.85826771654
+          ],
+          "visible_bounds": [
+            1763.14960629921,
+            3458.26771653543,
+            1899.2125984252,
+            3293.85826771654
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1797.16535433071,
+                3458.26771653543
+              ],
+              "left": [
+                1797.16535433071,
+                3458.26771653543
+              ],
+              "right": [
+                1797.16535433071,
+                3458.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1865.1968503937,
+                3458.26771653543
+              ],
+              "left": [
+                1865.1968503937,
+                3458.26771653543
+              ],
+              "right": [
+                1865.1968503937,
+                3458.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1865.1968503937,
+                3359.05511811024
+              ],
+              "left": [
+                1865.1968503937,
+                3359.05511811024
+              ],
+              "right": [
+                1865.1968503937,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1899.2125984252,
+                3359.05511811024
+              ],
+              "left": [
+                1899.2125984252,
+                3359.05511811024
+              ],
+              "right": [
+                1899.2125984252,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1831.18110236221,
+                3293.85826771654
+              ],
+              "left": [
+                1831.18110236221,
+                3293.85826771654
+              ],
+              "right": [
+                1831.18110236221,
+                3293.85826771654
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1763.14960629921,
+                3359.05511811024
+              ],
+              "left": [
+                1763.14960629921,
+                3359.05511811024
+              ],
+              "right": [
+                1763.14960629921,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1797.16535433071,
+                3359.05511811024
+              ],
+              "left": [
+                1797.16535433071,
+                3359.05511811024
+              ],
+              "right": [
+                1797.16535433071,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-25",
+          "dom_index": 25,
+          "name": "left orientation bar SIDE_RIGHT",
+          "note": "py-ai-path:{\"id\":\"print.SIDE_RIGHT.orientation-bar\",\"name\":\"left orientation bar SIDE_RIGHT\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_RIGHT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1077.16535433071,
+            4563.77952755906
+          ],
+          "geometric_bounds": [
+            1077.16535433071,
+            4563.77952755906,
+            1128.18897637795,
+            3259.84251968504
+          ],
+          "visible_bounds": [
+            1077.16535433071,
+            4563.77952755906,
+            1128.18897637795,
+            3259.84251968504
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "left": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "right": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1128.18897637795,
+                4563.77952755906
+              ],
+              "left": [
+                1128.18897637795,
+                4563.77952755906
+              ],
+              "right": [
+                1128.18897637795,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1128.18897637795,
+                3259.84251968504
+              ],
+              "left": [
+                1128.18897637795,
+                3259.84251968504
+              ],
+              "right": [
+                1128.18897637795,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "left": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "right": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-26",
+          "dom_index": 26,
+          "name": "print base SIDE_RIGHT",
+          "note": "py-ai-path:{\"id\":\"print.SIDE_RIGHT.base\",\"name\":\"print base SIDE_RIGHT\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_RIGHT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            1077.16535433071,
+            4563.77952755906
+          ],
+          "geometric_bounds": [
+            1077.16535433071,
+            4563.77952755906,
+            1927.55905511811,
+            3259.84251968504
+          ],
+          "visible_bounds": [
+            1077.16535433071,
+            4563.77952755906,
+            1927.55905511811,
+            3259.84251968504
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "left": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "right": [
+                1077.16535433071,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1927.55905511811,
+                4563.77952755906
+              ],
+              "left": [
+                1927.55905511811,
+                4563.77952755906
+              ],
+              "right": [
+                1927.55905511811,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1927.55905511811,
+                3259.84251968504
+              ],
+              "left": [
+                1927.55905511811,
+                3259.84251968504
+              ],
+              "right": [
+                1927.55905511811,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "left": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "right": [
+                1077.16535433071,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-27",
+          "dom_index": 27,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.SIDE_LEFT.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_LEFT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            799.370078740158,
+            3458.26771653543
+          ],
+          "geometric_bounds": [
+            799.370078740158,
+            3458.26771653543,
+            935.433070866142,
+            3293.85826771654
+          ],
+          "visible_bounds": [
+            799.370078740158,
+            3458.26771653543,
+            935.433070866142,
+            3293.85826771654
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                833.385826771653,
+                3458.26771653543
+              ],
+              "left": [
+                833.385826771653,
+                3458.26771653543
+              ],
+              "right": [
+                833.385826771653,
+                3458.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                901.417322834646,
+                3458.26771653543
+              ],
+              "left": [
+                901.417322834646,
+                3458.26771653543
+              ],
+              "right": [
+                901.417322834646,
+                3458.26771653543
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                901.417322834646,
+                3359.05511811024
+              ],
+              "left": [
+                901.417322834646,
+                3359.05511811024
+              ],
+              "right": [
+                901.417322834646,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                935.433070866142,
+                3359.05511811024
+              ],
+              "left": [
+                935.433070866142,
+                3359.05511811024
+              ],
+              "right": [
+                935.433070866142,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                867.40157480315,
+                3293.85826771654
+              ],
+              "left": [
+                867.40157480315,
+                3293.85826771654
+              ],
+              "right": [
+                867.40157480315,
+                3293.85826771654
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                799.370078740158,
+                3359.05511811024
+              ],
+              "left": [
+                799.370078740158,
+                3359.05511811024
+              ],
+              "right": [
+                799.370078740158,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                833.385826771653,
+                3359.05511811024
+              ],
+              "left": [
+                833.385826771653,
+                3359.05511811024
+              ],
+              "right": [
+                833.385826771653,
+                3359.05511811024
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-28",
+          "dom_index": 28,
+          "name": "left orientation bar SIDE_LEFT",
+          "note": "py-ai-path:{\"id\":\"print.SIDE_LEFT.orientation-bar\",\"name\":\"left orientation bar SIDE_LEFT\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_LEFT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            4563.77952755906
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            4563.77952755906,
+            164.409448818898,
+            3259.84251968504
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            4563.77952755906,
+            164.409448818898,
+            3259.84251968504
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "left": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "right": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                4563.77952755906
+              ],
+              "left": [
+                164.409448818898,
+                4563.77952755906
+              ],
+              "right": [
+                164.409448818898,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                164.409448818898,
+                3259.84251968504
+              ],
+              "left": [
+                164.409448818898,
+                3259.84251968504
+              ],
+              "right": [
+                164.409448818898,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "left": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "right": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-29",
+          "dom_index": 29,
+          "name": "print base SIDE_LEFT",
+          "note": "py-ai-path:{\"id\":\"print.SIDE_LEFT.base\",\"name\":\"print base SIDE_LEFT\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_LEFT"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            113.385826771653,
+            4563.77952755906
+          ],
+          "geometric_bounds": [
+            113.385826771653,
+            4563.77952755906,
+            963.779527559055,
+            3259.84251968504
+          ],
+          "visible_bounds": [
+            113.385826771653,
+            4563.77952755906,
+            963.779527559055,
+            3259.84251968504
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "left": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "right": [
+                113.385826771653,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                963.779527559055,
+                4563.77952755906
+              ],
+              "left": [
+                963.779527559055,
+                4563.77952755906
+              ],
+              "right": [
+                963.779527559055,
+                4563.77952755906
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                963.779527559055,
+                3259.84251968504
+              ],
+              "left": [
+                963.779527559055,
+                3259.84251968504
+              ],
+              "right": [
+                963.779527559055,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "left": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "right": [
+                113.385826771653,
+                3259.84251968504
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        }
+      ],
+      "group_layers": {
+        "PF_CUT:PF_PART_TOP": "PF_CUT",
+        "PF_CUT:PF_PART_BACK": "PF_CUT",
+        "PF_CUT:PF_PART_SHELF_03": "PF_CUT",
+        "PF_CUT:PF_PART_SHELF_02": "PF_CUT",
+        "PF_CUT:PF_PART_SHELF_01": "PF_CUT",
+        "PF_CUT:PF_PART_SIDE_RIGHT": "PF_CUT",
+        "PF_CUT:PF_PART_SIDE_LEFT": "PF_CUT",
+        "PF_PRINT_FRONT:PF_PART_TOP": "PF_PRINT_FRONT",
+        "PF_PRINT_FRONT:PF_PART_BACK": "PF_PRINT_FRONT",
+        "PF_PRINT_FRONT:PF_PART_SHELF_03": "PF_PRINT_FRONT",
+        "PF_PRINT_FRONT:PF_PART_SHELF_02": "PF_PRINT_FRONT",
+        "PF_PRINT_FRONT:PF_PART_SHELF_01": "PF_PRINT_FRONT",
+        "PF_PRINT_FRONT:PF_PART_SIDE_RIGHT": "PF_PRINT_FRONT",
+        "PF_PRINT_FRONT:PF_PART_SIDE_LEFT": "PF_PRINT_FRONT"
+      }
+    }
+  },
+  "preview": {
+    "profile": "deterministic-raster-preview-v1",
+    "source": "build/input-samples-r2/three-shelf/three-shelf-input.native.ai",
+    "source_sha256": "7f40ad7c886b7bafbad3024309318b71dc15a87dd849f5c2e2f32827a3a34520",
+    "renderer": "pdftocairo",
+    "renderer_version": "pdftocairo version 26.04.0",
+    "dpi": 144,
+    "page_count": 1,
+    "pages": [
+      {
+        "index": 1,
+        "width": 4536,
+        "height": 9355,
+        "output": "build/illustrator-export-r2/three-shelf/artboard.preview.png",
+        "pixel_sha256": "4e919e19020e68f5ddfe171faa892f5235ff08977771afd6ca3b873514112dd1",
+        "png_sha256": "b45cca77658709f27d9654753bb3f6a56f35af822a0c92b0f5bbb6cdd74bed77"
+      }
+    ]
+  },
+  "print_front_png": {
+    "visible_layer": "PF_PRINT_FRONT",
+    "hidden_layers": [
+      "PF_CUT",
+      "PF_ANNOTATION",
+      "PF_FOLD"
+    ],
+    "path": "build/illustrator-export-r2/three-shelf/print-front.png",
+    "dpi": 144
+  }
+}
