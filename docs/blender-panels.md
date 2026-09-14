@@ -4,7 +4,7 @@
 
 ## 再実行
 
-Blender 4.4.1 で、リポジトリ直下から実行する。
+Blender **5.2.1 LTS** で、リポジトリ直下から実行する。`$BLENDER --version` が `Blender 5.2.1` を表示することを確認する。
 
 ```bash
 BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
