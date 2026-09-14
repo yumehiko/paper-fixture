@@ -10,7 +10,9 @@ Run this through Blender, for example::
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -96,7 +98,6 @@ def front_material(image_path):
     links.new(texture.outputs["Color"], mix.inputs[2])
     links.new(mix.outputs["Color"], principled.inputs["Base Color"])
     material["pf_surface"] = "front-print-only"
-    material["pf_source_png"] = str(image_path)
     return material
 
 
@@ -180,7 +181,10 @@ def setup_scene(bounds):
     camera.location = (center[0], center[1], 2.0)
     camera.rotation_euler = (0.0, 0.0, 0.0)
     camera_data.type = "ORTHO"
-    camera_data.ortho_scale = max((xmax - xmin) * MM, (ymax - ymin) * MM) * 1.08
+    # Blender's ortho scale is the horizontal span.  Account for the 16:9
+    # output so a portrait artboard cannot be cropped above/below.
+    aspect = scene.render.resolution_x / scene.render.resolution_y
+    camera_data.ortho_scale = max((xmax - xmin) * MM, (ymax - ymin) * MM * aspect) * 1.08
     scene.camera = camera
     for name, z in (("PF_PREVIEW_FRONT_LIGHT", 0.5), ("PF_PREVIEW_BACK_LIGHT", -0.5)):
         light_data = bpy.data.lights.new(name, "AREA")
@@ -206,6 +210,19 @@ def render(scene, camera, path, rear=False):
     bpy.ops.render.render(write_still=True)
 
 
+def sha256(path):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def repo_relative(path):
+    root = Path(__file__).resolve().parents[1]
+    return Path(path).resolve().relative_to(root).as_posix()
+
+
 def main():
     args = arguments()
     bundle = load_bundle(args.export_json, args.print_png)
@@ -213,12 +230,18 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     bounds = bundle["payload"]["coordinate_system"]["artboard_bounds_mm"]
     camera, collection = setup_scene(bounds)
-    front = front_material(Path(args.print_png).resolve())
+    source_png = Path(args.print_png).resolve()
+    front = front_material(source_png)
+    # The source image remains external, but is linked relative to the saved
+    # blend. A checkout containing both build trees can move as one directory.
+    image = bpy.data.images["PF_PRINT_FRONT_SOURCE"]
+    image.filepath = "//" + os.path.relpath(source_png, output)
+    front["pf_source_png"] = image.filepath
     paper = paper_material()
     objects = [make_panel(part, bundle["thickness_mm"], bundle["print_range_mm"], front, paper, collection) for part in bundle["parts"]]
     scene = bpy.context.scene
     scene["pf_stage"] = "stage-3-flat-panels; no assembly placement applied"
-    scene["pf_source_export_json"] = str(Path(args.export_json).resolve())
+    scene["pf_source_export_json"] = repo_relative(args.export_json)
     scene["pf_curve_resolution_per_bezier"] = CURVE_RESOLUTION_PER_BEZIER
     scene["pf_thickness_reference"] = "local Z=0 mid-plane; printed front at +thickness/2"
     scene["pf_texture_resolution_note"] = "Uses source PNG pixels over print.range_mm; no resampling is performed."
@@ -226,8 +249,12 @@ def main():
     render(scene, camera, output / "preview-front.png")
     render(scene, camera, output / "preview-back.png", rear=True)
     (output / "build-manifest.json").write_text(json.dumps({
-        "export_json": str(Path(args.export_json).resolve()), "print_png": str(Path(args.print_png).resolve()),
-        "blend": str((output / "panels.blend").resolve()), "part_ids": [object_["pf_part_id"] for object_ in objects],
+        "input": {
+            "export_json": {"path": repo_relative(args.export_json), "sha256": sha256(args.export_json)},
+            "print_png": {"path": repo_relative(args.print_png), "sha256": sha256(args.print_png)},
+        },
+        "outputs": {"blend": "panels.blend", "preview_front": "preview-front.png", "preview_back": "preview-back.png"},
+        "part_ids": [object_["pf_part_id"] for object_ in objects],
         "thickness_mm": bundle["thickness_mm"], "curve_resolution_per_bezier": CURVE_RESOLUTION_PER_BEZIER,
         "stage": "flat panels only; not an assembly",
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

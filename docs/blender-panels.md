@@ -11,15 +11,15 @@ BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
 $BLENDER --background --python tools/build_blender_panels.py -- \
   --export-json build/illustrator-export-r2/curve-hole/export.json \
   --print-png build/illustrator-export-r2/curve-hole/print-front.png \
-  --output-dir build/blender-panels/curve-hole
-$BLENDER --background build/blender-panels/curve-hole/panels.blend \
+  --output-dir build/blender-panels-r3/curve-hole
+$BLENDER --background build/blender-panels-r3/curve-hole/panels.blend \
   --python tools/verify_blender_panels.py -- \
   --export-json build/illustrator-export-r2/curve-hole/export.json \
   --print-png build/illustrator-export-r2/curve-hole/print-front.png \
-  --report build/blender-panels/curve-hole/verification.json
+  --report build/blender-panels-r3/curve-hole/verification.json
 ```
 
-`three-shelf` に対しても同じコマンドで入力と出力ディレクトリだけを替える。出力は `panels.blend`、表面と裏面のレビュー用 `preview-front.png` / `preview-back.png`、再オープン検証の `verification.json`、入力対応を記した `build-manifest.json` である。
+`three-shelf` に対しても同じコマンドで入力と出力ディレクトリだけを替える。出力は `panels.blend`、表面と裏面のレビュー用 `preview-front.png` / `preview-back.png`、再オープン検証の `verification.json`、入力対応を記した `build-manifest.json` である。マニフェストはリポジトリ相対入力パスと各入力のSHA-256を保存する。`.blend` の画像リンクも同じチェックアウト内の相対パスで保存するため、リポジトリ一式を移動して再オープンできる。単体の `.blend` だけを別配布する用途は保証しない。
 
 ## 保存する局所基準
 

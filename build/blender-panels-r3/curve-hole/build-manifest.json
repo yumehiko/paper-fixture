@@ -1,0 +1,23 @@
+{
+  "input": {
+    "export_json": {
+      "path": "build/illustrator-export-r2/curve-hole/export.json",
+      "sha256": "2882c79dd2baa7e1d60ae684b6b20207bd1c054463facde89b7574e5e7f9115b"
+    },
+    "print_png": {
+      "path": "build/illustrator-export-r2/curve-hole/print-front.png",
+      "sha256": "495dd434f7e64a4ae6d0f18ec6f3f8b688379f627fa492ded471783ec5afb911"
+    }
+  },
+  "outputs": {
+    "blend": "panels.blend",
+    "preview_front": "preview-front.png",
+    "preview_back": "preview-back.png"
+  },
+  "part_ids": [
+    "SAMPLE_CURVE_HOLE"
+  ],
+  "thickness_mm": 3.0,
+  "curve_resolution_per_bezier": 12,
+  "stage": "flat panels only; not an assembly"
+}
