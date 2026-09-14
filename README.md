@@ -12,8 +12,7 @@ Illustrator の展開図を起点に、Blender で紙什器を組み立て、納
 
 - macOS
 - Git
-- Blender。開発端末では **Blender 4.4.1** で下記手順を実測済みです。
-- 開発端末では、既存の 4.4.1 を変更せず公式配布の **Blender 5.2.1 LTS** でも下記手順を実測済みです。検証対象端末での実機結果は後続テストで記録します。5.2.1 の macOS ARM64 用公式配布物は [Blender 公式ダウンロード](https://download.blender.org/release/Blender5.2/blender-5.2.1-macos-arm64.dmg) から取得できます。
+- Blender **5.2.1 LTS**。このプロジェクトの開発・検証は 5.2.1 を基準にします。macOS ARM64 用公式配布物は [Blender 公式ダウンロード](https://download.blender.org/release/Blender5.2/blender-5.2.1-macos-arm64.dmg) から取得できます。
 
 Python のパッケージ追加は、この Blender 生成・検証手順には不要です。スクリプトは Blender に同梱された Python で実行されます。
 
@@ -41,6 +40,8 @@ mkdir -p build/local-blender-check/curve-hole
 ```
 
 `--python-exit-code 1` により、生成または検証スクリプトが失敗すると Blender も終了コード 1 を返します。
+
+`"$BLENDER" --version` の出力が `Blender 5.2.1` であることを確認してから続けてください。
 
 ### 成功の確認と成果物
 
