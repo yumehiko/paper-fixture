@@ -49,15 +49,25 @@ def _boundary_on_straight_segment(point, path):
 def _bezier(a, c1, c2, b, t):
     u = 1 - t
     return (u**3*a[0] + 3*u*u*t*c1[0] + 3*u*t*t*c2[0] + t**3*b[0], u**3*a[1] + 3*u*u*t*c1[1] + 3*u*t*t*c2[1] + t**3*b[1])
-def _flatten_path(path, steps=32):
+def _split_cubic(a,c1,c2,b):
+    ac=( (a[0]+c1[0])/2,(a[1]+c1[1])/2 ); cd=((c1[0]+c2[0])/2,(c1[1]+c2[1])/2); db=((c2[0]+b[0])/2,(c2[1]+b[1])/2)
+    acd=((ac[0]+cd[0])/2,(ac[1]+cd[1])/2); cdb=((cd[0]+db[0])/2,(cd[1]+db[1])/2); mid=((acd[0]+cdb[0])/2,(acd[1]+cdb[1])/2)
+    return (a,ac,acd,mid),(mid,cdb,db,b)
+def _distance_to_line(p,a,b):
+    length=math.hypot(b[0]-a[0],b[1]-a[1])
+    return abs(_cross(a,b,p))/length if length > EPS else math.hypot(p[0]-a[0],p[1]-a[1])
+def _adaptive_cubic(a,c1,c2,b,tolerance=.001,depth=0):
+    # A chord may differ from its cubic only by this bounded flatness error.
+    if depth >= 24 or max(_distance_to_line(c1,a,b),_distance_to_line(c2,a,b)) <= tolerance:
+        return [(a,b)]
+    left,right=_split_cubic(a,c1,c2,b)
+    return _adaptive_cubic(*left,tolerance,depth+1)+_adaptive_cubic(*right,tolerance,depth+1)
+def _flatten_path(path):
     segments=[]
     for i, first in enumerate(path):
         second=path[(i+1)%len(path)]
         a, c1, c2, b=tuple(first["anchor_mm"]),tuple(first["out_handle_mm"]),tuple(second["in_handle_mm"]),tuple(second["anchor_mm"])
-        previous=a
-        for step in range(1,steps+1):
-            current=_bezier(a,c1,c2,b,step/steps)
-            segments.append((previous,current)); previous=current
+        segments.extend(_adaptive_cubic(a,c1,c2,b))
     return segments
 
 def validate_plan(payload, repo_root):
@@ -90,6 +100,9 @@ def validate_plan(payload, repo_root):
             a=_point(ends[0],'fold endpoint'); b=_point(ends[1],'fold endpoint')
             if a==b: raise InputError(f"{part['id']}.{fold.get('id')}: fold is degenerate")
             if not _boundary_on_straight_segment(a,part['outer']) or not _boundary_on_straight_segment(b,part['outer']): raise InputError(f"{part['id']}.{fold.get('id')}: endpoints must lie on straight outer-boundary segments")
+            # A concave outline can be hit again between valid endpoints.
+            for c,d in _flatten_path(part['outer']):
+                if _segments_intersect(a,b,c,d) and not _on_segment(a,c,d) and not _on_segment(b,c,d): raise InputError(f"{part['id']}.{fold.get('id')}: fold crosses outer boundary away from its endpoints")
             for hole in part['holes']:
                 if any(_segments_intersect(a,b,c,d) for c,d in _flatten_path(hole)): raise InputError(f"{part['id']}.{fold.get('id')}: fold intersects a hole")
             if any(_segments_intersect(a,b,c,d) for c,d in seen_lines): raise InputError(f"{part['id']}.{fold.get('id')}: fold intersects another fold")

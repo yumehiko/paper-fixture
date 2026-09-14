@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import json as _json
 from pathlib import Path
 
 import bpy
@@ -64,6 +65,12 @@ def cut_half_flat(obj, endpoints, keeps_positive):
     bpy.context.view_layer.objects.active = obj
     obj.select_set(True)
     bpy.ops.object.modifier_apply(modifier=modifier.name)
+    bpy.ops.object.mode_set(mode="EDIT")
+    bpy.ops.mesh.select_all(action="SELECT")
+    bpy.ops.mesh.remove_doubles(threshold=1e-7)
+    bpy.ops.mesh.fill_holes(sides=0)
+    bpy.ops.mesh.normals_make_consistent(inside=False)
+    bpy.ops.object.mode_set(mode="OBJECT")
     obj.select_set(False)
     bpy.data.objects.remove(cutter, do_unlink=True)
 
@@ -130,6 +137,11 @@ def assert_nonempty(obj, label):
         raise RuntimeError("empty face cell: " + label)
 
 
+def point_side(endpoints, point):
+    a,b=line_world(endpoints); p=Vector((point[0]*MM,-point[1]*MM,0))
+    return 1 if (b-a).cross(p-a).z >= 0 else -1
+
+
 def main():
     args = arguments()
     root = Path(args.repo_root).resolve()
@@ -156,7 +168,7 @@ def main():
         front = front_material(texture_path)
         bpy.data.images["PF_PRINT_FRONT_SOURCE"].filepath = "//textures/print-front.png"
         paper = paper_material()
-        folds, flat_instances = [], []
+        folds, flat_instances, assembly_records = [], [], []
         for assembly in plan["assemblies"]:
             part = parts[assembly["part_id"]]
             flat_base = Matrix.Translation(Vector((part["bounds_mm"][0] * MM, -part["bounds_mm"][1] * MM, 0.0)))
@@ -170,9 +182,15 @@ def main():
                 obj.matrix_world = transforms[face] @ flat_base
                 obj["pf_face_id"] = face
                 obj["pf_flat_base_matrix"] = [list(row) for row in flat_base]
+                contained=[]
+                for hole in part["holes"]:
+                    center=[sum(item["anchor_mm"][axis] for item in hole)/len(hole) for axis in (0,1)]
+                    if all(point_side(fold_source(part, edge["fold_id"])["endpoints_mm"], center) == signature[edge["fold_id"]] for edge in assembly["folds"]): contained.append(hole)
+                obj["pf_source_holes"] = _json.dumps(contained, separators=(",",":"))
             for edge in assembly["folds"]:
                 source = fold_source(part, edge["fold_id"])
                 folds.append({"assembly": assembly["id"], "fold_id": edge["fold_id"], "parent": edge["parent_face"], "child": edge["child_face"], "dihedral_deg": edge["target_dihedral_deg"], "rotation_from_flat_deg": (1 if edge["mountain_valley"] == "valley" else -1) * edge["child_side"] * (180 - edge["target_dihedral_deg"]), "endpoints_mm": source["endpoints_mm"]})
+            assembly_records.append({"id":assembly["id"],"root_face":assembly["root_face"],"root_transform_mm":assembly["root_transform_mm"]})
         for instance in plan["flat_instances"]:
             part = parts[instance["part_id"]]
             obj = make_panel(part, bundle["thickness_mm"], bundle["print_range_mm"], front, paper, collection)
@@ -183,7 +201,7 @@ def main():
             obj["pf_flat_base_matrix"] = [list(row) for row in flat_base]
             flat_instances.append({"id": instance["id"], "part_id": instance["part_id"], "transform_mm": instance["transform_mm"]})
         bpy.ops.wm.save_as_mainfile(filepath=str(staging / "assembly.blend"))
-        (staging / "fold-manifest.json").write_text(json.dumps({"manifest_version": 1, "model": "rigid-mid-plane-v2", "input_hashes": input_hashes, "limitations": ["no bend radius", "no thickness collision guarantee", "no manufacturing guarantee"], "folds": folds, "flat_instances": flat_instances}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (staging / "fold-manifest.json").write_text(json.dumps({"manifest_version": 1, "model": "rigid-mid-plane-v2", "input_hashes": input_hashes, "limitations": ["no bend radius", "no thickness collision guarantee", "no manufacturing guarantee"], "assemblies":assembly_records, "folds": folds, "flat_instances": flat_instances}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         provisional = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES - {"verification.json"})}
         (staging / "build-manifest.json").write_text(json.dumps({"manifest_version": 1, "input_hashes": input_hashes, "output_hashes": provisional}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         with tempfile.TemporaryDirectory(prefix="fold-verification-") as temporary:
