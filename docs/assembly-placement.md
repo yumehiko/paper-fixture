@@ -306,6 +306,45 @@ top_z = H
 
 1920×1080の納品想定外観と作業時間評価は次フェーズの範囲である。フェーズ4のpreviewは配置確認用であり、照明・背景・納品品質を完了条件にしない。
 
+### assembly-placement-r1 の再生成証跡
+
+この revision は承認済みの過去成果物を上書きせず、次の2 bundle を Blender 5.2.1 LTS
+で新規生成した開発 macOS 上の記録である。ユーザー手元の端末での確認を表すものではない。
+
+| fixture | 入力 | bundle | 確認した一般性 |
+| --- | --- | --- | --- |
+| `three-shelf` | `samples/placement/three-shelf-placement.json` | `build/assembly-placement-r1/three-shelf/` | 7 instance、全 transform/AABB/法線、3つの上面基準、3つの軸平行面接触 |
+| `repeated-rotated` | `samples/placement/repeated-rotated-placement.json` | `build/assembly-placement-r1/repeated-rotated/` | 3 instance、同じ `SHELF_01` を異なる ID で2回参照、3つとも非軸整列 rotation |
+
+各 bundle には `assembly.blend`、コピーした `textures/print-front.png`、二つの preview、
+`build-manifest.json`、`verification.json` がある。manifest は placement/panels/image の
+入力 hash、各 instance の source geometry、解決済み matrix、AABB、印刷面法線、checks、
+全管理対象出力 hash を持つ。verification は別 Blender プロセスで再オープンして得た
+全 instance の実 mesh AABB、法線、closed manifold、独立 mesh、scale、UV、穴の限定 ray
+検査、相対画像/hash、指定 check/contact の結果である。
+
+`three-shelf` の上面実測は 120.0000048 / 239.9999946 / 360.0000143 mm で、すべて
+0.05 mm 許容内だった。`shelf-01` と左右側板・背面の指定接触も合格した。`repeated-rotated`
+は contact を要求せず、全3 instance の非軸整列 transform、AABB、法線を再オープン後に
+照合した。特別な part 名、段数、TOP の扱いは、この2 fixture の生成・検証コードに追加していない。
+
+両 fixture の `preview-perspective.png` と `preview-reference.png` を開発者が確認した。
+前者では3段棚の左右側板・背面・棚・上板と印刷の青帯/矢印が見え、後者では正面配置を
+確認した。反復・回転 fixture では3枚の独立した板の非軸配置と表裏の印刷表示を複数視点で
+確認した。preview は配置レビュー用で、納品 render や製造判定ではない。
+
+移動性は、未編集 `three-shelf` bundle を checkout 外の一時ディレクトリへ丸ごとコピーし、
+そこで別 Blender プロセスによる `verify_assembly_bundle.py` を成功させて確認した。その
+コピーだけで `shelf-01` の object transform と mesh 頂点を編集して保存し、再オープン後に
+編集値と `//textures/print-front.png` の解決を確認した。これは編集可能性の確認であり、配布
+正本の `verification.json` ではない。編集後のコピーは manifest hash と入力どおりの transform
+が変わるため、通常の provenance 検証と再生成では失敗するのが期待動作である。
+
+穴の ray 検査はフェーズ3から継承した anchor 平均点での限定的な開口確認であり、曲線や
+複数領域の穴の外周完全一致を保証しない。非軸整列・曲面・穴への差し込みの contact を
+一般に判定しないため、そのような instance を配置拒否するものでもない。実案件寸法、製造
+公差、接合強度、1920×1080納品 render、作業時間評価はこの証跡の対象外である。
+
 ## 主要な代替案と選択理由
 
 | 論点 | 採用 | 見送る案と理由 |
