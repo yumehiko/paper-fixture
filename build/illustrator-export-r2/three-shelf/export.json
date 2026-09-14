@@ -1,0 +1,2963 @@
+{
+  "schema": "paper-fixture-illustrator-export-v1",
+  "source": {
+    "path": "/Users/yumehiko/repository/paper-fixture-worktrees/illustrator-export/build/input-samples-r2/three-shelf/three-shelf-input.native.ai",
+    "sha256": "7f40ad7c886b7bafbad3024309318b71dc15a87dd849f5c2e2f32827a3a34520",
+    "read_via": "Illustrator 2026 live DOM"
+  },
+  "coordinate_system": {
+    "unit": "mm",
+    "origin": "artboard upper-left",
+    "x_axis": "right",
+    "y_axis": "down",
+    "source_unit": "Illustrator points",
+    "mm_per_point": 0.35277777777777775,
+    "artboard_bounds_mm": [
+      0.0,
+      0.0,
+      799.9999999999997,
+      1650.0000000000005
+    ]
+  },
+  "material": {
+    "status": "external-explicit-input",
+    "thickness_mm": 3.0,
+    "front_side": "PF_PRINT_FRONT",
+    "back_and_edge": "paper base color in a later model-generation stage"
+  },
+  "print": {
+    "side": "front",
+    "range_mm": [
+      0.0,
+      0.0,
+      799.9999999999997,
+      1650.0000000000005
+    ],
+    "pixel_mapping": "pixel_x = x_mm / width_mm * PNG_width; pixel_y = y_mm / height_mm * PNG_height"
+  },
+  "parts": [
+    {
+      "id": "BACK",
+      "cut": {
+        "outer": {
+          "source_id": "cut.BACK.outer",
+          "name": "CUT outer contour BACK",
+          "closed": true,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                440.00000000000034,
+                840.0000000000019
+              ],
+              "in_handle_mm": [
+                440.00000000000034,
+                840.0000000000019
+              ],
+              "out_handle_mm": [
+                440.00000000000034,
+                840.0000000000019
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                799.9999999999997,
+                840.0000000000019
+              ],
+              "in_handle_mm": [
+                799.9999999999997,
+                840.0000000000019
+              ],
+              "out_handle_mm": [
+                799.9999999999997,
+                840.0000000000019
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                799.9999999999997,
+                1300.0000000000007
+              ],
+              "in_handle_mm": [
+                799.9999999999997,
+                1300.0000000000007
+              ],
+              "out_handle_mm": [
+                799.9999999999997,
+                1300.0000000000007
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                440.00000000000034,
+                1300.0000000000007
+              ],
+              "in_handle_mm": [
+                440.00000000000034,
+                1300.0000000000007
+              ],
+              "out_handle_mm": [
+                440.00000000000034,
+                1300.0000000000007
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BACK"
+          },
+          "role": "outer"
+        },
+        "holes": [
+          {
+            "source_id": "cut.BACK.hole.02",
+            "name": "CUT BACK hole 2",
+            "closed": true,
+            "filled": false,
+            "stroked": true,
+            "fill_color": null,
+            "stroke_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 0,
+              "blue": 0
+            },
+            "stroke_width_mm": 0.350000001324547,
+            "points": [
+              {
+                "anchor_mm": [
+                  732.0,
+                  1069.999999999999
+                ],
+                "in_handle_mm": [
+                  732.0,
+                  1063.3725830020303
+                ],
+                "out_handle_mm": [
+                  732.0,
+                  1076.627416997968
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  719.9999999999985,
+                  1082.0000000000007
+                ],
+                "in_handle_mm": [
+                  726.6274169979708,
+                  1082.0000000000007
+                ],
+                "out_handle_mm": [
+                  713.3725830020298,
+                  1082.0000000000007
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  708.0000000000008,
+                  1069.999999999999
+                ],
+                "in_handle_mm": [
+                  708.0000000000008,
+                  1076.627416997968
+                ],
+                "out_handle_mm": [
+                  708.0000000000008,
+                  1063.3725830020303
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  719.9999999999985,
+                  1058.0000000000014
+                ],
+                "in_handle_mm": [
+                  713.3725830020298,
+                  1058.0000000000014
+                ],
+                "out_handle_mm": [
+                  726.6274169979708,
+                  1058.0000000000014
+                ],
+                "point_type": "PointType.SMOOTH"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_BACK"
+            },
+            "role": "hole.02"
+          },
+          {
+            "source_id": "cut.BACK.hole.01",
+            "name": "CUT BACK hole 1",
+            "closed": true,
+            "filled": false,
+            "stroked": true,
+            "fill_color": null,
+            "stroke_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 0,
+              "blue": 0
+            },
+            "stroke_width_mm": 0.350000001324547,
+            "points": [
+              {
+                "anchor_mm": [
+                  531.9999999999992,
+                  1069.999999999999
+                ],
+                "in_handle_mm": [
+                  531.9999999999992,
+                  1063.3725830020303
+                ],
+                "out_handle_mm": [
+                  531.9999999999992,
+                  1076.627416997968
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  520.0000000000014,
+                  1082.0000000000007
+                ],
+                "in_handle_mm": [
+                  526.6274169979702,
+                  1082.0000000000007
+                ],
+                "out_handle_mm": [
+                  513.372583002029,
+                  1082.0000000000007
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  507.99999999999994,
+                  1069.999999999999
+                ],
+                "in_handle_mm": [
+                  507.99999999999994,
+                  1076.627416997968
+                ],
+                "out_handle_mm": [
+                  507.99999999999994,
+                  1063.3725830020303
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  520.0000000000014,
+                  1058.0000000000014
+                ],
+                "in_handle_mm": [
+                  513.372583002029,
+                  1058.0000000000014
+                ],
+                "out_handle_mm": [
+                  526.6274169979702,
+                  1058.0000000000014
+                ],
+                "point_type": "PointType.SMOOTH"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_BACK"
+            },
+            "role": "hole.01"
+          }
+        ]
+      },
+      "dimensions_mm": [
+        359.9999999999993,
+        459.99999999999875
+      ],
+      "placement_bounds_mm": [
+        440.00000000000034,
+        840.0000000000019,
+        799.9999999999997,
+        1300.0000000000007
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.BACK.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  754.0000000000001,
+                  1230.0000000000014
+                ],
+                "in_handle_mm": [
+                  754.0000000000001,
+                  1230.0000000000014
+                ],
+                "out_handle_mm": [
+                  754.0000000000001,
+                  1230.0000000000014
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  777.9999999999995,
+                  1230.0000000000014
+                ],
+                "in_handle_mm": [
+                  777.9999999999995,
+                  1230.0000000000014
+                ],
+                "out_handle_mm": [
+                  777.9999999999995,
+                  1230.0000000000014
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  777.9999999999995,
+                  1264.9999999999989
+                ],
+                "in_handle_mm": [
+                  777.9999999999995,
+                  1264.9999999999989
+                ],
+                "out_handle_mm": [
+                  777.9999999999995,
+                  1264.9999999999989
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  790.0000000000008,
+                  1264.9999999999989
+                ],
+                "in_handle_mm": [
+                  790.0000000000008,
+                  1264.9999999999989
+                ],
+                "out_handle_mm": [
+                  790.0000000000008,
+                  1264.9999999999989
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  766.0000000000016,
+                  1288.000000000002
+                ],
+                "in_handle_mm": [
+                  766.0000000000016,
+                  1288.000000000002
+                ],
+                "out_handle_mm": [
+                  766.0000000000016,
+                  1288.000000000002
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  741.9999999999989,
+                  1264.9999999999989
+                ],
+                "in_handle_mm": [
+                  741.9999999999989,
+                  1264.9999999999989
+                ],
+                "out_handle_mm": [
+                  741.9999999999989,
+                  1264.9999999999989
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  754.0000000000001,
+                  1264.9999999999989
+                ],
+                "in_handle_mm": [
+                  754.0000000000001,
+                  1264.9999999999989
+                ],
+                "out_handle_mm": [
+                  754.0000000000001,
+                  1264.9999999999989
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_BACK"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.BACK.orientation-bar",
+            "name": "left orientation bar BACK",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  457.9999999999989,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  457.9999999999989,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  457.9999999999989,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  457.9999999999989,
+                  1300.0000000000007
+                ],
+                "in_handle_mm": [
+                  457.9999999999989,
+                  1300.0000000000007
+                ],
+                "out_handle_mm": [
+                  457.9999999999989,
+                  1300.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  1300.0000000000007
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  1300.0000000000007
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  1300.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_BACK"
+            },
+            "role": "orientation-bar"
+          },
+          {
+            "source_id": "print.BACK.base",
+            "name": "print base BACK",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  799.9999999999997,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  799.9999999999997,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  799.9999999999997,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  799.9999999999997,
+                  1300.0000000000007
+                ],
+                "in_handle_mm": [
+                  799.9999999999997,
+                  1300.0000000000007
+                ],
+                "out_handle_mm": [
+                  799.9999999999997,
+                  1300.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  1300.0000000000007
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  1300.0000000000007
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  1300.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_BACK"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          440.00000000000034,
+          840.0000000000019,
+          799.9999999999997,
+          1300.0000000000007
+        ]
+      }
+    },
+    {
+      "id": "SHELF_01",
+      "cut": {
+        "outer": {
+          "source_id": "cut.SHELF_01.outer",
+          "name": "CUT outer contour SHELF_01",
+          "closed": true,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                539.9999999999991
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                539.9999999999991
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                539.9999999999991
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                400.0000000000016,
+                539.9999999999991
+              ],
+              "in_handle_mm": [
+                400.0000000000016,
+                539.9999999999991
+              ],
+              "out_handle_mm": [
+                400.0000000000016,
+                539.9999999999991
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                400.0000000000016,
+                799.9999999999997
+              ],
+              "in_handle_mm": [
+                400.0000000000016,
+                799.9999999999997
+              ],
+              "out_handle_mm": [
+                400.0000000000016,
+                799.9999999999997
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                799.9999999999997
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                799.9999999999997
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                799.9999999999997
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_01"
+          },
+          "role": "outer"
+        },
+        "holes": []
+      },
+      "dimensions_mm": [
+        360.00000000000176,
+        260.00000000000057
+      ],
+      "placement_bounds_mm": [
+        39.99999999999981,
+        539.9999999999991,
+        400.0000000000016,
+        799.9999999999997
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.SHELF_01.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  353.9999999999986,
+                  730.0000000000009
+                ],
+                "in_handle_mm": [
+                  353.9999999999986,
+                  730.0000000000009
+                ],
+                "out_handle_mm": [
+                  353.9999999999986,
+                  730.0000000000009
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  378.00000000000136,
+                  730.0000000000009
+                ],
+                "in_handle_mm": [
+                  378.00000000000136,
+                  730.0000000000009
+                ],
+                "out_handle_mm": [
+                  378.00000000000136,
+                  730.0000000000009
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  378.00000000000136,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  378.00000000000136,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  378.00000000000136,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  389.99999999999926,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  389.99999999999926,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  389.99999999999926,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  366.0,
+                  787.9999999999983
+                ],
+                "in_handle_mm": [
+                  366.0,
+                  787.9999999999983
+                ],
+                "out_handle_mm": [
+                  366.0,
+                  787.9999999999983
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  342.00000000000006,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  342.00000000000006,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  342.00000000000006,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  353.9999999999986,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  353.9999999999986,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  353.9999999999986,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_01"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.SHELF_01.orientation-bar",
+            "name": "left orientation bar SHELF_01",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_01"
+            },
+            "role": "orientation-bar"
+          },
+          {
+            "source_id": "print.SHELF_01.base",
+            "name": "print base SHELF_01",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  400.0000000000016,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  400.0000000000016,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  400.0000000000016,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  400.0000000000016,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  400.0000000000016,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  400.0000000000016,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_01"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          39.99999999999981,
+          539.9999999999991,
+          400.0000000000016,
+          799.9999999999997
+        ]
+      }
+    },
+    {
+      "id": "SHELF_02",
+      "cut": {
+        "outer": {
+          "source_id": "cut.SHELF_02.outer",
+          "name": "CUT outer contour SHELF_02",
+          "closed": true,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                440.00000000000034,
+                539.9999999999991
+              ],
+              "in_handle_mm": [
+                440.00000000000034,
+                539.9999999999991
+              ],
+              "out_handle_mm": [
+                440.00000000000034,
+                539.9999999999991
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                799.9999999999997,
+                539.9999999999991
+              ],
+              "in_handle_mm": [
+                799.9999999999997,
+                539.9999999999991
+              ],
+              "out_handle_mm": [
+                799.9999999999997,
+                539.9999999999991
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                799.9999999999997,
+                799.9999999999997
+              ],
+              "in_handle_mm": [
+                799.9999999999997,
+                799.9999999999997
+              ],
+              "out_handle_mm": [
+                799.9999999999997,
+                799.9999999999997
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                440.00000000000034,
+                799.9999999999997
+              ],
+              "in_handle_mm": [
+                440.00000000000034,
+                799.9999999999997
+              ],
+              "out_handle_mm": [
+                440.00000000000034,
+                799.9999999999997
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_02"
+          },
+          "role": "outer"
+        },
+        "holes": []
+      },
+      "dimensions_mm": [
+        359.9999999999993,
+        260.00000000000057
+      ],
+      "placement_bounds_mm": [
+        440.00000000000034,
+        539.9999999999991,
+        799.9999999999997,
+        799.9999999999997
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.SHELF_02.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  754.0000000000001,
+                  730.0000000000009
+                ],
+                "in_handle_mm": [
+                  754.0000000000001,
+                  730.0000000000009
+                ],
+                "out_handle_mm": [
+                  754.0000000000001,
+                  730.0000000000009
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  777.9999999999995,
+                  730.0000000000009
+                ],
+                "in_handle_mm": [
+                  777.9999999999995,
+                  730.0000000000009
+                ],
+                "out_handle_mm": [
+                  777.9999999999995,
+                  730.0000000000009
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  777.9999999999995,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  777.9999999999995,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  777.9999999999995,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  790.0000000000008,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  790.0000000000008,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  790.0000000000008,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  766.0000000000016,
+                  787.9999999999983
+                ],
+                "in_handle_mm": [
+                  766.0000000000016,
+                  787.9999999999983
+                ],
+                "out_handle_mm": [
+                  766.0000000000016,
+                  787.9999999999983
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  741.9999999999989,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  741.9999999999989,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  741.9999999999989,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  754.0000000000001,
+                  764.9999999999986
+                ],
+                "in_handle_mm": [
+                  754.0000000000001,
+                  764.9999999999986
+                ],
+                "out_handle_mm": [
+                  754.0000000000001,
+                  764.9999999999986
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_02"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.SHELF_02.orientation-bar",
+            "name": "left orientation bar SHELF_02",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  457.9999999999989,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  457.9999999999989,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  457.9999999999989,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  457.9999999999989,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  457.9999999999989,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  457.9999999999989,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_02"
+            },
+            "role": "orientation-bar"
+          },
+          {
+            "source_id": "print.SHELF_02.base",
+            "name": "print base SHELF_02",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  799.9999999999997,
+                  539.9999999999991
+                ],
+                "in_handle_mm": [
+                  799.9999999999997,
+                  539.9999999999991
+                ],
+                "out_handle_mm": [
+                  799.9999999999997,
+                  539.9999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  799.9999999999997,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  799.9999999999997,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  799.9999999999997,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  440.00000000000034,
+                  799.9999999999997
+                ],
+                "in_handle_mm": [
+                  440.00000000000034,
+                  799.9999999999997
+                ],
+                "out_handle_mm": [
+                  440.00000000000034,
+                  799.9999999999997
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_02"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          440.00000000000034,
+          539.9999999999991,
+          799.9999999999997,
+          799.9999999999997
+        ]
+      }
+    },
+    {
+      "id": "SHELF_03",
+      "cut": {
+        "outer": {
+          "source_id": "cut.SHELF_03.outer",
+          "name": "CUT outer contour SHELF_03",
+          "closed": true,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                840.0000000000019
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                840.0000000000019
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                840.0000000000019
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                400.0000000000016,
+                840.0000000000019
+              ],
+              "in_handle_mm": [
+                400.0000000000016,
+                840.0000000000019
+              ],
+              "out_handle_mm": [
+                400.0000000000016,
+                840.0000000000019
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                400.0000000000016,
+                1099.999999999999
+              ],
+              "in_handle_mm": [
+                400.0000000000016,
+                1099.999999999999
+              ],
+              "out_handle_mm": [
+                400.0000000000016,
+                1099.999999999999
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                1099.999999999999
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                1099.999999999999
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                1099.999999999999
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SHELF_03"
+          },
+          "role": "outer"
+        },
+        "holes": []
+      },
+      "dimensions_mm": [
+        360.00000000000176,
+        259.99999999999716
+      ],
+      "placement_bounds_mm": [
+        39.99999999999981,
+        840.0000000000019,
+        400.0000000000016,
+        1099.999999999999
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.SHELF_03.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  353.9999999999986,
+                  1030.0000000000005
+                ],
+                "in_handle_mm": [
+                  353.9999999999986,
+                  1030.0000000000005
+                ],
+                "out_handle_mm": [
+                  353.9999999999986,
+                  1030.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  378.00000000000136,
+                  1030.0000000000005
+                ],
+                "in_handle_mm": [
+                  378.00000000000136,
+                  1030.0000000000005
+                ],
+                "out_handle_mm": [
+                  378.00000000000136,
+                  1030.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  378.00000000000136,
+                  1065.0000000000016
+                ],
+                "in_handle_mm": [
+                  378.00000000000136,
+                  1065.0000000000016
+                ],
+                "out_handle_mm": [
+                  378.00000000000136,
+                  1065.0000000000016
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  389.99999999999926,
+                  1065.0000000000016
+                ],
+                "in_handle_mm": [
+                  389.99999999999926,
+                  1065.0000000000016
+                ],
+                "out_handle_mm": [
+                  389.99999999999926,
+                  1065.0000000000016
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  366.0,
+                  1088.0000000000011
+                ],
+                "in_handle_mm": [
+                  366.0,
+                  1088.0000000000011
+                ],
+                "out_handle_mm": [
+                  366.0,
+                  1088.0000000000011
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  342.00000000000006,
+                  1065.0000000000016
+                ],
+                "in_handle_mm": [
+                  342.00000000000006,
+                  1065.0000000000016
+                ],
+                "out_handle_mm": [
+                  342.00000000000006,
+                  1065.0000000000016
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  353.9999999999986,
+                  1065.0000000000016
+                ],
+                "in_handle_mm": [
+                  353.9999999999986,
+                  1065.0000000000016
+                ],
+                "out_handle_mm": [
+                  353.9999999999986,
+                  1065.0000000000016
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_03"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.SHELF_03.orientation-bar",
+            "name": "left orientation bar SHELF_03",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  1099.999999999999
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  1099.999999999999
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  1099.999999999999
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  1099.999999999999
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  1099.999999999999
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  1099.999999999999
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_03"
+            },
+            "role": "orientation-bar"
+          },
+          {
+            "source_id": "print.SHELF_03.base",
+            "name": "print base SHELF_03",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  400.0000000000016,
+                  840.0000000000019
+                ],
+                "in_handle_mm": [
+                  400.0000000000016,
+                  840.0000000000019
+                ],
+                "out_handle_mm": [
+                  400.0000000000016,
+                  840.0000000000019
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  400.0000000000016,
+                  1099.999999999999
+                ],
+                "in_handle_mm": [
+                  400.0000000000016,
+                  1099.999999999999
+                ],
+                "out_handle_mm": [
+                  400.0000000000016,
+                  1099.999999999999
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  1099.999999999999
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  1099.999999999999
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  1099.999999999999
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SHELF_03"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          39.99999999999981,
+          840.0000000000019,
+          400.0000000000016,
+          1099.999999999999
+        ]
+      }
+    },
+    {
+      "id": "SIDE_LEFT",
+      "cut": {
+        "outer": {
+          "source_id": "cut.SIDE_LEFT.outer",
+          "name": "CUT outer contour SIDE_LEFT",
+          "closed": true,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                39.99999999999892
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                39.99999999999892
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                39.99999999999892
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                339.99999999999994,
+                39.99999999999892
+              ],
+              "in_handle_mm": [
+                339.99999999999994,
+                39.99999999999892
+              ],
+              "out_handle_mm": [
+                339.99999999999994,
+                39.99999999999892
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                339.99999999999994,
+                500.00000000000034
+              ],
+              "in_handle_mm": [
+                339.99999999999994,
+                500.00000000000034
+              ],
+              "out_handle_mm": [
+                339.99999999999994,
+                500.00000000000034
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                500.00000000000034
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                500.00000000000034
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                500.00000000000034
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_LEFT"
+          },
+          "role": "outer"
+        },
+        "holes": []
+      },
+      "dimensions_mm": [
+        300.0000000000001,
+        460.0000000000014
+      ],
+      "placement_bounds_mm": [
+        39.99999999999981,
+        39.99999999999892,
+        339.99999999999994,
+        500.00000000000034
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.SIDE_LEFT.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  293.9999999999998,
+                  430.00000000000165
+                ],
+                "in_handle_mm": [
+                  293.9999999999998,
+                  430.00000000000165
+                ],
+                "out_handle_mm": [
+                  293.9999999999998,
+                  430.00000000000165
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  318.0000000000001,
+                  430.00000000000165
+                ],
+                "in_handle_mm": [
+                  318.0000000000001,
+                  430.00000000000165
+                ],
+                "out_handle_mm": [
+                  318.0000000000001,
+                  430.00000000000165
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  318.0000000000001,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  318.0000000000001,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  318.0000000000001,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  330.00000000000006,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  330.00000000000006,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  330.00000000000006,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  306.0000000000001,
+                  487.99999999999886
+                ],
+                "in_handle_mm": [
+                  306.0000000000001,
+                  487.99999999999886
+                ],
+                "out_handle_mm": [
+                  306.0000000000001,
+                  487.99999999999886
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  282.00000000000017,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  282.00000000000017,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  282.00000000000017,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  293.9999999999998,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  293.9999999999998,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  293.9999999999998,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SIDE_LEFT"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.SIDE_LEFT.orientation-bar",
+            "name": "left orientation bar SIDE_LEFT",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SIDE_LEFT"
+            },
+            "role": "orientation-bar"
+          },
+          {
+            "source_id": "print.SIDE_LEFT.base",
+            "name": "print base SIDE_LEFT",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  339.99999999999994,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  339.99999999999994,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  339.99999999999994,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  339.99999999999994,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  339.99999999999994,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  339.99999999999994,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SIDE_LEFT"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          39.99999999999981,
+          39.99999999999892,
+          339.99999999999994,
+          500.00000000000034
+        ]
+      }
+    },
+    {
+      "id": "SIDE_RIGHT",
+      "cut": {
+        "outer": {
+          "source_id": "cut.SIDE_RIGHT.outer",
+          "name": "CUT outer contour SIDE_RIGHT",
+          "closed": true,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                380.00000000000045,
+                39.99999999999892
+              ],
+              "in_handle_mm": [
+                380.00000000000045,
+                39.99999999999892
+              ],
+              "out_handle_mm": [
+                380.00000000000045,
+                39.99999999999892
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                679.9999999999999,
+                39.99999999999892
+              ],
+              "in_handle_mm": [
+                679.9999999999999,
+                39.99999999999892
+              ],
+              "out_handle_mm": [
+                679.9999999999999,
+                39.99999999999892
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                679.9999999999999,
+                500.00000000000034
+              ],
+              "in_handle_mm": [
+                679.9999999999999,
+                500.00000000000034
+              ],
+              "out_handle_mm": [
+                679.9999999999999,
+                500.00000000000034
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                380.00000000000045,
+                500.00000000000034
+              ],
+              "in_handle_mm": [
+                380.00000000000045,
+                500.00000000000034
+              ],
+              "out_handle_mm": [
+                380.00000000000045,
+                500.00000000000034
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE_RIGHT"
+          },
+          "role": "outer"
+        },
+        "holes": []
+      },
+      "dimensions_mm": [
+        299.99999999999943,
+        460.0000000000014
+      ],
+      "placement_bounds_mm": [
+        380.00000000000045,
+        39.99999999999892,
+        679.9999999999999,
+        500.00000000000034
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.SIDE_RIGHT.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  634.0000000000005,
+                  430.00000000000165
+                ],
+                "in_handle_mm": [
+                  634.0000000000005,
+                  430.00000000000165
+                ],
+                "out_handle_mm": [
+                  634.0000000000005,
+                  430.00000000000165
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  657.9999999999997,
+                  430.00000000000165
+                ],
+                "in_handle_mm": [
+                  657.9999999999997,
+                  430.00000000000165
+                ],
+                "out_handle_mm": [
+                  657.9999999999997,
+                  430.00000000000165
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  657.9999999999997,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  657.9999999999997,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  657.9999999999997,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  670.000000000001,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  670.000000000001,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  670.000000000001,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  646.0000000000018,
+                  487.99999999999886
+                ],
+                "in_handle_mm": [
+                  646.0000000000018,
+                  487.99999999999886
+                ],
+                "out_handle_mm": [
+                  646.0000000000018,
+                  487.99999999999886
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  621.9999999999991,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  621.9999999999991,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  621.9999999999991,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  634.0000000000005,
+                  464.99999999999915
+                ],
+                "in_handle_mm": [
+                  634.0000000000005,
+                  464.99999999999915
+                ],
+                "out_handle_mm": [
+                  634.0000000000005,
+                  464.99999999999915
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SIDE_RIGHT"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.SIDE_RIGHT.orientation-bar",
+            "name": "left orientation bar SIDE_RIGHT",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  380.00000000000045,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  380.00000000000045,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  380.00000000000045,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  397.999999999999,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  397.999999999999,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  397.999999999999,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  397.999999999999,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  397.999999999999,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  397.999999999999,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  380.00000000000045,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  380.00000000000045,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  380.00000000000045,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SIDE_RIGHT"
+            },
+            "role": "orientation-bar"
+          },
+          {
+            "source_id": "print.SIDE_RIGHT.base",
+            "name": "print base SIDE_RIGHT",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  380.00000000000045,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  380.00000000000045,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  380.00000000000045,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  679.9999999999999,
+                  39.99999999999892
+                ],
+                "in_handle_mm": [
+                  679.9999999999999,
+                  39.99999999999892
+                ],
+                "out_handle_mm": [
+                  679.9999999999999,
+                  39.99999999999892
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  679.9999999999999,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  679.9999999999999,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  679.9999999999999,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  380.00000000000045,
+                  500.00000000000034
+                ],
+                "in_handle_mm": [
+                  380.00000000000045,
+                  500.00000000000034
+                ],
+                "out_handle_mm": [
+                  380.00000000000045,
+                  500.00000000000034
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SIDE_RIGHT"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          380.00000000000045,
+          39.99999999999892,
+          679.9999999999999,
+          500.00000000000034
+        ]
+      }
+    },
+    {
+      "id": "TOP",
+      "cut": {
+        "outer": {
+          "source_id": "cut.TOP.outer",
+          "name": "CUT outer contour TOP",
+          "closed": true,
+          "filled": false,
+          "stroked": false,
+          "fill_color": null,
+          "stroke_color": null,
+          "stroke_width_mm": 0.35277777777777775,
+          "points": [
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                1340.0000000000002
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                1340.0000000000002
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                1340.0000000000002
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                400.0000000000016,
+                1340.0000000000002
+              ],
+              "in_handle_mm": [
+                400.0000000000016,
+                1340.0000000000002
+              ],
+              "out_handle_mm": [
+                400.0000000000016,
+                1340.0000000000002
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                400.0000000000016,
+                1610.0000000000005
+              ],
+              "in_handle_mm": [
+                400.0000000000016,
+                1610.0000000000005
+              ],
+              "out_handle_mm": [
+                400.0000000000016,
+                1610.0000000000005
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor_mm": [
+                39.99999999999981,
+                1610.0000000000005
+              ],
+              "in_handle_mm": [
+                39.99999999999981,
+                1610.0000000000005
+              ],
+              "out_handle_mm": [
+                39.99999999999981,
+                1610.0000000000005
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_TOP"
+          },
+          "role": "outer"
+        },
+        "holes": []
+      },
+      "dimensions_mm": [
+        360.00000000000176,
+        270.0000000000002
+      ],
+      "placement_bounds_mm": [
+        39.99999999999981,
+        1340.0000000000002,
+        400.0000000000016,
+        1610.0000000000005
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.TOP.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  353.9999999999986,
+                  1540.0000000000005
+                ],
+                "in_handle_mm": [
+                  353.9999999999986,
+                  1540.0000000000005
+                ],
+                "out_handle_mm": [
+                  353.9999999999986,
+                  1540.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  378.00000000000136,
+                  1540.0000000000005
+                ],
+                "in_handle_mm": [
+                  378.00000000000136,
+                  1540.0000000000005
+                ],
+                "out_handle_mm": [
+                  378.00000000000136,
+                  1540.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  378.00000000000136,
+                  1575.0000000000007
+                ],
+                "in_handle_mm": [
+                  378.00000000000136,
+                  1575.0000000000007
+                ],
+                "out_handle_mm": [
+                  378.00000000000136,
+                  1575.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  389.99999999999926,
+                  1575.0000000000007
+                ],
+                "in_handle_mm": [
+                  389.99999999999926,
+                  1575.0000000000007
+                ],
+                "out_handle_mm": [
+                  389.99999999999926,
+                  1575.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  366.0,
+                  1598.0000000000007
+                ],
+                "in_handle_mm": [
+                  366.0,
+                  1598.0000000000007
+                ],
+                "out_handle_mm": [
+                  366.0,
+                  1598.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  342.00000000000006,
+                  1575.0000000000007
+                ],
+                "in_handle_mm": [
+                  342.00000000000006,
+                  1575.0000000000007
+                ],
+                "out_handle_mm": [
+                  342.00000000000006,
+                  1575.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  353.9999999999986,
+                  1575.0000000000007
+                ],
+                "in_handle_mm": [
+                  353.9999999999986,
+                  1575.0000000000007
+                ],
+                "out_handle_mm": [
+                  353.9999999999986,
+                  1575.0000000000007
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_TOP"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.TOP.orientation-bar",
+            "name": "left orientation bar TOP",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  1340.0000000000002
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  1340.0000000000002
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  1340.0000000000002
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  1340.0000000000002
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  1340.0000000000002
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  1340.0000000000002
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  58.00000000000012,
+                  1610.0000000000005
+                ],
+                "in_handle_mm": [
+                  58.00000000000012,
+                  1610.0000000000005
+                ],
+                "out_handle_mm": [
+                  58.00000000000012,
+                  1610.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  1610.0000000000005
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  1610.0000000000005
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  1610.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_TOP"
+            },
+            "role": "orientation-bar"
+          },
+          {
+            "source_id": "print.TOP.base",
+            "name": "print base TOP",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  1340.0000000000002
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  1340.0000000000002
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  1340.0000000000002
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  400.0000000000016,
+                  1340.0000000000002
+                ],
+                "in_handle_mm": [
+                  400.0000000000016,
+                  1340.0000000000002
+                ],
+                "out_handle_mm": [
+                  400.0000000000016,
+                  1340.0000000000002
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  400.0000000000016,
+                  1610.0000000000005
+                ],
+                "in_handle_mm": [
+                  400.0000000000016,
+                  1610.0000000000005
+                ],
+                "out_handle_mm": [
+                  400.0000000000016,
+                  1610.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  39.99999999999981,
+                  1610.0000000000005
+                ],
+                "in_handle_mm": [
+                  39.99999999999981,
+                  1610.0000000000005
+                ],
+                "out_handle_mm": [
+                  39.99999999999981,
+                  1610.0000000000005
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_TOP"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          39.99999999999981,
+          1340.0000000000002,
+          400.0000000000016,
+          1610.0000000000005
+        ]
+      }
+    }
+  ]
+}

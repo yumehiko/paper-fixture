@@ -1,0 +1,5 @@
+{
+  "thickness_mm": 3.0,
+  "front_side": "PF_PRINT_FRONT",
+  "back_and_edge": "paper base color in a later model-generation stage"
+}

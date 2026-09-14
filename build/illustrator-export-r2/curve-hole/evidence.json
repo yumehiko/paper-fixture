@@ -1,0 +1,772 @@
+{
+  "dom": {
+    "status": "passed",
+    "illustrator": {
+      "ok": true,
+      "illustrator_version": "30.8.1",
+      "layer_names": [
+        "PF_CUT",
+        "PF_PRINT_FRONT",
+        "PF_ANNOTATION",
+        "PF_FOLD"
+      ],
+      "artboards": [
+        {
+          "name": "SAMPLE_CURVE_HOLE",
+          "rect": [
+            0,
+            453.543307086614,
+            680.314960629921,
+            0
+          ]
+        }
+      ],
+      "paths": [
+        {
+          "id": "illustrator-dom-path-0",
+          "dom_index": 0,
+          "name": "CUT hole φ24",
+          "note": "py-ai-path:{\"id\":\"cut.SAMPLE_CURVE_HOLE.hole.01\",\"name\":\"CUT hole φ24\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SAMPLE_CURVE_HOLE"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 0.99212598800659,
+          "position": [
+            306.141732283465,
+            260.787401574803
+          ],
+          "geometric_bounds": [
+            306.141732283465,
+            260.787401574803,
+            374.173228346457,
+            192.755905511811
+          ],
+          "visible_bounds": [
+            305.645669289462,
+            261.283464568806,
+            374.66929134046,
+            192.259842517808
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                374.173228346457,
+                226.771653543307
+              ],
+              "left": [
+                374.173228346457,
+                245.55803243519
+              ],
+              "right": [
+                374.173228346457,
+                207.985274651424
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                340.157480314961,
+                192.755905511811
+              ],
+              "left": [
+                358.943859206844,
+                192.755905511811
+              ],
+              "right": [
+                321.371101423079,
+                192.755905511811
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                306.141732283465,
+                226.771653543307
+              ],
+              "left": [
+                306.141732283465,
+                207.985274651424
+              ],
+              "right": [
+                306.141732283465,
+                245.55803243519
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                340.157480314961,
+                260.787401574803
+              ],
+              "left": [
+                321.371101423079,
+                260.787401574803
+              ],
+              "right": [
+                358.943859206844,
+                260.787401574803
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-1",
+          "dom_index": 1,
+          "name": "CUT outer contour (Bézier R20)",
+          "note": "py-ai-path:{\"id\":\"cut.SAMPLE_CURVE_HOLE.outer\",\"name\":\"CUT outer contour (Bézier R20)\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SAMPLE_CURVE_HOLE"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 0.99212598800659,
+          "position": [
+            0,
+            453.543307086614
+          ],
+          "geometric_bounds": [
+            0,
+            453.543307086614,
+            680.314960629921,
+            0
+          ],
+          "visible_bounds": [
+            -0.4960629940033,
+            454.039370080617,
+            680.811023623924,
+            -0.4960629940033
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                56.6929133858266,
+                453.543307086614
+              ],
+              "left": [
+                25.3822818993567,
+                453.543307086614
+              ],
+              "right": [
+                88.0035448722974,
+                453.543307086614
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                623.622047244095,
+                453.543307086614
+              ],
+              "left": [
+                592.311415757624,
+                453.543307086614
+              ],
+              "right": [
+                654.932678730565,
+                453.543307086614
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                680.314960629921,
+                396.850393700787
+              ],
+              "left": [
+                680.314960629921,
+                428.161025187258
+              ],
+              "right": [
+                680.314960629921,
+                365.539762214317
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                680.314960629921,
+                56.6929133858266
+              ],
+              "left": [
+                680.314960629921,
+                88.0035448722974
+              ],
+              "right": [
+                680.314960629921,
+                25.3822818993558
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                623.622047244095,
+                0
+              ],
+              "left": [
+                654.932678730565,
+                0
+              ],
+              "right": [
+                592.311415757624,
+                0
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                56.6929133858266,
+                0
+              ],
+              "left": [
+                88.0035448722974,
+                0
+              ],
+              "right": [
+                25.3822818993567,
+                0
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                0,
+                56.6929133858266
+              ],
+              "left": [
+                0,
+                25.3822818993558
+              ],
+              "right": [
+                0,
+                88.0035448722974
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                0,
+                396.850393700787
+              ],
+              "left": [
+                0,
+                365.539762214317
+              ],
+              "right": [
+                0,
+                428.161025187258
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-2",
+          "dom_index": 2,
+          "name": "hole location witness",
+          "note": "py-ai-path:{\"id\":\"print.SAMPLE_CURVE_HOLE.hole-window\",\"name\":\"hole location witness\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SAMPLE_CURVE_HOLE"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 255,
+            "blue": 255
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            306.141732283465,
+            260.787401574803
+          ],
+          "geometric_bounds": [
+            306.141732283465,
+            260.787401574803,
+            374.173228346457,
+            192.755905511811
+          ],
+          "visible_bounds": [
+            306.141732283465,
+            260.787401574803,
+            374.173228346457,
+            192.755905511811
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                374.173228346457,
+                226.771653543307
+              ],
+              "left": [
+                374.173228346457,
+                245.55803243519
+              ],
+              "right": [
+                374.173228346457,
+                207.985274651424
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                340.157480314961,
+                192.755905511811
+              ],
+              "left": [
+                358.943859206844,
+                192.755905511811
+              ],
+              "right": [
+                321.371101423079,
+                192.755905511811
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                306.141732283465,
+                226.771653543307
+              ],
+              "left": [
+                306.141732283465,
+                207.985274651424
+              ],
+              "right": [
+                306.141732283465,
+                245.55803243519
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                340.157480314961,
+                260.787401574803
+              ],
+              "left": [
+                321.371101423079,
+                260.787401574803
+              ],
+              "right": [
+                358.943859206844,
+                260.787401574803
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-3",
+          "dom_index": 3,
+          "name": "FRONT +Y orientation arrow",
+          "note": "py-ai-path:{\"id\":\"print.SAMPLE_CURVE_HOLE.orientation\",\"name\":\"FRONT +Y orientation arrow\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SAMPLE_CURVE_HOLE"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 97,
+            "blue": 13
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            493.228346456694,
+            238.110236220473
+          ],
+          "geometric_bounds": [
+            493.228346456694,
+            238.110236220473,
+            629.291338582678,
+            73.7007874015744
+          ],
+          "visible_bounds": [
+            493.228346456694,
+            238.110236220473,
+            629.291338582678,
+            73.7007874015744
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                527.244094488189,
+                238.110236220473
+              ],
+              "left": [
+                527.244094488189,
+                238.110236220473
+              ],
+              "right": [
+                527.244094488189,
+                238.110236220473
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                595.27559055118,
+                238.110236220473
+              ],
+              "left": [
+                595.27559055118,
+                238.110236220473
+              ],
+              "right": [
+                595.27559055118,
+                238.110236220473
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                595.27559055118,
+                138.897637795275
+              ],
+              "left": [
+                595.27559055118,
+                138.897637795275
+              ],
+              "right": [
+                595.27559055118,
+                138.897637795275
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                629.291338582678,
+                138.897637795275
+              ],
+              "left": [
+                629.291338582678,
+                138.897637795275
+              ],
+              "right": [
+                629.291338582678,
+                138.897637795275
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                561.259842519685,
+                73.7007874015744
+              ],
+              "left": [
+                561.259842519685,
+                73.7007874015744
+              ],
+              "right": [
+                561.259842519685,
+                73.7007874015744
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                493.228346456694,
+                138.897637795275
+              ],
+              "left": [
+                493.228346456694,
+                138.897637795275
+              ],
+              "right": [
+                493.228346456694,
+                138.897637795275
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                527.244094488189,
+                138.897637795275
+              ],
+              "left": [
+                527.244094488189,
+                138.897637795275
+              ],
+              "right": [
+                527.244094488189,
+                138.897637795275
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-4",
+          "dom_index": 4,
+          "name": "asymmetric left cyan bar",
+          "note": "py-ai-path:{\"id\":\"print.SAMPLE_CURVE_HOLE.left-bar\",\"name\":\"asymmetric left cyan bar\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SAMPLE_CURVE_HOLE"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 184,
+            "blue": 219
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            0,
+            453.543307086614
+          ],
+          "geometric_bounds": [
+            0,
+            453.543307086614,
+            68.0314960629921,
+            0
+          ],
+          "visible_bounds": [
+            0,
+            453.543307086614,
+            68.0314960629921,
+            0
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                0,
+                453.543307086614
+              ],
+              "left": [
+                0,
+                453.543307086614
+              ],
+              "right": [
+                0,
+                453.543307086614
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                68.0314960629921,
+                453.543307086614
+              ],
+              "left": [
+                68.0314960629921,
+                453.543307086614
+              ],
+              "right": [
+                68.0314960629921,
+                453.543307086614
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                68.0314960629921,
+                0
+              ],
+              "left": [
+                68.0314960629921,
+                0
+              ],
+              "right": [
+                68.0314960629921,
+                0
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                0,
+                0
+              ],
+              "left": [
+                0,
+                0
+              ],
+              "right": [
+                0,
+                0
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-5",
+          "dom_index": 5,
+          "name": "print base",
+          "note": "py-ai-path:{\"id\":\"print.SAMPLE_CURVE_HOLE.base\",\"name\":\"print base\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SAMPLE_CURVE_HOLE"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 240,
+            "green": 240,
+            "blue": 229
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            0,
+            453.543307086614
+          ],
+          "geometric_bounds": [
+            0,
+            453.543307086614,
+            680.314960629921,
+            0
+          ],
+          "visible_bounds": [
+            0,
+            453.543307086614,
+            680.314960629921,
+            0
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                0,
+                453.543307086614
+              ],
+              "left": [
+                0,
+                453.543307086614
+              ],
+              "right": [
+                0,
+                453.543307086614
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                680.314960629921,
+                453.543307086614
+              ],
+              "left": [
+                680.314960629921,
+                453.543307086614
+              ],
+              "right": [
+                680.314960629921,
+                453.543307086614
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                680.314960629921,
+                0
+              ],
+              "left": [
+                680.314960629921,
+                0
+              ],
+              "right": [
+                680.314960629921,
+                0
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                0,
+                0
+              ],
+              "left": [
+                0,
+                0
+              ],
+              "right": [
+                0,
+                0
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ]
+        }
+      ],
+      "group_layers": {
+        "PF_CUT:PF_PART_SAMPLE_CURVE_HOLE": "PF_CUT",
+        "PF_PRINT_FRONT:PF_PART_SAMPLE_CURVE_HOLE": "PF_PRINT_FRONT"
+      }
+    }
+  },
+  "preview": {
+    "profile": "deterministic-raster-preview-v1",
+    "source": "build/input-samples-r2/curve-hole/curve-hole-input.native.ai",
+    "source_sha256": "5ac38c0b861de0aa7eb58c1d67768ad5b8546ba41f5a9e5a9c8083c98577ba6a",
+    "renderer": "pdftocairo",
+    "renderer_version": "pdftocairo version 26.04.0",
+    "dpi": 144,
+    "page_count": 1,
+    "pages": [
+      {
+        "index": 1,
+        "width": 1361,
+        "height": 908,
+        "output": "build/illustrator-export-r2/curve-hole/artboard.preview.png",
+        "pixel_sha256": "5d4a371dfc09e8a3bc82379ccde3b75b49f16213db1a9b325daae266efff0564",
+        "png_sha256": "cb80d150a4682ec2d4a4a9e2af5a61f7c66d67785811c5a475d060fcd267976a"
+      }
+    ]
+  },
+  "print_front_png": {
+    "visible_layer": "PF_PRINT_FRONT",
+    "hidden_layers": [
+      "PF_CUT",
+      "PF_ANNOTATION",
+      "PF_FOLD"
+    ],
+    "path": "build/illustrator-export-r2/curve-hole/print-front.png",
+    "dpi": 144
+  }
+}

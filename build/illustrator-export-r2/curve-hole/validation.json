@@ -1,0 +1,40 @@
+{
+  "profile": "paper-fixture-export-verification-v1",
+  "numeric_live_dom_roundtrip": {
+    "source_path_ids": 6,
+    "exported_path_ids": 6,
+    "missing_ids": [],
+    "extra_ids": [],
+    "max_coordinate_error_mm": 0.0,
+    "tolerance_mm": 1e-06,
+    "passed": true
+  },
+  "print_pixel_mapping": {
+    "png": "print-front.png",
+    "pixels": [
+      1360,
+      908
+    ],
+    "range_mm": [
+      0.0,
+      0.0,
+      239.9999999999999,
+      159.99999999999991
+    ],
+    "formula": "pixel_x = x_mm / width_mm * PNG_width; pixel_y = y_mm / height_mm * PNG_height",
+    "visible_layer": "PF_PRINT_FRONT",
+    "hidden_layers": [
+      "PF_CUT",
+      "PF_ANNOTATION",
+      "PF_FOLD"
+    ],
+    "cut_red_pixels": 0,
+    "passed": true
+  },
+  "2d_overlay": {
+    "path": "geometry-overlay.svg",
+    "source": "artboard.preview.png",
+    "semantics": "magenta outer, yellow holes, cyan front-print paths"
+  },
+  "status": "passed"
+}

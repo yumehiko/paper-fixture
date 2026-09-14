@@ -1,0 +1,664 @@
+{
+  "schema": "paper-fixture-illustrator-export-v1",
+  "source": {
+    "path": "/Users/yumehiko/repository/paper-fixture-worktrees/illustrator-export/build/input-samples-r2/curve-hole/curve-hole-input.native.ai",
+    "sha256": "5ac38c0b861de0aa7eb58c1d67768ad5b8546ba41f5a9e5a9c8083c98577ba6a",
+    "read_via": "Illustrator 2026 live DOM"
+  },
+  "coordinate_system": {
+    "unit": "mm",
+    "origin": "artboard upper-left",
+    "x_axis": "right",
+    "y_axis": "down",
+    "source_unit": "Illustrator points",
+    "mm_per_point": 0.35277777777777775,
+    "artboard_bounds_mm": [
+      0.0,
+      0.0,
+      239.9999999999999,
+      159.99999999999991
+    ]
+  },
+  "material": {
+    "status": "external-explicit-input",
+    "thickness_mm": 3.0,
+    "front_side": "PF_PRINT_FRONT",
+    "back_and_edge": "paper base color in a later model-generation stage"
+  },
+  "print": {
+    "side": "front",
+    "range_mm": [
+      0.0,
+      0.0,
+      239.9999999999999,
+      159.99999999999991
+    ],
+    "pixel_mapping": "pixel_x = x_mm / width_mm * PNG_width; pixel_y = y_mm / height_mm * PNG_height"
+  },
+  "parts": [
+    {
+      "id": "SAMPLE_CURVE_HOLE",
+      "cut": {
+        "outer": {
+          "source_id": "cut.SAMPLE_CURVE_HOLE.outer",
+          "name": "CUT outer contour (Bézier R20)",
+          "closed": true,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 255,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width_mm": 0.350000001324547,
+          "points": [
+            {
+              "anchor_mm": [
+                19.999999999999936,
+                0.0
+              ],
+              "in_handle_mm": [
+                8.954305003384167,
+                0.0
+              ],
+              "out_handle_mm": [
+                31.045694996616024,
+                0.0
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor_mm": [
+                220.00000000000017,
+                0.0
+              ],
+              "in_handle_mm": [
+                208.954305003384,
+                0.0
+              ],
+              "out_handle_mm": [
+                231.045694996616,
+                0.0
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor_mm": [
+                239.9999999999999,
+                20.00000000000008
+              ],
+              "in_handle_mm": [
+                239.9999999999999,
+                8.954305003383912
+              ],
+              "out_handle_mm": [
+                239.9999999999999,
+                31.04569499661587
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor_mm": [
+                239.9999999999999,
+                139.99999999999997
+              ],
+              "in_handle_mm": [
+                239.9999999999999,
+                128.95430500338392
+              ],
+              "out_handle_mm": [
+                239.9999999999999,
+                151.04569499661608
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor_mm": [
+                220.00000000000017,
+                159.99999999999991
+              ],
+              "in_handle_mm": [
+                231.045694996616,
+                159.99999999999991
+              ],
+              "out_handle_mm": [
+                208.954305003384,
+                159.99999999999991
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor_mm": [
+                19.999999999999936,
+                159.99999999999991
+              ],
+              "in_handle_mm": [
+                31.045694996616024,
+                159.99999999999991
+              ],
+              "out_handle_mm": [
+                8.954305003384167,
+                159.99999999999991
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor_mm": [
+                0.0,
+                139.99999999999997
+              ],
+              "in_handle_mm": [
+                0.0,
+                151.04569499661608
+              ],
+              "out_handle_mm": [
+                0.0,
+                128.95430500338392
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor_mm": [
+                0.0,
+                20.00000000000008
+              ],
+              "in_handle_mm": [
+                0.0,
+                31.04569499661587
+              ],
+              "out_handle_mm": [
+                0.0,
+                8.954305003383912
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ],
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SAMPLE_CURVE_HOLE"
+          },
+          "role": "outer"
+        },
+        "holes": [
+          {
+            "source_id": "cut.SAMPLE_CURVE_HOLE.hole.01",
+            "name": "CUT hole φ24",
+            "closed": true,
+            "filled": false,
+            "stroked": true,
+            "fill_color": null,
+            "stroke_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 0,
+              "blue": 0
+            },
+            "stroke_width_mm": 0.350000001324547,
+            "points": [
+              {
+                "anchor_mm": [
+                  132.00000000000009,
+                  79.99999999999996
+                ],
+                "in_handle_mm": [
+                  132.00000000000009,
+                  73.37258300203013
+                ],
+                "out_handle_mm": [
+                  132.00000000000009,
+                  86.6274169979698
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  120.00000000000011,
+                  91.99999999999993
+                ],
+                "in_handle_mm": [
+                  126.62741699796996,
+                  91.99999999999993
+                ],
+                "out_handle_mm": [
+                  113.37258300203064,
+                  91.99999999999993
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  108.00000000000014,
+                  79.99999999999996
+                ],
+                "in_handle_mm": [
+                  108.00000000000014,
+                  86.6274169979698
+                ],
+                "out_handle_mm": [
+                  108.00000000000014,
+                  73.37258300203013
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  120.00000000000011,
+                  67.99999999999997
+                ],
+                "in_handle_mm": [
+                  113.37258300203064,
+                  67.99999999999997
+                ],
+                "out_handle_mm": [
+                  126.62741699796996,
+                  67.99999999999997
+                ],
+                "point_type": "PointType.SMOOTH"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SAMPLE_CURVE_HOLE"
+            },
+            "role": "hole.01"
+          }
+        ]
+      },
+      "dimensions_mm": [
+        239.9999999999999,
+        159.99999999999991
+      ],
+      "placement_bounds_mm": [
+        0.0,
+        0.0,
+        239.9999999999999,
+        159.99999999999991
+      ],
+      "print_front": {
+        "paths": [
+          {
+            "source_id": "print.SAMPLE_CURVE_HOLE.hole-window",
+            "name": "hole location witness",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 255,
+              "blue": 255
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  132.00000000000009,
+                  79.99999999999996
+                ],
+                "in_handle_mm": [
+                  132.00000000000009,
+                  73.37258300203013
+                ],
+                "out_handle_mm": [
+                  132.00000000000009,
+                  86.6274169979698
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  120.00000000000011,
+                  91.99999999999993
+                ],
+                "in_handle_mm": [
+                  126.62741699796996,
+                  91.99999999999993
+                ],
+                "out_handle_mm": [
+                  113.37258300203064,
+                  91.99999999999993
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  108.00000000000014,
+                  79.99999999999996
+                ],
+                "in_handle_mm": [
+                  108.00000000000014,
+                  86.6274169979698
+                ],
+                "out_handle_mm": [
+                  108.00000000000014,
+                  73.37258300203013
+                ],
+                "point_type": "PointType.SMOOTH"
+              },
+              {
+                "anchor_mm": [
+                  120.00000000000011,
+                  67.99999999999997
+                ],
+                "in_handle_mm": [
+                  113.37258300203064,
+                  67.99999999999997
+                ],
+                "out_handle_mm": [
+                  126.62741699796996,
+                  67.99999999999997
+                ],
+                "point_type": "PointType.SMOOTH"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SAMPLE_CURVE_HOLE"
+            },
+            "role": "hole-window"
+          },
+          {
+            "source_id": "print.SAMPLE_CURVE_HOLE.orientation",
+            "name": "FRONT +Y orientation arrow",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 255,
+              "green": 97,
+              "blue": 13
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  186.0,
+                  75.99999999999973
+                ],
+                "in_handle_mm": [
+                  186.0,
+                  75.99999999999973
+                ],
+                "out_handle_mm": [
+                  186.0,
+                  75.99999999999973
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  209.9999999999996,
+                  75.99999999999973
+                ],
+                "in_handle_mm": [
+                  209.9999999999996,
+                  75.99999999999973
+                ],
+                "out_handle_mm": [
+                  209.9999999999996,
+                  75.99999999999973
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  209.9999999999996,
+                  111.00000000000014
+                ],
+                "in_handle_mm": [
+                  209.9999999999996,
+                  111.00000000000014
+                ],
+                "out_handle_mm": [
+                  209.9999999999996,
+                  111.00000000000014
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  222.00000000000028,
+                  111.00000000000014
+                ],
+                "in_handle_mm": [
+                  222.00000000000028,
+                  111.00000000000014
+                ],
+                "out_handle_mm": [
+                  222.00000000000028,
+                  111.00000000000014
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  197.99999999999997,
+                  134.00000000000006
+                ],
+                "in_handle_mm": [
+                  197.99999999999997,
+                  134.00000000000006
+                ],
+                "out_handle_mm": [
+                  197.99999999999997,
+                  134.00000000000006
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  174.00000000000037,
+                  111.00000000000014
+                ],
+                "in_handle_mm": [
+                  174.00000000000037,
+                  111.00000000000014
+                ],
+                "out_handle_mm": [
+                  174.00000000000037,
+                  111.00000000000014
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  186.0,
+                  111.00000000000014
+                ],
+                "in_handle_mm": [
+                  186.0,
+                  111.00000000000014
+                ],
+                "out_handle_mm": [
+                  186.0,
+                  111.00000000000014
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SAMPLE_CURVE_HOLE"
+            },
+            "role": "orientation"
+          },
+          {
+            "source_id": "print.SAMPLE_CURVE_HOLE.left-bar",
+            "name": "asymmetric left cyan bar",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 0,
+              "green": 184,
+              "blue": 219
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  0.0,
+                  0.0
+                ],
+                "in_handle_mm": [
+                  0.0,
+                  0.0
+                ],
+                "out_handle_mm": [
+                  0.0,
+                  0.0
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  23.99999999999999,
+                  0.0
+                ],
+                "in_handle_mm": [
+                  23.99999999999999,
+                  0.0
+                ],
+                "out_handle_mm": [
+                  23.99999999999999,
+                  0.0
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  23.99999999999999,
+                  159.99999999999991
+                ],
+                "in_handle_mm": [
+                  23.99999999999999,
+                  159.99999999999991
+                ],
+                "out_handle_mm": [
+                  23.99999999999999,
+                  159.99999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  0.0,
+                  159.99999999999991
+                ],
+                "in_handle_mm": [
+                  0.0,
+                  159.99999999999991
+                ],
+                "out_handle_mm": [
+                  0.0,
+                  159.99999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SAMPLE_CURVE_HOLE"
+            },
+            "role": "left-bar"
+          },
+          {
+            "source_id": "print.SAMPLE_CURVE_HOLE.base",
+            "name": "print base",
+            "closed": true,
+            "filled": true,
+            "stroked": false,
+            "fill_color": {
+              "type": "RGBColor",
+              "red": 240,
+              "green": 240,
+              "blue": 229
+            },
+            "stroke_color": null,
+            "stroke_width_mm": 0.35277777777777775,
+            "points": [
+              {
+                "anchor_mm": [
+                  0.0,
+                  0.0
+                ],
+                "in_handle_mm": [
+                  0.0,
+                  0.0
+                ],
+                "out_handle_mm": [
+                  0.0,
+                  0.0
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  239.9999999999999,
+                  0.0
+                ],
+                "in_handle_mm": [
+                  239.9999999999999,
+                  0.0
+                ],
+                "out_handle_mm": [
+                  239.9999999999999,
+                  0.0
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  239.9999999999999,
+                  159.99999999999991
+                ],
+                "in_handle_mm": [
+                  239.9999999999999,
+                  159.99999999999991
+                ],
+                "out_handle_mm": [
+                  239.9999999999999,
+                  159.99999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              },
+              {
+                "anchor_mm": [
+                  0.0,
+                  159.99999999999991
+                ],
+                "in_handle_mm": [
+                  0.0,
+                  159.99999999999991
+                ],
+                "out_handle_mm": [
+                  0.0,
+                  159.99999999999991
+                ],
+                "point_type": "PointType.CORNER"
+              }
+            ],
+            "parent": {
+              "type": "GroupItem",
+              "name": "PF_PART_SAMPLE_CURVE_HOLE"
+            },
+            "role": "base"
+          }
+        ],
+        "bounds_mm": [
+          0.0,
+          0.0,
+          239.9999999999999,
+          159.99999999999991
+        ]
+      }
+    }
+  ]
+}
