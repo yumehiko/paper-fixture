@@ -9,13 +9,10 @@ Run with Blender 5.2.1::
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import math
-import os
 import shutil
 import sys
-import tempfile
 from pathlib import Path
 
 import bpy
@@ -23,14 +20,15 @@ from mathutils import Vector
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from tools.assembly_input import evaluate_checks, load_placement
-from tools.build_blender_panels import add_spline, paper_material, front_material, MM, PAPER_RGB
+from tools.build_blender_panels import add_spline, paper_material, front_material, MM
+from tools.assembly_bundle_output import (
+    OUTPUT_NAMES, assert_replaceable, create_staging, publish_staging,
+    resolve_output_boundary, sha256,
+)
 
 
 BLENDER_VERSION = "5.2.1"
 MANIFEST_VERSION = 1
-OUTPUT_NAMES = {"assembly.blend", "textures/print-front.png", "verification.json", "preview-perspective.png", "preview-reference.png"}
-
-
 def arguments():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True)
@@ -38,44 +36,6 @@ def arguments():
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--force", action="store_true")
     return parser.parse_args(sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else [])
-
-
-def sha256(path):
-    digest = hashlib.sha256()
-    with Path(path).open("rb") as source:
-        for block in iter(lambda: source.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
-
-
-def files_below(directory):
-    return {path.relative_to(directory).as_posix() for path in directory.rglob("*") if path.is_file()}
-
-
-def assert_replaceable(output, force):
-    """Refuse all pre-existing bundle mutations unless every file is accounted for."""
-    if not output.exists() or not files_below(output):
-        return
-    manifest_path = output / "build-manifest.json"
-    if not manifest_path.is_file():
-        if not force:
-            raise RuntimeError("existing output has no build-manifest.json; choose another --output-dir or pass --force")
-        return
-    try:
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        expected = manifest["output_hashes"]
-    except (OSError, ValueError, KeyError, TypeError) as error:
-        if not force:
-            raise RuntimeError(f"existing output manifest is invalid: {error}; choose another --output-dir or pass --force")
-        return
-    actual_names = files_below(output) - {"build-manifest.json"}
-    if set(expected) != actual_names:
-        reason = "existing output has missing or unknown files"
-    else:
-        changed = [name for name, digest in expected.items() if sha256(output / name) != digest]
-        reason = "existing output differs from its manifest: " + ", ".join(changed) if changed else ""
-    if reason and not force:
-        raise RuntimeError(reason + "; choose another --output-dir or pass --force")
 
 
 def make_panel(part, thickness_mm, print_range, front, paper, collection, instance):
@@ -186,27 +146,20 @@ def main():
         input_path.relative_to(root)
     except ValueError as error:
         raise RuntimeError("--input must be inside --repo-root") from error
-    requested_output = Path(args.output_dir)
-    if requested_output.is_symlink():
-        raise RuntimeError("--output-dir must not be a symlink")
-    output = requested_output.resolve()
-    try:
-        output.relative_to(root)
-    except ValueError as error:
-        raise RuntimeError("--output-dir must be a dedicated directory below the repository root") from error
-    if output == root or input_path == output or output in input_path.parents:
-        raise RuntimeError("--output-dir must not contain the repository root or an input")
-    assert_replaceable(output, args.force)
     resolved = load_placement(input_path, root)
     checks = evaluate_checks(resolved)
     bundle_source = root / resolved["sources"]["panels"]
     image_source = root / resolved["sources"]["print_front"]
+    input_hashes = {
+        "placement": {"path": input_path.relative_to(root).as_posix(), "sha256": sha256(input_path)},
+        "panels": {"path": resolved["sources"]["panels"], "sha256": sha256(bundle_source)},
+        "print_front": {"path": resolved["sources"]["print_front"], "sha256": sha256(image_source)},
+    }
+    output = resolve_output_boundary(root, args.output_dir, (input_path, bundle_source, image_source))
+    assert_replaceable(output, input_hashes, args.force)
     from tools.panel_input import load_bundle
     bundle = load_bundle(bundle_source, image_source)
-    # This creates only the parent of the explicitly supplied output boundary;
-    # an existing bundle itself is not modified until staging has completed.
-    output.parent.mkdir(parents=True, exist_ok=True)
-    staging = Path(tempfile.mkdtemp(prefix=output.name + ".staging-", dir=output.parent))
+    staging = create_staging(output)
     try:
         texture_dir = staging / "textures"
         texture_dir.mkdir()
@@ -229,15 +182,11 @@ def main():
         (staging / "verification.json").write_text(json.dumps(verification, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         hashes = {name: sha256(staging / name) for name in sorted(OUTPUT_NAMES)}
         manifest = {"manifest_version": MANIFEST_VERSION, "blender_version": BLENDER_VERSION,
-                    "input_hashes": {"placement": {"path": input_path.relative_to(root).as_posix(), "sha256": sha256(input_path)},
-                                     "panels": {"path": resolved["sources"]["panels"], "sha256": sha256(bundle_source)},
-                                     "print_front": {"path": resolved["sources"]["print_front"], "sha256": sha256(image_source)}},
+                    "input_hashes": input_hashes,
                     "instances": [{key: item[key] for key in ("id", "part_id", "translation_mm", "rotation_deg_xyz", "matrix_mm")} for item in resolved["instances"]],
                     "output_hashes": hashes}
         (staging / "build-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        if output.exists():
-            shutil.rmtree(output)
-        os.replace(staging, output)
+        publish_staging(staging, output)
     except Exception:
         shutil.rmtree(staging, ignore_errors=True)
         raise

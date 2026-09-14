@@ -170,7 +170,7 @@ assembly/
 
 生成CLIは `tools/build_assembly_bundle.py` である。`--output-dir` はリポジトリ内の専用成果物ディレクトリに限り、リポジトリ根・入力を含む親・symlinkは拒否する。生成は同じ親に staging directory を作り、`.blend`、画像、preview、検査reportをすべて書き終えてmanifestを作成してから置換する。このため生成失敗は既存の正常 bundle を完成品でない状態へ変えない。
 
-既存出力へ再生成する前には、`build-manifest.json` が管理する全出力（manifest自身を除く）の名前と SHA-256 を現在の全ファイルと照合する。manifest欠落・不正、欠落または変更済み出力、未知ファイルがあれば通常実行は拒否する。明示した `--force` はその成果物ディレクトリだけを staging 成果物で置換する。上流入力・リポジトリ全体を変更せず、手編集をmergeまたはbackupする機能は持たない。
+既存出力へ再生成する前には、`build-manifest.json` が管理する全出力（manifest自身を除く）の名前と SHA-256 を現在の全ファイルと照合し、今回の全入力hash・入力pathも既存manifestと照合する。manifest欠落・不正、異なる入力、欠落または変更済み出力、未知ファイルがあれば通常実行は拒否する。明示した `--force` はその成果物ディレクトリだけを staging 成果物で置換する。最終置換では既存bundleを同じ親へ原子的に退避してから新bundleを置き、置換に失敗した場合は既存bundleを戻す。上流入力・リポジトリ全体を変更せず、手編集をmergeまたはbackupする機能は持たない。
 
 ## 座標系と基準面
 
