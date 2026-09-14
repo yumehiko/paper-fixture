@@ -48,8 +48,21 @@ def _verify_live_dom(package: dict[str, Any], evidence: dict[str, Any]) -> dict[
             for original_point, normalized_point in zip(original["anchors"], normalized["points"], strict=True):
                 expected = [(float(original_point[original_key][0]) - left) * MM_PER_PT, (top - float(original_point[original_key][1])) * MM_PER_PT]
                 errors.extend(abs(expected[index] - normalized_point[key][index]) for index in range(2))
-    maximum = max(errors, default=0.0)
-    return {"source_path_ids": len(source), "exported_path_ids": len(exported), "missing_ids": missing, "extra_ids": extra, "max_coordinate_error_mm": maximum, "tolerance_mm": 0.000001, "passed": not missing and not extra and maximum <= 0.000001}
+    fold_errors: list[float] = []
+    live_folds = {}
+    for path in live["paths"]:
+        parent = path.get("parent", {})
+        if path.get("layer") == "PF_FOLD" and isinstance(parent, dict) and str(parent.get("name", "")).startswith("PF_PART_"):
+            part_id, fold_id = str(parent["name"])[8:], path.get("name") or ""
+            live_folds[(part_id, fold_id)] = path
+    exported_folds = {(part["id"], fold["id"]): fold for part in package["parts"] for fold in part.get("folds", [])}
+    fold_missing, fold_extra = sorted(set(live_folds) - set(exported_folds)), sorted(set(exported_folds) - set(live_folds))
+    for key in sorted(set(live_folds) & set(exported_folds)):
+        for raw, actual in zip(live_folds[key]["anchors"], exported_folds[key]["endpoints_mm"], strict=True):
+            expected = [(float(raw["anchor"][0]) - left) * MM_PER_PT, (top - float(raw["anchor"][1])) * MM_PER_PT]
+            fold_errors.extend(abs(expected[index] - actual[index]) for index in range(2))
+    maximum = max(errors + fold_errors, default=0.0)
+    return {"source_path_ids": len(source), "exported_path_ids": len(exported), "missing_ids": missing, "extra_ids": extra, "missing_folds": fold_missing, "extra_folds": fold_extra, "max_coordinate_error_mm": maximum, "tolerance_mm": 0.000001, "passed": not missing and not extra and not fold_missing and not fold_extra and maximum <= 0.000001}
 
 
 def _svg_path(path: dict[str, Any], *, x_scale: float, y_scale: float) -> str:
@@ -72,7 +85,8 @@ def _write_overlay(package: dict[str, Any], png: Path, output: Path) -> None:
         elements.append(f'<path d="{_svg_path(part["cut"]["outer"], x_scale=x_scale, y_scale=y_scale)}" class="cut"/>')
         elements.extend(f'<path d="{_svg_path(path, x_scale=x_scale, y_scale=y_scale)}" class="hole"/>' for path in part["cut"]["holes"])
         elements.extend(f'<path d="{_svg_path(path, x_scale=x_scale, y_scale=y_scale)}" class="print"/>' for path in part["print_front"]["paths"])
-    output.write_text("\n".join([f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">', '<image href="artboard.preview.png" width="100%" height="100%"/>', '<style>.cut{fill:none;stroke:#f0f;stroke-width:1.5}.hole{fill:none;stroke:#ff0;stroke-width:1.5}.print{fill:none;stroke:#0ff;stroke-width:.75}</style>', *elements, '</svg>', '']), encoding="utf-8")
+        elements.extend(f'<path d="M {fold["endpoints_mm"][0][0] * x_scale:.6f} {fold["endpoints_mm"][0][1] * y_scale:.6f} L {fold["endpoints_mm"][1][0] * x_scale:.6f} {fold["endpoints_mm"][1][1] * y_scale:.6f}" class="fold"/>' for fold in part.get("folds", []))
+    output.write_text("\n".join([f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">', '<image href="artboard.preview.png" width="100%" height="100%"/>', '<style>.cut{fill:none;stroke:#f0f;stroke-width:1.5}.hole{fill:none;stroke:#ff0;stroke-width:1.5}.print{fill:none;stroke:#0ff;stroke-width:.75}.fold{fill:none;stroke:#0f0;stroke-width:1}</style>', *elements, '</svg>', '']), encoding="utf-8")
 
 
 def _png_pixels(path: Path) -> tuple[int, int, bytes]:

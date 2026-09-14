@@ -97,7 +97,19 @@ def _part_id(group_name: Any) -> str | None:
     return value or None
 
 
-def _point_in_polygon(point: list[float], polygon: list[list[float]]) -> bool:
+def _flatten_path(path: dict[str, Any], steps: int = 32) -> list[list[float]]:
+    points = path["points"]
+    result = []
+    for index, current in enumerate(points):
+        previous = points[index - 1]
+        p0, p1, p2, p3 = previous["anchor_mm"], previous["out_handle_mm"], current["in_handle_mm"], current["anchor_mm"]
+        for step in range(steps):
+            t = step / steps; u = 1 - t
+            result.append([u**3*p0[0]+3*u*u*t*p1[0]+3*u*t*t*p2[0]+t**3*p3[0], u**3*p0[1]+3*u*u*t*p1[1]+3*u*t*t*p2[1]+t**3*p3[1]])
+    return result
+
+
+def _point_in_polygon(point: list[float], polygon: list[list[float]], tolerance: float = 1e-5) -> bool:
     """Use anchor polygons only to classify already-closed Illustrator paths.
 
     Curved outline segments remain in the exported Bézier geometry.  The test is
@@ -108,6 +120,10 @@ def _point_in_polygon(point: list[float], polygon: list[list[float]]) -> bool:
     inside = False
     for index, first in enumerate(polygon):
         second = polygon[(index + 1) % len(polygon)]
+        dx, dy = second[0] - first[0], second[1] - first[1]
+        length = math.hypot(dx, dy)
+        if length and abs(dx * (y - first[1]) - dy * (x - first[0])) / length <= tolerance and min(first[0], second[0]) - tolerance <= x <= max(first[0], second[0]) + tolerance and min(first[1], second[1]) - tolerance <= y <= max(first[1], second[1]) + tolerance:
+            raise ExportValidationError("PF_CUT contour containment is ambiguous at a boundary")
         if (first[1] > y) != (second[1] > y):
             crossing = (second[0] - first[0]) * (y - first[1]) / (second[1] - first[1]) + first[0]
             if x < crossing:
@@ -157,30 +173,60 @@ def export_from_dom(dom: dict[str, Any], *, source: Path, material: dict[str, An
         raise ExportValidationError("Illustrator did not return path inspection data")
 
     group_layers = illustrator.get("group_layers")
-    if not isinstance(group_layers, dict):
+    group_entries = illustrator.get("group_entries")
+    if not isinstance(group_layers, dict) or not isinstance(group_entries, list):
         raise ExportValidationError("Illustrator did not return group-to-layer membership data")
     grouped: dict[str, dict[str, list[dict[str, Any]]]] = defaultdict(lambda: {"cut": [], "print": [], "fold": []})
+    seen_groups: set[str] = set()
+    for group in group_entries:
+        if not isinstance(group, dict):
+            continue
+        name, layer = group.get("name"), group.get("layer")
+        if not isinstance(name, str) or not isinstance(layer, str):
+            continue
+        if layer in {"PF_CUT", "PF_PRINT_FRONT", "PF_FOLD"} and name.startswith("PF_PART_"):
+            marker = layer + ":" + name
+            if marker in seen_groups:
+                raise ExportValidationError(f"{layer}: duplicate part group {name}")
+            seen_groups.add(marker)
+            part_id = _part_id(name)
+            if part_id is not None:
+                grouped[part_id]
     for raw in raw_paths:
         if not isinstance(raw, dict):
             raise ExportValidationError("Illustrator returned a non-object path")
         parent = raw.get("parent")
-        if not isinstance(parent, dict) or parent.get("type") != "GroupItem":
+        layer_name = raw.get("layer")
+        if layer_name not in {"PF_CUT", "PF_PRINT_FRONT", "PF_FOLD"}:
             continue
+        if layer_name == "PF_PRINT_FRONT":
+            # The print deliverable is the layer-isolated PNG. Live text and
+            # compound paths are valid artwork even when they have no closed
+            # vector representation in this geometry IR.
+            if not isinstance(parent, dict) or parent.get("type") == "Layer":
+                raise ExportValidationError(f"{layer_name}: path {raw.get('name')!r} must be inside a PF_PART_<ID> group")
+            if parent.get("type") != "GroupItem":
+                continue
+        elif not isinstance(parent, dict) or parent.get("type") != "GroupItem":
+            raise ExportValidationError(f"{layer_name}: path {raw.get('name')!r} must be directly inside a PF_PART_<ID> group")
         part_id = _part_id(parent.get("name"))
         if part_id is None:
-            continue
+            raise ExportValidationError(f"{layer_name}: path {raw.get('name')!r} is in a non-PF_PART group")
         group_name = parent["name"]
-        layer_name = raw.get("layer")
         kind_by_layer = {"PF_CUT": "cut", "PF_PRINT_FRONT": "print", "PF_FOLD": "fold"}
         kind = kind_by_layer.get(layer_name)
         if kind and group_layers.get(f"{layer_name}:{group_name}") == layer_name:
             grouped[part_id][kind].append(raw)
+        else:
+            raise ExportValidationError(f"{layer_name}: group {group_name} must be directly on its PF layer")
 
     exported_parts: list[dict[str, Any]] = []
     for part_id in sorted(grouped):
         part = grouped[part_id]
-        if not part["cut"]:
-            continue
+        if not part["cut"] and (part["print"] or part["fold"] or any(
+            marker.endswith(":" + "PF_PART_" + part_id) for marker in seen_groups
+        )):
+            raise ExportValidationError(f"{part_id}: PF_PRINT_FRONT or PF_FOLD exists without PF_CUT geometry")
         cuts = [_normalize_path(raw, source_id=str(raw.get("id", f"cut.{part_id}.{index + 1}")), top_pt=top, left_pt=left)
                 for index, raw in enumerate(part["cut"])]
         # AI may intentionally retain a non-printing cut path without a visible
@@ -188,7 +234,7 @@ def export_from_dom(dom: dict[str, Any], *, source: Path, material: dict[str, An
         # CAM-facing stroke is required belongs to a later output profile.
         if any(item["filled"] for item in cuts):
             raise ExportValidationError(f"{part_id}: PF_CUT contours must be unfilled")
-        polygons = [[point["anchor_mm"] for point in item["points"]] for item in cuts]
+        polygons = [_flatten_path(item) for item in cuts]
         containers = [[other_index for other_index, other_polygon in enumerate(polygons)
                        if other_index != index and _point_in_polygon(polygon[0], other_polygon)]
                       for index, polygon in enumerate(polygons)]
@@ -325,6 +371,7 @@ def inspect_ai(source: Path, *, timeout: float) -> dict[str, Any]:
         raise RuntimeError("Illustrator did not return document structure")
     groups = runtime.get("groups")
     group_layers: dict[str, str] = {}
+    group_entries: list[dict[str, str]] = []
     if not isinstance(groups, list):
         raise RuntimeError("Illustrator did not return group memberships")
     for group in groups:
@@ -333,7 +380,8 @@ def inspect_ai(source: Path, *, timeout: float) -> dict[str, Any]:
         name, parent = group.get("name"), group.get("parent")
         if isinstance(name, str) and isinstance(parent, dict) and parent.get("type") == "Layer" and isinstance(parent.get("name"), str):
             group_layers[f"{parent['name']}:{name}"] = parent["name"]
-    return {"status": "passed", "illustrator": {"ok": True, "illustrator_version": runtime.get("illustrator_version"), "layer_names": [item.get("name") for item in structure.get("layers", []) if isinstance(item, dict)], "artboards": structure.get("artboards"), "paths": snapshot.get("paths"), "group_layers": group_layers}}
+            group_entries.append({"name": name, "layer": parent["name"]})
+    return {"status": "passed", "illustrator": {"ok": True, "illustrator_version": runtime.get("illustrator_version"), "layer_names": [item.get("name") for item in structure.get("layers", []) if isinstance(item, dict)], "artboards": structure.get("artboards"), "paths": snapshot.get("paths"), "group_layers": group_layers, "group_entries": group_entries}}
 
 
 def export_print_front_png(source: Path, output: Path, *, timeout: float) -> dict[str, Any]:

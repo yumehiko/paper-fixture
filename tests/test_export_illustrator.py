@@ -26,14 +26,27 @@ def _path(name: str, anchors: list[list[float]], *, layer: str, closed: bool = T
 
 def _dom(paths: list[dict]) -> dict:
     group_layers = {}
+    group_entries = []
+    seen_groups = set()
     for path in paths:
         group_layers[f"{path['layer']}:{path['parent']['name']}"] = path["layer"]
+        marker = (path["layer"], path["parent"]["name"])
+        if marker not in seen_groups:
+            group_entries.append({"name": path["parent"]["name"], "layer": path["layer"]})
+            seen_groups.add(marker)
     return {"illustrator": {"ok": True, "layer_names": ["PF_CUT", "PF_PRINT_FRONT", "PF_FOLD", "PF_ANNOTATION"],
             "artboards": [{"rect": [0, 72, 144, 0]}], "group_layers": group_layers,
-            "paths": paths}}
+            "group_entries": group_entries, "paths": paths}}
 
 
 class ExportFromDomTests(unittest.TestCase):
+    def test_classifies_hole_inside_curve_but_outside_anchor_chord(self) -> None:
+        outer = _path("curve", [[0, 36], [36, 72], [72, 36], [36, 0]], layer="PF_CUT")
+        handles = [([0, 16.1], [0, 55.9]), ([16.1, 72], [55.9, 72]), ([72, 55.9], [72, 16.1]), ([55.9, 0], [16.1, 0])]
+        for point, (left, right) in zip(outer["anchors"], handles): point["left_direction"], point["right_direction"] = left, right
+        hole = _path("hole", [[17, 66], [23, 66], [23, 60], [17, 60]], layer="PF_CUT")
+        result = exporter.export_from_dom(_dom([outer, hole]), source=_SOURCE, material=None)
+        self.assertEqual(len(result["parts"][0]["cut"]["holes"]), 1)
     def test_extracts_note_free_outer_hole_and_fold(self) -> None:
         result = exporter.export_from_dom(_dom([
             _path("cut outline", [[0, 72], [144, 72], [144, 0], [0, 0]], layer="PF_CUT"),
@@ -56,6 +69,42 @@ class ExportFromDomTests(unittest.TestCase):
         ]
         with self.assertRaisesRegex(exporter.ExportValidationError, "unambiguous outer"):
             exporter.export_from_dom(_dom(paths), source=_SOURCE, material=None)
+
+    def test_rejects_pf_layer_path_outside_part_group(self) -> None:
+        path = _path("orphan", [[0, 72], [144, 72], [144, 0]], layer="PF_CUT")
+        path["parent"] = {"type": "Layer", "name": "PF_CUT"}
+        with self.assertRaisesRegex(exporter.ExportValidationError, "PF_PART"):
+            exporter.export_from_dom(_dom([path]), source=_SOURCE, material=None)
+
+    def test_rejects_nested_cut_and_non_part_cut_groups_even_with_valid_part(self) -> None:
+        valid = _path("valid", [[0, 72], [144, 72], [144, 0], [0, 0]], layer="PF_CUT")
+        nested = _path("nested", [[160, 72], [200, 72], [200, 0], [160, 0]], layer="PF_CUT")
+        nested["parent"] = {"type": "GroupItem", "name": "PF_PART_BODY"}
+        dom = _dom([valid, nested])
+        dom["illustrator"]["group_layers"].pop("PF_CUT:PF_PART_BODY")
+        with self.assertRaisesRegex(exporter.ExportValidationError, "directly on its PF layer"):
+            exporter.export_from_dom(dom, source=_SOURCE, material=None)
+        other = _path("other", [[160, 72], [200, 72], [200, 0], [160, 0]], layer="PF_CUT")
+        other["parent"] = {"type": "GroupItem", "name": "working"}
+        with self.assertRaisesRegex(exporter.ExportValidationError, "non-PF_PART"):
+            exporter.export_from_dom(_dom([valid, other]), source=_SOURCE, material=None)
+
+    def test_rejects_duplicate_groups_and_print_only_part(self) -> None:
+        cut = _path("cut", [[0, 72], [144, 72], [144, 0], [0, 0]], layer="PF_CUT")
+        dom = _dom([cut])
+        dom["illustrator"]["group_entries"].append({"name": "PF_PART_PANEL", "layer": "PF_CUT"})
+        with self.assertRaisesRegex(exporter.ExportValidationError, "duplicate part group"):
+            exporter.export_from_dom(dom, source=_SOURCE, material=None)
+        print_only = _path("print", [[0, 72], [20, 72], [20, 0], [0, 0]], layer="PF_PRINT_FRONT", part="PRINT_ONLY")
+        with self.assertRaisesRegex(exporter.ExportValidationError, "without PF_CUT"):
+            exporter.export_from_dom(_dom([cut, print_only]), source=_SOURCE, material=None)
+
+    def test_allows_compound_print_path_without_cut_path_rules(self) -> None:
+        cut = _path("cut", [[0, 72], [144, 72], [144, 0], [0, 0]], layer="PF_CUT")
+        compound = _path("outlined text", [[10, 20], [20, 20], [20, 10]], layer="PF_PRINT_FRONT")
+        compound["parent"] = {"type": "CompoundPathItem", "name": ""}
+        result = exporter.export_from_dom(_dom([cut, compound]), source=_SOURCE, material=None)
+        self.assertEqual(result["parts"][0]["print_front"]["paths"], [])
 
     def test_rejects_open_cut_and_nonstraight_fold(self) -> None:
         open_cut = _path("cut", [[0, 72], [144, 72], [144, 0]], layer="PF_CUT", closed=False)

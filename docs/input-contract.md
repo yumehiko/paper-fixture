@@ -1,4 +1,6 @@
-# 入力データの契約案
+# 入力データの契約案（設計・開発者向け）
+
+> 通常の入稿は [Illustrator 入稿と寸法資料](operator-intake.md) が正本です。Illustrator 担当は `.ai` と人向け寸法資料を渡し、note、material / placement JSON、XYZ 座標、回転行列を入力しません。本書の JSON、座標、配置は既存 builder と将来設計を説明する開発者向け契約です。
 
 ## 合意済みの入力運用
 
