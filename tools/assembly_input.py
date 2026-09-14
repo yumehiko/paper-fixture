@@ -145,7 +145,9 @@ def _validate_contact(contact, index, ids, errors):
         _error(errors, f"{label} faces must be opposite faces on one axis")
     if contact.get("kind") != "axis_aligned_face_contact":
         _error(errors, f"{label}.kind must be axis_aligned_face_contact")
-    _finite_number(contact.get("target_gap_mm"), f"{label}.target_gap_mm", errors)
+    target_gap = _finite_number(contact.get("target_gap_mm"), f"{label}.target_gap_mm", errors)
+    if target_gap is not None and target_gap < 0:
+        _error(errors, f"{label}.target_gap_mm must be non-negative")
     tolerance = _finite_number(contact.get("tolerance_mm"), f"{label}.tolerance_mm", errors)
     if tolerance is not None and tolerance < 0:
         _error(errors, f"{label}.tolerance_mm must be non-negative")
@@ -269,7 +271,9 @@ def evaluate_checks(resolved):
             continue
         a_value = first["world_aabb_mm"][axis][0 if _face_side(contact["a_face"]) == "min" else 1]
         b_value = second["world_aabb_mm"][axis][0 if _face_side(contact["b_face"]) == "min" else 1]
-        gap = abs(a_value - b_value)
+        # A positive value is separation and a negative value is penetration.
+        # The sign is defined by the two facing AABB sides, not contact ordering.
+        gap = a_value - b_value if _face_side(contact["a_face"]) == "min" else b_value - a_value
         other_axes = [candidate for candidate in "xyz" if candidate != axis]
         overlaps = all(min(first["world_aabb_mm"][candidate][1], second["world_aabb_mm"][candidate][1]) - max(first["world_aabb_mm"][candidate][0], second["world_aabb_mm"][candidate][0]) > 0 for candidate in other_axes)
         passed = overlaps and abs(gap - contact["target_gap_mm"]) <= contact["tolerance_mm"]

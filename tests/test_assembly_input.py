@@ -83,6 +83,16 @@ class AssemblyInputTests(unittest.TestCase):
         with self.assertRaisesRegex(InputError, "not applicable"):
             evaluate_checks(validate_placement(rotated, ROOT))
 
+    def test_contact_gap_keeps_penetration_sign_and_rejects_negative_target(self):
+        payload = self.payload()
+        payload["instances"][2]["translation_mm"][0] = -1
+        with self.assertRaisesRegex(InputError, "not satisfied"):
+            evaluate_checks(validate_placement(payload, ROOT))
+        payload = self.payload()
+        payload["checks"]["expected_contacts"][0]["target_gap_mm"] = -0.1
+        with self.assertRaisesRegex(InputError, "target_gap_mm must be non-negative"):
+            validate_placement(payload, ROOT)
+
     def test_cli_returns_nonzero_for_invalid_input_and_writes_resolved_report(self):
         with tempfile.TemporaryDirectory() as directory:
             directory = Path(directory)
