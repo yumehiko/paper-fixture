@@ -2,7 +2,7 @@
 
 Illustrator の展開図を起点に、Blender で紙什器を組み立て、確認・編集できるモデルへ受け渡す工程を補助するプロジェクトです。カメラ、照明、背景、納品レンダリングは既存の手動工程で設定します。
 
-現在は試作の第1〜4段階まで完了しています。Illustrator から取り出した展開図を、印刷面・紙厚・穴を持つ編集可能な Blender の平面部材へ変換し、明示した instance 配置から編集可能な assembly bundle を生成できます。折りと両面印刷は対象外です。
+現在は試作の第1〜4段階と、資料に基づく直線折りの組立まで完了しています。Illustrator から取り出した展開図を、印刷面・紙厚・穴を持つ編集可能な Blender の平面部材へ変換し、明示した instance 配置または資料から解決した直線foldの面ツリーから編集可能な assembly bundle を生成できます。両面印刷は対象外です。
 
 組立前の配置入力は Blender なしでも検査できます。既存の7部材試作入力を検査し、
 解決済みの4×4行列と任意の基準面・接触検査結果を出すには次を実行します。
@@ -120,6 +120,8 @@ mkdir -p build/local-blender-check/curve-hole
 
 独自の `.ai` を渡す場合は、[Illustrator 入稿と寸法資料](docs/operator-intake.md)を先に読んでください。Blender オペレーターが `.ai` と人向けの寸法資料を agent に渡します。path note、JSON、XYZ座標、回転行列は不要です。
 
+直線foldを含む場合は、資料に必要な折り・配置条件と生成・再open検証の流れを[資料から直線折りを含む組立を生成する設計](docs/fold-workflow.md)で確認してください。リポジトリには skill plugin の**ソース**を [`plugins/paper-fixture/`](plugins/paper-fixture/) に含めています。cloneしただけではCodex環境へ導入されないため、その環境のplugin導入手順で有効化した後、checkoutが利用できるtaskで `$paper-fixture-assembly` を呼び出します。このskillはcheckout中の `tools/export_illustrator.py`、`tools/build_fold_assembly.py`、検証器を実行します。Blender本体とIllustrator exporter用のPython環境はplugin内には含まれず、別途利用できる必要があります。オペレーターが記入するのは `.ai` と人が読める寸法資料だけです。
+
 [Illustrator 書き出し試作](docs/illustrator-export.md) は exporter の規約と出力形式の詳細です。理想化サンプルの `.ai` 再生成は、追加で公開 MIT リポジトリ [illustrator-agent](https://github.com/yumehiko/illustrator-agent) を必要とする開発者向け手順であり、Blender を試すための前提ではありません。
 
 ## 困ったとき・フィードバック
@@ -147,5 +149,6 @@ mkdir -p build/local-blender-check/curve-hole
 - [Illustrator 入稿と寸法資料](docs/operator-intake.md)
 - [Blender平面部材生成（第3段階）](docs/blender-panels.md)
 - [数値配置と編集可能な `.blend` 受け渡し設計（第4段階）](docs/assembly-placement.md)
+- [資料から直線折りを含む組立を生成する設計](docs/fold-workflow.md)
 
 各文書では、ユーザーが示した要望と、検証前の設計提案を区別する。未回答の項目を決定事項として扱わない。
