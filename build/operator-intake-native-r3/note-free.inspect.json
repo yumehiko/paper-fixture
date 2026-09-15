@@ -1,0 +1,327 @@
+{
+  "illustrator_version": "30.8.1",
+  "input": "/Users/yumehiko/repository/paper-fixture-operator-intake/build/operator-intake-native-r3/operator-intake.note-free.synthetic.ai",
+  "profile": "illustrator-native-local-edit-v1",
+  "runtime_required": true,
+  "selectors": [
+    {
+      "before": "FRONT / BODY",
+      "bounds": [
+        75.0,
+        207.4951171875,
+        259.322265625,
+        242.32470703125
+      ],
+      "id": "illustrator-dom-text-0",
+      "name": "BODY print text",
+      "operations": [
+        "replace_text"
+      ],
+      "runtime_evidence": {
+        "contents": "FRONT / BODY",
+        "dom_index": 0,
+        "geometric_bounds": [
+          75,
+          242.32470703125,
+          259.322265625,
+          207.4951171875
+        ],
+        "height": 34.82958984375,
+        "id": "illustrator-dom-text-0",
+        "kind": "TextType.POINTTEXT",
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          -7831,
+          8371
+        ],
+        "name": "BODY print text",
+        "note": "",
+        "parent": {
+          "name": "PF_PART_BODY",
+          "type": "GroupItem"
+        },
+        "position": [
+          75,
+          242.32470703125
+        ],
+        "style": {
+          "auto_leading": true,
+          "fill_color": {
+            "blue": 255,
+            "green": 255,
+            "red": 255,
+            "type": "RGBColor"
+          },
+          "font_name": "Helvetica",
+          "font_size": 26,
+          "justification": "Justification.LEFT",
+          "leading": 45.5,
+          "tracking": 0
+        },
+        "type": "text",
+        "visible_bounds": [
+          75,
+          242.32470703125,
+          259.322265625,
+          207.4951171875
+        ],
+        "width": 184.322265625
+      },
+      "selector": {
+        "id": "illustrator-dom-text-0",
+        "type": "text"
+      },
+      "type": "text"
+    },
+    {
+      "before": "Synthetic fixture only",
+      "bounds": [
+        20.0,
+        14.228515625,
+        130.71875,
+        30.3037109375
+      ],
+      "id": "illustrator-dom-text-1",
+      "name": "annotation-text",
+      "operations": [
+        "replace_text"
+      ],
+      "runtime_evidence": {
+        "contents": "Synthetic fixture only",
+        "dom_index": 1,
+        "geometric_bounds": [
+          20,
+          30.3037109375,
+          130.71875,
+          14.228515625
+        ],
+        "height": 16.0751953125,
+        "id": "illustrator-dom-text-1",
+        "kind": "TextType.POINTTEXT",
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          -7831,
+          8371
+        ],
+        "name": "annotation-text",
+        "note": "",
+        "parent": {
+          "name": "PF_ANNOTATION",
+          "type": "Layer"
+        },
+        "position": [
+          20,
+          30.3037109375
+        ],
+        "style": {
+          "auto_leading": true,
+          "fill_color": {
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "type": "RGBColor"
+          },
+          "font_name": "Helvetica",
+          "font_size": 12,
+          "justification": "Justification.LEFT",
+          "leading": 21,
+          "tracking": 0
+        },
+        "type": "text",
+        "visible_bounds": [
+          20,
+          30.3037109375,
+          130.71875,
+          14.228515625
+        ],
+        "width": 110.71875
+      },
+      "selector": {
+        "id": "illustrator-dom-text-1",
+        "type": "text"
+      },
+      "type": "text"
+    }
+  ],
+  "snapshot": {
+    "linked_images": [],
+    "structure": {
+      "artboards": [
+        {
+          "name": "Artboard 1",
+          "rect": [
+            0,
+            360,
+            720,
+            0
+          ]
+        }
+      ],
+      "compound_path_item_count": 1,
+      "group_item_count": 6,
+      "layer_count": 4,
+      "layers": [
+        {
+          "locked": false,
+          "name": "PF_CUT",
+          "page_item_count": 2,
+          "page_item_types": [
+            "GroupItem",
+            "GroupItem"
+          ],
+          "visible": true
+        },
+        {
+          "locked": false,
+          "name": "PF_PRINT_FRONT",
+          "page_item_count": 2,
+          "page_item_types": [
+            "GroupItem",
+            "GroupItem"
+          ],
+          "visible": true
+        },
+        {
+          "locked": false,
+          "name": "PF_FOLD",
+          "page_item_count": 2,
+          "page_item_types": [
+            "GroupItem",
+            "GroupItem"
+          ],
+          "visible": true
+        },
+        {
+          "locked": false,
+          "name": "PF_ANNOTATION",
+          "page_item_count": 1,
+          "page_item_types": [
+            "TextFrame"
+          ],
+          "visible": true
+        }
+      ],
+      "page_item_count": 17,
+      "path_item_count": 8,
+      "placed_item_count": 0,
+      "text_frame_count": 2
+    },
+    "texts": [
+      {
+        "contents": "FRONT / BODY",
+        "dom_index": 0,
+        "geometric_bounds": [
+          75,
+          242.32470703125,
+          259.322265625,
+          207.4951171875
+        ],
+        "height": 34.82958984375,
+        "id": "illustrator-dom-text-0",
+        "kind": "TextType.POINTTEXT",
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          -7831,
+          8371
+        ],
+        "name": "BODY print text",
+        "note": "",
+        "parent": {
+          "name": "PF_PART_BODY",
+          "type": "GroupItem"
+        },
+        "position": [
+          75,
+          242.32470703125
+        ],
+        "style": {
+          "auto_leading": true,
+          "fill_color": {
+            "blue": 255,
+            "green": 255,
+            "red": 255,
+            "type": "RGBColor"
+          },
+          "font_name": "Helvetica",
+          "font_size": 26,
+          "justification": "Justification.LEFT",
+          "leading": 45.5,
+          "tracking": 0
+        },
+        "type": "text",
+        "visible_bounds": [
+          75,
+          242.32470703125,
+          259.322265625,
+          207.4951171875
+        ],
+        "width": 184.322265625
+      },
+      {
+        "contents": "Synthetic fixture only",
+        "dom_index": 1,
+        "geometric_bounds": [
+          20,
+          30.3037109375,
+          130.71875,
+          14.228515625
+        ],
+        "height": 16.0751953125,
+        "id": "illustrator-dom-text-1",
+        "kind": "TextType.POINTTEXT",
+        "matrix": [
+          1,
+          0,
+          0,
+          1,
+          -7831,
+          8371
+        ],
+        "name": "annotation-text",
+        "note": "",
+        "parent": {
+          "name": "PF_ANNOTATION",
+          "type": "Layer"
+        },
+        "position": [
+          20,
+          30.3037109375
+        ],
+        "style": {
+          "auto_leading": true,
+          "fill_color": {
+            "blue": 0,
+            "green": 0,
+            "red": 0,
+            "type": "RGBColor"
+          },
+          "font_name": "Helvetica",
+          "font_size": 12,
+          "justification": "Justification.LEFT",
+          "leading": 21,
+          "tracking": 0
+        },
+        "type": "text",
+        "visible_bounds": [
+          20,
+          30.3037109375,
+          130.71875,
+          14.228515625
+        ],
+        "width": 110.71875
+      }
+    ],
+    "verified_path_count": 8
+  },
+  "source_sha256": "86de124946faab019a180e7966f04e39019493e52c757e0fd735a8b1f7aa2762",
+  "status": "passed"
+}
