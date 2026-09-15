@@ -58,7 +58,7 @@ def validate_path(path, label):
     return normalized
 
 
-def load_bundle(export_json, print_png):
+def load_bundle(export_json, print_png, *, allow_folds=False):
     """Validate and return an export bundle without changing its source files."""
     export_path = Path(export_json)
     image_path = Path(print_png)
@@ -100,7 +100,10 @@ def load_bundle(export_json, print_png):
         cut = part.get("cut", {})
         outer = validate_path(cut.get("outer"), f"{label}.cut.outer")
         holes = [validate_path(hole, f"{label}.cut.holes[{hole_index}]") for hole_index, hole in enumerate(cut.get("holes", []))]
-        normalized_parts.append({"id": part_id, "bounds_mm": bounds, "outer": outer, "holes": holes})
+        if part.get("folds") and not allow_folds:
+            raise InputError(f"{label}.folds is present; use the paper-fixture fold assembly workflow, not the flat-panel generator")
+        normalized_parts.append({"id": part_id, "bounds_mm": bounds, "outer": outer, "holes": holes,
+                                 "folds": part.get("folds", []) if allow_folds else []})
     return {"payload": payload, "thickness_mm": float(thickness), "print_range_mm": print_range, "parts": normalized_parts}
 
 
