@@ -118,7 +118,7 @@ mkdir -p build/local-blender-check/curve-hole
 
 最短手順で使う `export.json` と `print-front.png` は、リポジトリに同梱されています。独自の `.ai` から作る場合は、macOS、Adobe Illustrator 2026、Illustrator を読み取り専用で操作する公開 MIT リポジトリ [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) が必要です。取得と環境作成のコマンドは [Illustrator 書き出し試作](docs/illustrator-export.md) に記載しています。
 
-同梱サンプルを試したあとに独自の `.ai` から始める場合は、[自作 `.ai` から assembly bundle を作る](docs/custom-ai-workflow.md) を先に読んでください。元ファイルのコピーを整理し、`PF_CUT` と `PF_PRINT_FRONT`、部材ごとの `PF_PART_<ID>`、全パスの ID note、紙厚を記した `material.json`、配置を記した `placement.json` を用意するところから、書き出し・検証・Blender での確認までを一続きで説明しています。
+独自の `.ai` を渡す場合は、[Illustrator 入稿と寸法資料](docs/operator-intake.md)を先に読んでください。Blender オペレーターが `.ai` と人向けの寸法資料を agent に渡します。path note、JSON、XYZ座標、回転行列は不要です。
 
 [Illustrator 書き出し試作](docs/illustrator-export.md) は exporter の規約と出力形式の詳細です。理想化サンプルの `.ai` 再生成は、追加で公開 MIT リポジトリ [illustrator-agent](https://github.com/yumehiko/illustrator-agent) を必要とする開発者向け手順であり、Blender を試すための前提ではありません。
 
@@ -144,6 +144,7 @@ mkdir -p build/local-blender-check/curve-hole
 - [理想化入力サンプル（再生成手順）](samples/idealized_input/README.md)
 - [Illustrator書き出し試作](docs/illustrator-export.md)
 - [自作 `.ai` から assembly bundle を作る](docs/custom-ai-workflow.md)
+- [Illustrator 入稿と寸法資料](docs/operator-intake.md)
 - [Blender平面部材生成（第3段階）](docs/blender-panels.md)
 - [数値配置と編集可能な `.blend` 受け渡し設計（第4段階）](docs/assembly-placement.md)
 

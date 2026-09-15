@@ -1,4 +1,6 @@
-# 自作 `.ai` から assembly bundle を作る
+# 開発者向け旧互換手順: 自作 `.ai` から assembly bundle を作る
+
+> **通常の入稿手順ではありません。** Illustrator 担当は [Illustrator 入稿と寸法資料](operator-intake.md) に従い、`.ai` と人向けの寸法資料だけを Blender オペレーター経由で agent に渡します。path note、material / placement JSON、XYZ 座標、回転行列は入力しません。この文書は既存の JSON 配置 builder を再現・保守する開発者向けの旧互換経路です。
 
 同梱サンプルを試したあとに、自作の Illustrator 展開図から Blender で確認・編集できる `assembly.blend` を作る手順です。対象は、片面印刷を持つ独立した平面部材を数値で配置する工程です。カメラ、照明、背景、納品レンダリングは、この bundle を開いた後の既存の手動工程で設定します。
 
@@ -26,7 +28,7 @@ Blender の生成・検証に追加 Python パッケージは不要です。Illu
 
 各部材について、`PF_CUT` と `PF_PRINT_FRONT` の**直下**に同名のグループを作ります。部材 ID が `CUSTOM_PANEL` なら、両方に `PF_PART_CUSTOM_PANEL` を置きます。対象パスをそのグループへ移し、入れ子グループにはしません。部材 ID は export の `parts[].id` と placement の `part_id` で同じ文字列を使います。
 
-### path note を付ける
+### 旧規約の path note を付ける
 
 対象パスを選び、Illustrator の **ウィンドウ → 属性** を開きます。属性パネル右上のメニューから **Show Note（ノートを表示）** を選んで Note 欄を出し、そこへ値を設定します。各 path の note は、次のように `py-ai-path:` に JSON を続けた 1 行です。対象 path はすべて閉じます。
 
@@ -142,6 +144,6 @@ export の検証は元 `.ai` を読み取り専用で開き、`PF_PRINT_FRONT` �
 | PNG 検証失敗 | `print-front.png` を編集せず、新規 output directory に export をやり直す。 |
 | bundle 再生成拒否 | 手編集済みなら新しい `--output-dir` を使う。置換してよい当該 bundle だけ `--force` を使う。 |
 
-Illustrator 2026 の live DOM による 1 アートボード、閉じた図形 path、片面印刷、外周・穴、明示紙厚、数値配置、Blender 5.2.1 LTS の再オープン検証は実証済みです。曲線外周と穴は同梱 fixture で実証済みです。今回も新規 `CUSTOM_PANEL`（180 × 120 mm、R12 外周、穴、赤とシアンの印刷）で、export、fresh `PF_PRINT_FRONT` の RGBA 比較、placement、bundle、別プロセス再オープンまで開発機 smoke を通しました。利用者の実案件での実機検証は [#6](https://github.com/yumehiko/paper-fixture/issues/6) で収集します。
+この旧互換経路の既存 fixture は開発用のものです。通常の無ノート入稿の実測結果は [Illustrator 入稿と寸法資料](operator-intake.md) の synthetic fixture 記録を正本とします。利用者の実案件での実機検証は [#6](https://github.com/yumehiko/paper-fixture/issues/6) で収集します。
 
 折り、両面印刷、未整理 `.ai` の意味推定、アウトライン文字、複数アートボード、製造可能性・納品色管理の保証は対象外です。ライブテキスト、配置・ラスタ画像は上記のとおり未検証です。新しい入力機能が必要なら exporter を暗黙に拡張せず、別 Issue にしてください。

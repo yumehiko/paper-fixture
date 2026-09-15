@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "Synthetic note-free operator intake fixture",
+  "width": 720,
+  "height": 360,
+  "layers": [
+    {
+      "id": "cut", "name": "PF_CUT", "groups": [
+        {"id": "body-cut", "name": "PF_PART_BODY", "paths": [
+          {"id": "body-outer", "name": "BODY curved outer", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 40, "y": 150, "in_handle": {"x": 40, "y": 210}, "out_handle": {"x": 40, "y": 90}, "smooth": true}, {"x": 190, "y": 40, "in_handle": {"x": 130, "y": 40}, "out_handle": {"x": 250, "y": 40}, "smooth": true}, {"x": 340, "y": 150, "in_handle": {"x": 340, "y": 90}, "out_handle": {"x": 340, "y": 210}, "smooth": true}, {"x": 190, "y": 260, "in_handle": {"x": 250, "y": 260}, "out_handle": {"x": 130, "y": 260}, "smooth": true}]},
+          {"id": "body-hole", "name": "BODY curved hole", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 166, "y": 150, "in_handle": {"x": 166, "y": 163}, "out_handle": {"x": 166, "y": 137}, "smooth": true}, {"x": 190, "y": 126, "in_handle": {"x": 177, "y": 126}, "out_handle": {"x": 203, "y": 126}, "smooth": true}, {"x": 214, "y": 150, "in_handle": {"x": 214, "y": 137}, "out_handle": {"x": 214, "y": 163}, "smooth": true}, {"x": 190, "y": 174, "in_handle": {"x": 203, "y": 174}, "out_handle": {"x": 177, "y": 174}, "smooth": true}]}
+        ]},
+        {"id": "side-cut", "name": "PF_PART_SIDE", "paths": [
+          {"id": "side-outer", "name": "SIDE outer", "closed": true, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 410, "y": 40}, {"x": 590, "y": 40}, {"x": 590, "y": 260}, {"x": 410, "y": 260}]}
+        ]}
+      ]
+    },
+    {
+      "id": "print", "name": "PF_PRINT_FRONT", "groups": [
+        {"id": "body-print", "name": "PF_PART_BODY", "paths": [
+          {"id": "body-print-field", "name": "BODY red field", "closed": true, "fill": {"red": 0.9, "green": 0.1, "blue": 0.1}, "stroke": null, "points": [{"x": 54, "y": 54}, {"x": 326, "y": 54}, {"x": 326, "y": 246}, {"x": 54, "y": 246}]}
+        ], "text_frames": [
+          {"id": "body-text", "name": "BODY print text", "text": "FRONT / BODY", "x": 75, "y": 220, "font_size": 26, "font_name": "Helvetica", "fill": {"red": 1, "green": 1, "blue": 1}, "alignment": "left"}
+        ]},
+        {"id": "side-print", "name": "PF_PART_SIDE", "compound_paths": [
+          {"id": "side-compound", "name": "SIDE outlined print", "paths": [
+            {"id": "side-compound-outer", "closed": true, "fill": {"red": 0, "green": 0.7, "blue": 0.8}, "stroke": null, "polarity": "positive", "points": [{"x": 430, "y": 70}, {"x": 570, "y": 70}, {"x": 570, "y": 230}, {"x": 430, "y": 230}]},
+            {"id": "side-compound-hole", "closed": true, "fill": {"red": 0, "green": 0.7, "blue": 0.8}, "stroke": null, "polarity": "negative", "points": [{"x": 465, "y": 105}, {"x": 535, "y": 105}, {"x": 535, "y": 195}, {"x": 465, "y": 195}]}
+          ]}
+        ]}
+      ]
+    },
+    {
+      "id": "fold", "name": "PF_FOLD", "groups": [
+        {"id": "body-fold", "name": "PF_PART_BODY", "paths": [
+          {"id": "body-fold-line", "name": "FOLD_BODY_SIDE", "closed": false, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 190, "y": 40}, {"x": 190, "y": 260}]}
+        ]},
+        {"id": "side-fold", "name": "PF_PART_SIDE", "paths": [
+          {"id": "side-fold-line", "name": "FOLD_SIDE_TAB", "closed": false, "fill": null, "stroke": {"red": 0, "green": 0, "blue": 0}, "points": [{"x": 500, "y": 40}, {"x": 500, "y": 260}]}
+        ]}
+      ]
+    },
+    {"id": "annotation", "name": "PF_ANNOTATION", "text_frames": [{"id": "annotation-text", "text": "Synthetic fixture only", "x": 20, "y": 20, "font_size": 12, "font_name": "Helvetica", "fill": {"red": 0, "green": 0, "blue": 0}, "alignment": "left"}]}
+  ]
+}

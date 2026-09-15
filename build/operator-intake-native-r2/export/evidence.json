@@ -1,0 +1,892 @@
+{
+  "dom": {
+    "status": "passed",
+    "illustrator": {
+      "ok": true,
+      "illustrator_version": "30.8.1",
+      "layer_names": [
+        "PF_CUT",
+        "PF_PRINT_FRONT",
+        "PF_FOLD",
+        "PF_ANNOTATION"
+      ],
+      "artboards": [
+        {
+          "name": "Artboard 1",
+          "rect": [
+            0,
+            360,
+            720,
+            0
+          ]
+        }
+      ],
+      "paths": [
+        {
+          "id": "illustrator-dom-path-0",
+          "dom_index": 0,
+          "name": "SIDE outer",
+          "note": "py-ai-path:{\"id\":\"side-outer\",\"name\":\"SIDE outer\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 1,
+          "position": [
+            410,
+            260
+          ],
+          "geometric_bounds": [
+            410,
+            260,
+            590,
+            40
+          ],
+          "visible_bounds": [
+            409.5,
+            260.5,
+            590.5,
+            39.5
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                410,
+                260
+              ],
+              "left": [
+                410,
+                260
+              ],
+              "right": [
+                410,
+                260
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                590,
+                260
+              ],
+              "left": [
+                590,
+                260
+              ],
+              "right": [
+                590,
+                260
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                590,
+                40
+              ],
+              "left": [
+                590,
+                40
+              ],
+              "right": [
+                590,
+                40
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                410,
+                40
+              ],
+              "left": [
+                410,
+                40
+              ],
+              "right": [
+                410,
+                40
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "layer": "PF_CUT",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_SIDE"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-1",
+          "dom_index": 1,
+          "name": "BODY curved hole",
+          "note": "py-ai-path:{\"id\":\"body-hole\",\"name\":\"BODY curved hole\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BODY"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 1,
+          "position": [
+            166,
+            174
+          ],
+          "geometric_bounds": [
+            166,
+            174,
+            214,
+            126
+          ],
+          "visible_bounds": [
+            165.5,
+            174.5,
+            214.5,
+            125.5
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                190,
+                174
+              ],
+              "left": [
+                177,
+                174
+              ],
+              "right": [
+                203,
+                174
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                214,
+                150
+              ],
+              "left": [
+                214,
+                163
+              ],
+              "right": [
+                214,
+                137
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                190,
+                126
+              ],
+              "left": [
+                203,
+                126
+              ],
+              "right": [
+                177,
+                126
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                166,
+                150
+              ],
+              "left": [
+                166,
+                137
+              ],
+              "right": [
+                166,
+                163
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ],
+          "layer": "PF_CUT",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_BODY"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-2",
+          "dom_index": 2,
+          "name": "BODY curved outer",
+          "note": "py-ai-path:{\"id\":\"body-outer\",\"name\":\"BODY curved outer\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BODY"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 1,
+          "position": [
+            40,
+            260
+          ],
+          "geometric_bounds": [
+            40,
+            260,
+            340,
+            40
+          ],
+          "visible_bounds": [
+            39.5,
+            260.5,
+            340.5,
+            39.5
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                190,
+                260
+              ],
+              "left": [
+                130,
+                260
+              ],
+              "right": [
+                250,
+                260
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                340,
+                150
+              ],
+              "left": [
+                340,
+                210
+              ],
+              "right": [
+                340,
+                90
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                190,
+                40
+              ],
+              "left": [
+                250,
+                40
+              ],
+              "right": [
+                130,
+                40
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                40,
+                150
+              ],
+              "left": [
+                40,
+                90
+              ],
+              "right": [
+                40,
+                210
+              ],
+              "point_type": "PointType.SMOOTH"
+            }
+          ],
+          "layer": "PF_CUT",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_BODY"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-3",
+          "dom_index": 3,
+          "name": "side-compound-hole",
+          "note": "py-ai-path:{\"id\":\"side-compound-hole\",\"name\":null}",
+          "parent": {
+            "type": "CompoundPathItem",
+            "name": "SIDE outlined print"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 178,
+            "blue": 204
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            465,
+            195
+          ],
+          "geometric_bounds": [
+            465,
+            195,
+            535,
+            105
+          ],
+          "visible_bounds": [
+            465,
+            195,
+            535,
+            105
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                465,
+                105
+              ],
+              "left": [
+                465,
+                105
+              ],
+              "right": [
+                465,
+                105
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                535,
+                105
+              ],
+              "left": [
+                535,
+                105
+              ],
+              "right": [
+                535,
+                105
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                535,
+                195
+              ],
+              "left": [
+                535,
+                195
+              ],
+              "right": [
+                535,
+                195
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                465,
+                195
+              ],
+              "left": [
+                465,
+                195
+              ],
+              "right": [
+                465,
+                195
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "layer": "PF_PRINT_FRONT",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_SIDE"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-4",
+          "dom_index": 4,
+          "name": "side-compound-outer",
+          "note": "py-ai-path:{\"id\":\"side-compound-outer\",\"name\":null}",
+          "parent": {
+            "type": "CompoundPathItem",
+            "name": "SIDE outlined print"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 178,
+            "blue": 204
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            430,
+            230
+          ],
+          "geometric_bounds": [
+            430,
+            230,
+            570,
+            70
+          ],
+          "visible_bounds": [
+            430,
+            230,
+            570,
+            70
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                430,
+                230
+              ],
+              "left": [
+                430,
+                230
+              ],
+              "right": [
+                430,
+                230
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                570,
+                230
+              ],
+              "left": [
+                570,
+                230
+              ],
+              "right": [
+                570,
+                230
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                570,
+                70
+              ],
+              "left": [
+                570,
+                70
+              ],
+              "right": [
+                570,
+                70
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                430,
+                70
+              ],
+              "left": [
+                430,
+                70
+              ],
+              "right": [
+                430,
+                70
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "layer": "PF_PRINT_FRONT",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_SIDE"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-5",
+          "dom_index": 5,
+          "name": "BODY red field",
+          "note": "py-ai-path:{\"id\":\"body-print-field\",\"name\":\"BODY red field\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BODY"
+          },
+          "closed": true,
+          "clipping": false,
+          "filled": true,
+          "stroked": false,
+          "fill_color": {
+            "type": "RGBColor",
+            "red": 229,
+            "green": 26,
+            "blue": 26
+          },
+          "stroke_color": null,
+          "stroke_width": 1,
+          "position": [
+            54,
+            246
+          ],
+          "geometric_bounds": [
+            54,
+            246,
+            326,
+            54
+          ],
+          "visible_bounds": [
+            54,
+            246,
+            326,
+            54
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                54,
+                246
+              ],
+              "left": [
+                54,
+                246
+              ],
+              "right": [
+                54,
+                246
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                326,
+                246
+              ],
+              "left": [
+                326,
+                246
+              ],
+              "right": [
+                326,
+                246
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                326,
+                54
+              ],
+              "left": [
+                326,
+                54
+              ],
+              "right": [
+                326,
+                54
+              ],
+              "point_type": "PointType.CORNER"
+            },
+            {
+              "anchor": [
+                54,
+                54
+              ],
+              "left": [
+                54,
+                54
+              ],
+              "right": [
+                54,
+                54
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "layer": "PF_PRINT_FRONT",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_BODY"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-6",
+          "dom_index": 6,
+          "name": "FOLD_SIDE_TAB",
+          "note": "py-ai-path:{\"id\":\"side-fold-line\",\"name\":\"FOLD_SIDE_TAB\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_SIDE"
+          },
+          "closed": false,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 1,
+          "position": [
+            500,
+            260
+          ],
+          "geometric_bounds": [
+            500,
+            260,
+            500,
+            40
+          ],
+          "visible_bounds": [
+            499.5,
+            260,
+            500.5,
+            40
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                500,
+                40
+              ],
+              "left": [
+                500,
+                40
+              ],
+              "right": [
+                500,
+                40
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                500,
+                260
+              ],
+              "left": [
+                500,
+                260
+              ],
+              "right": [
+                500,
+                260
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "layer": "PF_FOLD",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_SIDE"
+            }
+          ]
+        },
+        {
+          "id": "illustrator-dom-path-7",
+          "dom_index": 7,
+          "name": "FOLD_BODY_SIDE",
+          "note": "py-ai-path:{\"id\":\"body-fold-line\",\"name\":\"FOLD_BODY_SIDE\"}",
+          "parent": {
+            "type": "GroupItem",
+            "name": "PF_PART_BODY"
+          },
+          "closed": false,
+          "clipping": false,
+          "filled": false,
+          "stroked": true,
+          "fill_color": null,
+          "stroke_color": {
+            "type": "RGBColor",
+            "red": 0,
+            "green": 0,
+            "blue": 0
+          },
+          "stroke_width": 1,
+          "position": [
+            190,
+            260
+          ],
+          "geometric_bounds": [
+            190,
+            260,
+            190,
+            40
+          ],
+          "visible_bounds": [
+            189.5,
+            260,
+            190.5,
+            40
+          ],
+          "matrix": null,
+          "anchors": [
+            {
+              "anchor": [
+                190,
+                40
+              ],
+              "left": [
+                190,
+                40
+              ],
+              "right": [
+                190,
+                40
+              ],
+              "point_type": "PointType.SMOOTH"
+            },
+            {
+              "anchor": [
+                190,
+                260
+              ],
+              "left": [
+                190,
+                260
+              ],
+              "right": [
+                190,
+                260
+              ],
+              "point_type": "PointType.CORNER"
+            }
+          ],
+          "layer": "PF_FOLD",
+          "ancestor_groups": [
+            {
+              "name": "PF_PART_BODY"
+            }
+          ]
+        }
+      ],
+      "group_layers": {
+        "PF_CUT:PF_PART_SIDE": "PF_CUT",
+        "PF_CUT:PF_PART_BODY": "PF_CUT",
+        "PF_PRINT_FRONT:PF_PART_SIDE": "PF_PRINT_FRONT",
+        "PF_PRINT_FRONT:PF_PART_BODY": "PF_PRINT_FRONT",
+        "PF_FOLD:PF_PART_SIDE": "PF_FOLD",
+        "PF_FOLD:PF_PART_BODY": "PF_FOLD"
+      },
+      "group_entries": [
+        {
+          "name": "PF_PART_SIDE",
+          "layer": "PF_CUT"
+        },
+        {
+          "name": "PF_PART_BODY",
+          "layer": "PF_CUT"
+        },
+        {
+          "name": "PF_PART_SIDE",
+          "layer": "PF_PRINT_FRONT"
+        },
+        {
+          "name": "PF_PART_BODY",
+          "layer": "PF_PRINT_FRONT"
+        },
+        {
+          "name": "PF_PART_SIDE",
+          "layer": "PF_FOLD"
+        },
+        {
+          "name": "PF_PART_BODY",
+          "layer": "PF_FOLD"
+        }
+      ]
+    }
+  },
+  "preview": {
+    "profile": "deterministic-raster-preview-v1",
+    "source": "build/operator-intake-native-r2/operator-intake.synthetic.ai",
+    "source_sha256": "5d1318baafe8f261c3e5b74ccb3c412ff4a8117341e94d02e2f2ed93f68c4f9f",
+    "renderer": "pdftocairo",
+    "renderer_version": "pdftocairo version 26.04.0",
+    "dpi": 144,
+    "page_count": 1,
+    "pages": [
+      {
+        "index": 1,
+        "width": 1440,
+        "height": 720,
+        "output": "build/operator-intake-native-r2/export/artboard.preview.png",
+        "pixel_sha256": "53002ecb8b410c3b2bbeb36d06d88da00a11dfe75983d08e34e191f8b85e7fa2",
+        "png_sha256": "fbb8b5c5efc74a34c1dd14ab3da179d1a79bc0acf138e5709c373f9a70c0f4ad"
+      }
+    ]
+  },
+  "print_front_png": {
+    "visible_layer": "PF_PRINT_FRONT",
+    "hidden_layers": [
+      "PF_CUT",
+      "PF_FOLD",
+      "PF_ANNOTATION"
+    ],
+    "path": "build/operator-intake-native-r2/export/print-front.png",
+    "dpi": 144,
+    "pixels": [
+      1440,
+      720
+    ],
+    "pixel_sha256": "f00f683c45507211c63c17975251916d677d3f368229e3f989ee79ee09efc87d"
+  }
+}

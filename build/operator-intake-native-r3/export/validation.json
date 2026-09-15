@@ -1,0 +1,57 @@
+{
+  "profile": "paper-fixture-export-verification-v1",
+  "numeric_live_dom_roundtrip": {
+    "source_path_ids": 4,
+    "exported_path_ids": 4,
+    "missing_ids": [],
+    "extra_ids": [],
+    "missing_folds": [],
+    "extra_folds": [],
+    "max_coordinate_error_mm": 0.0,
+    "tolerance_mm": 1e-06,
+    "passed": true
+  },
+  "print_pixel_mapping": {
+    "png": "print-front.png",
+    "range_mm": [
+      0.0,
+      0.0,
+      253.99999999999997,
+      126.99999999999999
+    ],
+    "formula": "pixel_x = x_mm / width_mm * PNG_width; pixel_y = y_mm / height_mm * PNG_height",
+    "source": "build/operator-intake-native-r3/operator-intake.note-free.synthetic.ai",
+    "visible_layer": "PF_PRINT_FRONT",
+    "hidden_layers": [
+      "PF_CUT",
+      "PF_FOLD",
+      "PF_ANNOTATION"
+    ],
+    "expected_hidden_layers": [
+      "PF_ANNOTATION",
+      "PF_CUT",
+      "PF_FOLD"
+    ],
+    "pixels": [
+      1440,
+      720
+    ],
+    "pixel_sha256": "f00f683c45507211c63c17975251916d677d3f368229e3f989ee79ee09efc87d",
+    "recorded_pixel_sha256": "f00f683c45507211c63c17975251916d677d3f368229e3f989ee79ee09efc87d",
+    "layer_provenance_passed": true,
+    "recorded_hash_passed": true,
+    "fresh_print_only_reexport": "matched",
+    "reference_pixels": [
+      1440,
+      720
+    ],
+    "reference_pixel_sha256": "f00f683c45507211c63c17975251916d677d3f368229e3f989ee79ee09efc87d",
+    "passed": true
+  },
+  "2d_overlay": {
+    "path": "geometry-overlay.svg",
+    "source": "artboard.preview.png",
+    "semantics": "magenta outer, yellow holes, cyan front-print paths, green folds"
+  },
+  "status": "passed"
+}

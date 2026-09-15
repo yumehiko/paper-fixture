@@ -32,6 +32,12 @@ def _evidence(pixel_sha256: str) -> dict:
 
 
 class PrintIsolationTests(unittest.TestCase):
+    def test_verifies_fold_endpoints_from_live_dom(self) -> None:
+        package = {"parts": [{"id": "BODY", "cut": {"outer": {"source_id": "cut", "points": []}, "holes": []}, "print_front": {"paths": []}, "folds": [{"id": "FOLD_A", "endpoints_mm": [[0.0, 0.0], [25.4, 25.4]]}]}]}
+        evidence = {"dom": {"illustrator": {"artboards": [{"rect": [0, 72, 72, 0]}], "paths": [{"id": "cut", "layer": "PF_CUT", "parent": {"name": "PF_PART_BODY"}, "anchors": []}, {"id": "fold", "name": "FOLD_A", "layer": "PF_FOLD", "parent": {"name": "PF_PART_BODY"}, "anchors": [{"anchor": [0, 72]}, {"anchor": [72, 0]}]}]}}}
+        result = verifier._verify_live_dom(package, evidence)
+        self.assertTrue(result["passed"])
+        self.assertEqual(result["missing_folds"], [])
     def test_accepts_a_red_print_pixel(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
