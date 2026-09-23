@@ -1,2 +1,5 @@
 __pycache__/
 .DS_Store
+
+# Local implementation and review worktrees
+/.worktrees/
