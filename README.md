@@ -1,92 +1,91 @@
 # paper-fixture
 
-Illustrator の展開図を起点に、Blender で紙什器を組み立て、確認・編集できるモデルへ受け渡す工程を補助するプロジェクトです。カメラ、照明、背景、納品レンダリングは既存の手動工程で設定します。
+Illustrator の展開図から、Blender で確認・編集できる紙什器の assembly bundle を作るためのプロジェクトです。このページは初回の作業を、入力準備から `.blend` の確認・修正まで順に案内します。
 
-現在は試作の第1〜4段階と、資料に基づく直線折りの組立まで完了しています。Illustrator から取り出した展開図を、印刷面・紙厚・穴を持つ編集可能な Blender の平面部材へ変換し、明示した instance 配置または資料から解決した直線foldの面ツリーから編集可能な assembly bundle を生成できます。両面印刷は対象外です。
+この工程が扱うのは編集可能な assembly bundle までです。カメラ、照明、背景、納品レンダリングは Blender で通常どおり設定します。曲線fold、交差fold、両面印刷、折り半径・強度・製造可能性の保証は対象外です。対応する直線foldの範囲は [fold workflow](docs/fold-workflow.md) を参照してください。
 
-組立前の配置入力は Blender なしでも検査できます。既存の7部材試作入力を検査し、
-解決済みの4×4行列と任意の基準面・接触検査結果を出すには次を実行します。
+## 全体の流れ
 
-```bash
-python3 tools/verify_assembly_placement.py \
-  --input samples/placement/three-shelf-placement.json \
-  --repo-root .
-```
+[工程図: `.ai` から Blender 組立を確認・編集するまで](docs/onboarding-workflow.md) は、Illustrator 担当、Blender 担当、agent の担当、渡すファイル、生成・検証、修正ループを GitHub 上で確認できる Mermaid 図です。以下のチュートリアルはこの図と同じ順序です。
 
-入力契約と配置値の例は[数値配置と編集可能な `.blend` 受け渡し設計](docs/assembly-placement.md)を参照してください。
+## 0. 用意するもの
 
-配置を含む bundle は次のように生成します。既存の出力先は manifest とすべての出力 hash が一致するときだけ再生成できます。手編集、欠落、未知ファイルを含む出力先は別の `--output-dir` を使うか、成果物ディレクトリだけを置換する `--force` を明示してください。
+- macOS、Git、Blender **5.2.1 LTS**。Blender の生成・検証には追加の Python パッケージは不要です。
+- 独自の `.ai` を書き出す場合は Adobe Illustrator 2026 と、[Illustrator exporter の準備](docs/illustrator-export.md) にある `py-ai-illustrator` 環境。
+- agent を実行できる Codex の task。agent は入力を読み、必要な生成・検証コマンドを実行します。
 
-```bash
-BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
-"$BLENDER" --background --python-exit-code 1 --python tools/build_assembly_bundle.py -- \
-  --input samples/placement/three-shelf-placement.json --repo-root . \
-  --output-dir build/local-assembly-check/three-shelf
-```
-
-成果物は `assembly.blend`、`textures/print-front.png`、2枚の preview、`verification.json`、`build-manifest.json` からなります。画像は bundle 内の相対パス `//textures/print-front.png` で参照されます。
-
-### assembly bundle を使う
-
-Blender 5.2.1 LTS があれば、追加の Python パッケージは不要です。初回は
-`git clone https://github.com/yumehiko/paper-fixture.git`、更新時は checkout 内で
-`git pull --ff-only` を実行します。次は入力検査、最短生成、生成物の別プロセス検証を
-順に行う例です。検証 report は provenance を変えないよう bundle の外へ出します。
+Blender は [公式ダウンロード](https://download.blender.org/release/Blender5.2/blender-5.2.1-macos-arm64.dmg) から入手できます。Intel Mac では対応する公式配布物を選んでください。以下では標準のアプリケーション配置を使います。
 
 ```bash
 BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
-python3 tools/verify_assembly_placement.py \
-  --input samples/placement/three-shelf-placement.json --repo-root .
-mkdir -p build/local-assembly-check
-"$BLENDER" --background --python-exit-code 1 --python tools/build_assembly_bundle.py -- \
-  --input samples/placement/three-shelf-placement.json --repo-root . \
-  --output-dir build/local-assembly-check/three-shelf
-"$BLENDER" --background build/local-assembly-check/three-shelf/assembly.blend \
-  --python-exit-code 1 --python tools/verify_assembly_bundle.py -- \
-  --bundle build/local-assembly-check/three-shelf \
-  --report /tmp/paper-fixture-assembly-verification.json
+"$BLENDER" --version
 ```
 
-3つのコマンドが終了コード 0 なら、入力の全 instance の transform、ワールド AABB、
-印刷面法線、指定した基準面・接触、閉じた mesh、UV、穴の既存フェーズ3相当の ray
-検査、bundle 内の画像 hash が確認されています。開くのは bundle 内の
-`assembly.blend` です。`textures/print-front.png`、`build-manifest.json`、
-`verification.json`、`preview-perspective.png`、`preview-reference.png` も同じ
-ディレクトリに保ってください。
+`Blender 5.2.1` と表示されたら続けます。ここまでの環境確認はこのリポジトリの実機工程では未実測です。実案件での利用者検証は [#6](https://github.com/yumehiko/paper-fixture/issues/6) で収集します。
 
-bundle ディレクトリ全体は checkout の外へ移動できます。移動後も
-`assembly.blend` を開くか、上記の最後の検証コマンドで確認します。画像は bundle
-相対パスなので、`.blend` 単体を移動してはいけません。
-
-同じ出力先への再生成は、前回 manifest の入力とすべての管理対象ファイルの hash が
-一致する場合だけ許可されます。Blender で手編集した bundle、画像や preview を追加・
-変更した bundle、未知ファイルを入れた bundle は通常の再生成が失敗します。改訂は新しい
-`--output-dir` を使い、当該成果物の変更を破棄してよい場合だけ `--force` を使ってください。
-`--force` は上流入力や別の bundle を変更しません。
-
-## まず試す（macOS / Blender）
-
-この手順は、リポジトリに含まれる `curve-hole` の書き出し束から Blender の板を生成し、保存後の `.blend` を再オープンして検証します。Illustrator は必要ありません。
-
-### 前提環境
-
-- macOS
-- Git
-- Blender **5.2.1 LTS**。このプロジェクトの開発・検証は 5.2.1 を基準にします。macOS ARM64 用公式配布物は [Blender 公式ダウンロード](https://download.blender.org/release/Blender5.2/blender-5.2.1-macos-arm64.dmg) から取得できます。
-
-Python のパッケージ追加は、この Blender 生成・検証手順には不要です。スクリプトは Blender に同梱された Python で実行されます。
-
-### 取得と実行
-
-ターミナルで、任意の作業場所に新しく取得して実行します。`BLENDER` は Blender.app の実際の場所に合わせて変更してください。
+## 1. リポジトリを取得し、skill plugin を導入する
 
 ```bash
 git clone https://github.com/yumehiko/paper-fixture.git
 cd paper-fixture
+git rev-parse --short HEAD
+```
 
+この checkout には [`plugins/paper-fixture/`](plugins/paper-fixture/) として **plugin のソース**が入っています。clone しただけでは Codex に導入・有効化されません。
+
+1. checkout のルートで `codex plugin marketplace add .` を実行します。
+2. `codex plugin add paper-fixture@paper-fixture` を実行します。
+3. Codex を再起動するか、新しい task を開き、`$paper-fixture-assembly` を使えることを確認します。
+
+この repo-scoped marketplace は [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json) にあり、Paper Fixture の source `./plugins/paper-fixture` を指します。公式の marketplace とローカル plugin の導入手順は [OpenAI Developers: Package your plugin](https://developers.openai.com/plugins/build/plugins) に従います。上の Codex 導入操作は本PRでは未実測です。
+
+plugin は agent の作業手順を追加するものです。Blender 本体や Illustrator exporter 用 Python 環境、そして対象の `.ai` と寸法資料を plugin 内へ導入するものではありません。agent の task から、この checkout と入力ファイルにアクセスできる必要があります。
+
+## 2. テンプレートを作業用に複製して編集する
+
+テンプレートは公開用の架空の見本です。実案件のデータや製造済みの仕様ではありません。テンプレート自体は変更せず、作業ディレクトリに複製します。
+
+```bash
+mkdir -p work/display-r1
+cp templates/operator-intake/operator-intake-template.ai \
+  work/display-r1/display-intake.ai
+cp templates/operator-intake/dimensions-template.md \
+  work/display-r1/display-dimensions.md
+```
+
+Illustrator で `work/display-r1/display-intake.ai` を開き、すぐに別名保存されていることを確認します。`PF_CUT`、`PF_PRINT_FRONT`、必要なら `PF_FOLD` の `PF_PART_EXAMPLE_*` を実部材のグループへ置き換え、見本の部材を削除します。寸法、紙厚、完成時の向き、部材同士の関係、折り条件は `display-dimensions.md` に書きます。PDF、寸法入り画像、完成写真、自然文メモでも構いません。
+
+入力規則と提出前チェックは [Illustrator 入稿と寸法資料](docs/operator-intake.md)、テンプレートの詳しい編集手順は [templates/operator-intake/README.md](templates/operator-intake/README.md) にあります。人が path note、JSON、XYZ 座標、回転行列を作成・記入する必要はありません。
+
+## 3. agent へ `.ai` と寸法資料を渡す
+
+Codex の新しい task をこの checkout で開き、次のように渡します。
+
+> `work/display-r1/display-intake.ai` と `work/display-r1/display-dimensions.md` から、検証済みの editable Blender assembly bundle を作ってください。資料が不足または矛盾していれば、部材名・折線名を示して質問してください。
+
+導入済みの skill がこの入力を案内し、Illustrator exporter、fold の有無に応じた生成器、別プロセスの検証器を実行します。十分な資料なら承認待ちを挟みません。不足や矛盾があれば、たとえば `BODY` の `FOLD_02` の山谷・角度・可動側のように、必要な箇所だけ質問します。
+
+## 4. 生成した bundle を確認する
+
+agent が示す新しい output directory を bundle の単位で扱います。成功時には少なくとも次が同じディレクトリにあります。
+
+- `assembly.blend` — Blender で編集するファイル
+- `textures/print-front.png` — `.blend` から相対参照される前面画像
+- `verification.json` と manifest — 生成・再オープン検証の記録
+- fold がない bundle では `preview-perspective.png` と `preview-reference.png`
+
+`assembly.blend` を Blender で開くときも、上の同伴ファイルを移動・削除しません。bundle 全体は checkout の外へ移動できますが、`.blend` 単体だけを移動すると画像参照が切れます。生成器と検証器が終了コード 0 で完了し、`verification.json` が作られていることを確認してから、形状・画像・配置を確認します。
+
+## 5. Blender で修正する
+
+確認後は `assembly.blend` の mesh、transform、材質を Blender で通常どおり編集・保存できます。手編集は生成済み bundle の変更です。入力を直して再生成する場合は、既存bundleを上書きせず、新しい revision の output directory を agent に指定します。これにより、検証済みのbundleと改訂版を比較できます。
+
+## 同梱サンプルを先に試す
+
+Illustrator を使わず、同梱された `curve-hole` の書き出し束で Blender の板生成と再オープン検証を試せます。出力先は新しく作成します。
+
+```bash
 BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
-"$BLENDER" --version
-
 mkdir -p build/local-blender-check/curve-hole
 "$BLENDER" --background --python-exit-code 1 --python tools/build_blender_panels.py -- \
   --export-json build/illustrator-export-r2/curve-hole/export.json \
@@ -99,56 +98,22 @@ mkdir -p build/local-blender-check/curve-hole
   --report build/local-blender-check/curve-hole/verification.json
 ```
 
-`--python-exit-code 1` により、生成または検証スクリプトが失敗すると Blender も終了コード 1 を返します。
+両方が終了コード 0 なら、`panels.blend`、前後面preview、`verification.json`、`build-manifest.json` が作られます。このサンプルは通常の `.ai` 入稿からの全工程を実測するものではありません。
 
-`"$BLENDER" --version` の出力が `Blender 5.2.1` であることを確認してから続けてください。
+## 詳細・既存の利用経路
 
-### 成功の確認と成果物
-
-両方のコマンドが終了コード 0 で終わり、次のファイルができていれば成功です。
-
-- `build/local-blender-check/curve-hole/panels.blend` — 編集可能な mesh の平面部材
-- `build/local-blender-check/curve-hole/preview-front.png` / `preview-back.png` — 前後面のレビュー画像
-- `build/local-blender-check/curve-hole/verification.json` — 再オープン後の形状、厚み、穴、材質、UV、画像リンクの検証結果
-- `build/local-blender-check/curve-hole/build-manifest.json` — 入力パスと SHA-256 を含む生成記録
-
-生成済みの閲覧用成果物は [`build/blender-panels-r3/curve-hole/`](build/blender-panels-r3/curve-hole/) と [`build/blender-panels-r3/three-shelf/`](build/blender-panels-r3/three-shelf/) にもあります。`.blend` の前面画像はリポジトリ内の相対パスでリンクされます。画像を含む正しい表示には、`.blend` 単体ではなくリポジトリ一式を保持したまま開いてください。
-
-## Illustrator を含むフル工程
-
-最短手順で使う `export.json` と `print-front.png` は、リポジトリに同梱されています。独自の `.ai` から作る場合は、macOS、Adobe Illustrator 2026、Illustrator を読み取り専用で操作する公開 MIT リポジトリ [py-ai-illustrator](https://github.com/yumehiko/py-ai-illustrator) が必要です。取得と環境作成のコマンドは [Illustrator 書き出し試作](docs/illustrator-export.md) に記載しています。
-
-独自の `.ai` を渡す場合は、[Illustrator 入稿と寸法資料](docs/operator-intake.md)を先に読んでください。Blender オペレーターが `.ai` と人向けの寸法資料を agent に渡します。path note、JSON、XYZ座標、回転行列は不要です。
-
-直線foldを含む場合は、資料に必要な折り・配置条件と生成・再open検証の流れを[資料から直線折りを含む組立を生成する設計](docs/fold-workflow.md)で確認してください。リポジトリには skill plugin の**ソース**を [`plugins/paper-fixture/`](plugins/paper-fixture/) に含めています。cloneしただけではCodex環境へ導入されないため、その環境のplugin導入手順で有効化した後、checkoutが利用できるtaskで `$paper-fixture-assembly` を呼び出します。このskillはcheckout中の `tools/export_illustrator.py`、`tools/build_fold_assembly.py`、検証器を実行します。Blender本体とIllustrator exporter用のPython環境はplugin内には含まれず、別途利用できる必要があります。オペレーターが記入するのは `.ai` と人が読める寸法資料だけです。
-
-[Illustrator 書き出し試作](docs/illustrator-export.md) は exporter の規約と出力形式の詳細です。理想化サンプルの `.ai` 再生成は、追加で公開 MIT リポジトリ [illustrator-agent](https://github.com/yumehiko/illustrator-agent) を必要とする開発者向け手順であり、Blender を試すための前提ではありません。
+- [工程図と修正ループ](docs/onboarding-workflow.md)
+- [Illustrator 入稿と寸法資料](docs/operator-intake.md)
+- [直線foldを含む assembly の範囲と処理](docs/fold-workflow.md)
+- [Illustrator exporter の規約と開発環境](docs/illustrator-export.md)
+- [Blender平面部材生成](docs/blender-panels.md)
+- [数値配置と編集可能な `.blend` 受け渡し設計](docs/assembly-placement.md)
+- [開発者向け旧互換CLI: 自作 `.ai` から assembly bundle を作る](docs/custom-ai-workflow.md)
+- [入力データ契約](docs/input-contract.md)、[理想化入力サンプル](samples/idealized_input/README.md)
+- [目的と対象範囲](docs/vision.md)、[処理構成](docs/architecture.md)、[検証計画](docs/validation-plan.md)、[未決事項](docs/open-questions.md)
 
 ## 困ったとき・フィードバック
 
-問題を報告する際は、秘密情報や実案件データを添付せず、次を添えてください。
+問題を報告する際は、実案件データや秘密情報を添付せず、macOSの版、CPU、`"$BLENDER" --version` の出力、checkoutのコミットID、実行コマンド、終了コード、エラー全文、可能なら manifest・検証結果・previewを添えてください。
 
-- macOS の版、CPU（Apple Silicon / Intel）、`"$BLENDER" --version` の出力
-- 試したリポジトリのコミット ID（`git rev-parse HEAD`）と実行したコマンド
-- 期待した結果、実際の結果、終了コード、エラー全文
-- 可能なら `verification.json`、`build-manifest.json`、前後面プレビュー画像
-- 影響度（実行不能・検証失敗・表示差異・質問）
-
-[検証端末フィードバックを新規 Issue として報告する](https://github.com/yumehiko/paper-fixture/issues/new?template=verification-device-feedback.md) ためのテンプレートも用意しています。Blender 5.2.1 LTS での実機テスト結果は、成功・失敗を問わず後続フェーズでこの導線へ記録してください。
-
-## ドキュメント
-
-- [目的と対象範囲](docs/vision.md)
-- [入力データの契約案](docs/input-contract.md)
-- [処理構成とモデル表現](docs/architecture.md)
-- [試作と検証の計画](docs/validation-plan.md)
-- [設計インタビューと未決事項](docs/open-questions.md)
-- [理想化入力サンプル（再生成手順）](samples/idealized_input/README.md)
-- [Illustrator書き出し試作](docs/illustrator-export.md)
-- [自作 `.ai` から assembly bundle を作る](docs/custom-ai-workflow.md)
-- [Illustrator 入稿と寸法資料](docs/operator-intake.md)
-- [Blender平面部材生成（第3段階）](docs/blender-panels.md)
-- [数値配置と編集可能な `.blend` 受け渡し設計（第4段階）](docs/assembly-placement.md)
-- [資料から直線折りを含む組立を生成する設計](docs/fold-workflow.md)
-
-各文書では、ユーザーが示した要望と、検証前の設計提案を区別する。未回答の項目を決定事項として扱わない。
+[検証端末フィードバックを新規 Issue として報告する](https://github.com/yumehiko/paper-fixture/issues/new?template=verification-device-feedback.md) テンプレートがあります。Blender 5.2.1 LTS での利用者実機テストは、成功・失敗を問わず [#6](https://github.com/yumehiko/paper-fixture/issues/6) で収集します。
