@@ -1,0 +1,20 @@
+{
+  "name": "paper-fixture",
+  "interface": {
+    "displayName": "Paper Fixture"
+  },
+  "plugins": [
+    {
+      "name": "paper-fixture",
+      "source": {
+        "source": "local",
+        "path": "./plugins/paper-fixture"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
